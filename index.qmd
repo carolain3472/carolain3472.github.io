@@ -1,0 +1,22 @@
+---
+title: "Carolain Jiménez Bedoya"
+subtitle: "Systems Engineer · Medical Image Analysis & Applied AI"
+image: retrato.jpg
+about:
+  template: trestles
+  links:
+    - icon: github
+      text: GitHub
+      href: https://github.com/carolain3472
+    - text: ORCID
+      href: https://orcid.org/0009-0006-0077-7890
+---
+
+I'm a systems engineer from Colombia working on medical image analysis and applied AI. I'm a research member of the MMV group at Universidad del Valle and lead AI engineering at S&S IP S.A.S. My first-author paper on traumatic brain injury and MRI was presented at CIARP 2025 (Springer LNCS). I care about methods that are measured honestly and reported next to their limits.
+
+## Publications
+
+**Identification of Traumatic Brain Injury on Magnetic Resonance Imaging.**
+Jiménez, C., Chaves, D., Trujillo, M., Herrera, A., Ledesma, M.
+*Progress in Pattern Recognition, Image Analysis, Computer Vision and Applications (CIARP 2025)*. Lecture Notes in Computer Science, vol. 16529. Springer, Cham. Oral presentation, Bogotá.
+[DOI: 10.1007/978-3-032-23176-5_14](https://doi.org/10.1007/978-3-032-23176-5_14)
