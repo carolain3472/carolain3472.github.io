@@ -1,0 +1,1022 @@
+[
+ {
+  "id": 0,
+  "datos": {
+   "lineas": [
+    {
+     "codigo": "412",
+     "ingreso": 421811404,
+     "devoluciones": 5953553
+    },
+    {
+     "codigo": "508",
+     "ingreso": 219008333,
+     "devoluciones": 0
+    }
+   ],
+   "retenciones": 531486,
+   "pronto_pago": false
+  },
+  "texto": "Por restaurante (actividad 508) se facturaron $219.008.333 en el año, sin devoluciones. La nómina del último trimestre fue de $41.780.000. Consultoría, código 412: $421.811.404, de los que se devolvieron $5.953.553. Los clientes le practicaron retenciones por $531.486. Va a pagar después del plazo de pronto pago.",
+  "verdad": 7062000
+ },
+ {
+  "id": 1,
+  "datos": {
+   "lineas": [
+    {
+     "codigo": "203",
+     "ingreso": 364198090,
+     "devoluciones": 0
+    },
+    {
+     "codigo": "305",
+     "ingreso": 331219284,
+     "devoluciones": 0
+    },
+    {
+     "codigo": "508",
+     "ingreso": 268631267,
+     "devoluciones": 0
+    },
+    {
+     "codigo": "101",
+     "ingreso": 184650656,
+     "devoluciones": 0
+    }
+   ],
+   "retenciones": 267640,
+   "pronto_pago": true
+  },
+  "texto": "Por comercio al por menor (actividad 203) se facturaron $364.198.090 en el año, sin devoluciones. Restaurante, código 508: $268.631.267, sin devoluciones. La actividad 101, producción de alimentos, cerró con ingresos de $184.650.656, sin devoluciones. La bodega se trasladó en agosto y el arriendo quedó en $3.200.000 mensuales. La actividad 305, comercio de ferretería, cerró con ingresos de $331.219.284, sin devoluciones. Los clientes le practicaron retenciones por $267.640. Va a pagar dentro del plazo de pronto pago.",
+  "verdad": 9097000
+ },
+ {
+  "id": 2,
+  "datos": {
+   "lineas": [
+    {
+     "codigo": "508",
+     "ingreso": 99099383,
+     "devoluciones": 4740776
+    },
+    {
+     "codigo": "305",
+     "ingreso": 362826536,
+     "devoluciones": 0
+    }
+   ],
+   "retenciones": 307026,
+   "pronto_pago": false
+  },
+  "texto": "Comercio de ferretería, código 305: $362.826.536, sin devoluciones. Restaurante, código 508: $99.099.383, de los que se devolvieron $4.740.776. La nómina del último trimestre fue de $41.780.000. Los clientes le practicaron retenciones por $307.026. Va a pagar después del plazo de pronto pago.",
+  "verdad": 4218000
+ },
+ {
+  "id": 3,
+  "datos": {
+   "lineas": [
+    {
+     "codigo": "412",
+     "ingreso": 331595310,
+     "devoluciones": 0
+    },
+    {
+     "codigo": "203",
+     "ingreso": 359289794,
+     "devoluciones": 0
+    },
+    {
+     "codigo": "305",
+     "ingreso": 189532315,
+     "devoluciones": 0
+    },
+    {
+     "codigo": "101",
+     "ingreso": 52149022,
+     "devoluciones": 0
+    }
+   ],
+   "retenciones": 611582,
+   "pronto_pago": false
+  },
+  "texto": "Por consultoría (actividad 412) se facturaron $331.595.310 en el año, sin devoluciones. Por producción de alimentos (actividad 101) se facturaron $52.149.022 en el año, sin devoluciones. Por comercio de ferretería (actividad 305) se facturaron $189.532.315 en el año, sin devoluciones. La bodega se trasladó en agosto y el arriendo quedó en $3.200.000 mensuales. Por comercio al por menor (actividad 203) se facturaron $359.289.794 en el año, sin devoluciones. Los clientes le practicaron retenciones por $611.582. Va a pagar después del plazo de pronto pago.",
+  "verdad": 8071000
+ },
+ {
+  "id": 4,
+  "datos": {
+   "lineas": [
+    {
+     "codigo": "203",
+     "ingreso": 217932216,
+     "devoluciones": 0
+    },
+    {
+     "codigo": "508",
+     "ingreso": 391224160,
+     "devoluciones": 0
+    }
+   ],
+   "retenciones": 174791,
+   "pronto_pago": true
+  },
+  "texto": "Por restaurante (actividad 508) se facturaron $391.224.160 en el año, sin devoluciones. La nómina del último trimestre fue de $41.780.000. Por comercio al por menor (actividad 203) se facturaron $217.932.216 en el año, sin devoluciones. Los clientes le practicaron retenciones por $174.791. Va a pagar dentro del plazo de pronto pago.",
+  "verdad": 6026000
+ },
+ {
+  "id": 5,
+  "datos": {
+   "lineas": [
+    {
+     "codigo": "305",
+     "ingreso": 289340092,
+     "devoluciones": 12980303
+    },
+    {
+     "codigo": "101",
+     "ingreso": 187689994,
+     "devoluciones": 0
+    },
+    {
+     "codigo": "412",
+     "ingreso": 464239844,
+     "devoluciones": 0
+    },
+    {
+     "codigo": "203",
+     "ingreso": 411312533,
+     "devoluciones": 0
+    }
+   ],
+   "retenciones": 691277,
+   "pronto_pago": true
+  },
+  "texto": "Consultoría, código 412: $464.239.844, sin devoluciones. La nómina del último trimestre fue de $41.780.000. Por comercio de ferretería (actividad 305) se facturaron $289.340.092 en el año, de los que se devolvieron $12.980.303. La actividad 101, producción de alimentos, cerró con ingresos de $187.689.994, sin devoluciones. La actividad 203, comercio al por menor, cerró con ingresos de $411.312.533, sin devoluciones. Los clientes le practicaron retenciones por $691.277. Va a pagar dentro del plazo de pronto pago.",
+  "verdad": 10240000
+ },
+ {
+  "id": 6,
+  "datos": {
+   "lineas": [
+    {
+     "codigo": "412",
+     "ingreso": 38432502,
+     "devoluciones": 0
+    },
+    {
+     "codigo": "101",
+     "ingreso": 439910608,
+     "devoluciones": 0
+    },
+    {
+     "codigo": "305",
+     "ingreso": 442712363,
+     "devoluciones": 0
+    },
+    {
+     "codigo": "203",
+     "ingreso": 242487647,
+     "devoluciones": 7654655
+    }
+   ],
+   "retenciones": 685516,
+   "pronto_pago": true
+  },
+  "texto": "Producción de alimentos, código 101: $439.910.608, sin devoluciones. Por consultoría (actividad 412) se facturaron $38.432.502 en el año, sin devoluciones. La bodega se trasladó en agosto y el arriendo quedó en $3.200.000 mensuales. La actividad 305, comercio de ferretería, cerró con ingresos de $442.712.363, sin devoluciones. La actividad 203, comercio al por menor, cerró con ingresos de $242.487.647, de los que se devolvieron $7.654.655. Los clientes le practicaron retenciones por $685.516. Va a pagar dentro del plazo de pronto pago.",
+  "verdad": 7052000
+ },
+ {
+  "id": 7,
+  "datos": {
+   "lineas": [
+    {
+     "codigo": "508",
+     "ingreso": 267051078,
+     "devoluciones": 0
+    },
+    {
+     "codigo": "412",
+     "ingreso": 81989722,
+     "devoluciones": 1870707
+    }
+   ],
+   "retenciones": 790972,
+   "pronto_pago": true
+  },
+  "texto": "Consultoría, código 412: $81.989.722, de los que se devolvieron $1.870.707. La actividad 508, restaurante, cerró con ingresos de $267.051.078, sin devoluciones. La nómina del último trimestre fue de $41.780.000. Los clientes le practicaron retenciones por $790.972. Va a pagar dentro del plazo de pronto pago.",
+  "verdad": 3241000
+ },
+ {
+  "id": 8,
+  "datos": {
+   "lineas": [
+    {
+     "codigo": "101",
+     "ingreso": 398989557,
+     "devoluciones": 0
+    },
+    {
+     "codigo": "412",
+     "ingreso": 113163179,
+     "devoluciones": 0
+    }
+   ],
+   "retenciones": 225263,
+   "pronto_pago": true
+  },
+  "texto": "La bodega se trasladó en agosto y el arriendo quedó en $3.200.000 mensuales. La actividad 412, consultoría, cerró con ingresos de $113.163.179, sin devoluciones. Producción de alimentos, código 101: $398.989.557, sin devoluciones. Los clientes le practicaron retenciones por $225.263. Va a pagar dentro del plazo de pronto pago.",
+  "verdad": 2713000
+ },
+ {
+  "id": 9,
+  "datos": {
+   "lineas": [
+    {
+     "codigo": "203",
+     "ingreso": 301792271,
+     "devoluciones": 0
+    },
+    {
+     "codigo": "412",
+     "ingreso": 130223372,
+     "devoluciones": 0
+    },
+    {
+     "codigo": "508",
+     "ingreso": 168400319,
+     "devoluciones": 4810113
+    }
+   ],
+   "retenciones": 81939,
+   "pronto_pago": false
+  },
+  "texto": "La actividad 508, restaurante, cerró con ingresos de $168.400.319, de los que se devolvieron $4.810.113. La actividad 203, comercio al por menor, cerró con ingresos de $301.792.271, sin devoluciones. El año pasado el cliente pagó $1.145.000 por este concepto. Consultoría, código 412: $130.223.372, sin devoluciones. Los clientes le practicaron retenciones por $81.939. Va a pagar después del plazo de pronto pago.",
+  "verdad": 5990000
+ },
+ {
+  "id": 10,
+  "datos": {
+   "lineas": [
+    {
+     "codigo": "508",
+     "ingreso": 266804673,
+     "devoluciones": 0
+    },
+    {
+     "codigo": "203",
+     "ingreso": 350568492,
+     "devoluciones": 2606300
+    },
+    {
+     "codigo": "412",
+     "ingreso": 231739010,
+     "devoluciones": 0
+    }
+   ],
+   "retenciones": 781586,
+   "pronto_pago": true
+  },
+  "texto": "Por consultoría (actividad 412) se facturaron $231.739.010 en el año, sin devoluciones. Restaurante, código 508: $266.804.673, sin devoluciones. Por comercio al por menor (actividad 203) se facturaron $350.568.492 en el año, de los que se devolvieron $2.606.300. La nómina del último trimestre fue de $41.780.000. Los clientes le practicaron retenciones por $781.586. Va a pagar dentro del plazo de pronto pago.",
+  "verdad": 7352000
+ },
+ {
+  "id": 11,
+  "datos": {
+   "lineas": [
+    {
+     "codigo": "305",
+     "ingreso": 112265074,
+     "devoluciones": 0
+    },
+    {
+     "codigo": "412",
+     "ingreso": 339337760,
+     "devoluciones": 5781818
+    }
+   ],
+   "retenciones": 203017,
+   "pronto_pago": false
+  },
+  "texto": "Por consultoría (actividad 412) se facturaron $339.337.760 en el año, de los que se devolvieron $5.781.818. La nómina del último trimestre fue de $41.780.000. Comercio de ferretería, código 305: $112.265.074, sin devoluciones. Los clientes le practicaron retenciones por $203.017. Va a pagar después del plazo de pronto pago.",
+  "verdad": 4620000
+ },
+ {
+  "id": 12,
+  "datos": {
+   "lineas": [
+    {
+     "codigo": "508",
+     "ingreso": 257630713,
+     "devoluciones": 7152335
+    },
+    {
+     "codigo": "305",
+     "ingreso": 95282754,
+     "devoluciones": 0
+    },
+    {
+     "codigo": "412",
+     "ingreso": 290549189,
+     "devoluciones": 0
+    }
+   ],
+   "retenciones": 409078,
+   "pronto_pago": false
+  },
+  "texto": "Por restaurante (actividad 508) se facturaron $257.630.713 en el año, de los que se devolvieron $7.152.335. El año pasado el cliente pagó $1.145.000 por este concepto. La actividad 412, consultoría, cerró con ingresos de $290.549.189, sin devoluciones. Comercio de ferretería, código 305: $95.282.754, sin devoluciones. Los clientes le practicaron retenciones por $409.078. Va a pagar después del plazo de pronto pago.",
+  "verdad": 7032000
+ },
+ {
+  "id": 13,
+  "datos": {
+   "lineas": [
+    {
+     "codigo": "305",
+     "ingreso": 264828448,
+     "devoluciones": 0
+    },
+    {
+     "codigo": "101",
+     "ingreso": 136138542,
+     "devoluciones": 0
+    }
+   ],
+   "retenciones": 895011,
+   "pronto_pago": true
+  },
+  "texto": "Por comercio de ferretería (actividad 305) se facturaron $264.828.448 en el año, sin devoluciones. El año pasado el cliente pagó $1.145.000 por este concepto. Producción de alimentos, código 101: $136.138.542, sin devoluciones. Los clientes le practicaron retenciones por $895.011. Va a pagar dentro del plazo de pronto pago.",
+  "verdad": 1958000
+ },
+ {
+  "id": 14,
+  "datos": {
+   "lineas": [
+    {
+     "codigo": "508",
+     "ingreso": 188576814,
+     "devoluciones": 4174818
+    },
+    {
+     "codigo": "101",
+     "ingreso": 343149742,
+     "devoluciones": 0
+    }
+   ],
+   "retenciones": 543858,
+   "pronto_pago": false
+  },
+  "texto": "La nómina del último trimestre fue de $41.780.000. Restaurante, código 508: $188.576.814, de los que se devolvieron $4.174.818. Producción de alimentos, código 101: $343.149.742, sin devoluciones. Los clientes le practicaron retenciones por $543.858. Va a pagar después del plazo de pronto pago.",
+  "verdad": 3534000
+ },
+ {
+  "id": 15,
+  "datos": {
+   "lineas": [
+    {
+     "codigo": "203",
+     "ingreso": 68258747,
+     "devoluciones": 1493063
+    },
+    {
+     "codigo": "101",
+     "ingreso": 164778716,
+     "devoluciones": 5781313
+    },
+    {
+     "codigo": "305",
+     "ingreso": 160578949,
+     "devoluciones": 0
+    }
+   ],
+   "retenciones": 506283,
+   "pronto_pago": true
+  },
+  "texto": "Por comercio de ferretería (actividad 305) se facturaron $160.578.949 en el año, sin devoluciones. Por producción de alimentos (actividad 101) se facturaron $164.778.716 en el año, de los que se devolvieron $5.781.313. Comercio al por menor, código 203: $68.258.747, de los que se devolvieron $1.493.063. La bodega se trasladó en agosto y el arriendo quedó en $3.200.000 mensuales. Los clientes le practicaron retenciones por $506.283. Va a pagar dentro del plazo de pronto pago.",
+  "verdad": 2046000
+ },
+ {
+  "id": 16,
+  "datos": {
+   "lineas": [
+    {
+     "codigo": "508",
+     "ingreso": 404009053,
+     "devoluciones": 0
+    },
+    {
+     "codigo": "305",
+     "ingreso": 267757083,
+     "devoluciones": 0
+    },
+    {
+     "codigo": "101",
+     "ingreso": 226962703,
+     "devoluciones": 0
+    },
+    {
+     "codigo": "412",
+     "ingreso": 472556928,
+     "devoluciones": 0
+    }
+   ],
+   "retenciones": 473906,
+   "pronto_pago": true
+  },
+  "texto": "Por consultoría (actividad 412) se facturaron $472.556.928 en el año, sin devoluciones. La actividad 101, producción de alimentos, cerró con ingresos de $226.962.703, sin devoluciones. La actividad 305, comercio de ferretería, cerró con ingresos de $267.757.083, sin devoluciones. Restaurante, código 508: $404.009.053, sin devoluciones. La bodega se trasladó en agosto y el arriendo quedó en $3.200.000 mensuales. Los clientes le practicaron retenciones por $473.906. Va a pagar dentro del plazo de pronto pago.",
+  "verdad": 12346000
+ },
+ {
+  "id": 17,
+  "datos": {
+   "lineas": [
+    {
+     "codigo": "203",
+     "ingreso": 120628060,
+     "devoluciones": 0
+    },
+    {
+     "codigo": "508",
+     "ingreso": 307868650,
+     "devoluciones": 6912564
+    }
+   ],
+   "retenciones": 123045,
+   "pronto_pago": false
+  },
+  "texto": "Comercio al por menor, código 203: $120.628.060, sin devoluciones. La actividad 508, restaurante, cerró con ingresos de $307.868.650, de los que se devolvieron $6.912.564. El año pasado el cliente pagó $1.145.000 por este concepto. Los clientes le practicaron retenciones por $123.045. Va a pagar después del plazo de pronto pago.",
+  "verdad": 4780000
+ },
+ {
+  "id": 18,
+  "datos": {
+   "lineas": [
+    {
+     "codigo": "203",
+     "ingreso": 165801087,
+     "devoluciones": 0
+    },
+    {
+     "codigo": "305",
+     "ingreso": 171079527,
+     "devoluciones": 0
+    },
+    {
+     "codigo": "101",
+     "ingreso": 334316129,
+     "devoluciones": 8379686
+    },
+    {
+     "codigo": "508",
+     "ingreso": 334515191,
+     "devoluciones": 5828313
+    }
+   ],
+   "retenciones": 839074,
+   "pronto_pago": false
+  },
+  "texto": "Comercio de ferretería, código 305: $171.079.527, sin devoluciones. Producción de alimentos, código 101: $334.316.129, de los que se devolvieron $8.379.686. El año pasado el cliente pagó $1.145.000 por este concepto. Restaurante, código 508: $334.515.191, de los que se devolvieron $5.828.313. Comercio al por menor, código 203: $165.801.087, sin devoluciones. Los clientes le practicaron retenciones por $839.074. Va a pagar después del plazo de pronto pago.",
+  "verdad": 7939000
+ },
+ {
+  "id": 19,
+  "datos": {
+   "lineas": [
+    {
+     "codigo": "203",
+     "ingreso": 50572534,
+     "devoluciones": 1885503
+    },
+    {
+     "codigo": "412",
+     "ingreso": 138632152,
+     "devoluciones": 0
+    },
+    {
+     "codigo": "101",
+     "ingreso": 443478970,
+     "devoluciones": 0
+    }
+   ],
+   "retenciones": 494005,
+   "pronto_pago": false
+  },
+  "texto": "La actividad 101, producción de alimentos, cerró con ingresos de $443.478.970, sin devoluciones. La actividad 203, comercio al por menor, cerró con ingresos de $50.572.534, de los que se devolvieron $1.885.503. La nómina del último trimestre fue de $41.780.000. Consultoría, código 412: $138.632.152, sin devoluciones. Los clientes le practicaron retenciones por $494.005. Va a pagar después del plazo de pronto pago.",
+  "verdad": 3649000
+ },
+ {
+  "id": 20,
+  "datos": {
+   "lineas": [
+    {
+     "codigo": "203",
+     "ingreso": 56983286,
+     "devoluciones": 0
+    },
+    {
+     "codigo": "508",
+     "ingreso": 127801729,
+     "devoluciones": 2196999
+    },
+    {
+     "codigo": "305",
+     "ingreso": 180402349,
+     "devoluciones": 6375117
+    },
+    {
+     "codigo": "412",
+     "ingreso": 94435866,
+     "devoluciones": 1003485
+    }
+   ],
+   "retenciones": 705032,
+   "pronto_pago": true
+  },
+  "texto": "La actividad 412, consultoría, cerró con ingresos de $94.435.866, de los que se devolvieron $1.003.485. El año pasado el cliente pagó $1.145.000 por este concepto. La actividad 305, comercio de ferretería, cerró con ingresos de $180.402.349, de los que se devolvieron $6.375.117. Por comercio al por menor (actividad 203) se facturaron $56.983.286 en el año, sin devoluciones. La actividad 508, restaurante, cerró con ingresos de $127.801.729, de los que se devolvieron $2.196.999. Los clientes le practicaron retenciones por $705.032. Va a pagar dentro del plazo de pronto pago.",
+  "verdad": 3637000
+ },
+ {
+  "id": 21,
+  "datos": {
+   "lineas": [
+    {
+     "codigo": "203",
+     "ingreso": 343928131,
+     "devoluciones": 6010663
+    },
+    {
+     "codigo": "412",
+     "ingreso": 436996994,
+     "devoluciones": 0
+    }
+   ],
+   "retenciones": 346559,
+   "pronto_pago": true
+  },
+  "texto": "La actividad 412, consultoría, cerró con ingresos de $436.996.994, sin devoluciones. Comercio al por menor, código 203: $343.928.131, de los que se devolvieron $6.010.663. La nómina del último trimestre fue de $41.780.000. Los clientes le practicaron retenciones por $346.559. Va a pagar dentro del plazo de pronto pago.",
+  "verdad": 6647000
+ },
+ {
+  "id": 22,
+  "datos": {
+   "lineas": [
+    {
+     "codigo": "203",
+     "ingreso": 416566513,
+     "devoluciones": 0
+    },
+    {
+     "codigo": "305",
+     "ingreso": 456579905,
+     "devoluciones": 22541314
+    },
+    {
+     "codigo": "101",
+     "ingreso": 326125173,
+     "devoluciones": 0
+    },
+    {
+     "codigo": "508",
+     "ingreso": 170877552,
+     "devoluciones": 7642146
+    }
+   ],
+   "retenciones": 253417,
+   "pronto_pago": false
+  },
+  "texto": "La actividad 203, comercio al por menor, cerró con ingresos de $416.566.513, sin devoluciones. Por restaurante (actividad 508) se facturaron $170.877.552 en el año, de los que se devolvieron $7.642.146. Comercio de ferretería, código 305: $456.579.905, de los que se devolvieron $22.541.314. La bodega se trasladó en agosto y el arriendo quedó en $3.200.000 mensuales. Producción de alimentos, código 101: $326.125.173, sin devoluciones. Los clientes le practicaron retenciones por $253.417. Va a pagar después del plazo de pronto pago.",
+  "verdad": 10802000
+ },
+ {
+  "id": 23,
+  "datos": {
+   "lineas": [
+    {
+     "codigo": "305",
+     "ingreso": 420830319,
+     "devoluciones": 0
+    },
+    {
+     "codigo": "101",
+     "ingreso": 65821121,
+     "devoluciones": 0
+    }
+   ],
+   "retenciones": 562248,
+   "pronto_pago": false
+  },
+  "texto": "Por producción de alimentos (actividad 101) se facturaron $65.821.121 en el año, sin devoluciones. La bodega se trasladó en agosto y el arriendo quedó en $3.200.000 mensuales. La actividad 305, comercio de ferretería, cerró con ingresos de $420.830.319, sin devoluciones. Los clientes le practicaron retenciones por $562.248. Va a pagar después del plazo de pronto pago.",
+  "verdad": 3583000
+ },
+ {
+  "id": 24,
+  "datos": {
+   "lineas": [
+    {
+     "codigo": "508",
+     "ingreso": 39830049,
+     "devoluciones": 0
+    },
+    {
+     "codigo": "101",
+     "ingreso": 430804924,
+     "devoluciones": 0
+    },
+    {
+     "codigo": "412",
+     "ingreso": 178067470,
+     "devoluciones": 0
+    }
+   ],
+   "retenciones": 326189,
+   "pronto_pago": false
+  },
+  "texto": "Por restaurante (actividad 508) se facturaron $39.830.049 en el año, sin devoluciones. La bodega se trasladó en agosto y el arriendo quedó en $3.200.000 mensuales. Producción de alimentos, código 101: $430.804.924, sin devoluciones. La actividad 412, consultoría, cerró con ingresos de $178.067.470, sin devoluciones. Los clientes le practicaron retenciones por $326.189. Va a pagar después del plazo de pronto pago.",
+  "verdad": 4326000
+ },
+ {
+  "id": 25,
+  "datos": {
+   "lineas": [
+    {
+     "codigo": "203",
+     "ingreso": 312513052,
+     "devoluciones": 0
+    },
+    {
+     "codigo": "305",
+     "ingreso": 196478447,
+     "devoluciones": 2619829
+    }
+   ],
+   "retenciones": 320894,
+   "pronto_pago": false
+  },
+  "texto": "Por comercio de ferretería (actividad 305) se facturaron $196.478.447 en el año, de los que se devolvieron $2.619.829. Por comercio al por menor (actividad 203) se facturaron $312.513.052 en el año, sin devoluciones. El año pasado el cliente pagó $1.145.000 por este concepto. Los clientes le practicaron retenciones por $320.894. Va a pagar después del plazo de pronto pago.",
+  "verdad": 3984000
+ },
+ {
+  "id": 26,
+  "datos": {
+   "lineas": [
+    {
+     "codigo": "101",
+     "ingreso": 261320385,
+     "devoluciones": 0
+    },
+    {
+     "codigo": "412",
+     "ingreso": 92312800,
+     "devoluciones": 1205249
+    },
+    {
+     "codigo": "508",
+     "ingreso": 269371870,
+     "devoluciones": 1572087
+    },
+    {
+     "codigo": "305",
+     "ingreso": 370877367,
+     "devoluciones": 10036528
+    }
+   ],
+   "retenciones": 148257,
+   "pronto_pago": true
+  },
+  "texto": "La actividad 101, producción de alimentos, cerró con ingresos de $261.320.385, sin devoluciones. Por restaurante (actividad 508) se facturaron $269.371.870 en el año, de los que se devolvieron $1.572.087. La actividad 412, consultoría, cerró con ingresos de $92.312.800, de los que se devolvieron $1.205.249. La actividad 305, comercio de ferretería, cerró con ingresos de $370.877.367, de los que se devolvieron $10.036.528. El año pasado el cliente pagó $1.145.000 por este concepto. Los clientes le practicaron retenciones por $148.257. Va a pagar dentro del plazo de pronto pago.",
+  "verdad": 8041000
+ },
+ {
+  "id": 27,
+  "datos": {
+   "lineas": [
+    {
+     "codigo": "508",
+     "ingreso": 20652279,
+     "devoluciones": 0
+    },
+    {
+     "codigo": "101",
+     "ingreso": 117000020,
+     "devoluciones": 0
+    }
+   ],
+   "retenciones": 313727,
+   "pronto_pago": false
+  },
+  "texto": "La actividad 101, producción de alimentos, cerró con ingresos de $117.000.020, sin devoluciones. El año pasado el cliente pagó $1.145.000 por este concepto. La actividad 508, restaurante, cerró con ingresos de $20.652.279, sin devoluciones. Los clientes le practicaron retenciones por $313.727. Va a pagar después del plazo de pronto pago.",
+  "verdad": 526000
+ },
+ {
+  "id": 28,
+  "datos": {
+   "lineas": [
+    {
+     "codigo": "412",
+     "ingreso": 79963335,
+     "devoluciones": 0
+    },
+    {
+     "codigo": "305",
+     "ingreso": 90790789,
+     "devoluciones": 2762767
+    }
+   ],
+   "retenciones": 565721,
+   "pronto_pago": true
+  },
+  "texto": "La bodega se trasladó en agosto y el arriendo quedó en $3.200.000 mensuales. Consultoría, código 412: $79.963.335, sin devoluciones. Comercio de ferretería, código 305: $90.790.789, de los que se devolvieron $2.762.767. Los clientes le practicaron retenciones por $565.721. Va a pagar dentro del plazo de pronto pago.",
+  "verdad": 1031000
+ },
+ {
+  "id": 29,
+  "datos": {
+   "lineas": [
+    {
+     "codigo": "508",
+     "ingreso": 346694475,
+     "devoluciones": 0
+    },
+    {
+     "codigo": "305",
+     "ingreso": 472556485,
+     "devoluciones": 0
+    },
+    {
+     "codigo": "101",
+     "ingreso": 387981225,
+     "devoluciones": 0
+    },
+    {
+     "codigo": "203",
+     "ingreso": 81339051,
+     "devoluciones": 0
+    }
+   ],
+   "retenciones": 593617,
+   "pronto_pago": true
+  },
+  "texto": "El año pasado el cliente pagó $1.145.000 por este concepto. La actividad 305, comercio de ferretería, cerró con ingresos de $472.556.485, sin devoluciones. Producción de alimentos, código 101: $387.981.225, sin devoluciones. Por restaurante (actividad 508) se facturaron $346.694.475 en el año, sin devoluciones. Comercio al por menor, código 203: $81.339.051, sin devoluciones. Los clientes le practicaron retenciones por $593.617. Va a pagar dentro del plazo de pronto pago.",
+  "verdad": 9697000
+ },
+ {
+  "id": 30,
+  "datos": {
+   "lineas": [
+    {
+     "codigo": "412",
+     "ingreso": 355487005,
+     "devoluciones": 0
+    },
+    {
+     "codigo": "305",
+     "ingreso": 200394066,
+     "devoluciones": 4116750
+    },
+    {
+     "codigo": "508",
+     "ingreso": 189673638,
+     "devoluciones": 0
+    },
+    {
+     "codigo": "203",
+     "ingreso": 361424612,
+     "devoluciones": 17835060
+    }
+   ],
+   "retenciones": 753798,
+   "pronto_pago": true
+  },
+  "texto": "Por restaurante (actividad 508) se facturaron $189.673.638 en el año, sin devoluciones. El año pasado el cliente pagó $1.145.000 por este concepto. La actividad 203, comercio al por menor, cerró con ingresos de $361.424.612, de los que se devolvieron $17.835.060. Comercio de ferretería, código 305: $200.394.066, de los que se devolvieron $4.116.750. Consultoría, código 412: $355.487.005, sin devoluciones. Los clientes le practicaron retenciones por $753.798. Va a pagar dentro del plazo de pronto pago.",
+  "verdad": 9315000
+ },
+ {
+  "id": 31,
+  "datos": {
+   "lineas": [
+    {
+     "codigo": "305",
+     "ingreso": 161987401,
+     "devoluciones": 0
+    },
+    {
+     "codigo": "101",
+     "ingreso": 426284837,
+     "devoluciones": 0
+    },
+    {
+     "codigo": "203",
+     "ingreso": 311357104,
+     "devoluciones": 0
+    }
+   ],
+   "retenciones": 744418,
+   "pronto_pago": true
+  },
+  "texto": "Comercio de ferretería, código 305: $161.987.401, sin devoluciones. El año pasado el cliente pagó $1.145.000 por este concepto. Producción de alimentos, código 101: $426.284.837, sin devoluciones. Comercio al por menor, código 203: $311.357.104, sin devoluciones. Los clientes le practicaron retenciones por $744.418. Va a pagar dentro del plazo de pronto pago.",
+  "verdad": 4810000
+ },
+ {
+  "id": 32,
+  "datos": {
+   "lineas": [
+    {
+     "codigo": "203",
+     "ingreso": 99798980,
+     "devoluciones": 0
+    },
+    {
+     "codigo": "412",
+     "ingreso": 73776289,
+     "devoluciones": 3649221
+    },
+    {
+     "codigo": "101",
+     "ingreso": 21370576,
+     "devoluciones": 0
+    }
+   ],
+   "retenciones": 272157,
+   "pronto_pago": true
+  },
+  "texto": "La actividad 203, comercio al por menor, cerró con ingresos de $99.798.980, sin devoluciones. Por consultoría (actividad 412) se facturaron $73.776.289 en el año, de los que se devolvieron $3.649.221. Producción de alimentos, código 101: $21.370.576, sin devoluciones. La bodega se trasladó en agosto y el arriendo quedó en $3.200.000 mensuales. Los clientes le practicaron retenciones por $272.157. Va a pagar dentro del plazo de pronto pago.",
+  "verdad": 1300000
+ },
+ {
+  "id": 33,
+  "datos": {
+   "lineas": [
+    {
+     "codigo": "305",
+     "ingreso": 420828322,
+     "devoluciones": 0
+    },
+    {
+     "codigo": "412",
+     "ingreso": 300595285,
+     "devoluciones": 11726962
+    },
+    {
+     "codigo": "203",
+     "ingreso": 406433253,
+     "devoluciones": 1173822
+    }
+   ],
+   "retenciones": 84832,
+   "pronto_pago": false
+  },
+  "texto": "La actividad 412, consultoría, cerró con ingresos de $300.595.285, de los que se devolvieron $11.726.962. La actividad 203, comercio al por menor, cerró con ingresos de $406.433.253, de los que se devolvieron $1.173.822. Comercio de ferretería, código 305: $420.828.322, sin devoluciones. El año pasado el cliente pagó $1.145.000 por este concepto. Los clientes le practicaron retenciones por $84.832. Va a pagar después del plazo de pronto pago.",
+  "verdad": 10331000
+ },
+ {
+  "id": 34,
+  "datos": {
+   "lineas": [
+    {
+     "codigo": "508",
+     "ingreso": 307155525,
+     "devoluciones": 12189882
+    },
+    {
+     "codigo": "203",
+     "ingreso": 350581875,
+     "devoluciones": 0
+    },
+    {
+     "codigo": "305",
+     "ingreso": 359805812,
+     "devoluciones": 0
+    }
+   ],
+   "retenciones": 406842,
+   "pronto_pago": true
+  },
+  "texto": "Comercio de ferretería, código 305: $359.805.812, sin devoluciones. Por restaurante (actividad 508) se facturaron $307.155.525 en el año, de los que se devolvieron $12.189.882. La bodega se trasladó en agosto y el arriendo quedó en $3.200.000 mensuales. Comercio al por menor, código 203: $350.581.875, sin devoluciones. Los clientes le practicaron retenciones por $406.842. Va a pagar dentro del plazo de pronto pago.",
+  "verdad": 8603000
+ },
+ {
+  "id": 35,
+  "datos": {
+   "lineas": [
+    {
+     "codigo": "305",
+     "ingreso": 448718547,
+     "devoluciones": 0
+    },
+    {
+     "codigo": "508",
+     "ingreso": 159888658,
+     "devoluciones": 187961
+    },
+    {
+     "codigo": "203",
+     "ingreso": 454675974,
+     "devoluciones": 0
+    },
+    {
+     "codigo": "412",
+     "ingreso": 349594458,
+     "devoluciones": 0
+    }
+   ],
+   "retenciones": 362494,
+   "pronto_pago": false
+  },
+  "texto": "El año pasado el cliente pagó $1.145.000 por este concepto. Restaurante, código 508: $159.888.658, de los que se devolvieron $187.961. La actividad 412, consultoría, cerró con ingresos de $349.594.458, sin devoluciones. La actividad 305, comercio de ferretería, cerró con ingresos de $448.718.547, sin devoluciones. La actividad 203, comercio al por menor, cerró con ingresos de $454.675.974, sin devoluciones. Los clientes le practicaron retenciones por $362.494. Va a pagar después del plazo de pronto pago.",
+  "verdad": 13483000
+ },
+ {
+  "id": 36,
+  "datos": {
+   "lineas": [
+    {
+     "codigo": "412",
+     "ingreso": 418334869,
+     "devoluciones": 0
+    },
+    {
+     "codigo": "101",
+     "ingreso": 381356921,
+     "devoluciones": 0
+    },
+    {
+     "codigo": "203",
+     "ingreso": 350237740,
+     "devoluciones": 0
+    },
+    {
+     "codigo": "305",
+     "ingreso": 96040278,
+     "devoluciones": 574809
+    }
+   ],
+   "retenciones": 631365,
+   "pronto_pago": true
+  },
+  "texto": "La nómina del último trimestre fue de $41.780.000. Por consultoría (actividad 412) se facturaron $418.334.869 en el año, sin devoluciones. Comercio de ferretería, código 305: $96.040.278, de los que se devolvieron $574.809. Producción de alimentos, código 101: $381.356.921, sin devoluciones. La actividad 203, comercio al por menor, cerró con ingresos de $350.237.740, sin devoluciones. Los clientes le practicaron retenciones por $631.365. Va a pagar dentro del plazo de pronto pago.",
+  "verdad": 8748000
+ },
+ {
+  "id": 37,
+  "datos": {
+   "lineas": [
+    {
+     "codigo": "203",
+     "ingreso": 182830129,
+     "devoluciones": 0
+    },
+    {
+     "codigo": "412",
+     "ingreso": 270179372,
+     "devoluciones": 0
+    }
+   ],
+   "retenciones": 860508,
+   "pronto_pago": true
+  },
+  "texto": "Comercio al por menor, código 203: $182.830.129, sin devoluciones. La nómina del último trimestre fue de $41.780.000. La actividad 412, consultoría, cerró con ingresos de $270.179.372, sin devoluciones. Los clientes le practicaron retenciones por $860.508. Va a pagar dentro del plazo de pronto pago.",
+  "verdad": 3336000
+ },
+ {
+  "id": 38,
+  "datos": {
+   "lineas": [
+    {
+     "codigo": "412",
+     "ingreso": 382824454,
+     "devoluciones": 0
+    },
+    {
+     "codigo": "508",
+     "ingreso": 288415065,
+     "devoluciones": 0
+    }
+   ],
+   "retenciones": 194072,
+   "pronto_pago": true
+  },
+  "texto": "La actividad 412, consultoría, cerró con ingresos de $382.824.454, sin devoluciones. Por restaurante (actividad 508) se facturaron $288.415.065 en el año, sin devoluciones. La nómina del último trimestre fue de $41.780.000. Los clientes le practicaron retenciones por $194.072. Va a pagar dentro del plazo de pronto pago.",
+  "verdad": 7133000
+ },
+ {
+  "id": 39,
+  "datos": {
+   "lineas": [
+    {
+     "codigo": "508",
+     "ingreso": 410035451,
+     "devoluciones": 0
+    },
+    {
+     "codigo": "305",
+     "ingreso": 290288214,
+     "devoluciones": 0
+    }
+   ],
+   "retenciones": 366793,
+   "pronto_pago": false
+  },
+  "texto": "Por restaurante (actividad 508) se facturaron $410.035.451 en el año, sin devoluciones. Comercio de ferretería, código 305: $290.288.214, sin devoluciones. La bodega se trasladó en agosto y el arriendo quedó en $3.200.000 mensuales. Los clientes le practicaron retenciones por $366.793. Va a pagar después del plazo de pronto pago.",
+  "verdad": 7612000
+ }
+]

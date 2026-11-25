@@ -1,54 +1,103 @@
 ---
-title: "Fire Watch: the same event, written four ways"
-description: "A small game to see if a model takes the same decision when the same event is described with other words."
+title: "Fire Watch: I made a game to see how a decision model fails"
+description: "A 3D forest, six sensors, four buttons. I compared two cloud models with two models that run inside the browser, and the local ones could not read a thermometer."
 author: "Carolain Jiménez Bedoya"
 date: 2026-11-25
 categories: [decision models, trustworthy AI]
-image: game.png
+image: bad.jpg
 lang: en
+toc: true
 ---
 
-At a tech event I learned about decision models for interfaces. Instead of writing text, they receive a situation and a closed list of options, and they return one option with a probability. Chrome is testing an API for this, the [Decisions API](https://github.com/explainers-by-googlers/decisions-api), where the model runs on the computer of the person using the page.
+A few days ago I went to a tech event and saw a demo I kept thinking about. There was a character on the screen, you talked to it, and a panel on the side showed the probability of each thing it could do. The model never wrote a word. It only picked from a list.
 
-I wanted to try the idea on something close to my work, so I made a small game. I lead the AI research of Kawsay, a wildfire detection project with FIRST Global Team Colombia, and the game borrows that setting. You read a message from a forest sensor and choose one of four actions: ignore, monitor, send a drone or call the brigade. The rule book is fixed, so there is always one correct answer.
+They call these decision models. You give them a situation and a closed list of options, and they return one option with a number next to it. Chrome is testing an API for this, the [Decisions API](https://github.com/explainers-by-googlers/decisions-api), and the model runs on the computer of whoever opens the page. Nothing leaves the device, which for someone who likes medical data and sensors in places without internet is a very good sentence to hear.
 
-[![The game, with one of the sensor messages. Click to play.](game.png){fig-alt="Screenshot of Fire Watch with the rule book, a sensor message and four buttons"}](../../lab/fire-watch/index.html)
+So I made my own game to see where it breaks.
 
-[Play Fire Watch](../../lab/fire-watch/index.html)
+<video controls muted loop playsinline preload="metadata" poster="bad.jpg" style="width:100%;border-radius:12px"><source src="game.mp4" type="video/mp4"></video>
 
-## The test
+[**Play Fire Watch**](../../lab/fire-watch/index.html). It works on a phone too, and you don't need to download any model.
 
-I made 24 events, six per action, and wrote each one in four ways: with numbers, in Spanish with numbers, in plain words, and in plain words again with one phrase changed. The event is the same in the four versions, so the answer should be the same too.
+## Why fire
+
+With FIRST Global Team Colombia I work on Kawsay, a wildfire detection project. When we talked to the municipal brigades in Valle del Cauca they told us something simple: they hear about the fires too late. A phone call needs a person who already sees smoke, and the satellites pass every few hours.
+
+![The node monitoring page of the Kawsay platform, which is still a prototype. The game takes only the idea from it.](kawsay.jpg){fig-alt="Kawsay platform with sensor cards and a map"}
+
+In a system like that, somebody has to read many short messages and decide what each one deserves. That is the game. Six sensors, twelve messages, and four buttons: ignore, monitor, send the drone, call the brigade. You have six flights and four trips, so you can't send everything to everything. If you ignore smoke, you lose trees.
+
+::: {layout-ncol=2}
+![The brigade arrives in time.](brigade.jpg)
+
+![I ignored smoke on purpose. Eleven trees.](bad.jpg)
+:::
+
+The rule book is fixed, so every message has one right answer:
+
+| Action | When |
+|:--|:--|
+| Brigade | The camera sees smoke, whatever else happens |
+| Drone | No smoke, 45 °C or more, and 20% humidity or less |
+| Monitor | No smoke, and only one of those two problems |
+| Ignore | None of them |
+
+## One event, four ways of saying it
+
+I wrote 24 events, six per action, and each one in four versions. This is the same event:
 
 > **Numbers.** Sensor at the east gate. Temperature 47 °C. Humidity 65%. Camera: no smoke.
 >
+> **Spanish.** Sensor en la puerta este. Temperatura 47 °C. Humedad 65 %. Cámara: sin humo.
+>
 > **Plain words.** The battery was changed on Monday. At the east gate the air is very hot and humid as usual, and the camera shows nothing unusual.
+>
+> **One phrase changed.** The same, but it ends with "the camera shows no smoke".
 
-## First results, in the cloud
+The answer is *monitor* in all of them. If a model changes its mind because I changed the words, I want to know.
 
-I started with two general models in the cloud, asking them to pick one option from the list. I ran Claude Haiku 5.5 three times and Claude Sonnet 5.5 once.
+I tested four models. Claude Sonnet 5.5 and Claude Haiku 5.5 are general models in the cloud, and I asked them for one word. The other two ran on my MacBook (an M4): the Decisions API of Chrome 158 with its experimental flag on, and EmbeddingGemma 2, which Google offers through MediaPipe and weighs about 165 MB.
 
-| Version | Haiku 5.5 (three runs) | Sonnet 5.5 (one run) |
-|:--|:--:|:--:|
-| Numbers | 24, 24, 24 | 24 |
-| Spanish | 24, 24, 24 | 24 |
-| Plain words | 19, 20, 19 | 24 |
-| Plain words, one phrase changed | 22, 22, 22 | 24 |
+![](fw-heat.png){fig-alt="Table of correct decisions per model and version"}
 
-: Correct decisions out of 24 {.striped}
+The table surprised me because the two groups fail in opposite places.
 
-![The same results as a chart. The horizontal axis starts at 16.](fire-results.png){fig-alt="Dot chart: Sonnet 24 in all versions, Haiku 24, 24, 19.3 and 22"}
+The cloud models read the numbers perfectly and Spanish made no difference. Haiku gets lost in plain words. The local models are the other way around: they do better with words and they can't do numbers. EmbeddingGemma 2 got 6 of 24 with numbers, which is what you get with your eyes closed. When I opened the answers I saw that it had said *monitor* 24 times out of 24.
 
-Changing the language made no difference. Taking the numbers away did, for the smaller model. Almost every mistake went in the same direction: the rule book said monitor and the model said ignore. For an alarm this is the bad direction, because an event that needed attention gets no attention.
+It makes sense once you think about what that model does. It turns the message and each option into vectors and measures which ones are close. "47 °C" and "45 °C or more" are close as text, and so are "30 °C" and "45 °C or more". There is no place where 47 gets compared with 45.
 
-## What I found in my own prompt
+## The mistake was also mine
 
-The mistakes had something in common. My message said the camera shows "nothing unusual", and my description of the ignore option ended with "Nothing is unusual". The model may have been matching the words I repeated. In the fourth version I only changed that phrase to "no smoke", and Haiku went from 19 or 20 to 22.
+Haiku made the same error again and again: the rule book said *monitor* and it said *ignore*. In a fire system that is the bad direction.
 
-It is a small test with 24 events, one rule book and wording that I invented, and 22 is still not 24, so the repeated phrase does not explain everything. I would still check it in any product where a model chooses from a list, because the person who writes the options can push the answer without noticing.
+When I looked at my own text I found a possible reason. The message said "the camera shows **nothing unusual**", and my description of *ignore* ended with "**Nothing is unusual**". I had copied my own words without noticing. In the fourth version I changed only that phrase and Haiku went from 19 or 20 to 22. The Chrome model moved one point and EmbeddingGemma 2 did not move at all, so this is a Haiku thing, at least here.
 
-## Next
+It is one phrase and 24 events, so I don't want to make it bigger than it is. But I would look for repeated words in any product where a model chooses from a list that a person wrote.
 
-The page can run the same decisions with a local model, through Chrome or with EmbeddingGemma 2 in the browser. That part is still experimental, and I will add the numbers here when I have them.
+## My first fix did not work
 
-Code, and the answers of the last run of each model: [lab/fire-watch](https://github.com/carolain3472/carolain3472.github.io/tree/main/lab/fire-watch). The game is a toy made to compare models. It is not a fire detection system.
+My idea was to stop asking for the action. I would ask the local model three yes or no questions (is there smoke, is it very hot, is it very dry) and let normal code apply the rule book. I was sure about this one.
+
+With Chrome it got worse: from 11 to 6 with numbers and from 14 to 9 with words. EmbeddingGemma 2 went from 6 to 12 with numbers, mostly because it found the smoke, and with words almost nothing changed. So I plotted the probability of each answer, one dot per event, to see what was going on.
+
+![](fw-yesno.png){fig-alt="Dots with the probability of yes, for hot and dry, with numbers and with words"}
+
+Look at the two rows with plain words. The orange and blue dots are separated, the model does know which ones are hot and which ones are dry. The problem is the line at 0.5. For *dry*, every single event is above 0.7, so with that line everything is dry. And in the rows with numbers the colors are mixed, so no line would help.
+
+Then I wrote 24 new events, different from the first ones, used them only to choose better cut points, and went back to the original 24.
+
+![](fw-strategies.png){fig-alt="Bars with three strategies for EmbeddingGemma 2"}
+
+From 13 to 18 with words. It is better, it is still far from 24, and with numbers it stays at 12. With Chrome, the adjusted cut points gave 11 with words, less than just asking for the action.
+
+## What I take from this
+
+If I had to use a small local model for something like this, I would let the code read the thermometer, because `if t >= 45` has never failed me. I would use the model for the part that only exists as language, like a neighbor's message that says it smells like burnt leaves. And I would choose the cut points with data, since 0.5 is only a number that comes by default.
+
+I would also try other models. EmbeddingGemma is the fastest and the weakest of the options that Chrome is considering. [Resoneo tested more of them](https://think.resoneo.com/chrome-decisions-api/) on 1,365 decisions and EmbeddingGemma also came last, at 38%, while Gemma 4 got 85%. I did not run Gemma 4 because it needs more than 4 GB, and I did not use dedicated cloud models like Gemini Decision or Jev. My median time was 55 ms per decision with Chrome, and that is the reason people care about them.
+
+A few limits: 24 events, texts made from templates that I wrote, one run of Sonnet and one of each local model, one laptop. The API is experimental and can change next week.
+
+Everything is in [lab/fire-watch](https://github.com/carolain3472/carolain3472.github.io/tree/main/lab/fire-watch): the events, the answers (for Haiku, the last of the three runs) and the code. There is also an [experiment page](../../lab/fire-watch/experiment.html) to run the local models in your own browser. I built the game and ran the tests with help from Claude Code. The 3D uses three.js.
+
+![](end.jpg){fig-alt="End screen of the game comparing the player and the model"}

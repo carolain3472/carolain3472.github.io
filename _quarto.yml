@@ -17,3 +17,5 @@ format:
   html:
     theme: cosmo
     css: styles.css
+    toc-title: " "
+    lightbox: true

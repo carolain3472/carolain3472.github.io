@@ -1,52 +1,35 @@
 ---
-title: "Carolain Jiménez Bedoya"
-subtitle: "Computer Vision · Medical Image Analysis · Trustworthy AI"
-image: retrato.jpg
-about:
-  template: trestles
-  links:
-    - icon: github
-      text: GitHub
-      href: https://github.com/carolain3472
-    - icon: linkedin
-      text: LinkedIn
-      href: https://www.linkedin.com/in/carolain-jimenez-bedoya
-    - text: ORCID
-      href: https://orcid.org/0009-0006-0077-7890
-    - text: Portfolio
-      href: https://carolain-jimenez.netlify.app/
-listing:
-  - id: latest
-    contents: posts
-    sort: "date desc"
-    max-items: 5
-    type: grid
-    grid-columns: 2
-    image-height: 130px
-    fields: [image, date, title]
-    sort-ui: false
-    filter-ui: false
+pagetitle: "Carolain Jiménez Bedoya"
+description-meta: "Computer vision, medical image analysis and trustworthy AI. Notes and experiments by Carolain Jiménez Bedoya."
+page-layout: full
+toc: false
 ---
 
-I'm a systems engineer from Colombia working on medical image analysis and applied AI. I'm a research member of the MMV group at Universidad del Valle and lead AI engineering at S&S IP S.A.S. My first-author paper on traumatic brain injury and MRI was presented at CIARP 2025 (Springer LNCS). I care about methods that are measured honestly and reported next to their limits.
+```{=html}
+<section class="hero"><div>
+<p class="name" role="heading" aria-level="1">Carolain Jiménez Bedoya</p>
+<p>I'm a systems engineer from Colombia. I work on medical images with the MMV group at Universidad del Valle, and I lead AI engineering at S&amp;S IP S.A.S. I also mentor Team Colombia in FIRST Global.</p>
+<p>This is where I write down what I try: experiments small enough to see inside, systems from work, and results that did not come out the way I wanted.</p>
+<div class="links"><a href="https://github.com/carolain3472">GitHub</a><a href="https://www.linkedin.com/in/carolain-jimenez-bedoya">LinkedIn</a><a href="https://orcid.org/0009-0006-0077-7890">ORCID</a><a href="https://carolain-jimenez.netlify.app/">Portfolio</a></div>
+</div><img src="retrato.jpg" alt="Portrait of Carolain Jiménez Bedoya"></section>
 
-This is where I write about my research, the AI systems I build at work, and what I learn teaching and mentoring. Some notes are in English and some in Spanish.
+<h2>Notes</h2>
+<div class="cards">
+<a class="big" href="posts/fire-watch/"><div class="pic" style="background-image:url(posts/fire-watch/bad.jpg)"></div><div class="tx"><small>Decision models</small><h3>Fire Watch: I made a game to see how a decision model fails</h3><p>A 3D forest, six sensors and four buttons. The local models could not read a thermometer.</p></div></a>
+<a class="big" href="posts/scanner-shortcut/"><div class="pic fit" style="background-image:url(posts/scanner-shortcut/sc-weights.png)"></div><div class="tx"><small>Medical imaging</small><h3>When a model learns the scanner</h3><p>The same model scores 0.97 or 0.69, and you can see inside it what it was looking at.</p></div></a>
+<a href="posts/negative-result/"><div class="pic fit" style="background-image:url(posts/negative-result/cw-grid.png)"></div><div class="tx"><small>Clinical NLP</small><h3>I trained the model more and it did not improve</h3><p>101 notes, a bug in my own evaluator, and a model that changed its vocabulary.</p></div></a>
+<a href="posts/chatbot-no-se/"><div class="pic fit" style="background-image:url(posts/chatbot-no-se/chat1.png)"></div><div class="tx"><small>IA responsable, en español</small><h3>Le di permiso a un chatbot para decir «no sé»</h3><p>270 respuestas con y sin reglamento, y los errores que quedaron.</p></div></a>
+<a href="posts/ia-propone/"><div class="pic fit" style="background-image:url(posts/ia-propone/ip-exactos.png)"></div><div class="tx"><small>Transformación digital, en español</small><h3>Tres modelos leyeron bien 40 documentos. La cuenta fue otra historia</h3><p>Quién lee, quién calcula y quién firma.</p></div></a>
+</div>
 
-## Latest notes
+<h2>Publication</h2>
+<p><strong>Identification of Traumatic Brain Injury on Magnetic Resonance Imaging.</strong> Jiménez, C., Chaves, D., Trujillo, M., Herrera, A., Ledesma, M. <em>CIARP 2025</em>, Lecture Notes in Computer Science, vol. 16529. Springer, Cham. Oral presentation, Bogotá. <a href="https://doi.org/10.1007/978-3-032-23176-5_14">10.1007/978-3-032-23176-5_14</a></p>
 
-::: {#latest}
-:::
-
-## Publications
-
-**Identification of Traumatic Brain Injury on Magnetic Resonance Imaging.**
-Jiménez, C., Chaves, D., Trujillo, M., Herrera, A., Ledesma, M.
-*Progress in Pattern Recognition, Image Analysis, Computer Vision and Applications (CIARP 2025)*. Lecture Notes in Computer Science, vol. 16529. Springer, Cham. Oral presentation, Bogotá.
-[DOI: 10.1007/978-3-032-23176-5_14](https://doi.org/10.1007/978-3-032-23176-5_14)
-
-## Projects
-
-- **[Traumatic brain injury on MRI](https://carolain-jimenez.netlify.app/tbi.html)**, radiomics and machine learning on T1-weighted MRI.
-- **[Kawsay](https://carolain-jimenez.netlify.app/nte.html)**, wildfire detection with FIRST Global Team Colombia.
-- **[RENOVA](https://carolain-jimenez.netlify.app/renova.html)**, aquatic plant classification on a Raspberry Pi.
-- **[Spanish clinical notes](https://carolain-jimenez.netlify.app/nlp-clinico.html)**, language models for clinical text.
+<h2>Projects</h2>
+<div class="four">
+<a href="https://carolain-jimenez.netlify.app/tbi.html"><img src="img/proj-tbi.jpg" alt="">Traumatic brain injury on MRI<span>Radiomics on T1-weighted images</span></a>
+<a href="https://carolain-jimenez.netlify.app/nte.html"><img src="img/proj-fire.jpg" alt="">Kawsay<span>Wildfire detection, FIRST Global 2026</span></a>
+<a href="https://carolain-jimenez.netlify.app/renova.html"><img src="img/renova-robot.jpg" alt="">RENOVA<span>Aquatic plants on a Raspberry Pi</span></a>
+<a href="https://carolain-jimenez.netlify.app/nlp-clinico.html"><img src="img/proj-nlp.jpg" alt="">Spanish clinical notes<span>Language models, TecNM Morelia</span></a>
+</div>
+```
