@@ -1,0 +1,49 @@
+---
+title: "Fire Watch: the same event, written four ways"
+description: "A small game to see if a model takes the same decision when the same event is described with other words."
+author: "Carolain Jiménez Bedoya"
+date: 2026-11-25
+categories: [decision models, trustworthy AI]
+lang: en
+---
+
+At a tech event I learned about decision models for interfaces. Instead of writing text, they receive a situation and a closed list of options, and they return one option with a probability. Chrome is testing an API for this, the [Decisions API](https://github.com/explainers-by-googlers/decisions-api), where the model runs on the computer of the person using the page.
+
+I wanted to try the idea on something close to my work, so I made a small game. I lead the AI research of Kawsay, a wildfire detection project with FIRST Global Team Colombia, and the game borrows that setting. You read a message from a forest sensor and choose one of four actions: ignore, monitor, send a drone or call the brigade. The rule book is fixed, so there is always one correct answer.
+
+[Play Fire Watch](../../lab/fire-watch/index.html)
+
+## The test
+
+I made 24 events, six per action, and wrote each one in four ways: with numbers, in Spanish with numbers, in plain words, and in plain words again with one phrase changed. The event is the same in the four versions, so the answer should be the same too.
+
+> **Numbers.** Sensor at the east gate. Temperature 47 °C. Humidity 65%. Camera: no smoke.
+>
+> **Plain words.** The battery was changed on Monday. At the east gate the air is very hot and humid as usual, and the camera shows nothing unusual.
+
+## First results, in the cloud
+
+I started with two general models in the cloud, asking them to pick one option from the list. I ran Claude Haiku 5.5 three times and Claude Sonnet 5.5 once.
+
+| Version | Haiku 5.5 (three runs) | Sonnet 5.5 (one run) |
+|:--|:--:|:--:|
+| Numbers | 24, 24, 24 | 24 |
+| Spanish | 24, 24, 24 | 24 |
+| Plain words | 19, 20, 19 | 24 |
+| Plain words, one phrase changed | 22, 22, 22 | 24 |
+
+: Correct decisions out of 24 {.striped}
+
+Changing the language made no difference. Taking the numbers away did, for the smaller model. Almost every mistake went in the same direction: the rule book said monitor and the model said ignore. For an alarm this is the bad direction, because an event that needed attention gets no attention.
+
+## What I found in my own prompt
+
+The mistakes had something in common. My message said the camera shows "nothing unusual", and my description of the ignore option ended with "Nothing is unusual". The model may have been matching the words I repeated. In the fourth version I only changed that phrase to "no smoke", and Haiku went from 19 or 20 to 22.
+
+It is a small test with 24 events, one rule book and wording that I invented, and 22 is still not 24, so the repeated phrase does not explain everything. I would still check it in any product where a model chooses from a list, because the person who writes the options can push the answer without noticing.
+
+## Next
+
+The page can run the same decisions with a local model, through Chrome or with EmbeddingGemma 2 in the browser. That part is still experimental, and I will add the numbers here when I have them.
+
+Code, and the answers of the last run of each model: [lab/fire-watch](https://github.com/carolain3472/carolain3472.github.io/tree/main/lab/fire-watch). The game is a toy made to compare models. It is not a fire detection system.

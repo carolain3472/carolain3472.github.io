@@ -1,0 +1,265 @@
+{
+ "schema": {
+  "prompt": "Which action does the rule book say to take?",
+  "options": [
+   {
+    "label": "ignore",
+    "description": "No smoke, temperature below 45 °C and humidity above 20%. Nothing is unusual."
+   },
+   {
+    "label": "monitor",
+    "description": "No smoke, and only one problem: very hot (45 °C or more) or very dry (20% or less), but not both."
+   },
+   {
+    "label": "drone",
+    "description": "No smoke, and both problems at once: very hot (45 °C or more) and very dry (20% or less)."
+   },
+   {
+    "label": "brigade",
+    "description": "The camera sees smoke, whatever the temperature and the humidity are."
+   }
+  ]
+ },
+ "events": [
+  {
+   "id": 8,
+   "label": "drone",
+   "text": {
+    "numbers": "Sensor at the river bend. Temperature 52 °C. Humidity 8%. Camera: no smoke.",
+    "spanish": "Sensor en la curva del río. Temperatura 52 °C. Humedad 8 %. Cámara: sin humo.",
+    "words": "A family of deer walked by this morning. At the river bend the air is very hot and very dry, and the camera shows nothing unusual.",
+    "words_no_echo": "A family of deer walked by this morning. At the river bend the air is very hot and very dry, and the camera shows no smoke."
+   }
+  },
+  {
+   "id": 9,
+   "label": "drone",
+   "text": {
+    "numbers": "Sensor at the old quarry. Temperature 54 °C. Humidity 10%. Camera: no smoke.",
+    "spanish": "Sensor en la cantera vieja. Temperatura 54 °C. Humedad 10 %. Cámara: sin humo.",
+    "words": "The sign near the post is loose. At the old quarry the air is very hot and very dry, and the camera shows nothing unusual.",
+    "words_no_echo": "The sign near the post is loose. At the old quarry the air is very hot and very dry, and the camera shows no smoke."
+   }
+  },
+  {
+   "id": 6,
+   "label": "drone",
+   "text": {
+    "numbers": "Sensor at the lake path. Temperature 47 °C. Humidity 11%. Camera: no smoke.",
+    "spanish": "Sensor en el camino del lago. Temperatura 47 °C. Humedad 11 %. Cámara: sin humo.",
+    "words": "The battery was changed on Monday. At the lake path the air is very hot and very dry, and the camera shows nothing unusual.",
+    "words_no_echo": "The battery was changed on Monday. At the lake path the air is very hot and very dry, and the camera shows no smoke."
+   }
+  },
+  {
+   "id": 22,
+   "label": "ignore",
+   "text": {
+    "numbers": "Sensor at the river bend. Temperature 35 °C. Humidity 54%. Camera: no smoke.",
+    "spanish": "Sensor en la curva del río. Temperatura 35 °C. Humedad 54 %. Cámara: sin humo.",
+    "words": "A school group visited yesterday. At the river bend the air is at a normal temperature and humid as usual, and the camera shows nothing unusual.",
+    "words_no_echo": "A school group visited yesterday. At the river bend the air is at a normal temperature and humid as usual, and the camera shows no smoke."
+   }
+  },
+  {
+   "id": 3,
+   "label": "brigade",
+   "text": {
+    "numbers": "Sensor at the north ridge. Temperature 49 °C. Humidity 8%. Camera: smoke visible.",
+    "spanish": "Sensor en el filo norte. Temperatura 49 °C. Humedad 8 %. Cámara: se ve humo.",
+    "words": "The sign near the post is loose. At the north ridge the air is very hot and very dry, and the camera shows smoke.",
+    "words_no_echo": "The sign near the post is loose. At the north ridge the air is very hot and very dry, and the camera shows smoke."
+   }
+  },
+  {
+   "id": 20,
+   "label": "ignore",
+   "text": {
+    "numbers": "Sensor at the lake path. Temperature 34 °C. Humidity 49%. Camera: no smoke.",
+    "spanish": "Sensor en el camino del lago. Temperatura 34 °C. Humedad 49 %. Cámara: sin humo.",
+    "words": "The sign near the post is loose. At the lake path the air is at a normal temperature and humid as usual, and the camera shows nothing unusual.",
+    "words_no_echo": "The sign near the post is loose. At the lake path the air is at a normal temperature and humid as usual, and the camera shows no smoke."
+   }
+  },
+  {
+   "id": 5,
+   "label": "brigade",
+   "text": {
+    "numbers": "Sensor at the north ridge. Temperature 54 °C. Humidity 14%. Camera: smoke visible.",
+    "spanish": "Sensor en el filo norte. Temperatura 54 °C. Humedad 14 %. Cámara: se ve humo.",
+    "words": "Somebody left a blue jacket on the bench. At the north ridge the air is very hot and very dry, and the camera shows smoke.",
+    "words_no_echo": "Somebody left a blue jacket on the bench. At the north ridge the air is very hot and very dry, and the camera shows smoke."
+   }
+  },
+  {
+   "id": 23,
+   "label": "ignore",
+   "text": {
+    "numbers": "Sensor at the pine slope. Temperature 23 °C. Humidity 59%. Camera: no smoke.",
+    "spanish": "Sensor en la ladera de pinos. Temperatura 23 °C. Humedad 59 %. Cámara: sin humo.",
+    "words": "A family of deer walked by this morning. At the pine slope the air is at a normal temperature and humid as usual, and the camera shows nothing unusual.",
+    "words_no_echo": "A family of deer walked by this morning. At the pine slope the air is at a normal temperature and humid as usual, and the camera shows no smoke."
+   }
+  },
+  {
+   "id": 0,
+   "label": "brigade",
+   "text": {
+    "numbers": "Sensor at the pine slope. Temperature 29 °C. Humidity 37%. Camera: smoke visible.",
+    "spanish": "Sensor en la ladera de pinos. Temperatura 29 °C. Humedad 37 %. Cámara: se ve humo.",
+    "words": "The battery was changed on Monday. At the pine slope the air is at a normal temperature and humid as usual, and the camera shows smoke.",
+    "words_no_echo": "The battery was changed on Monday. At the pine slope the air is at a normal temperature and humid as usual, and the camera shows smoke."
+   }
+  },
+  {
+   "id": 12,
+   "label": "monitor",
+   "text": {
+    "numbers": "Sensor at the east gate. Temperature 47 °C. Humidity 65%. Camera: no smoke.",
+    "spanish": "Sensor en la puerta este. Temperatura 47 °C. Humedad 65 %. Cámara: sin humo.",
+    "words": "The battery was changed on Monday. At the east gate the air is very hot and humid as usual, and the camera shows nothing unusual.",
+    "words_no_echo": "The battery was changed on Monday. At the east gate the air is very hot and humid as usual, and the camera shows no smoke."
+   }
+  },
+  {
+   "id": 7,
+   "label": "drone",
+   "text": {
+    "numbers": "Sensor at the east gate. Temperature 55 °C. Humidity 8%. Camera: no smoke.",
+    "spanish": "Sensor en la puerta este. Temperatura 55 °C. Humedad 8 %. Cámara: sin humo.",
+    "words": "Somebody left a blue jacket on the bench. At the east gate the air is very hot and very dry, and the camera shows nothing unusual.",
+    "words_no_echo": "Somebody left a blue jacket on the bench. At the east gate the air is very hot and very dry, and the camera shows no smoke."
+   }
+  },
+  {
+   "id": 4,
+   "label": "brigade",
+   "text": {
+    "numbers": "Sensor at the river bend. Temperature 32 °C. Humidity 32%. Camera: smoke visible.",
+    "spanish": "Sensor en la curva del río. Temperatura 32 °C. Humedad 32 %. Cámara: se ve humo.",
+    "words": "A family of deer walked by this morning. At the river bend the air is at a normal temperature and humid as usual, and the camera shows smoke.",
+    "words_no_echo": "A family of deer walked by this morning. At the river bend the air is at a normal temperature and humid as usual, and the camera shows smoke."
+   }
+  },
+  {
+   "id": 16,
+   "label": "monitor",
+   "text": {
+    "numbers": "Sensor at the old quarry. Temperature 36 °C. Humidity 14%. Camera: no smoke.",
+    "spanish": "Sensor en la cantera vieja. Temperatura 36 °C. Humedad 14 %. Cámara: sin humo.",
+    "words": "The sign near the post is loose. At the old quarry the air is at a normal temperature and very dry, and the camera shows nothing unusual.",
+    "words_no_echo": "The sign near the post is loose. At the old quarry the air is at a normal temperature and very dry, and the camera shows no smoke."
+   }
+  },
+  {
+   "id": 13,
+   "label": "monitor",
+   "text": {
+    "numbers": "Sensor at the north ridge. Temperature 49 °C. Humidity 51%. Camera: no smoke.",
+    "spanish": "Sensor en el filo norte. Temperatura 49 °C. Humedad 51 %. Cámara: sin humo.",
+    "words": "Somebody left a blue jacket on the bench. At the north ridge the air is very hot and humid as usual, and the camera shows nothing unusual.",
+    "words_no_echo": "Somebody left a blue jacket on the bench. At the north ridge the air is very hot and humid as usual, and the camera shows no smoke."
+   }
+  },
+  {
+   "id": 1,
+   "label": "brigade",
+   "text": {
+    "numbers": "Sensor at the east gate. Temperature 46 °C. Humidity 32%. Camera: smoke visible.",
+    "spanish": "Sensor en la puerta este. Temperatura 46 °C. Humedad 32 %. Cámara: se ve humo.",
+    "words": "A family of deer walked by this morning. At the east gate the air is very hot and humid as usual, and the camera shows smoke.",
+    "words_no_echo": "A family of deer walked by this morning. At the east gate the air is very hot and humid as usual, and the camera shows smoke."
+   }
+  },
+  {
+   "id": 14,
+   "label": "monitor",
+   "text": {
+    "numbers": "Sensor at the east gate. Temperature 57 °C. Humidity 32%. Camera: no smoke.",
+    "spanish": "Sensor en la puerta este. Temperatura 57 °C. Humedad 32 %. Cámara: sin humo.",
+    "words": "A family of deer walked by this morning. At the east gate the air is very hot and humid as usual, and the camera shows nothing unusual.",
+    "words_no_echo": "A family of deer walked by this morning. At the east gate the air is very hot and humid as usual, and the camera shows no smoke."
+   }
+  },
+  {
+   "id": 15,
+   "label": "monitor",
+   "text": {
+    "numbers": "Sensor at the pine slope. Temperature 38 °C. Humidity 11%. Camera: no smoke.",
+    "spanish": "Sensor en la ladera de pinos. Temperatura 38 °C. Humedad 11 %. Cámara: sin humo.",
+    "words": "The battery was changed on Monday. At the pine slope the air is at a normal temperature and very dry, and the camera shows nothing unusual.",
+    "words_no_echo": "The battery was changed on Monday. At the pine slope the air is at a normal temperature and very dry, and the camera shows no smoke."
+   }
+  },
+  {
+   "id": 11,
+   "label": "drone",
+   "text": {
+    "numbers": "Sensor at the lake path. Temperature 50 °C. Humidity 16%. Camera: no smoke.",
+    "spanish": "Sensor en el camino del lago. Temperatura 50 °C. Humedad 16 %. Cámara: sin humo.",
+    "words": "The path was repainted last week. At the lake path the air is very hot and very dry, and the camera shows nothing unusual.",
+    "words_no_echo": "The path was repainted last week. At the lake path the air is very hot and very dry, and the camera shows no smoke."
+   }
+  },
+  {
+   "id": 19,
+   "label": "ignore",
+   "text": {
+    "numbers": "Sensor at the old quarry. Temperature 21 °C. Humidity 64%. Camera: no smoke.",
+    "spanish": "Sensor en la cantera vieja. Temperatura 21 °C. Humedad 64 %. Cámara: sin humo.",
+    "words": "Somebody left a blue jacket on the bench. At the old quarry the air is at a normal temperature and humid as usual, and the camera shows nothing unusual.",
+    "words_no_echo": "Somebody left a blue jacket on the bench. At the old quarry the air is at a normal temperature and humid as usual, and the camera shows no smoke."
+   }
+  },
+  {
+   "id": 10,
+   "label": "drone",
+   "text": {
+    "numbers": "Sensor at the north ridge. Temperature 48 °C. Humidity 16%. Camera: no smoke.",
+    "spanish": "Sensor en el filo norte. Temperatura 48 °C. Humedad 16 %. Cámara: sin humo.",
+    "words": "Somebody left a blue jacket on the bench. At the north ridge the air is very hot and very dry, and the camera shows nothing unusual.",
+    "words_no_echo": "Somebody left a blue jacket on the bench. At the north ridge the air is very hot and very dry, and the camera shows no smoke."
+   }
+  },
+  {
+   "id": 18,
+   "label": "ignore",
+   "text": {
+    "numbers": "Sensor at the lake path. Temperature 26 °C. Humidity 39%. Camera: no smoke.",
+    "spanish": "Sensor en el camino del lago. Temperatura 26 °C. Humedad 39 %. Cámara: sin humo.",
+    "words": "The path was repainted last week. At the lake path the air is at a normal temperature and humid as usual, and the camera shows nothing unusual.",
+    "words_no_echo": "The path was repainted last week. At the lake path the air is at a normal temperature and humid as usual, and the camera shows no smoke."
+   }
+  },
+  {
+   "id": 17,
+   "label": "monitor",
+   "text": {
+    "numbers": "Sensor at the old quarry. Temperature 37 °C. Humidity 15%. Camera: no smoke.",
+    "spanish": "Sensor en la cantera vieja. Temperatura 37 °C. Humedad 15 %. Cámara: sin humo.",
+    "words": "A school group visited yesterday. At the old quarry the air is at a normal temperature and very dry, and the camera shows nothing unusual.",
+    "words_no_echo": "A school group visited yesterday. At the old quarry the air is at a normal temperature and very dry, and the camera shows no smoke."
+   }
+  },
+  {
+   "id": 2,
+   "label": "brigade",
+   "text": {
+    "numbers": "Sensor at the north ridge. Temperature 30 °C. Humidity 17%. Camera: smoke visible.",
+    "spanish": "Sensor en el filo norte. Temperatura 30 °C. Humedad 17 %. Cámara: se ve humo.",
+    "words": "Somebody left a blue jacket on the bench. At the north ridge the air is at a normal temperature and very dry, and the camera shows smoke.",
+    "words_no_echo": "Somebody left a blue jacket on the bench. At the north ridge the air is at a normal temperature and very dry, and the camera shows smoke."
+   }
+  },
+  {
+   "id": 21,
+   "label": "ignore",
+   "text": {
+    "numbers": "Sensor at the north ridge. Temperature 28 °C. Humidity 66%. Camera: no smoke.",
+    "spanish": "Sensor en el filo norte. Temperatura 28 °C. Humedad 66 %. Cámara: sin humo.",
+    "words": "A family of deer walked by this morning. At the north ridge the air is at a normal temperature and humid as usual, and the camera shows nothing unusual.",
+    "words_no_echo": "A family of deer walked by this morning. At the north ridge the air is at a normal temperature and humid as usual, and the camera shows no smoke."
+   }
+  }
+ ]
+}
