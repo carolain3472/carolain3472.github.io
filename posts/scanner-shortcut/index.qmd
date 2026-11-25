@@ -1,0 +1,67 @@
+---
+title: "When a model learns the scanner"
+description: "A small experiment with simulated images: the same model scores 0.97 or 0.69, depending on which people I test it on."
+author: "Carolain Jiménez Bedoya"
+date: 2026-11-25
+categories: [medical imaging, trustworthy AI]
+image: images.png
+lang: en
+bibliography: refs.bib
+link-citations: true
+---
+
+Medical imaging datasets are often put together from several hospitals, and each hospital has its own scanner. If most patients come from one scanner and most healthy people come from another, a model can get good results by recognizing the scanner, even if it learns little about the disease.
+
+I wanted to see it with numbers, so I built the smallest experiment I could. It uses simulated images, needs only NumPy and runs in less than 15 seconds on my laptop.
+
+## The images
+
+Each image is a 32 × 32 gray ellipse, a very simple brain. People differ a little in size. Patients have a faint dark spot, and its position moves from one patient to another. The scanner adds a smooth change in brightness, so one side of the image is a bit brighter. I normalize the intensity of every image separately, which is a common step.
+
+![From left to right: control on scanner 0, patient on scanner 0, control on scanner 1, patient on scanner 1. It is hard to see either the spot or the shading by eye.](images.png){fig-alt="Four simulated brain images, two per scanner, with and without the dark spot"}
+
+## The test
+
+I trained a logistic regression on the pixels of 600 images, and I changed only one thing: how many of the patients came from scanner 1. At 50% the scanner says nothing about the disease. At 90%, nine out of ten patients come from scanner 1 and nine out of ten controls from scanner 0.
+
+Then I tested the same model on 1,000 new people, in two ways. In the first one they had the same scanner mix as the training data, which is what a random split of the dataset gives you. In the second one the scanner had nothing to do with the disease. Every number is the mean of 10 runs.
+
+```{=html}
+{{< include auc.svg >}}
+<div style="height:1rem"></div>
+```
+
+The blue line stays between 0.96 and 0.97. With that result alone I would have said the model was fine at every point. The orange line goes from 0.97 down to 0.69.
+
+| Patients from scanner 1 | Same mix as training | Each scanner on its own | Scanner unrelated to disease | Scanner label only |
+|:--|--:|--:|--:|--:|
+| 50% | 0.97 | 0.98 | 0.97 | 0.50 |
+| 60% | 0.97 | 0.97 | 0.96 | 0.60 |
+| 70% | 0.96 | 0.96 | 0.92 | 0.69 |
+| 80% | 0.96 | 0.95 | 0.81 | 0.79 |
+| 90% | 0.97 | 0.88 | 0.69 | 0.90 |
+
+: AUC, mean of 10 runs {.striped}
+
+The last column is a "model" that never looks at the image and only knows which scanner was used. At 90% it reaches 0.90. I also repeated everything without any dark spot, so there was no disease to find, and with the 90% mix the model still got 0.90 on the first test. On the second one it got 0.50, the same as guessing.
+
+## What I would check now
+
+Before trusting an AUC on data from several sites, I would do three things.
+
+1. Count patients and controls per scanner, and compute the AUC of the scanner label alone. If it is far from 0.5, a good result needs another explanation ruled out.
+2. Report the AUC inside each scanner. It helps, but it did not show the whole problem here. At 90% it was 0.88, while the AUC with scanner unrelated to disease was 0.69, because the scanner also moves the scores up or down, so the scores of two people scanned on different machines can no longer be compared.
+3. Test on people whose scanner is unrelated to the diagnosis, or on a site the model never saw.
+
+## The same thing with real images
+
+Zech and colleagues trained a network to find pneumonia in chest X-rays. Its AUC was 0.931 on new images from the hospitals used in training and 0.815 at another hospital. Sorting the images only by hospital already gave 0.861 [@zech]. Glocker and colleagues worked with brain MRI from two studies, matched by age and sex, and a classifier could still tell the studies apart after careful preprocessing [@glocker].
+
+My version is a toy. Real scanners differ in many more ways than one shading, real lesions are not round spots, and a logistic regression is not a deep network, so the exact numbers mean nothing outside this page. I used it to understand where the gap comes from, and changing the `lesion` and `bias` values in the code is a good way to play with it.
+
+Code: [experiment.py](https://github.com/carolain3472/carolain3472.github.io/blob/main/posts/scanner-shortcut/experiment.py) and [figures.py](https://github.com/carolain3472/carolain3472.github.io/blob/main/posts/scanner-shortcut/figures.py).
+
+## References
+
+::: {#refs}
+:::

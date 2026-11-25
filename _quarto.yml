@@ -5,6 +5,8 @@ website:
   title: "Carolain Jiménez Bedoya"
   navbar:
     right:
+      - text: Notes
+        href: blog.qmd
       - icon: github
         href: https://github.com/carolain3472
         aria-label: GitHub
