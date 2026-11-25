@@ -9,4 +9,4 @@ listing:
 ---
 
 
-Notes about my research, the AI systems I build at work and things I try on my own. Some are in English and some in Spanish. I use AI tools, mainly Claude, to help me with code, figures and editing, and I publish the data so anyone can check the numbers.
+Notes about my research, the AI systems I build at work and things I try on my own. I use AI tools, mainly Claude, to help me with code, figures and editing, and I publish the data so anyone can check the numbers.
