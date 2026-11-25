@@ -1,0 +1,525 @@
+{
+ "model": "claude-haiku-5-5",
+ "rows": [
+  {
+   "id": 0,
+   "verdad": 7062000,
+   "solo_modelo": 7062000,
+   "lee_y_programa": 7062000,
+   "lectura_perfecta": true,
+   "ms": [
+    4653,
+    1378
+   ],
+   "usd": 0.0007164000000000001,
+   "n_lineas": 2
+  },
+  {
+   "id": 1,
+   "verdad": 9097000,
+   "solo_modelo": 9097000,
+   "lee_y_programa": 9097000,
+   "lectura_perfecta": true,
+   "ms": [
+    5585,
+    1482
+   ],
+   "usd": 0.0009253,
+   "n_lineas": 4
+  },
+  {
+   "id": 2,
+   "verdad": 4218000,
+   "solo_modelo": 4218000,
+   "lee_y_programa": 4218000,
+   "lectura_perfecta": true,
+   "ms": [
+    5899,
+    1936
+   ],
+   "usd": 0.0008347000000000001,
+   "n_lineas": 2
+  },
+  {
+   "id": 3,
+   "verdad": 8071000,
+   "solo_modelo": 8070700,
+   "lee_y_programa": 8071000,
+   "lectura_perfecta": true,
+   "ms": [
+    3398,
+    1061
+   ],
+   "usd": 0.0008576,
+   "n_lineas": 4
+  },
+  {
+   "id": 4,
+   "verdad": 6026000,
+   "solo_modelo": 6026000,
+   "lee_y_programa": 6026000,
+   "lectura_perfecta": true,
+   "ms": [
+    3550,
+    1259
+   ],
+   "usd": 0.000719,
+   "n_lineas": 2
+  },
+  {
+   "id": 5,
+   "verdad": 10240000,
+   "solo_modelo": 10240000,
+   "lee_y_programa": 10240000,
+   "lectura_perfecta": true,
+   "ms": [
+    5910,
+    2023
+   ],
+   "usd": 0.000983,
+   "n_lineas": 4
+  },
+  {
+   "id": 6,
+   "verdad": 7052000,
+   "solo_modelo": 7052000,
+   "lee_y_programa": 7052000,
+   "lectura_perfecta": true,
+   "ms": [
+    5021,
+    1594
+   ],
+   "usd": 0.000983,
+   "n_lineas": 4
+  },
+  {
+   "id": 7,
+   "verdad": 3241000,
+   "solo_modelo": 3241000,
+   "lee_y_programa": 3241000,
+   "lectura_perfecta": true,
+   "ms": [
+    4173,
+    1679
+   ],
+   "usd": 0.0008088,
+   "n_lineas": 2
+  },
+  {
+   "id": 8,
+   "verdad": 2713000,
+   "solo_modelo": 2713000,
+   "lee_y_programa": 2713000,
+   "lectura_perfecta": true,
+   "ms": [
+    3792,
+    1484
+   ],
+   "usd": 0.0007833,
+   "n_lineas": 2
+  },
+  {
+   "id": 9,
+   "verdad": 5990000,
+   "solo_modelo": 5990000,
+   "lee_y_programa": 5990000,
+   "lectura_perfecta": true,
+   "ms": [
+    3282,
+    1750
+   ],
+   "usd": 0.0008186000000000001,
+   "n_lineas": 3
+  },
+  {
+   "id": 10,
+   "verdad": 7352000,
+   "solo_modelo": 7352000,
+   "lee_y_programa": 7352000,
+   "lectura_perfecta": true,
+   "ms": [
+    4934,
+    1972
+   ],
+   "usd": 0.0009172,
+   "n_lineas": 3
+  },
+  {
+   "id": 11,
+   "verdad": 4620000,
+   "solo_modelo": 4620000,
+   "lee_y_programa": 4620000,
+   "lectura_perfecta": true,
+   "ms": [
+    6297,
+    1590
+   ],
+   "usd": 0.000799,
+   "n_lineas": 2
+  },
+  {
+   "id": 12,
+   "verdad": 7032000,
+   "solo_modelo": 7032000,
+   "lee_y_programa": 7032000,
+   "lectura_perfecta": true,
+   "ms": [
+    3201,
+    1944
+   ],
+   "usd": 0.0008354,
+   "n_lineas": 3
+  },
+  {
+   "id": 13,
+   "verdad": 1958000,
+   "solo_modelo": 1959000,
+   "lee_y_programa": 1958000,
+   "lectura_perfecta": true,
+   "ms": [
+    5245,
+    1421
+   ],
+   "usd": 0.0008113,
+   "n_lineas": 2
+  },
+  {
+   "id": 14,
+   "verdad": 3534000,
+   "solo_modelo": 3534000,
+   "lee_y_programa": 3534000,
+   "lectura_perfecta": true,
+   "ms": [
+    4210,
+    1630
+   ],
+   "usd": 0.0006978,
+   "n_lineas": 2
+  },
+  {
+   "id": 15,
+   "verdad": 2046000,
+   "solo_modelo": 2046000,
+   "lee_y_programa": 2046000,
+   "lectura_perfecta": true,
+   "ms": [
+    5568,
+    1436
+   ],
+   "usd": 0.0009122,
+   "n_lineas": 3
+  },
+  {
+   "id": 16,
+   "verdad": 12346000,
+   "solo_modelo": 12346000,
+   "lee_y_programa": 12346000,
+   "lectura_perfecta": true,
+   "ms": [
+    4859,
+    1495
+   ],
+   "usd": 0.0009656,
+   "n_lineas": 4
+  },
+  {
+   "id": 17,
+   "verdad": 4780000,
+   "solo_modelo": 4780000,
+   "lee_y_programa": 4780000,
+   "lectura_perfecta": true,
+   "ms": [
+    3021,
+    1470
+   ],
+   "usd": 0.0007282,
+   "n_lineas": 2
+  },
+  {
+   "id": 18,
+   "verdad": 7939000,
+   "solo_modelo": 7939000,
+   "lee_y_programa": 7939000,
+   "lectura_perfecta": true,
+   "ms": [
+    3947,
+    1827
+   ],
+   "usd": 0.0010033,
+   "n_lineas": 4
+  },
+  {
+   "id": 19,
+   "verdad": 3649000,
+   "solo_modelo": 3649000,
+   "lee_y_programa": 3649000,
+   "lectura_perfecta": true,
+   "ms": [
+    4284,
+    1688
+   ],
+   "usd": 0.0008623000000000001,
+   "n_lineas": 3
+  },
+  {
+   "id": 20,
+   "verdad": 3637000,
+   "solo_modelo": 3637000,
+   "lee_y_programa": 3637000,
+   "lectura_perfecta": true,
+   "ms": [
+    5091,
+    1986
+   ],
+   "usd": 0.0009321,
+   "n_lineas": 4
+  },
+  {
+   "id": 21,
+   "verdad": 6647000,
+   "solo_modelo": 6647000,
+   "lee_y_programa": 6647000,
+   "lectura_perfecta": true,
+   "ms": [
+    3600,
+    1617
+   ],
+   "usd": 0.0008500000000000001,
+   "n_lineas": 2
+  },
+  {
+   "id": 22,
+   "verdad": 10802000,
+   "solo_modelo": 10802000,
+   "lee_y_programa": 10802000,
+   "lectura_perfecta": true,
+   "ms": [
+    3824,
+    1805
+   ],
+   "usd": 0.0009485,
+   "n_lineas": 4
+  },
+  {
+   "id": 23,
+   "verdad": 3583000,
+   "solo_modelo": 3583000,
+   "lee_y_programa": 3583000,
+   "lectura_perfecta": true,
+   "ms": [
+    3032,
+    1791
+   ],
+   "usd": 0.0007914,
+   "n_lineas": 2
+  },
+  {
+   "id": 24,
+   "verdad": 4326000,
+   "solo_modelo": 4327000,
+   "lee_y_programa": 4326000,
+   "lectura_perfecta": true,
+   "ms": [
+    3459,
+    1944
+   ],
+   "usd": 0.0008878000000000001,
+   "n_lineas": 3
+  },
+  {
+   "id": 25,
+   "verdad": 3984000,
+   "solo_modelo": 3984000,
+   "lee_y_programa": 3984000,
+   "lectura_perfecta": true,
+   "ms": [
+    2367,
+    986
+   ],
+   "usd": 0.0006005,
+   "n_lineas": 2
+  },
+  {
+   "id": 26,
+   "verdad": 8041000,
+   "solo_modelo": 8041000,
+   "lee_y_programa": 8041000,
+   "lectura_perfecta": true,
+   "ms": [
+    3965,
+    1593
+   ],
+   "usd": 0.0009981,
+   "n_lineas": 4
+  },
+  {
+   "id": 27,
+   "verdad": 526000,
+   "solo_modelo": 526000,
+   "lee_y_programa": 526000,
+   "lectura_perfecta": true,
+   "ms": [
+    2320,
+    1531
+   ],
+   "usd": 0.0006744,
+   "n_lineas": 2
+  },
+  {
+   "id": 28,
+   "verdad": 1031000,
+   "solo_modelo": 1031000,
+   "lee_y_programa": 1031000,
+   "lectura_perfecta": true,
+   "ms": [
+    2934,
+    1499
+   ],
+   "usd": 0.0007605000000000001,
+   "n_lineas": 2
+  },
+  {
+   "id": 29,
+   "verdad": 9697000,
+   "solo_modelo": 9697000,
+   "lee_y_programa": 9697000,
+   "lectura_perfecta": true,
+   "ms": [
+    3960,
+    1673
+   ],
+   "usd": 0.0008779,
+   "n_lineas": 4
+  },
+  {
+   "id": 30,
+   "verdad": 9315000,
+   "solo_modelo": 9315000,
+   "lee_y_programa": 9315000,
+   "lectura_perfecta": true,
+   "ms": [
+    4506,
+    1844
+   ],
+   "usd": 0.0010246,
+   "n_lineas": 4
+  },
+  {
+   "id": 31,
+   "verdad": 4810000,
+   "solo_modelo": 4810000,
+   "lee_y_programa": 4810000,
+   "lectura_perfecta": true,
+   "ms": [
+    3675,
+    1710
+   ],
+   "usd": 0.0008692000000000001,
+   "n_lineas": 3
+  },
+  {
+   "id": 32,
+   "verdad": 1300000,
+   "solo_modelo": 1300000,
+   "lee_y_programa": 1300000,
+   "lectura_perfecta": true,
+   "ms": [
+    4002,
+    1580
+   ],
+   "usd": 0.0009285000000000001,
+   "n_lineas": 3
+  },
+  {
+   "id": 33,
+   "verdad": 10331000,
+   "solo_modelo": 10331000,
+   "lee_y_programa": 10331000,
+   "lectura_perfecta": true,
+   "ms": [
+    4338,
+    1824
+   ],
+   "usd": 0.0008904,
+   "n_lineas": 3
+  },
+  {
+   "id": 34,
+   "verdad": 8603000,
+   "solo_modelo": 8603000,
+   "lee_y_programa": 8603000,
+   "lectura_perfecta": true,
+   "ms": [
+    3675,
+    1662
+   ],
+   "usd": 0.0008849999999999999,
+   "n_lineas": 3
+  },
+  {
+   "id": 35,
+   "verdad": 13483000,
+   "solo_modelo": 13483000,
+   "lee_y_programa": 13483000,
+   "lectura_perfecta": true,
+   "ms": [
+    3740,
+    1990
+   ],
+   "usd": 0.0009668000000000001,
+   "n_lineas": 4
+  },
+  {
+   "id": 36,
+   "verdad": 8748000,
+   "solo_modelo": 8748000,
+   "lee_y_programa": 8748000,
+   "lectura_perfecta": true,
+   "ms": [
+    4020,
+    1665
+   ],
+   "usd": 0.0009368,
+   "n_lineas": 4
+  },
+  {
+   "id": 37,
+   "verdad": 3336000,
+   "solo_modelo": 3336000,
+   "lee_y_programa": 3336000,
+   "lectura_perfecta": true,
+   "ms": [
+    3878,
+    1522
+   ],
+   "usd": 0.0007903000000000001,
+   "n_lineas": 2
+  },
+  {
+   "id": 38,
+   "verdad": 7133000,
+   "solo_modelo": 7133000,
+   "lee_y_programa": 7133000,
+   "lectura_perfecta": true,
+   "ms": [
+    2821,
+    1630
+   ],
+   "usd": 0.0007738999999999999,
+   "n_lineas": 2
+  },
+  {
+   "id": 39,
+   "verdad": 7612000,
+   "solo_modelo": 7612000,
+   "lee_y_programa": 7612000,
+   "lectura_perfecta": true,
+   "ms": [
+    2799,
+    1588
+   ],
+   "usd": 0.0007173,
+   "n_lineas": 2
+  }
+ ]
+}

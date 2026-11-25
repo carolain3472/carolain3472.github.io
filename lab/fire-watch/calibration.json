@@ -1,0 +1,146 @@
+[
+ {
+  "hot": 0,
+  "dry": 0,
+  "smoke": 0,
+  "text": "The fence was fixed yesterday. At the stone house the air is at a normal temperature and humid as usual, and the camera shows nothing unusual."
+ },
+ {
+  "hot": 1,
+  "dry": 0,
+  "smoke": 0,
+  "text": "Two hikers passed at noon. At the south camp the air is very hot and humid as usual, and the camera shows no smoke."
+ },
+ {
+  "hot": 0,
+  "dry": 1,
+  "smoke": 0,
+  "text": "The mailbox is empty. At the south camp the air is at a normal temperature and very dry, and the camera shows no smoke."
+ },
+ {
+  "hot": 1,
+  "dry": 1,
+  "smoke": 0,
+  "text": "The mailbox is empty. At the bamboo corner the air is very hot and very dry, and the camera shows nothing unusual."
+ },
+ {
+  "hot": 0,
+  "dry": 0,
+  "smoke": 1,
+  "text": "The fence was fixed yesterday. At the south camp the air is at a normal temperature and humid as usual, and the camera shows smoke."
+ },
+ {
+  "hot": 1,
+  "dry": 0,
+  "smoke": 1,
+  "text": "The fence was fixed yesterday. At the old bridge the air is very hot and humid as usual, and the camera shows smoke."
+ },
+ {
+  "hot": 0,
+  "dry": 1,
+  "smoke": 1,
+  "text": "The grass was cut on Friday. At the old bridge the air is at a normal temperature and very dry, and the camera shows smoke."
+ },
+ {
+  "hot": 1,
+  "dry": 1,
+  "smoke": 1,
+  "text": "A dog slept near the post. At the old bridge the air is very hot and very dry, and the camera shows smoke."
+ },
+ {
+  "hot": 0,
+  "dry": 0,
+  "smoke": 0,
+  "text": "Someone painted the gate green. At the bamboo corner the air is at a normal temperature and humid as usual, and the camera shows no smoke."
+ },
+ {
+  "hot": 1,
+  "dry": 0,
+  "smoke": 0,
+  "text": "Two hikers passed at noon. At the bamboo corner the air is very hot and humid as usual, and the camera shows no smoke."
+ },
+ {
+  "hot": 0,
+  "dry": 1,
+  "smoke": 0,
+  "text": "The grass was cut on Friday. At the stone house the air is at a normal temperature and very dry, and the camera shows no smoke."
+ },
+ {
+  "hot": 1,
+  "dry": 1,
+  "smoke": 0,
+  "text": "Someone painted the gate green. At the south camp the air is very hot and very dry, and the camera shows nothing unusual."
+ },
+ {
+  "hot": 0,
+  "dry": 0,
+  "smoke": 1,
+  "text": "Someone painted the gate green. At the stone house the air is at a normal temperature and humid as usual, and the camera shows smoke."
+ },
+ {
+  "hot": 1,
+  "dry": 0,
+  "smoke": 1,
+  "text": "The fence was fixed yesterday. At the south camp the air is very hot and humid as usual, and the camera shows smoke."
+ },
+ {
+  "hot": 0,
+  "dry": 1,
+  "smoke": 1,
+  "text": "The mailbox is empty. At the stone house the air is at a normal temperature and very dry, and the camera shows smoke."
+ },
+ {
+  "hot": 1,
+  "dry": 1,
+  "smoke": 1,
+  "text": "The grass was cut on Friday. At the bamboo corner the air is very hot and very dry, and the camera shows smoke."
+ },
+ {
+  "hot": 0,
+  "dry": 0,
+  "smoke": 0,
+  "text": "Two hikers passed at noon. At the water tank the air is at a normal temperature and humid as usual, and the camera shows no smoke."
+ },
+ {
+  "hot": 1,
+  "dry": 0,
+  "smoke": 0,
+  "text": "The fence was fixed yesterday. At the water tank the air is very hot and humid as usual, and the camera shows no smoke."
+ },
+ {
+  "hot": 0,
+  "dry": 1,
+  "smoke": 0,
+  "text": "The grass was cut on Friday. At the bamboo corner the air is at a normal temperature and very dry, and the camera shows no smoke."
+ },
+ {
+  "hot": 1,
+  "dry": 1,
+  "smoke": 0,
+  "text": "The fence was fixed yesterday. At the bamboo corner the air is very hot and very dry, and the camera shows no smoke."
+ },
+ {
+  "hot": 0,
+  "dry": 0,
+  "smoke": 1,
+  "text": "The fence was fixed yesterday. At the bamboo corner the air is at a normal temperature and humid as usual, and the camera shows smoke."
+ },
+ {
+  "hot": 1,
+  "dry": 0,
+  "smoke": 1,
+  "text": "The mailbox is empty. At the south camp the air is very hot and humid as usual, and the camera shows smoke."
+ },
+ {
+  "hot": 0,
+  "dry": 1,
+  "smoke": 1,
+  "text": "A dog slept near the post. At the bamboo corner the air is at a normal temperature and very dry, and the camera shows smoke."
+ },
+ {
+  "hot": 1,
+  "dry": 1,
+  "smoke": 1,
+  "text": "The mailbox is empty. At the stone house the air is very hot and very dry, and the camera shows smoke."
+ }
+]

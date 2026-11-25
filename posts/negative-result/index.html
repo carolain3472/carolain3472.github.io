@@ -8,9 +8,9 @@
 
 <meta name="author" content="Carolain Jiménez Bedoya">
 <meta name="dcterms.date" content="2026-11-25">
-<meta name="description" content="A second look, with intervals, at a fine-tuning experiment on Spanish clinical text.">
+<meta name="description" content="I went back to the 101 answers of my internship in Mexico, found a bug in my own evaluator, and saw that the model had changed its vocabulary.">
 
-<title>More training, and the model did not improve – Carolain Jiménez Bedoya</title>
+<title>I trained the model more and it did not improve. Two years later I know more about why – Carolain Jiménez Bedoya</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -28,6 +28,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -50,6 +85,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap-d31a0c91b01e363be7b7a36e602e2c70.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -82,7 +120,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a>
+<body class="nav-fixed quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -119,13 +157,26 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+   
+  <ul>
+  <li><a href="#the-notes" id="toc-the-notes" class="nav-link active" data-scroll-target="#the-notes">The notes</a></li>
+  <li><a href="#first-is-it-really-worse" id="toc-first-is-it-really-worse" class="nav-link" data-scroll-target="#first-is-it-really-worse">First, is it really worse</a></li>
+  <li><a href="#what-changed" id="toc-what-changed" class="nav-link" data-scroll-target="#what-changed">What changed</a></li>
+  <li><a href="#a-bug-in-my-evaluator" id="toc-a-bug-in-my-evaluator" class="nav-link" data-scroll-target="#a-bug-in-my-evaluator">A bug in my evaluator</a></li>
+  <li><a href="#the-part-i-did-not-expect" id="toc-the-part-i-did-not-expect" class="nav-link" data-scroll-target="#the-part-i-did-not-expect">The part I did not expect</a></li>
+  <li><a href="#why-it-did-not-improve-probably" id="toc-why-it-did-not-improve-probably" class="nav-link" data-scroll-target="#why-it-did-not-improve-probably">Why it did not improve, probably</a></li>
+  <li><a href="#if-i-did-it-again" id="toc-if-i-did-it-again" class="nav-link" data-scroll-target="#if-i-did-it-again">If I did it again</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content" tabindex="-1">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">More training, and the model did not improve</h1>
+<h1 class="title">I trained the model more and it did not improve. Two years later I know more about why</h1>
   <div class="quarto-categories">
     <div class="quarto-category">clinical NLP</div>
     <div class="quarto-category">research</div>
@@ -134,7 +185,7 @@ ul.task-list li input[type="checkbox"] {
 
 <div>
   <div class="description">
-    A second look, with intervals, at a fine-tuning experiment on Spanish clinical text.
+    I went back to the 101 answers of my internship in Mexico, found a bug in my own evaluator, and saw that the model had changed its vocabulary.
   </div>
 </div>
 
@@ -163,48 +214,155 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>In the summer of 2024 I did a research internship at TecNM Morelia, in Mexico, with Programa Delfín. I worked with Spanish clinical text, and one part of the project was to see if a language model could recover clinical words hidden in a note. It is a first step towards removing personal details from clinical text.</p>
-<p>I compared a biomedical RoBERTa for Spanish with versions of the same model that I trained further on diabetes notes, using 100, 6,000 and 10,000 of them. The test had 101 notes, each with one clinical word masked by hand.</p>
+<p>In the summer of 2024 I spent some weeks at TecNM Morelia, in Mexico, with Programa Delfín. I worked with clinical notes in Spanish. There is much less of that than in English, and hospital notes have a way of writing that general models have not seen.</p>
+<p>One part of my work was this: hide one word of a note and see if a language model can guess it. It is a first step towards removing personal details from clinical text. I took a biomedical RoBERTa for Spanish, trained it further on sets of 100, 6,000 and 10,000 notes, and wanted to see if each version got better than the one before.</p>
+<p>The one with no extra training won.</p>
+<p>I wrote that in my portfolio and moved on. This week I opened the notebook again, because it still had every answer of every model, 101 notes by 5 models, and I had only ever looked at the final percentage.</p>
+<section id="the-notes" class="level2">
+<h2 class="anchored" data-anchor-id="the-notes">The notes</h2>
+<p>Before training anything I had looked at the corpus. These two plots are from the original notebook, with the colors I chose back then.</p>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="nlp-longitud.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Length of the 3,001 DISTEMIST notes, in words."><img src="nlp-longitud.png" class="img-fluid figure-img" alt="Pie chart of note length"></a></p>
+<figcaption>Length of the 3,001 DISTEMIST notes, in words.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="nlp-top15.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="The 15 diseases that appear the most."><img src="nlp-top15.png" class="img-fluid figure-img" alt="Bar chart of the 15 most mentioned diseases"></a></p>
+<figcaption>The 15 diseases that appear the most.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>The test was different: 101 short notes about diabetes, generated with GPT-3.5 in the style of a real case, where I masked one word by hand in each one. In 31 of them the hidden word was <em>diabetes</em>, so a model that always answers “diabetes” already gets 31%.</p>
+</section>
+<section id="first-is-it-really-worse" class="level2">
+<h2 class="anchored" data-anchor-id="first-is-it-really-worse">First, is it really worse</h2>
+<p><a href="cw-intervals.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="cw-intervals.png" class="img-fluid" alt="Five overlapping 95 percent intervals"></a></p>
+<p>The lines are 95% intervals, and with 101 notes they are wide. They overlap almost completely. But all the models answered the same notes, so there is a better way to compare: count only the notes where they disagree, what one lost and what the other won. That is McNemar’s test.</p>
 <table class="table-striped caption-top table">
-<caption>Exact recovery of the masked word, 101 notes. Wilson intervals, computed for this note.</caption>
+<caption>Notes that each trained model lost and won, exact test</caption>
 <thead>
 <tr class="header">
-<th style="text-align: left;">Extra training</th>
-<th style="text-align: right;">Words recovered</th>
-<th style="text-align: center;">95% interval</th>
+<th style="text-align: left;">Against no extra training</th>
+<th style="text-align: right;">Lost</th>
+<th style="text-align: right;">Won</th>
+<th style="text-align: right;">p</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">None</td>
-<td style="text-align: right;">81.2%</td>
-<td style="text-align: center;">72.5 to 87.6</td>
+<td style="text-align: left;">100 notes</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.06</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">10,000 notes</td>
-<td style="text-align: right;">79.2%</td>
-<td style="text-align: center;">70.3 to 86.0</td>
+<td style="text-align: left;">6,000 notes</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">0.58</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">100 notes</td>
-<td style="text-align: right;">76.2%</td>
-<td style="text-align: center;">67.1 to 83.5</td>
+<td style="text-align: left;">10,000 notes, 1 epoch</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">0.77</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">10,000 notes, 2 epochs</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">0.79</td>
 </tr>
 </tbody>
 </table>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="intervals.png" class="img-fluid figure-img" alt="Three overlapping intervals: 81.2, 79.2 and 76.2 percent"></p>
-<figcaption>The three scores with their intervals. The axis goes from 60 to 95.</figcaption>
-</figure>
-</div>
-<p>The model without extra training had the highest score. In my portfolio I wrote that extra training lowered the score, and it is true for these notes. Looking at the intervals now, they overlap almost completely, and the difference between the first two rows is two notes out of 101. The same notes were used for every model, so a paired test on each answer would be more precise than these intervals, and I would need the individual answers to do it.</p>
-<p>What I can say is that extra training showed no improvement on this test. I cannot say that it hurts.</p>
-<p>There are three more limits I would fix before repeating it. The test notes were synthetic, written by GPT-3.5 in the style of a real case report, and real hospital notes have more abbreviations. Each note tested a single word. And exact match counts “enfermedad” as wrong when the hidden word was “diabetes”, although both fit the sentence.</p>
-<p>If I repeated it, I would choose the size of the test before training and write down which difference is big enough to matter.</p>
-<p>More about the project: <a href="https://carolain-jimenez.netlify.app/nlp-clinico.html">Language models for Spanish clinical notes</a> and <a href="https://github.com/carolain3472/nlp_notes_diabetes">the repository</a>.</p>
+<p>So for the big training sets I can’t say that it got worse. They lost some and won almost as many. The only one that looks bad is the small set of 100 notes, which lost five and won none, and even there p is 0.06.</p>
+<p>I liked the second column more than the p values, because “lost 8 and won 6” means the model <strong>changed</strong>. An average hides that.</p>
+</section>
+<section id="what-changed" class="level2">
+<h2 class="anchored" data-anchor-id="what-changed">What changed</h2>
+<p>These are the notes where the five models do not agree.</p>
+<p><a href="cw-grid.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="cw-grid.png" class="img-fluid" alt="Grid of notes by model, right and wrong"></a></p>
+<p>Reading from top to bottom you can see columns flip. I went to look at the words:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Hidden word</th>
+<th style="text-align: left;">No extra training</th>
+<th style="text-align: left;">10,000 notes, 2 epochs</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">dislipidemia</td>
+<td style="text-align: left;">dislipemia</td>
+<td style="text-align: left;">dislipidemia ✓</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">glucosa</td>
+<td style="text-align: left;">glicemia</td>
+<td style="text-align: left;">glucosa ✓</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">glucemia</td>
+<td style="text-align: left;">glucemia ✓</td>
+<td style="text-align: left;">glucosa</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">glucémico (three notes)</td>
+<td style="text-align: left;">glucémico ✓</td>
+<td style="text-align: left;">metabólico, with scores 0.96, 0.57 and 0.99</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">metabólico</td>
+<td style="text-align: left;">glucémico</td>
+<td style="text-align: left;">metabólico ✓, with score 0.997</td>
+</tr>
+</tbody>
+</table>
+<p>The base model says <em>dislipemia</em> and <em>glicemia</em>. The trained one says <em>dislipidemia</em> and <em>glucosa</em>. And where the base model answers <em>glucémico</em>, the trained one answers <em>metabólico</em>, often very sure of itself, whether it is right or not.</p>
+<p>It did not forget medicine. It learned another way of writing it. In most of these cases a doctor would probably read both words and not stop. (I am an engineer, so I would like one to confirm it.)</p>
+</section>
+<section id="a-bug-in-my-evaluator" class="level2">
+<h2 class="anchored" data-anchor-id="a-bug-in-my-evaluator">A bug in my evaluator</h2>
+<p>One note was wrong for all five models. The hidden word was <em>cardiovascular</em> and four of them had answered <em>cardiovascular</em>. The problem was mine: I took the original word from the text with its comma, so I was comparing <code>cardiovascular</code> with <code>cardiovascular,</code> and they are not equal.</p>
+<p>It moves one point, and it was there for two years.</p>
+<p>Then I tried a softer scorer that also accepts five groups of near synonyms that I chose by hand, like <em>glucosa / glucemia / glicemia</em> or <em>glucémico / metabólico</em>.</p>
+<p><a href="cw-scorers.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="cw-scorers.png" class="img-fluid" alt="Bars with three ways of scoring each model"></a></p>
+<p>With that scorer the five models go from 87 to 90 out of 101, and the differences I reported are practically gone. I chose the groups after seeing the answers, which is exactly what you should not do to publish a number, so I use it only to understand where the gap was. Most of it was in my ruler.</p>
+</section>
+<section id="the-part-i-did-not-expect" class="level2">
+<h2 class="anchored" data-anchor-id="the-part-i-did-not-expect">The part I did not expect</h2>
+<p><a href="cw-confidence.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="cw-confidence.png" class="img-fluid" alt="Scores given to wrong answers, by model"></a></p>
+<p>Each dot is a wrong answer, and how far right it is tells how sure the model was. The base model gave more than 0.9 to one wrong answer. The models trained with 6,000 and 10,000 notes gave it to four, four and five. Accuracy looks the same and the mistakes got more confident. For something that would end up in a hospital I care more about this plot than about the first one.</p>
+</section>
+<section id="why-it-did-not-improve-probably" class="level2">
+<h2 class="anchored" data-anchor-id="why-it-did-not-improve-probably">Why it did not improve, probably</h2>
+<p>When I read the training code again I found this:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>folder_path <span class="op">=</span> <span class="st">'/content/drive/MyDrive/notas_preprocesadas_100'</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>I trained the 100-note version with the notes <strong>after</strong> preprocessing: lowercase, no punctuation, no numbers and no stop words. And then I tested it with normal sentences. A model that learns from “paciente años diabetes tipo tratamiento” is later asked to fill a gap in a full sentence with commas. It was the only version that lost and won nothing, which fits. I only have the path of that one in the notebook, so I can’t say it for the others.</p>
+<p>I was also cutting each note at 256 tokens. More than a quarter of the notes have over 600 words, so the model never saw the end of the long ones.</p>
+</section>
+<section id="if-i-did-it-again" class="level2">
+<h2 class="anchored" data-anchor-id="if-i-did-it-again">If I did it again</h2>
+<p>I would train on the text as it is. I would decide before starting how many test notes I need to see a difference of, say, five points, and 101 is not enough. I would have two people agree on which words count as the same before looking at any answer. And I would plot the confidence of the mistakes from the first day.</p>
+<p>The 505 answers are in <a href="https://github.com/carolain3472/carolain3472.github.io/tree/main/lab/clinical-words">lab/clinical-words</a> (only the hidden word and the prediction, not the notes). The project is <a href="https://carolain-jimenez.netlify.app/nlp-clinico.html">here</a> and the code is <a href="https://github.com/carolain3472/nlp_notes_diabetes">in its repository</a>.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -684,6 +842,38 @@ ul.task-list li input[type="checkbox"] {
   window.quartoScrollableRegionsLabels = {"code":"Scrollable code","output":"Scrollable output"};
   </script>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

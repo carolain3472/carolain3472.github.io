@@ -8,9 +8,9 @@
 
 <meta name="author" content="Carolain Jiménez Bedoya">
 <meta name="dcterms.date" content="2026-11-25">
-<meta name="description" content="A small game to see if a model takes the same decision when the same event is described with other words.">
+<meta name="description" content="A 3D forest, six sensors, four buttons. I compared two cloud models with two models that run inside the browser, and the local ones could not read a thermometer.">
 
-<title>Fire Watch: the same event, written four ways – Carolain Jiménez Bedoya</title>
+<title>Fire Watch: I made a game to see how a decision model fails – Carolain Jiménez Bedoya</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -50,6 +50,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap-d31a0c91b01e363be7b7a36e602e2c70.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -82,7 +85,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a>
+<body class="nav-fixed quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -119,13 +122,24 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+   
+  <ul>
+  <li><a href="#why-fire" id="toc-why-fire" class="nav-link active" data-scroll-target="#why-fire">Why fire</a></li>
+  <li><a href="#one-event-four-ways-of-saying-it" id="toc-one-event-four-ways-of-saying-it" class="nav-link" data-scroll-target="#one-event-four-ways-of-saying-it">One event, four ways of saying it</a></li>
+  <li><a href="#the-mistake-was-also-mine" id="toc-the-mistake-was-also-mine" class="nav-link" data-scroll-target="#the-mistake-was-also-mine">The mistake was also mine</a></li>
+  <li><a href="#my-first-fix-did-not-work" id="toc-my-first-fix-did-not-work" class="nav-link" data-scroll-target="#my-first-fix-did-not-work">My first fix did not work</a></li>
+  <li><a href="#what-i-take-from-this" id="toc-what-i-take-from-this" class="nav-link" data-scroll-target="#what-i-take-from-this">What I take from this</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content" tabindex="-1">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Fire Watch: the same event, written four ways</h1>
+<h1 class="title">Fire Watch: I made a game to see how a decision model fails</h1>
   <div class="quarto-categories">
     <div class="quarto-category">decision models</div>
     <div class="quarto-category">trustworthy AI</div>
@@ -134,7 +148,7 @@ ul.task-list li input[type="checkbox"] {
 
 <div>
   <div class="description">
-    A small game to see if a model takes the same decision when the same event is described with other words.
+    A 3D forest, six sensors, four buttons. I compared two cloud models with two models that run inside the browser, and the local ones could not read a thermometer.
   </div>
 </div>
 
@@ -163,75 +177,110 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>At a tech event I learned about decision models for interfaces. Instead of writing text, they receive a situation and a closed list of options, and they return one option with a probability. Chrome is testing an API for this, the <a href="https://github.com/explainers-by-googlers/decisions-api">Decisions API</a>, where the model runs on the computer of the person using the page.</p>
-<p>I wanted to try the idea on something close to my work, so I made a small game. I lead the AI research of Kawsay, a wildfire detection project with FIRST Global Team Colombia, and the game borrows that setting. You read a message from a forest sensor and choose one of four actions: ignore, monitor, send a drone or call the brigade. The rule book is fixed, so there is always one correct answer.</p>
+<p>A few days ago I went to a tech event and saw a demo I kept thinking about. There was a character on the screen, you talked to it, and a panel on the side showed the probability of each thing it could do. The model never wrote a word. It only picked from a list.</p>
+<p>They call these decision models. You give them a situation and a closed list of options, and they return one option with a number next to it. Chrome is testing an API for this, the <a href="https://github.com/explainers-by-googlers/decisions-api">Decisions API</a>, and the model runs on the computer of whoever opens the page. Nothing leaves the device, which for someone who likes medical data and sensors in places without internet is a very good sentence to hear.</p>
+<p>So I made my own game to see where it breaks.</p>
+<video controls="" muted="" loop="" playsinline="" preload="metadata" poster="bad.jpg" style="width:100%;border-radius:12px">
+<source src="game.mp4" type="video/mp4">
+</video>
+<p><a href="../../lab/fire-watch/index.html"><strong>Play Fire Watch</strong></a>. It works on a phone too, and you don’t need to download any model.</p>
+<section id="why-fire" class="level2">
+<h2 class="anchored" data-anchor-id="why-fire">Why fire</h2>
+<p>With FIRST Global Team Colombia I work on Kawsay, a wildfire detection project. When we talked to the municipal brigades in Valle del Cauca they told us something simple: they hear about the fires too late. A phone call needs a person who already sees smoke, and the satellites pass every few hours.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="../../lab/fire-watch/index.html"><img src="game.png" class="img-fluid figure-img" alt="Screenshot of Fire Watch with the rule book, a sensor message and four buttons"></a></p>
-<figcaption>The game, with one of the sensor messages. Click to play.</figcaption>
+<p><a href="kawsay.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="The node monitoring page of the Kawsay platform, which is still a prototype. The game takes only the idea from it."><img src="kawsay.jpg" class="img-fluid figure-img" alt="Kawsay platform with sensor cards and a map"></a></p>
+<figcaption>The node monitoring page of the Kawsay platform, which is still a prototype. The game takes only the idea from it.</figcaption>
 </figure>
 </div>
-<p><a href="../../lab/fire-watch/index.html">Play Fire Watch</a></p>
-<section id="the-test" class="level2">
-<h2 class="anchored" data-anchor-id="the-test">The test</h2>
-<p>I made 24 events, six per action, and wrote each one in four ways: with numbers, in Spanish with numbers, in plain words, and in plain words again with one phrase changed. The event is the same in the four versions, so the answer should be the same too.</p>
-<blockquote class="blockquote">
-<p><strong>Numbers.</strong> Sensor at the east gate. Temperature 47 °C. Humidity 65%. Camera: no smoke.</p>
-<p><strong>Plain words.</strong> The battery was changed on Monday. At the east gate the air is very hot and humid as usual, and the camera shows nothing unusual.</p>
-</blockquote>
-</section>
-<section id="first-results-in-the-cloud" class="level2">
-<h2 class="anchored" data-anchor-id="first-results-in-the-cloud">First results, in the cloud</h2>
-<p>I started with two general models in the cloud, asking them to pick one option from the list. I ran Claude Haiku 5.5 three times and Claude Sonnet 5.5 once.</p>
-<table class="table-striped caption-top table">
-<caption>Correct decisions out of 24</caption>
+<p>In a system like that, somebody has to read many short messages and decide what each one deserves. That is the game. Six sensors, twelve messages, and four buttons: ignore, monitor, send the drone, call the brigade. You have six flights and four trips, so you can’t send everything to everything. If you ignore smoke, you lose trees.</p>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="brigade.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="The brigade arrives in time."><img src="brigade.jpg" class="img-fluid figure-img" alt="The brigade arrives in time."></a></p>
+<figcaption>The brigade arrives in time.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="bad.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="I ignored smoke on purpose. Eleven trees."><img src="bad.jpg" class="img-fluid figure-img" alt="I ignored smoke on purpose. Eleven trees."></a></p>
+<figcaption>I ignored smoke on purpose. Eleven trees.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>The rule book is fixed, so every message has one right answer:</p>
+<table class="caption-top table">
 <thead>
 <tr class="header">
-<th style="text-align: left;">Version</th>
-<th style="text-align: center;">Haiku 5.5 (three runs)</th>
-<th style="text-align: center;">Sonnet 5.5 (one run)</th>
+<th style="text-align: left;">Action</th>
+<th style="text-align: left;">When</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Numbers</td>
-<td style="text-align: center;">24, 24, 24</td>
-<td style="text-align: center;">24</td>
+<td style="text-align: left;">Brigade</td>
+<td style="text-align: left;">The camera sees smoke, whatever else happens</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Spanish</td>
-<td style="text-align: center;">24, 24, 24</td>
-<td style="text-align: center;">24</td>
+<td style="text-align: left;">Drone</td>
+<td style="text-align: left;">No smoke, 45 °C or more, and 20% humidity or less</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Plain words</td>
-<td style="text-align: center;">19, 20, 19</td>
-<td style="text-align: center;">24</td>
+<td style="text-align: left;">Monitor</td>
+<td style="text-align: left;">No smoke, and only one of those two problems</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Plain words, one phrase changed</td>
-<td style="text-align: center;">22, 22, 22</td>
-<td style="text-align: center;">24</td>
+<td style="text-align: left;">Ignore</td>
+<td style="text-align: left;">None of them</td>
 </tr>
 </tbody>
 </table>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="fire-results.png" class="img-fluid figure-img" alt="Dot chart: Sonnet 24 in all versions, Haiku 24, 24, 19.3 and 22"></p>
-<figcaption>The same results as a chart. The horizontal axis starts at 16.</figcaption>
-</figure>
-</div>
-<p>Changing the language made no difference. Taking the numbers away did, for the smaller model. Almost every mistake went in the same direction: the rule book said monitor and the model said ignore. For an alarm this is the bad direction, because an event that needed attention gets no attention.</p>
 </section>
-<section id="what-i-found-in-my-own-prompt" class="level2">
-<h2 class="anchored" data-anchor-id="what-i-found-in-my-own-prompt">What I found in my own prompt</h2>
-<p>The mistakes had something in common. My message said the camera shows “nothing unusual”, and my description of the ignore option ended with “Nothing is unusual”. The model may have been matching the words I repeated. In the fourth version I only changed that phrase to “no smoke”, and Haiku went from 19 or 20 to 22.</p>
-<p>It is a small test with 24 events, one rule book and wording that I invented, and 22 is still not 24, so the repeated phrase does not explain everything. I would still check it in any product where a model chooses from a list, because the person who writes the options can push the answer without noticing.</p>
+<section id="one-event-four-ways-of-saying-it" class="level2">
+<h2 class="anchored" data-anchor-id="one-event-four-ways-of-saying-it">One event, four ways of saying it</h2>
+<p>I wrote 24 events, six per action, and each one in four versions. This is the same event:</p>
+<blockquote class="blockquote">
+<p><strong>Numbers.</strong> Sensor at the east gate. Temperature 47 °C. Humidity 65%. Camera: no smoke.</p>
+<p><strong>Spanish.</strong> Sensor en la puerta este. Temperatura 47 °C. Humedad 65 %. Cámara: sin humo.</p>
+<p><strong>Plain words.</strong> The battery was changed on Monday. At the east gate the air is very hot and humid as usual, and the camera shows nothing unusual.</p>
+<p><strong>One phrase changed.</strong> The same, but it ends with “the camera shows no smoke”.</p>
+</blockquote>
+<p>The answer is <em>monitor</em> in all of them. If a model changes its mind because I changed the words, I want to know.</p>
+<p>I tested four models. Claude Sonnet 5.5 and Claude Haiku 5.5 are general models in the cloud, and I asked them for one word. The other two ran on my MacBook (an M4): the Decisions API of Chrome 158 with its experimental flag on, and EmbeddingGemma 2, which Google offers through MediaPipe and weighs about 165 MB.</p>
+<p><a href="fw-heat.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="fw-heat.png" class="img-fluid" alt="Table of correct decisions per model and version"></a></p>
+<p>The table surprised me because the two groups fail in opposite places.</p>
+<p>The cloud models read the numbers perfectly and Spanish made no difference. Haiku gets lost in plain words. The local models are the other way around: they do better with words and they can’t do numbers. EmbeddingGemma 2 got 6 of 24 with numbers, which is what you get with your eyes closed. When I opened the answers I saw that it had said <em>monitor</em> 24 times out of 24.</p>
+<p>It makes sense once you think about what that model does. It turns the message and each option into vectors and measures which ones are close. “47 °C” and “45 °C or more” are close as text, and so are “30 °C” and “45 °C or more”. There is no place where 47 gets compared with 45.</p>
 </section>
-<section id="next" class="level2">
-<h2 class="anchored" data-anchor-id="next">Next</h2>
-<p>The page can run the same decisions with a local model, through Chrome or with EmbeddingGemma 2 in the browser. That part is still experimental, and I will add the numbers here when I have them.</p>
-<p>Code, and the answers of the last run of each model: <a href="https://github.com/carolain3472/carolain3472.github.io/tree/main/lab/fire-watch">lab/fire-watch</a>. The game is a toy made to compare models. It is not a fire detection system.</p>
+<section id="the-mistake-was-also-mine" class="level2">
+<h2 class="anchored" data-anchor-id="the-mistake-was-also-mine">The mistake was also mine</h2>
+<p>Haiku made the same error again and again: the rule book said <em>monitor</em> and it said <em>ignore</em>. In a fire system that is the bad direction.</p>
+<p>When I looked at my own text I found a possible reason. The message said “the camera shows <strong>nothing unusual</strong>”, and my description of <em>ignore</em> ended with “<strong>Nothing is unusual</strong>”. I had copied my own words without noticing. In the fourth version I changed only that phrase and Haiku went from 19 or 20 to 22. The Chrome model moved one point and EmbeddingGemma 2 did not move at all, so this is a Haiku thing, at least here.</p>
+<p>It is one phrase and 24 events, so I don’t want to make it bigger than it is. But I would look for repeated words in any product where a model chooses from a list that a person wrote.</p>
+</section>
+<section id="my-first-fix-did-not-work" class="level2">
+<h2 class="anchored" data-anchor-id="my-first-fix-did-not-work">My first fix did not work</h2>
+<p>My idea was to stop asking for the action. I would ask the local model three yes or no questions (is there smoke, is it very hot, is it very dry) and let normal code apply the rule book. I was sure about this one.</p>
+<p>With Chrome it got worse: from 11 to 6 with numbers and from 14 to 9 with words. EmbeddingGemma 2 went from 6 to 12 with numbers, mostly because it found the smoke, and with words almost nothing changed. So I plotted the probability of each answer, one dot per event, to see what was going on.</p>
+<p><a href="fw-yesno.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="fw-yesno.png" class="img-fluid" alt="Dots with the probability of yes, for hot and dry, with numbers and with words"></a></p>
+<p>Look at the two rows with plain words. The orange and blue dots are separated, the model does know which ones are hot and which ones are dry. The problem is the line at 0.5. For <em>dry</em>, every single event is above 0.7, so with that line everything is dry. And in the rows with numbers the colors are mixed, so no line would help.</p>
+<p>Then I wrote 24 new events, different from the first ones, used them only to choose better cut points, and went back to the original 24.</p>
+<p><a href="fw-strategies.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="fw-strategies.png" class="img-fluid" alt="Bars with three strategies for EmbeddingGemma 2"></a></p>
+<p>From 13 to 18 with words. It is better, it is still far from 24, and with numbers it stays at 12. With Chrome, the adjusted cut points gave 11 with words, less than just asking for the action.</p>
+</section>
+<section id="what-i-take-from-this" class="level2">
+<h2 class="anchored" data-anchor-id="what-i-take-from-this">What I take from this</h2>
+<p>If I had to use a small local model for something like this, I would let the code read the thermometer, because <code>if t &gt;= 45</code> has never failed me. I would use the model for the part that only exists as language, like a neighbor’s message that says it smells like burnt leaves. And I would choose the cut points with data, since 0.5 is only a number that comes by default.</p>
+<p>I would also try other models. EmbeddingGemma is the fastest and the weakest of the options that Chrome is considering. <a href="https://think.resoneo.com/chrome-decisions-api/">Resoneo tested more of them</a> on 1,365 decisions and EmbeddingGemma also came last, at 38%, while Gemma 4 got 85%. I did not run Gemma 4 because it needs more than 4 GB, and I did not use dedicated cloud models like Gemini Decision or Jev. My median time was 55 ms per decision with Chrome, and that is the reason people care about them.</p>
+<p>A few limits: 24 events, texts made from templates that I wrote, one run of Sonnet and one of each local model, one laptop. The API is experimental and can change next week.</p>
+<p>Everything is in <a href="https://github.com/carolain3472/carolain3472.github.io/tree/main/lab/fire-watch">lab/fire-watch</a>: the events, the answers (for Haiku, the last of the three runs) and the code. There is also an <a href="../../lab/fire-watch/experiment.html">experiment page</a> to run the local models in your own browser. I built the game and ran the tests with help from Claude Code. The 3D uses three.js.</p>
+<p><a href="end.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="end.jpg" class="img-fluid" alt="End screen of the game comparing the player and the model"></a></p>
 
 
 </section>
@@ -714,6 +763,38 @@ ul.task-list li input[type="checkbox"] {
   window.quartoScrollableRegionsLabels = {"code":"Scrollable code","output":"Scrollable output"};
   </script>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

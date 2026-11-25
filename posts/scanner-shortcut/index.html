@@ -8,7 +8,7 @@
 
 <meta name="author" content="Carolain Jiménez Bedoya">
 <meta name="dcterms.date" content="2026-11-25">
-<meta name="description" content="A small experiment with simulated images: the same model scores 0.97 or 0.69, depending on which people I test it on.">
+<meta name="description" content="A small experiment with simulated images. The same model scores 0.97 or 0.69, and you can see inside it what it was looking at.">
 
 <title>When a model learns the scanner – Carolain Jiménez Bedoya</title>
 <style>
@@ -69,6 +69,9 @@ div.csl-indent {
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap-d31a0c91b01e363be7b7a36e602e2c70.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -101,7 +104,7 @@ div.csl-indent {
 <link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a>
+<body class="nav-fixed quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -138,7 +141,19 @@ div.csl-indent {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+   
+  <ul>
+  <li><a href="#a-very-bad-brain" id="toc-a-very-bad-brain" class="nav-link active" data-scroll-target="#a-very-bad-brain">A very bad brain</a></li>
+  <li><a href="#changing-one-number" id="toc-changing-one-number" class="nav-link" data-scroll-target="#changing-one-number">Changing one number</a></li>
+  <li><a href="#looking-inside" id="toc-looking-inside" class="nav-link" data-scroll-target="#looking-inside">Looking inside</a></li>
+  <li><a href="#what-i-would-ask-of-a-result-now" id="toc-what-i-would-ask-of-a-result-now" class="nav-link" data-scroll-target="#what-i-would-ask-of-a-result-now">What I would ask of a result now</a></li>
+  <li><a href="#it-happens-with-real-images" id="toc-it-happens-with-real-images" class="nav-link" data-scroll-target="#it-happens-with-real-images">It happens with real images</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content" tabindex="-1">
 
@@ -153,7 +168,7 @@ div.csl-indent {
 
 <div>
   <div class="description">
-    A small experiment with simulated images: the same model scores 0.97 or 0.69, depending on which people I test it on.
+    A small experiment with simulated images. The same model scores 0.97 or 0.69, and you can see inside it what it was looking at.
   </div>
 </div>
 
@@ -182,22 +197,31 @@ div.csl-indent {
 </header>
 
 
-<p>Medical imaging datasets are often put together from several hospitals, and each hospital has its own scanner. If most patients come from one scanner and most healthy people come from another, a model can get good results by recognizing the scanner, even if it learns little about the disease.</p>
-<p>I wanted to see it with numbers, so I built the smallest experiment I could. It uses simulated images, needs only NumPy and runs in less than 15 seconds on my laptop.</p>
-<section id="the-images" class="level2">
-<h2 class="anchored" data-anchor-id="the-images">The images</h2>
-<p>Each image is a 32 × 32 gray ellipse, a very simple brain. People differ a little in size. Patients have a faint dark spot, and its position moves from one patient to another. The scanner adds a smooth change in brightness, so one side of the image is a bit brighter. I normalize the intensity of every image separately, which is a common step.</p>
+<p>I work with brain MRI, and there is one question I can’t let go of: when a model separates two groups of people, what is it looking at.</p>
+<p>Medical imaging datasets are often put together from several hospitals, and each hospital has its own scanner. If most patients come from one and most healthy people come from another, there are two ways of getting the right answer. One is to see the disease. The other is to recognize the machine, which is much easier.</p>
+<p>You read this in many papers. I wanted to have it in my hands, with something so small that I could see every part of it, so I built a fake brain.</p>
+<section id="a-very-bad-brain" class="level2">
+<h2 class="anchored" data-anchor-id="a-very-bad-brain">A very bad brain</h2>
+<p>It is a gray ellipse of 32 × 32 pixels. People differ a little in size, the way people do. Patients have a faint dark spot that moves a bit from one person to another. And the scanner adds a soft shadow: one machine leaves the right side of the image a bit brighter, the other one the left. Every image is normalized on its own, which is a common step, and the shadow survives it.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images.png" class="img-fluid figure-img" alt="Four simulated brain images, two per scanner, with and without the dark spot"></p>
-<figcaption>From left to right: control on scanner 0, patient on scanner 0, control on scanner 1, patient on scanner 1. It is hard to see either the spot or the shading by eye.</figcaption>
+<p><a href="images.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Control on scanner 0, patient on scanner 0, control on scanner 1, patient on scanner 1."><img src="images.png" class="img-fluid figure-img" alt="Four simulated brain images"></a></p>
+<figcaption>Control on scanner 0, patient on scanner 0, control on scanner 1, patient on scanner 1.</figcaption>
 </figure>
 </div>
+<p>Looking at them one by one, I can’t tell you which is which. If I average 800 of each and subtract, everything appears:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="sc-changes.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Left: what the disease does. Right: what the scanner does."><img src="sc-changes.png" class="img-fluid figure-img" alt="Two maps, a blue spot for the disease and a left to right gradient for the scanner"></a></p>
+<figcaption>Left: what the disease does. Right: what the scanner does.</figcaption>
+</figure>
+</div>
+<p>The disease is a small spot. The scanner touches the whole brain. Keep those two pictures in mind.</p>
 </section>
-<section id="the-test" class="level2">
-<h2 class="anchored" data-anchor-id="the-test">The test</h2>
-<p>I trained a logistic regression on the pixels of 600 images, and I changed only one thing: how many of the patients came from scanner 1. At 50% the scanner says nothing about the disease. At 90%, nine out of ten patients come from scanner 1 and nine out of ten controls from scanner 0.</p>
-<p>Then I tested the same model on 1,000 new people, in two ways. In the first one they had the same scanner mix as the training data, which is what a random split of the dataset gives you. In the second one the scanner had nothing to do with the disease. Every number is the mean of 10 runs.</p>
+<section id="changing-one-number" class="level2">
+<h2 class="anchored" data-anchor-id="changing-one-number">Changing one number</h2>
+<p>I trained a logistic regression on 600 of these images, half patients and half controls. I kept everything fixed except how many of the patients came from scanner 1. At 50% the scanner tells you nothing. At 90%, nine of every ten patients come from scanner 1 and nine of every ten controls from scanner 0.</p>
+<p>Then I tested each model on 1,000 new people, twice. In the first test they had the same mix of scanners as the training data, which is what you get when you split one dataset at random. In the second, the scanner had nothing to do with the disease. All the numbers are the mean of 10 runs.</p>
 <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 700 370" role="img" aria-label="AUC against share of patients from scanner 1" style="width:100%;height:auto;font-family:system-ui,sans-serif">
 <rect width="700" height="370" fill="#fcfcfb"></rect>
 <text x="20" y="22" font-size="13" fill="#52514e">AUC (mean of 10 runs)</text>
@@ -230,7 +254,7 @@ div.csl-indent {
 </svg>
 
 <div style="height:1rem"></div>
-<p>The blue line stays between 0.96 and 0.97. With that result alone I would have said the model was fine at every point. The orange line goes from 0.97 down to 0.69.</p>
+<p>The blue line barely moves, between 0.96 and 0.97. If that were the only test I had, I would have felt good at every point of it. The orange one ends at 0.69.</p>
 <table class="table-striped caption-top table">
 <caption>AUC, mean of 10 runs</caption>
 <colgroup>
@@ -243,10 +267,10 @@ div.csl-indent {
 <thead>
 <tr class="header">
 <th style="text-align: left;">Patients from scanner 1</th>
-<th style="text-align: right;">Same mix as training</th>
+<th style="text-align: right;">Same mix</th>
 <th style="text-align: right;">Each scanner on its own</th>
 <th style="text-align: right;">Scanner unrelated to disease</th>
-<th style="text-align: right;">Scanner label only</th>
+<th style="text-align: right;">Only the scanner label</th>
 </tr>
 </thead>
 <tbody>
@@ -287,22 +311,33 @@ div.csl-indent {
 </tr>
 </tbody>
 </table>
-<p>The last column is a “model” that never looks at the image and only knows which scanner was used. At 90% it reaches 0.90. I also repeated everything without any dark spot, so there was no disease to find, and with the 90% mix the model still got 0.90 on the first test. On the second one it got 0.50, the same as guessing.</p>
+<p>The last column is a “model” that never opens the image. It only knows which machine was used, and at 90% it gets 0.90.</p>
+<p>I also repeated everything without the spot, so there was no disease to find. With the 90% mix the model still got 0.90 in the first test and 0.50 in the second. It was reporting an excellent result about nothing.</p>
 </section>
-<section id="what-i-would-check-now" class="level2">
-<h2 class="anchored" data-anchor-id="what-i-would-check-now">What I would check now</h2>
-<p>Before trusting an AUC on data from several sites, I would do three things.</p>
+<section id="looking-inside" class="level2">
+<h2 class="anchored" data-anchor-id="looking-inside">Looking inside</h2>
+<p>A logistic regression has one weight per pixel, so you can draw them as an image. This is my favorite part.</p>
+<p><a href="sc-weights.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="sc-weights.png" class="img-fluid" alt="Weight maps of the model at 50, 70 and 90 percent"></a></p>
+<p>At 50% the model found the spot. At 90% the spot is still there, weaker, and around it you can see the left to right shadow of the scanner. Compare it with the picture of what the scanner does. Nobody told the model about scanners. It took the two things that helped and mixed them.</p>
+<p>And this is what that does to the scores:</p>
+<p><a href="sc-scores.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="sc-scores.png" class="img-fluid" alt="Scores of controls and patients, separated by scanner"></a></p>
+<p>Inside each scanner, patients score higher than controls, so it did learn something. But the healthy people of scanner 1 score higher than the patients of scanner 0. Any cut point you choose is going to be unfair to one of the two hospitals.</p>
+<p>That explains a number of the table that confused me. At 90%, each scanner on its own gives 0.88 and everyone together gives 0.69. Checking each site separately is good, and it would have shown me only a part of the problem, because the scores of two people scanned on different machines can no longer be compared.</p>
+</section>
+<section id="what-i-would-ask-of-a-result-now" class="level2">
+<h2 class="anchored" data-anchor-id="what-i-would-ask-of-a-result-now">What I would ask of a result now</h2>
 <ol type="1">
-<li>Count patients and controls per scanner, and compute the AUC of the scanner label alone. If it is far from 0.5, a good result needs another explanation ruled out.</li>
-<li>Report the AUC inside each scanner. It helps, but it did not show the whole problem here. At 90% it was 0.88, while the AUC with scanner unrelated to disease was 0.69, because the scanner also moves the scores up or down, so the scores of two people scanned on different machines can no longer be compared.</li>
-<li>Test on people whose scanner is unrelated to the diagnosis, or on a site the model never saw.</li>
+<li>A table of how many patients and controls came from each scanner, and the AUC of that label alone. It takes five minutes. If it is far from 0.5, there is something to explain.</li>
+<li>The AUC inside each scanner, and the distribution of scores of each one, not only the number.</li>
+<li>A test on people whose scanner has no relation with the diagnosis, or on a site the model never saw.</li>
+<li>If the model lets you, a picture of what it looks at. It proves nothing by itself, but it can make you suspicious in time.</li>
 </ol>
 </section>
-<section id="the-same-thing-with-real-images" class="level2">
-<h2 class="anchored" data-anchor-id="the-same-thing-with-real-images">The same thing with real images</h2>
-<p>Zech and colleagues trained a network to find pneumonia in chest X-rays. Its AUC was 0.931 on new images from the hospitals used in training and 0.815 at another hospital. Sorting the images only by hospital already gave 0.861 <span class="citation" data-cites="zech">(<a href="#ref-zech" role="doc-biblioref">Zech et al. 2018</a>)</span>. Glocker and colleagues worked with brain MRI from two studies, matched by age and sex, and a classifier could still tell the studies apart after careful preprocessing <span class="citation" data-cites="glocker">(<a href="#ref-glocker" role="doc-biblioref">Glocker et al. 2019</a>)</span>.</p>
-<p>My version is a toy. Real scanners differ in many more ways than one shading, real lesions are not round spots, and a logistic regression is not a deep network, so the exact numbers mean nothing outside this page. I used it to understand where the gap comes from, and changing the <code>lesion</code> and <code>bias</code> values in the code is a good way to play with it.</p>
-<p>Code: <a href="https://github.com/carolain3472/carolain3472.github.io/blob/main/posts/scanner-shortcut/experiment.py">experiment.py</a> and <a href="https://github.com/carolain3472/carolain3472.github.io/blob/main/posts/scanner-shortcut/figures.py">figures.py</a>.</p>
+<section id="it-happens-with-real-images" class="level2">
+<h2 class="anchored" data-anchor-id="it-happens-with-real-images">It happens with real images</h2>
+<p>Zech and colleagues trained a network to find pneumonia in chest X-rays. It got an AUC of 0.931 on new images from the hospitals of the training set and 0.815 at another hospital. Sorting the images only by hospital already gave 0.861 <span class="citation" data-cites="zech">(<a href="#ref-zech" role="doc-biblioref">Zech et al. 2018</a>)</span>. Glocker and colleagues took brain MRI from two studies, matched people by age and sex, preprocessed everything carefully, and a classifier could still say which study each scan came from <span class="citation" data-cites="glocker">(<a href="#ref-glocker" role="doc-biblioref">Glocker et al. 2019</a>)</span>.</p>
+<p>My version is a toy. A real scanner differs in many more ways than one shadow, real lesions are not round, and a deep network is not a logistic regression, so my numbers mean nothing outside this page. What I got from it is that now, when I see a very good AUC, I have a picture in my head of what could be inside.</p>
+<p>It needs only NumPy and runs in less than 15 seconds. Change <code>lesion</code> and <code>bias</code> and watch the second test fall: <a href="https://github.com/carolain3472/carolain3472.github.io/blob/main/posts/scanner-shortcut/experiment.py">experiment.py</a>, and <a href="https://github.com/carolain3472/carolain3472.github.io/blob/main/posts/scanner-shortcut/figures2.py">figures2.py</a> for the maps.</p>
 </section>
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>
@@ -796,6 +831,38 @@ Zech, John R., Marcus A. Badgeley, Manway Liu, Anthony B. Costa, Joseph J. Titan
   window.quartoScrollableRegionsLabels = {"code":"Scrollable code","output":"Scrollable output"};
   </script>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

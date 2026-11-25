@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Computer vision, medical image analysis and trustworthy AI. Notes and experiments by Carolain Jiménez Bedoya.">
 
 <title>Carolain Jiménez Bedoya</title>
 <style>
@@ -36,13 +37,12 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/scrollable-regions/scrollable-regions.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
@@ -75,64 +75,12 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-latest .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-image','listing-date','listing-title',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-latest'] = new List('listing-latest', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a>
+<body class="nav-fixed quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -166,161 +114,55 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
 <!-- main -->
-<div class="quarto-about-trestles">
-  <div class="about-entity">
-    <img src="retrato.jpg" class="about-image
-  rounded " style="width: 20em;">
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Carolain Jiménez Bedoya</h1>
-<p class="subtitle lead">Computer Vision · Medical Image Analysis · Trustworthy AI</p>
-</div>
-<div class="quarto-title-meta">
-  </div>
-</header>
-    <div class="about-links">
-  <a href="https://github.com/carolain3472" class="about-link" rel="" target="">
-    <i class="bi bi-github"></i>
-     <span class="about-link-text">GitHub</span>
-  </a>
-  <a href="https://www.linkedin.com/in/carolain-jimenez-bedoya" class="about-link" rel="" target="">
-    <i class="bi bi-linkedin"></i>
-     <span class="about-link-text">LinkedIn</span>
-  </a>
-  <a href="https://orcid.org/0009-0006-0077-7890" class="about-link" rel="" target="">
-     <span class="about-link-text">ORCID</span>
-  </a>
-  <a href="https://carolain-jimenez.netlify.app/" class="about-link" rel="" target="">
-     <span class="about-link-text">Portfolio</span>
-  </a>
-</div>
-  </div>
-  <div class="about-contents"><main class="content" id="quarto-document-content" tabindex="-1">
-<p>I’m a systems engineer from Colombia working on medical image analysis and applied AI. I’m a research member of the MMV group at Universidad del Valle and lead AI engineering at S&amp;S IP S.A.S. My first-author paper on traumatic brain injury and MRI was presented at CIARP 2025 (Springer LNCS). I care about methods that are measured honestly and reported next to their limits.</p>
-<p>This is where I write about my research, the AI systems I build at work, and what I learn teaching and mentoring. Some notes are in English and some in Spanish.</p>
-<section id="latest-notes" class="level2">
-<h2 data-anchor-id="latest-notes">Latest notes</h2>
-<div id="listing-latest" class="quarto-listing quarto-listing-container-grid">
-<div class="list grid quarto-listing-cols-2">
-<div class="g-col-1" data-index="0" data-categories="Y2xpbmljYWwlMjBOTFAlMkNyZXNlYXJjaA==" data-listing-date-sort="1795582800000" data-listing-file-modified-sort="1795585087572" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
-<a href="./posts/negative-result/index.html" class="quarto-grid-link no-external-icon">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./posts/negative-result/intervals.png" class="thumbnail-image card-img" style="height: 130px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-More training, and the model did not improve
-</h5>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-Nov 25, 2026
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="1" data-categories="ZGVjaXNpb24lMjBtb2RlbHMlMkN0cnVzdHdvcnRoeSUyMEFJ" data-listing-date-sort="1795582800000" data-listing-file-modified-sort="1795585087572" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="588">
-<a href="./posts/fire-watch/index.html" class="quarto-grid-link no-external-icon">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./posts/fire-watch/game.png" class="thumbnail-image card-img" style="height: 130px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Fire Watch: the same event, written four ways
-</h5>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-Nov 25, 2026
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="2" data-categories="SUElMjByZXNwb25zYWJsZSUyQ3RyYWJham8=" data-listing-date-sort="1795582800000" data-listing-file-modified-sort="1795585087573" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="351">
-<a href="./posts/chatbot-no-se/index.html" class="quarto-grid-link no-external-icon">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./posts/chatbot-no-se/flujo-chatbot.png" class="thumbnail-image card-img" style="height: 130px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Un chatbot que puede decir «no tengo esa información»
-</h5>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-Nov 25, 2026
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="3" data-categories="bWVkaWNhbCUyMGltYWdpbmclMkN0cnVzdHdvcnRoeSUyMEFJ" data-listing-date-sort="1795582800000" data-listing-file-modified-sort="1795584938072" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="747">
-<a href="./posts/scanner-shortcut/index.html" class="quarto-grid-link no-external-icon">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./posts/scanner-shortcut/images.png" class="thumbnail-image card-img" style="height: 130px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-When a model learns the scanner
-</h5>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-Nov 25, 2026
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="4" data-categories="dHJhbnNmb3JtYWNpJUMzJUIzbiUyMGRpZ2l0YWwlMkNJQSUyMHJlc3BvbnNhYmxlJTJDdHJhYmFqbw==" data-listing-date-sort="1795582800000" data-listing-file-modified-sort="1795585087573" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="388">
-<a href="./posts/ia-propone/index.html" class="quarto-grid-link no-external-icon">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./posts/ia-propone/reparto.png" class="thumbnail-image card-img" style="height: 130px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-La IA propone, el programa calcula y una persona firma
-</h5>
-<div class="card-attribution card-text-small end">
-<div class="listing-date">
-Nov 25, 2026
-</div>
-</div>
-</div>
-</div></a>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div>
-</section>
-<section id="publications" class="level2">
-<h2 data-anchor-id="publications">Publications</h2>
-<p><strong>Identification of Traumatic Brain Injury on Magnetic Resonance Imaging.</strong> Jiménez, C., Chaves, D., Trujillo, M., Herrera, A., Ledesma, M. <em>Progress in Pattern Recognition, Image Analysis, Computer Vision and Applications (CIARP 2025)</em>. Lecture Notes in Computer Science, vol.&nbsp;16529. Springer, Cham. Oral presentation, Bogotá. <a href="https://doi.org/10.1007/978-3-032-23176-5_14">DOI: 10.1007/978-3-032-23176-5_14</a></p>
-</section>
-<section id="projects" class="level2">
-<h2 data-anchor-id="projects">Projects</h2>
-<ul>
-<li><strong><a href="https://carolain-jimenez.netlify.app/tbi.html">Traumatic brain injury on MRI</a></strong>, radiomics and machine learning on T1-weighted MRI.</li>
-<li><strong><a href="https://carolain-jimenez.netlify.app/nte.html">Kawsay</a></strong>, wildfire detection with FIRST Global Team Colombia.</li>
-<li><strong><a href="https://carolain-jimenez.netlify.app/renova.html">RENOVA</a></strong>, aquatic plant classification on a Raspberry Pi.</li>
-<li><strong><a href="https://carolain-jimenez.netlify.app/nlp-clinico.html">Spanish clinical notes</a></strong>, language models for clinical text.</li>
-</ul>
+<main class="content column-page" id="quarto-document-content" tabindex="-1"><header id="title-block-header" class="quarto-title-block"></header>
 
 
-</section>
-</main></div>
+
+
+<section class="hero"><div>
+<p class="name" role="heading" aria-level="1">Carolain Jiménez Bedoya</p>
+<p>I'm a systems engineer from Colombia. I work on medical images with the MMV group at Universidad del Valle, and I lead AI engineering at S&amp;S IP S.A.S. I also mentor Team Colombia in FIRST Global.</p>
+<p>This is where I write down what I try: experiments small enough to see inside, systems from work, and results that did not come out the way I wanted.</p>
+<div class="links"><a href="https://github.com/carolain3472">GitHub</a><a href="https://www.linkedin.com/in/carolain-jimenez-bedoya">LinkedIn</a><a href="https://orcid.org/0009-0006-0077-7890">ORCID</a><a href="https://carolain-jimenez.netlify.app/">Portfolio</a></div>
+</div><img src="retrato.jpg" alt="Portrait of Carolain Jiménez Bedoya"></section>
+
+<h2 class="anchored">Notes</h2>
+<div class="cards">
+<a class="big" href="posts/fire-watch/"><div class="pic" style="background-image:url(posts/fire-watch/bad.jpg)"></div><div class="tx"><small>Decision models</small><h3 class="anchored">Fire Watch: I made a game to see how a decision model fails</h3><p>A 3D forest, six sensors and four buttons. The local models could not read a thermometer.</p></div></a>
+<a class="big" href="posts/scanner-shortcut/"><div class="pic fit" style="background-image:url(posts/scanner-shortcut/sc-weights.png)"></div><div class="tx"><small>Medical imaging</small><h3 class="anchored">When a model learns the scanner</h3><p>The same model scores 0.97 or 0.69, and you can see inside it what it was looking at.</p></div></a>
+<a href="posts/negative-result/"><div class="pic fit" style="background-image:url(posts/negative-result/cw-grid.png)"></div><div class="tx"><small>Clinical NLP</small><h3 class="anchored">I trained the model more and it did not improve</h3><p>101 notes, a bug in my own evaluator, and a model that changed its vocabulary.</p></div></a>
+<a href="posts/chatbot-no-se/"><div class="pic fit" style="background-image:url(posts/chatbot-no-se/chat1.png)"></div><div class="tx"><small>IA responsable, en español</small><h3 class="anchored">Le di permiso a un chatbot para decir «no sé»</h3><p>270 respuestas con y sin reglamento, y los errores que quedaron.</p></div></a>
+<a href="posts/ia-propone/"><div class="pic fit" style="background-image:url(posts/ia-propone/ip-exactos.png)"></div><div class="tx"><small>Transformación digital, en español</small><h3 class="anchored">Tres modelos leyeron bien 40 documentos. La cuenta fue otra historia</h3><p>Quién lee, quién calcula y quién firma.</p></div></a>
 </div>
- <!-- /main -->
+
+<h2 class="anchored">Publication</h2>
+<p><strong>Identification of Traumatic Brain Injury on Magnetic Resonance Imaging.</strong> Jiménez, C., Chaves, D., Trujillo, M., Herrera, A., Ledesma, M. <em>CIARP 2025</em>, Lecture Notes in Computer Science, vol. 16529. Springer, Cham. Oral presentation, Bogotá. <a href="https://doi.org/10.1007/978-3-032-23176-5_14">10.1007/978-3-032-23176-5_14</a></p>
+
+<h2 class="anchored">Projects</h2>
+<div class="four">
+<a href="https://carolain-jimenez.netlify.app/tbi.html"><img src="img/proj-tbi.jpg" alt="">Traumatic brain injury on MRI<span>Radiomics on T1-weighted images</span></a>
+<a href="https://carolain-jimenez.netlify.app/nte.html"><img src="img/proj-fire.jpg" alt="">Kawsay<span>Wildfire detection, FIRST Global 2026</span></a>
+<a href="https://carolain-jimenez.netlify.app/renova.html"><img src="img/renova-robot.jpg" alt="">RENOVA<span>Aquatic plants on a Raspberry Pi</span></a>
+<a href="https://carolain-jimenez.netlify.app/nlp-clinico.html"><img src="img/proj-nlp.jpg" alt="">Spanish clinical notes<span>Language models, TecNM Morelia</span></a>
+</div>
+
+
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
         if (clz.startsWith('code-annotation-')) {                     

@@ -1,0 +1,506 @@
+note,masked_word,model,prediction,score,exact_match
+nota1,glucosa,no extra training,glucosa,0.5119,1
+nota2,diabetes,no extra training,diabetes,0.8806,1
+nota3,consulta,no extra training,consulta,0.3003,1
+nota4,diabetes,no extra training,diabetes,0.8265,1
+nota5,diabetes,no extra training,diabetes,0.7463,1
+nota6,glucosa,no extra training,continua,0.1806,0
+nota7,insulina,no extra training,insulina,0.9991,1
+nota9,mg,no extra training,mg,0.9032,1
+nota10,carcinoma,no extra training,carcinoma,0.9332,1
+nota11,diabetes,no extra training,diabetes,0.9517,1
+nota12,glucosa,no extra training,glucosa,0.6234,1
+nota13,hiperglucemia,no extra training,hipoglucemia,0.7166,0
+nota15,glucémico,no extra training,metabólico,0.7643,0
+nota16,diabetes,no extra training,diabetes,0.9183,1
+nota17,metformina,no extra training,insulina,0.7209,0
+nota18,glucemia,no extra training,glucemia,0.5192,1
+nota19,diabética,no extra training,diabética,0.9872,1
+nota20,insulina,no extra training,insulina,0.5866,1
+nota21,diabetes,no extra training,diabetes,0.9408,1
+nota23,neuropatía,no extra training,neuropatía,0.6422,1
+nota24,glucémico,no extra training,metabólico,0.5217,0
+nota25,diabetes,no extra training,diabetes,0.9514,1
+nota26,hipertensión,no extra training,hipertensión,0.9971,1
+nota27,antidiabético,no extra training,farmacológico,0.7534,0
+nota28,glucosa,no extra training,diabetes,0.6571,0
+nota29,diabetes,no extra training,diabetes,0.8613,1
+nota30,glucémico,no extra training,glucémico,0.8546,1
+nota31,hipoglucemia,no extra training,hipoglucemia,0.5131,1
+nota32,diabética,no extra training,diabética,0.9870,1
+nota33,glucosa,no extra training,glucosa,0.9629,1
+nota34,metabólico,no extra training,glucémico,0.5540,0
+nota35,glucosa,no extra training,glucosa,0.3873,1
+nota36,"cardiovascular,",no extra training,cardiovascular,0.5477,0
+nota37,neuropática,no extra training,",",0.5366,0
+nota38,diabetes,no extra training,diabetes,0.9839,1
+nota39,comorbilidades,no extra training,complicaciones,0.5755,0
+nota40,diabética,no extra training,diabética,0.6938,1
+nota41,glucosa,no extra training,glucosa,0.8438,1
+nota43,glucémico,no extra training,glucémico,0.6526,1
+nota44,diabetes,no extra training,diabetes,0.9352,1
+nota46,hepática,no extra training,hepática,0.9474,1
+nota47,hemoglobina,no extra training,hemoglobina,0.9997,1
+nota48,diabetes,no extra training,diabetes,0.7353,1
+nota49,lipídico,no extra training,lipídico,0.7277,1
+nota50,diabetes,no extra training,diabetes,0.9888,1
+nota51,glicosilada,no extra training,glicosilada,0.9991,1
+nota52,diabética,no extra training,diabética,0.8788,1
+nota53,dislipidemia,no extra training,dislipemia,0.7670,0
+nota54,glucemia,no extra training,hipoglucemia,0.9287,0
+nota55,glucémico,no extra training,metabólico,0.5304,0
+nota56,dislipidemia,no extra training,dislipidemia,0.4760,1
+nota57,glucosa,no extra training,glicemia,0.5286,0
+nota58,hipoglucemia,no extra training,hipoglucemia,0.9788,1
+nota59,kg,no extra training,kg,0.9655,1
+nota60,metformina,no extra training,metformina,0.5350,1
+nota61,diabetes,no extra training,diabetes,0.9890,1
+nota62,lípidos,no extra training,lípidos,0.2143,1
+nota64,hipoglucemia,no extra training,hipoglucemia,0.3553,1
+nota65,glucemia,no extra training,glicemia,0.5699,0
+nota66,renal,no extra training,renal,0.1882,1
+nota67,diabetes,no extra training,diabetes,0.7432,1
+nota68,diabetes,no extra training,diabetes,0.9933,1
+nota69,hemoglobina,no extra training,hemoglobina,0.9949,1
+nota70,diabetes,no extra training,diabetes,0.9070,1
+nota71,actividad,no extra training,actividad,0.9970,1
+nota72,diabetes,no extra training,diabetes,0.9793,1
+nota74,diabetes,no extra training,diabetes,0.9764,1
+nota75,insulina,no extra training,insulina,0.9756,1
+nota76,diabética,no extra training,diabética,0.9162,1
+nota77,hipoglucemia,no extra training,sudoración,0.5799,0
+nota78,diabetes,no extra training,diabetes,0.8468,1
+nota79,glucémico,no extra training,glucémico,0.5302,1
+nota80,insulina,no extra training,insulina,0.9700,1
+nota81,diabetes,no extra training,diabetes,0.9491,1
+nota83,estatinas,no extra training,estatinas,0.3282,1
+nota84,glucosa,no extra training,glucosa,0.6906,1
+nota85,diabetes,no extra training,diabetes,0.8852,1
+nota86,diabetes,no extra training,diabetes,0.3460,1
+nota87,glucemia,no extra training,glucemia,0.7607,1
+nota88,hemoglobina,no extra training,hemoglobina,0.9995,1
+nota89,diabetes,no extra training,diabetes,0.8909,1
+nota90,diabetes,no extra training,diabetes,0.8347,1
+nota91,diabetes,no extra training,enfermedad,0.3006,0
+nota92,insulina,no extra training,insulina,0.9985,1
+nota93,diabética,no extra training,diabética,0.9182,1
+nota94,metformina,no extra training,metformina,0.7896,1
+nota95,diabetes,no extra training,diabetes,0.9230,1
+nota96,presión,no extra training,presión,0.8985,1
+nota97,diabética,no extra training,diabética,0.8919,1
+nota98,glucémico,no extra training,nutricional,0.4089,0
+nota99,diabetes,no extra training,diabetes,0.9694,1
+nota100,glicosilada,no extra training,glicosilada,0.9933,1
+nota103,insulina,no extra training,insulina,0.8545,1
+nota104,diabetes,no extra training,diabetes,0.7713,1
+nota105,hemoglobina,no extra training,hemoglobina,0.9936,1
+nota106,diabetes,no extra training,diabetes,0.9593,1
+nota107,balanceada,no extra training,balanceada,0.4194,1
+nota108,diabetes,no extra training,diabetes,0.8874,1
+nota109,mellitus,no extra training,mellitus,0.9940,1
+nota110,hipertensión,no extra training,hipertensión,0.9986,1
+nota8,diabetes,no extra training,diabetes,0.9814,1
+nota1,glucosa,100 notes,glucosa,0.4499,1
+nota2,diabetes,100 notes,diabetes,0.9434,1
+nota3,consulta,100 notes,consulta,0.3844,1
+nota4,diabetes,100 notes,diabetes,0.8876,1
+nota5,diabetes,100 notes,diabetes,0.8011,1
+nota6,glucosa,100 notes,glucemia,0.1770,0
+nota7,insulina,100 notes,insulina,0.9993,1
+nota9,mg,100 notes,mg,0.8650,1
+nota10,carcinoma,100 notes,carcinoma,0.7875,1
+nota11,diabetes,100 notes,diabetes,0.9840,1
+nota12,glucosa,100 notes,glucosa,0.6252,1
+nota13,hiperglucemia,100 notes,hipoglucemia,0.5767,0
+nota15,glucémico,100 notes,metabólico,0.7731,0
+nota16,diabetes,100 notes,diabetes,0.9379,1
+nota17,metformina,100 notes,insulina,0.5542,0
+nota18,glucemia,100 notes,glucemia,0.5152,1
+nota19,diabética,100 notes,diabética,0.9793,1
+nota20,insulina,100 notes,insulina,0.9609,1
+nota21,diabetes,100 notes,diabetes,0.9586,1
+nota23,neuropatía,100 notes,neuropatía,0.6637,1
+nota24,glucémico,100 notes,metabólico,0.5189,0
+nota25,diabetes,100 notes,diabetes,0.9734,1
+nota26,hipertensión,100 notes,hipertensión,0.9969,1
+nota27,antidiabético,100 notes,farmacológico,0.8808,0
+nota28,glucosa,100 notes,diabetes,0.4476,0
+nota29,diabetes,100 notes,diabetes,0.9274,1
+nota30,glucémico,100 notes,glucémico,0.8853,1
+nota31,hipoglucemia,100 notes,hipoglucemia,0.4072,1
+nota32,diabética,100 notes,diabética,0.9788,1
+nota33,glucosa,100 notes,glucosa,0.9611,1
+nota34,metabólico,100 notes,glucémico,0.5051,0
+nota35,glucosa,100 notes,glucosa,0.3813,1
+nota36,"cardiovascular,",100 notes,cardiovascular,0.6892,0
+nota37,neuropática,100 notes,",",0.1566,0
+nota38,diabetes,100 notes,diabetes,0.9941,1
+nota39,comorbilidades,100 notes,complicaciones,0.6120,0
+nota40,diabética,100 notes,diabética,0.7050,1
+nota41,glucosa,100 notes,glucosa,0.8800,1
+nota43,glucémico,100 notes,glucémico,0.6485,1
+nota44,diabetes,100 notes,diabetes,0.9640,1
+nota46,hepática,100 notes,hepática,0.9677,1
+nota47,hemoglobina,100 notes,hemoglobina,0.9999,1
+nota48,diabetes,100 notes,enfermedad,0.4385,0
+nota49,lipídico,100 notes,lipídico,0.9574,1
+nota50,diabetes,100 notes,diabetes,0.9951,1
+nota51,glicosilada,100 notes,glicosilada,0.9989,1
+nota52,diabética,100 notes,diabética,0.8733,1
+nota53,dislipidemia,100 notes,dislipemia,0.8490,0
+nota54,glucemia,100 notes,hipoglucemia,0.9165,0
+nota55,glucémico,100 notes,metabólico,0.4821,0
+nota56,dislipidemia,100 notes,dislipemia,0.5921,0
+nota57,glucosa,100 notes,glicemia,0.4921,0
+nota58,hipoglucemia,100 notes,hipoglucemia,0.9738,1
+nota59,kg,100 notes,kg,0.9589,1
+nota60,metformina,100 notes,metformina,0.6236,1
+nota61,diabetes,100 notes,diabetes,0.9942,1
+nota62,lípidos,100 notes,glucosa,0.1431,0
+nota64,hipoglucemia,100 notes,hipoglucemia,0.2052,1
+nota65,glucemia,100 notes,glicemia,0.5664,0
+nota66,renal,100 notes,renal,0.7024,1
+nota67,diabetes,100 notes,diabetes,0.5290,1
+nota68,diabetes,100 notes,diabetes,0.9963,1
+nota69,hemoglobina,100 notes,hemoglobina,0.9985,1
+nota70,diabetes,100 notes,diabetes,0.8710,1
+nota71,actividad,100 notes,actividad,0.9935,1
+nota72,diabetes,100 notes,diabetes,0.9603,1
+nota74,diabetes,100 notes,diabetes,0.9570,1
+nota75,insulina,100 notes,insulina,0.9530,1
+nota76,diabética,100 notes,diabética,0.9267,1
+nota77,hipoglucemia,100 notes,sudoración,0.7720,0
+nota78,diabetes,100 notes,diabetes,0.9277,1
+nota79,glucémico,100 notes,glucémico,0.5320,1
+nota80,insulina,100 notes,insulina,0.9447,1
+nota81,diabetes,100 notes,diabetes,0.9793,1
+nota83,estatinas,100 notes,simvastatina,0.4569,0
+nota84,glucosa,100 notes,glucosa,0.7156,1
+nota85,diabetes,100 notes,diabetes,0.9455,1
+nota86,diabetes,100 notes,enfermedad,0.3293,0
+nota87,glucemia,100 notes,glucemia,0.7752,1
+nota88,hemoglobina,100 notes,hemoglobina,0.9998,1
+nota89,diabetes,100 notes,diabetes,0.9450,1
+nota90,diabetes,100 notes,diabetes,0.9107,1
+nota91,diabetes,100 notes,enfermedad,0.2220,0
+nota92,insulina,100 notes,insulina,0.9988,1
+nota93,diabética,100 notes,diabética,0.8976,1
+nota94,metformina,100 notes,metformina,0.8145,1
+nota95,diabetes,100 notes,diabetes,0.9437,1
+nota96,presión,100 notes,presión,0.8695,1
+nota97,diabética,100 notes,diabética,0.9008,1
+nota98,glucémico,100 notes,nutricional,0.3345,0
+nota99,diabetes,100 notes,diabetes,0.9881,1
+nota100,glicosilada,100 notes,glicosilada,0.9942,1
+nota103,insulina,100 notes,insulina,0.7690,1
+nota104,diabetes,100 notes,diabetes,0.8808,1
+nota105,hemoglobina,100 notes,hemoglobina,0.9972,1
+nota106,diabetes,100 notes,diabetes,0.9788,1
+nota107,balanceada,100 notes,balanceada,0.3832,1
+nota108,diabetes,100 notes,diabetes,0.9195,1
+nota109,mellitus,100 notes,mellitus,0.9959,1
+nota110,hipertensión,100 notes,hipertensión,0.9987,1
+nota8,diabetes,100 notes,diabetes,0.9899,1
+nota1,glucosa,6000 notes,glucosa,0.9519,1
+nota2,diabetes,6000 notes,diabetes,0.9179,1
+nota3,consulta,6000 notes,consulta,0.7326,1
+nota4,diabetes,6000 notes,diabetes,0.8064,1
+nota5,diabetes,6000 notes,diabetes,0.7765,1
+nota6,glucosa,6000 notes,glucosa,0.8956,1
+nota7,insulina,6000 notes,insulina,0.9989,1
+nota9,mg,6000 notes,mg,0.7893,1
+nota10,carcinoma,6000 notes,carcinoma,0.8942,1
+nota11,diabetes,6000 notes,diabetes,0.9214,1
+nota12,glucosa,6000 notes,glucosa,0.9751,1
+nota13,hiperglucemia,6000 notes,hipoglucemia,0.7175,0
+nota15,glucémico,6000 notes,metabólico,0.9946,0
+nota16,diabetes,6000 notes,diabetes,0.8132,1
+nota17,metformina,6000 notes,ejercicio,0.4053,0
+nota18,glucemia,6000 notes,glucosa,0.8546,0
+nota19,diabética,6000 notes,diabética,0.9983,1
+nota20,insulina,6000 notes,insulina,0.9990,1
+nota21,diabetes,6000 notes,diabetes,0.9161,1
+nota23,neuropatía,6000 notes,neuropatía,0.9096,1
+nota24,glucémico,6000 notes,metabólico,0.9909,0
+nota25,diabetes,6000 notes,diabetes,0.8695,1
+nota26,hipertensión,6000 notes,hipertensión,0.9976,1
+nota27,antidiabético,6000 notes,farmacológico,0.8900,0
+nota28,glucosa,6000 notes,glucosa,0.4161,1
+nota29,diabetes,6000 notes,diabetes,0.8287,1
+nota30,glucémico,6000 notes,metabólico,0.8607,0
+nota31,hipoglucemia,6000 notes,hipoglucemia,0.4747,1
+nota32,diabética,6000 notes,diabética,0.9951,1
+nota33,glucosa,6000 notes,glucosa,0.9966,1
+nota34,metabólico,6000 notes,metabólico,0.9876,1
+nota35,glucosa,6000 notes,glucosa,0.9595,1
+nota36,"cardiovascular,",6000 notes,cardiovascular,0.3764,0
+nota37,neuropática,6000 notes,",",0.7084,0
+nota38,diabetes,6000 notes,diabetes,0.9719,1
+nota39,comorbilidades,6000 notes,enfermedades,0.6201,0
+nota40,diabética,6000 notes,diabética,0.9923,1
+nota41,glucosa,6000 notes,glucosa,0.9914,1
+nota43,glucémico,6000 notes,metabólico,0.8132,0
+nota44,diabetes,6000 notes,diabetes,0.8432,1
+nota46,hepática,6000 notes,hepática,0.7725,1
+nota47,hemoglobina,6000 notes,hemoglobina,0.9982,1
+nota48,diabetes,6000 notes,salud,0.4834,0
+nota49,lipídico,6000 notes,lipídico,0.9942,1
+nota50,diabetes,6000 notes,diabetes,0.9710,1
+nota51,glicosilada,6000 notes,glicosilada,0.9996,1
+nota52,diabética,6000 notes,diabética,0.9931,1
+nota53,dislipidemia,6000 notes,dislipidemia,0.9810,1
+nota54,glucemia,6000 notes,hipoglucemia,0.8900,0
+nota55,glucémico,6000 notes,metabólico,0.9696,0
+nota56,dislipidemia,6000 notes,dislipidemia,0.9820,1
+nota57,glucosa,6000 notes,glucosa,0.9152,1
+nota58,hipoglucemia,6000 notes,hipoglucemia,0.9858,1
+nota59,kg,6000 notes,kg,0.5354,1
+nota60,metformina,6000 notes,metformina,0.9230,1
+nota61,diabetes,6000 notes,diabetes,0.9748,1
+nota62,lípidos,6000 notes,lípidos,0.3600,1
+nota64,hipoglucemia,6000 notes,hipoglucemia,0.3953,1
+nota65,glucemia,6000 notes,glucosa,0.5764,0
+nota66,renal,6000 notes,renal,0.9744,1
+nota67,diabetes,6000 notes,diabetes,0.5789,1
+nota68,diabetes,6000 notes,diabetes,0.9912,1
+nota69,hemoglobina,6000 notes,hemoglobina,0.9967,1
+nota70,diabetes,6000 notes,diabetes,0.7332,1
+nota71,actividad,6000 notes,actividad,0.9991,1
+nota72,diabetes,6000 notes,diabetes,0.9960,1
+nota74,diabetes,6000 notes,diabetes,0.9786,1
+nota75,insulina,6000 notes,insulina,0.9952,1
+nota76,diabética,6000 notes,diabética,0.9839,1
+nota77,hipoglucemia,6000 notes,enuresis,0.2306,0
+nota78,diabetes,6000 notes,diabetes,0.7699,1
+nota79,glucémico,6000 notes,metabólico,0.9896,0
+nota80,insulina,6000 notes,insulina,0.9797,1
+nota81,diabetes,6000 notes,diabetes,0.8873,1
+nota83,estatinas,6000 notes,dieta,0.3313,0
+nota84,glucosa,6000 notes,glucosa,0.9550,1
+nota85,diabetes,6000 notes,diabetes,0.8264,1
+nota86,diabetes,6000 notes,glucosa,0.4186,0
+nota87,glucemia,6000 notes,glucemia,0.4659,1
+nota88,hemoglobina,6000 notes,hemoglobina,0.9984,1
+nota89,diabetes,6000 notes,diabetes,0.7605,1
+nota90,diabetes,6000 notes,diabetes,0.7250,1
+nota91,diabetes,6000 notes,enfermedad,0.3386,0
+nota92,insulina,6000 notes,insulina,0.9998,1
+nota93,diabética,6000 notes,diabética,0.9930,1
+nota94,metformina,6000 notes,metformina,0.9511,1
+nota95,diabetes,6000 notes,diabetes,0.8533,1
+nota96,presión,6000 notes,presión,0.9618,1
+nota97,diabética,6000 notes,diabética,0.9945,1
+nota98,glucémico,6000 notes,nutricional,0.7794,0
+nota99,diabetes,6000 notes,diabetes,0.9443,1
+nota100,glicosilada,6000 notes,glicosilada,0.9971,1
+nota103,insulina,6000 notes,insulina,0.9627,1
+nota104,diabetes,6000 notes,diabetes,0.8638,1
+nota105,hemoglobina,6000 notes,hemoglobina,0.9980,1
+nota106,diabetes,6000 notes,diabetes,0.9391,1
+nota107,balanceada,6000 notes,variada,0.5411,0
+nota108,diabetes,6000 notes,diabetes,0.7870,1
+nota109,mellitus,6000 notes,mellitus,0.9983,1
+nota110,hipertensión,6000 notes,hipertensión,0.9985,1
+nota8,diabetes,6000 notes,diabetes,0.9801,1
+nota1,glucosa,10000 notes 1 epoch,glucosa,0.9394,1
+nota2,diabetes,10000 notes 1 epoch,diabetes,0.9454,1
+nota3,consulta,10000 notes 1 epoch,consulta,0.8677,1
+nota4,diabetes,10000 notes 1 epoch,diabetes,0.8803,1
+nota5,diabetes,10000 notes 1 epoch,diabetes,0.7873,1
+nota6,glucosa,10000 notes 1 epoch,glucosa,0.9110,1
+nota7,insulina,10000 notes 1 epoch,insulina,0.9982,1
+nota9,mg,10000 notes 1 epoch,mg,0.9305,1
+nota10,carcinoma,10000 notes 1 epoch,carcinoma,0.9540,1
+nota11,diabetes,10000 notes 1 epoch,diabetes,0.9587,1
+nota12,glucosa,10000 notes 1 epoch,glucosa,0.9434,1
+nota13,hiperglucemia,10000 notes 1 epoch,hipoglucemia,0.3987,0
+nota15,glucémico,10000 notes 1 epoch,metabólico,0.9920,0
+nota16,diabetes,10000 notes 1 epoch,diabetes,0.8838,1
+nota17,metformina,10000 notes 1 epoch,insulina,0.3283,0
+nota18,glucemia,10000 notes 1 epoch,glucosa,0.7702,0
+nota19,diabética,10000 notes 1 epoch,diabética,0.9885,1
+nota20,insulina,10000 notes 1 epoch,insulina,0.9991,1
+nota21,diabetes,10000 notes 1 epoch,diabetes,0.9496,1
+nota23,neuropatía,10000 notes 1 epoch,neuropatía,0.5228,1
+nota24,glucémico,10000 notes 1 epoch,metabólico,0.9825,0
+nota25,diabetes,10000 notes 1 epoch,diabetes,0.9503,1
+nota26,hipertensión,10000 notes 1 epoch,hipertensión,0.9968,1
+nota27,antidiabético,10000 notes 1 epoch,médico,0.3633,0
+nota28,glucosa,10000 notes 1 epoch,glucosa,0.5578,1
+nota29,diabetes,10000 notes 1 epoch,diabetes,0.8916,1
+nota30,glucémico,10000 notes 1 epoch,metabólico,0.8588,0
+nota31,hipoglucemia,10000 notes 1 epoch,hipoglucemia,0.2556,1
+nota32,diabética,10000 notes 1 epoch,diabética,0.9871,1
+nota33,glucosa,10000 notes 1 epoch,glucosa,0.9952,1
+nota34,metabólico,10000 notes 1 epoch,metabólico,0.9850,1
+nota35,glucosa,10000 notes 1 epoch,glucosa,0.8727,1
+nota36,"cardiovascular,",10000 notes 1 epoch,",",0.6443,0
+nota37,neuropática,10000 notes 1 epoch,",",0.5317,0
+nota38,diabetes,10000 notes 1 epoch,diabetes,0.9760,1
+nota39,comorbilidades,10000 notes 1 epoch,enfermedades,0.7621,0
+nota40,diabética,10000 notes 1 epoch,diabética,0.7988,1
+nota41,glucosa,10000 notes 1 epoch,glucosa,0.9752,1
+nota43,glucémico,10000 notes 1 epoch,metabólico,0.3700,0
+nota44,diabetes,10000 notes 1 epoch,diabetes,0.9212,1
+nota46,hepática,10000 notes 1 epoch,hepática,0.9331,1
+nota47,hemoglobina,10000 notes 1 epoch,hemoglobina,0.9992,1
+nota48,diabetes,10000 notes 1 epoch,diabetes,0.4379,1
+nota49,lipídico,10000 notes 1 epoch,lipídico,0.9880,1
+nota50,diabetes,10000 notes 1 epoch,diabetes,0.9892,1
+nota51,glicosilada,10000 notes 1 epoch,glicosilada,0.9984,1
+nota52,diabética,10000 notes 1 epoch,diabética,0.9157,1
+nota53,dislipidemia,10000 notes 1 epoch,dislipidemia,0.8153,1
+nota54,glucemia,10000 notes 1 epoch,hipoglucemia,0.6925,0
+nota55,glucémico,10000 notes 1 epoch,metabólico,0.8970,0
+nota56,dislipidemia,10000 notes 1 epoch,dislipidemia,0.8898,1
+nota57,glucosa,10000 notes 1 epoch,glucosa,0.6983,1
+nota58,hipoglucemia,10000 notes 1 epoch,hipoglucemia,0.9561,1
+nota59,kg,10000 notes 1 epoch,kg,0.8493,1
+nota60,metformina,10000 notes 1 epoch,metformina,0.8564,1
+nota61,diabetes,10000 notes 1 epoch,diabetes,0.9850,1
+nota62,lípidos,10000 notes 1 epoch,glucosa,0.7681,0
+nota64,hipoglucemia,10000 notes 1 epoch,hiperglucemia,0.3504,0
+nota65,glucemia,10000 notes 1 epoch,glucosa,0.6219,0
+nota66,renal,10000 notes 1 epoch,renal,0.9950,1
+nota67,diabetes,10000 notes 1 epoch,diabetes,0.6980,1
+nota68,diabetes,10000 notes 1 epoch,diabetes,0.9931,1
+nota69,hemoglobina,10000 notes 1 epoch,hemoglobina,0.9918,1
+nota70,diabetes,10000 notes 1 epoch,diabetes,0.5373,1
+nota71,actividad,10000 notes 1 epoch,actividad,0.9995,1
+nota72,diabetes,10000 notes 1 epoch,diabetes,0.9600,1
+nota74,diabetes,10000 notes 1 epoch,diabetes,0.9905,1
+nota75,insulina,10000 notes 1 epoch,insulina,0.9894,1
+nota76,diabética,10000 notes 1 epoch,diabética,0.9073,1
+nota77,hipoglucemia,10000 notes 1 epoch,poliuria,0.2163,0
+nota78,diabetes,10000 notes 1 epoch,diabetes,0.8792,1
+nota79,glucémico,10000 notes 1 epoch,metabólico,0.9715,0
+nota80,insulina,10000 notes 1 epoch,insulina,0.9773,1
+nota81,diabetes,10000 notes 1 epoch,diabetes,0.9286,1
+nota83,estatinas,10000 notes 1 epoch,estatinas,0.5334,1
+nota84,glucosa,10000 notes 1 epoch,glucosa,0.9265,1
+nota85,diabetes,10000 notes 1 epoch,diabetes,0.9205,1
+nota86,diabetes,10000 notes 1 epoch,enfermedad,0.3746,0
+nota87,glucemia,10000 notes 1 epoch,glucemia,0.5447,1
+nota88,hemoglobina,10000 notes 1 epoch,hemoglobina,0.9987,1
+nota89,diabetes,10000 notes 1 epoch,diabetes,0.8854,1
+nota90,diabetes,10000 notes 1 epoch,diabetes,0.8712,1
+nota91,diabetes,10000 notes 1 epoch,padecimiento,0.4063,0
+nota92,insulina,10000 notes 1 epoch,insulina,0.9994,1
+nota93,diabética,10000 notes 1 epoch,diabética,0.9737,1
+nota94,metformina,10000 notes 1 epoch,metformina,0.9634,1
+nota95,diabetes,10000 notes 1 epoch,diabetes,0.9201,1
+nota96,presión,10000 notes 1 epoch,presión,0.9842,1
+nota97,diabética,10000 notes 1 epoch,diabética,0.9045,1
+nota98,glucémico,10000 notes 1 epoch,nutricional,0.9145,0
+nota99,diabetes,10000 notes 1 epoch,diabetes,0.9745,1
+nota100,glicosilada,10000 notes 1 epoch,glicosilada,0.9721,1
+nota103,insulina,10000 notes 1 epoch,insulina,0.9533,1
+nota104,diabetes,10000 notes 1 epoch,diabetes,0.8933,1
+nota105,hemoglobina,10000 notes 1 epoch,hemoglobina,0.9987,1
+nota106,diabetes,10000 notes 1 epoch,diabetes,0.9521,1
+nota107,balanceada,10000 notes 1 epoch,balanceada,0.6763,1
+nota108,diabetes,10000 notes 1 epoch,diabetes,0.9279,1
+nota109,mellitus,10000 notes 1 epoch,mellitus,0.9988,1
+nota110,hipertensión,10000 notes 1 epoch,hipertensión,0.9982,1
+nota8,diabetes,10000 notes 1 epoch,diabetes,0.9803,1
+nota1,glucosa,10000 notes 2 epochs,glucosa,0.8912,1
+nota2,diabetes,10000 notes 2 epochs,diabetes,0.8894,1
+nota3,consulta,10000 notes 2 epochs,consulta,0.8243,1
+nota4,diabetes,10000 notes 2 epochs,diabetes,0.9352,1
+nota5,diabetes,10000 notes 2 epochs,diabetes,0.8727,1
+nota6,glucosa,10000 notes 2 epochs,glucosa,0.8525,1
+nota7,insulina,10000 notes 2 epochs,insulina,0.9968,1
+nota9,mg,10000 notes 2 epochs,mg,0.8627,1
+nota10,carcinoma,10000 notes 2 epochs,carcinoma,0.8492,1
+nota11,diabetes,10000 notes 2 epochs,diabetes,0.9802,1
+nota12,glucosa,10000 notes 2 epochs,glucosa,0.9200,1
+nota13,hiperglucemia,10000 notes 2 epochs,hiperglucemia,0.3894,1
+nota15,glucémico,10000 notes 2 epochs,metabólico,0.9986,0
+nota16,diabetes,10000 notes 2 epochs,diabetes,0.9229,1
+nota17,metformina,10000 notes 2 epochs,ejercicio,0.3353,0
+nota18,glucemia,10000 notes 2 epochs,glucosa,0.7159,0
+nota19,diabética,10000 notes 2 epochs,diabética,0.9976,1
+nota20,insulina,10000 notes 2 epochs,insulina,0.9978,1
+nota21,diabetes,10000 notes 2 epochs,diabetes,0.9674,1
+nota23,neuropatía,10000 notes 2 epochs,neuropatía,0.2670,1
+nota24,glucémico,10000 notes 2 epochs,metabólico,0.9987,0
+nota25,diabetes,10000 notes 2 epochs,diabetes,0.9742,1
+nota26,hipertensión,10000 notes 2 epochs,hipertensión,0.9954,1
+nota27,antidiabético,10000 notes 2 epochs,médico,0.5457,0
+nota28,glucosa,10000 notes 2 epochs,glucosa,0.5530,1
+nota29,diabetes,10000 notes 2 epochs,diabetes,0.9432,1
+nota30,glucémico,10000 notes 2 epochs,metabólico,0.9564,0
+nota31,hipoglucemia,10000 notes 2 epochs,depresión,0.2003,0
+nota32,diabética,10000 notes 2 epochs,diabética,0.9980,1
+nota33,glucosa,10000 notes 2 epochs,glucosa,0.9955,1
+nota34,metabólico,10000 notes 2 epochs,metabólico,0.9975,1
+nota35,glucosa,10000 notes 2 epochs,glucosa,0.7399,1
+nota36,"cardiovascular,",10000 notes 2 epochs,cardiovascular,0.5761,0
+nota37,neuropática,10000 notes 2 epochs,",",0.8317,0
+nota38,diabetes,10000 notes 2 epochs,diabetes,0.9882,1
+nota39,comorbilidades,10000 notes 2 epochs,enfermedades,0.3963,0
+nota40,diabética,10000 notes 2 epochs,diabética,0.9503,1
+nota41,glucosa,10000 notes 2 epochs,glucosa,0.9584,1
+nota43,glucémico,10000 notes 2 epochs,metabólico,0.5688,0
+nota44,diabetes,10000 notes 2 epochs,diabetes,0.9573,1
+nota46,hepática,10000 notes 2 epochs,hepática,0.9007,1
+nota47,hemoglobina,10000 notes 2 epochs,hemoglobina,0.9987,1
+nota48,diabetes,10000 notes 2 epochs,diabetes,0.5571,1
+nota49,lipídico,10000 notes 2 epochs,lipídico,0.9968,1
+nota50,diabetes,10000 notes 2 epochs,diabetes,0.9933,1
+nota51,glicosilada,10000 notes 2 epochs,glicosilada,0.9981,1
+nota52,diabética,10000 notes 2 epochs,diabética,0.9836,1
+nota53,dislipidemia,10000 notes 2 epochs,dislipidemia,0.8445,1
+nota54,glucemia,10000 notes 2 epochs,hipoglucemia,0.6584,0
+nota55,glucémico,10000 notes 2 epochs,metabólico,0.9802,0
+nota56,dislipidemia,10000 notes 2 epochs,dislipidemia,0.8128,1
+nota57,glucosa,10000 notes 2 epochs,glucosa,0.5052,1
+nota58,hipoglucemia,10000 notes 2 epochs,hipoglucemia,0.9420,1
+nota59,kg,10000 notes 2 epochs,kg,0.9556,1
+nota60,metformina,10000 notes 2 epochs,metformina,0.9630,1
+nota61,diabetes,10000 notes 2 epochs,diabetes,0.9935,1
+nota62,lípidos,10000 notes 2 epochs,glucosa,0.8259,0
+nota64,hipoglucemia,10000 notes 2 epochs,hiperglucemia,0.4920,0
+nota65,glucemia,10000 notes 2 epochs,glucosa,0.4374,0
+nota66,renal,10000 notes 2 epochs,renal,0.9973,1
+nota67,diabetes,10000 notes 2 epochs,diabetes,0.7139,1
+nota68,diabetes,10000 notes 2 epochs,diabetes,0.9952,1
+nota69,hemoglobina,10000 notes 2 epochs,hemoglobina,0.9913,1
+nota70,diabetes,10000 notes 2 epochs,diabetes,0.4846,1
+nota71,actividad,10000 notes 2 epochs,actividad,0.9996,1
+nota72,diabetes,10000 notes 2 epochs,diabetes,0.9824,1
+nota74,diabetes,10000 notes 2 epochs,diabetes,0.9894,1
+nota75,insulina,10000 notes 2 epochs,insulina,0.9807,1
+nota76,diabética,10000 notes 2 epochs,diabética,0.9775,1
+nota77,hipoglucemia,10000 notes 2 epochs,poliuria,0.6149,0
+nota78,diabetes,10000 notes 2 epochs,diabetes,0.9275,1
+nota79,glucémico,10000 notes 2 epochs,metabólico,0.9946,0
+nota80,insulina,10000 notes 2 epochs,insulina,0.9795,1
+nota81,diabetes,10000 notes 2 epochs,diabetes,0.9659,1
+nota83,estatinas,10000 notes 2 epochs,estatinas,0.6619,1
+nota84,glucosa,10000 notes 2 epochs,glucosa,0.9366,1
+nota85,diabetes,10000 notes 2 epochs,diabetes,0.9470,1
+nota86,diabetes,10000 notes 2 epochs,glucosa,0.3076,0
+nota87,glucemia,10000 notes 2 epochs,glucemia,0.6739,1
+nota88,hemoglobina,10000 notes 2 epochs,hemoglobina,0.9981,1
+nota89,diabetes,10000 notes 2 epochs,diabetes,0.9258,1
+nota90,diabetes,10000 notes 2 epochs,diabetes,0.9265,1
+nota91,diabetes,10000 notes 2 epochs,padecimiento,0.3497,0
+nota92,insulina,10000 notes 2 epochs,insulina,0.9991,1
+nota93,diabética,10000 notes 2 epochs,diabética,0.9938,1
+nota94,metformina,10000 notes 2 epochs,metformina,0.9841,1
+nota95,diabetes,10000 notes 2 epochs,diabetes,0.9511,1
+nota96,presión,10000 notes 2 epochs,presión,0.9892,1
+nota97,diabética,10000 notes 2 epochs,diabética,0.9355,1
+nota98,glucémico,10000 notes 2 epochs,nutricional,0.8610,0
+nota99,diabetes,10000 notes 2 epochs,diabetes,0.9894,1
+nota100,glicosilada,10000 notes 2 epochs,glicosilada,0.9846,1
+nota103,insulina,10000 notes 2 epochs,insulina,0.7190,1
+nota104,diabetes,10000 notes 2 epochs,diabetes,0.9405,1
+nota105,hemoglobina,10000 notes 2 epochs,hemoglobina,0.9988,1
+nota106,diabetes,10000 notes 2 epochs,diabetes,0.9698,1
+nota107,balanceada,10000 notes 2 epochs,balanceada,0.6181,1
+nota108,diabetes,10000 notes 2 epochs,diabetes,0.9608,1
+nota109,mellitus,10000 notes 2 epochs,mellitus,0.9994,1
+nota110,hipertensión,10000 notes 2 epochs,hipertensión,0.9969,1
+nota8,diabetes,10000 notes 2 epochs,diabetes,0.9845,1
