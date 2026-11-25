@@ -4,6 +4,7 @@ description: "Cómo repartir las tareas cuando una cifra equivocada termina en u
 author: "Carolain Jiménez Bedoya"
 date: 2026-11-25
 categories: [transformación digital, IA responsable, trabajo]
+image: reparto.png
 lang: es
 ---
 
@@ -16,6 +17,8 @@ El trabajo está repartido en tres:
 1. **El modelo lee.** Extrae tarifas, códigos y fechas de los acuerdos municipales y de los documentos del cliente, y los deja como propuesta.
 2. **Un programa calcula.** Las cuentas las hace un motor con reglas escritas y probadas, con aritmética decimal exacta y el redondeo que pide la norma. Si lo corres dos veces con los mismos datos, da lo mismo.
 3. **Una persona aprueba.** Nada llega a una declaración oficial sin que un contador lo revise y lo confirme.
+
+![El reparto del trabajo en la plataforma.](reparto.png){fig-alt="Diagrama: el modelo lee, el programa calcula y una persona firma"}
 
 Los modelos de lenguaje leen muy bien documentos desordenados, que era la parte lenta. Pero pueden leer un 5 donde hay un 6, y lo hacen con la misma seguridad con la que aciertan. Con este reparto, ese error aparece en una propuesta que alguien va a revisar antes de que exista un formulario.
 

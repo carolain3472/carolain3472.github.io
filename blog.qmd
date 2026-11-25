@@ -5,5 +5,5 @@ listing:
   type: default
   sort: "date desc"
   categories: true
-  fields: [date, title, description, categories, reading-time]
+  fields: [image, date, title, description, categories, reading-time]
 ---

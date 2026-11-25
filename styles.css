@@ -1,1 +1,4 @@
 /* css styles */
+
+/* show the whole picture in the note cards */
+.quarto-listing .card-img-top img, img.thumbnail-image { object-fit: contain !important; background: #fcfcfb; }

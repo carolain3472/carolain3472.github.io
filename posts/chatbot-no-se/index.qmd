@@ -4,6 +4,7 @@ description: "Las decisiones detrás de un asistente universitario donde una res
 author: "Carolain Jiménez Bedoya"
 date: 2026-11-25
 categories: [IA responsable, trabajo]
+image: flujo-chatbot.png
 lang: es
 ---
 
@@ -14,6 +15,8 @@ Por eso casi todo el trabajo de diseño estuvo en lo que el bot no hace.
 La primera decisión fue tener una sola base de conocimiento, verificada por la institución. El modelo responde con lo que encuentra ahí, y el prompt le prohíbe completar con lo que aprendió en su entrenamiento. Un modelo de lenguaje sabe muchas cosas sobre universidades en general, y en este caso eso es un problema, porque suena correcto y puede ser de otra universidad.
 
 La segunda fue darle una salida. Cuando la base no tiene la respuesta, el bot dice «no tengo esa información». Cuando la pregunta se sale de su alcance, pasa el caso a una persona. Parece un detalle, pero un sistema sin esa opción queda obligado a responder algo.
+
+![Las tres salidas posibles para una pregunta.](flujo-chatbot.png){fig-alt="Diagrama: la pregunta pasa por la búsqueda en la base verificada y sale como respuesta, como no tengo esa información o hacia una persona"}
 
 La tercera fue probar con preguntas reales de estudiantes y corregir hasta que dejaron de aparecer respuestas inventadas en esas pruebas. Eso no garantiza que nunca vaya a pasar, y por eso la salida hacia una persona sigue ahí.
 

@@ -4,6 +4,7 @@ description: "A second look, with intervals, at a fine-tuning experiment on Span
 author: "Carolain Jiménez Bedoya"
 date: 2026-11-25
 categories: [clinical NLP, research]
+image: intervals.png
 lang: en
 ---
 
@@ -18,6 +19,8 @@ I compared a biomedical RoBERTa for Spanish with versions of the same model that
 | 100 notes | 76.2% | 67.1 to 83.5 |
 
 : Exact recovery of the masked word, 101 notes. Wilson intervals, computed for this note. {.striped}
+
+![The three scores with their intervals. The axis goes from 60 to 95.](intervals.png){fig-alt="Three overlapping intervals: 81.2, 79.2 and 76.2 percent"}
 
 The model without extra training had the highest score. In my portfolio I wrote that extra training lowered the score, and it is true for these notes. Looking at the intervals now, they overlap almost completely, and the difference between the first two rows is two notes out of 101. The same notes were used for every model, so a paired test on each answer would be more precise than these intervals, and I would need the individual answers to do it.
 

@@ -20,8 +20,10 @@ listing:
     contents: posts
     sort: "date desc"
     max-items: 5
-    type: table
-    fields: [date, title]
+    type: grid
+    grid-columns: 2
+    image-height: 130px
+    fields: [image, date, title]
     sort-ui: false
     filter-ui: false
 ---
