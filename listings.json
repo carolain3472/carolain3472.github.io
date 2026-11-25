@@ -1,12 +1,12 @@
 [
   {
-    "listing": "/blog.html",
+    "listing": "/es/blog.html",
     "items": [
-      "/posts/negative-result/index.html",
-      "/posts/who-does-the-math/index.html",
-      "/posts/fire-watch/index.html",
-      "/posts/scanner-shortcut/index.html",
-      "/posts/chatbot-i-dont-know/index.html"
+      "/es/posts/negative-result/index.html",
+      "/es/posts/who-does-the-math/index.html",
+      "/es/posts/fire-watch/index.html",
+      "/es/posts/scanner-shortcut/index.html",
+      "/es/posts/chatbot-i-dont-know/index.html"
     ]
   }
 ]

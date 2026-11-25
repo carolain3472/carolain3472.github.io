@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Notes – Carolain Jiménez Bedoya</title>
+<title>blog – Carolain Jiménez Bedoya</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -36,8 +36,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/scrollable-regions/scrollable-regions.js" type="module"></script>
@@ -76,64 +74,12 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-image','listing-date','listing-title','listing-description','listing-categories','listing-reading-time',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a>
+<body class="nav-fixed fullcontent quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -150,13 +96,29 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
+    <a class="nav-link" href="./research.html"> 
+<span class="menu-text">Research</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./business.html"> 
+<span class="menu-text">AI for business</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./explorations.html"> 
+<span class="menu-text">Explorations</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link active" href="./blog.html" aria-current="page"> 
-<span class="menu-text">Notes</span></a>
+<span class="menu-text">All notes</span></a>
   </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/carolain3472"> <i class="bi bi-github" role="img" aria-label="GitHub">
 </i> 
 <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./es/index.html"> 
+<span class="menu-text">ES</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -170,203 +132,29 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(5)</span></div><div class="category" data-category="Y2xpbmljYWwlMjBOTFA=">clinical NLP <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ZGVjaXNpb24lMjBtb2RlbHM=">decision models <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ZGlnaXRhbCUyMHRyYW5zZm9ybWF0aW9u">digital transformation <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bWVkaWNhbCUyMGltYWdpbmc=">medical imaging <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cmVzZWFyY2g=">research <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cmVzcG9uc2libGUlMjBBSQ==">responsible AI <span class="quarto-category-count">(2)</span></div><div class="category" data-category="dHJ1c3R3b3J0aHklMjBBSQ==">trustworthy AI <span class="quarto-category-count">(2)</span></div><div class="category" data-category="d29yaw==">work <span class="quarto-category-count">(2)</span></div></div></div>
+    
 <!-- main -->
-<main class="content" id="quarto-document-content" tabindex="-1">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Notes</h1>
-</div>
-
-
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<p>Notes about my research, the AI systems I build at work and things I try on my own. I use AI tools, mainly Claude, to help me with code, figures and editing, and I publish the data so anyone can check the numbers.</p>
+<main class="content" id="quarto-document-content" tabindex="-1"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
 
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="Y2xpbmljYWwlMjBOTFAlMkNyZXNlYXJjaA==" data-listing-date-sort="1795582800000" data-listing-file-modified-sort="1795615634803" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1068">
-<div class="thumbnail"><a href="./posts/negative-result/index.html" class="no-external-icon">
 
-<img loading="lazy" src="./posts/negative-result/cw-grid.png" class="thumbnail-image">
 
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/negative-result/index.html" class="no-external-icon">I trained the model more and it did not improve. Two years later I know more about why</a>
-</h3>
-<div class="listing-categories">
 
-<div class="listing-category" onclick="window.quartoListingCategory('Y2xpbmljYWwlMjBOTFA='); return false;">clinical NLP</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('cmVzZWFyY2g='); return false;">research</div>
-
-</div>
-<div class="listing-description">
-<a href="./posts/negative-result/index.html" class="no-external-icon">
-<p>I went back to the 101 answers of my internship in Mexico, found a bug in my own evaluator, and saw that the model had changed its vocabulary.</p>
-</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/negative-result/index.html" class="no-external-icon">
-<div class="listing-date">
-Nov 25, 2026
-</div>
-<div class="listing-reading-time">6 min</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="ZGlnaXRhbCUyMHRyYW5zZm9ybWF0aW9uJTJDcmVzcG9uc2libGUlMjBBSSUyQ3dvcms=" data-listing-date-sort="1795582800000" data-listing-file-modified-sort="1795618212090" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="971">
-<div class="thumbnail"><a href="./posts/who-does-the-math/index.html" class="no-external-icon">
-
-<img loading="lazy" src="./posts/who-does-the-math/exact.png" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/who-does-the-math/index.html" class="no-external-icon">Three models read 40 documents without a mistake. The math was another story</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('ZGlnaXRhbCUyMHRyYW5zZm9ybWF0aW9u'); return false;">digital transformation</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('cmVzcG9uc2libGUlMjBBSQ=='); return false;">responsible AI</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('d29yaw=='); return false;">work</div>
-
-</div>
-<div class="listing-description">
-<a href="./posts/who-does-the-math/index.html" class="no-external-icon">
-<p>An invented town, 40 documents and two ways of getting to a total that can’t be wrong.</p>
-</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/who-does-the-math/index.html" class="no-external-icon">
-<div class="listing-date">
-Nov 25, 2026
-</div>
-<div class="listing-reading-time">5 min</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="ZGVjaXNpb24lMjBtb2RlbHMlMkN0cnVzdHdvcnRoeSUyMEFJ" data-listing-date-sort="1795582800000" data-listing-file-modified-sort="1795615764546" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1334">
-<div class="thumbnail"><a href="./posts/fire-watch/index.html" class="no-external-icon">
-
-<img loading="lazy" src="./posts/fire-watch/bad.jpg" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/fire-watch/index.html" class="no-external-icon">Fire Watch: I made a game to see how a decision model fails</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('ZGVjaXNpb24lMjBtb2RlbHM='); return false;">decision models</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('dHJ1c3R3b3J0aHklMjBBSQ=='); return false;">trustworthy AI</div>
-
-</div>
-<div class="listing-description">
-<a href="./posts/fire-watch/index.html" class="no-external-icon">
-<p>A 3D forest, six sensors, four buttons. I compared two cloud models with two models that run inside the browser, and the local ones could not read a thermometer.</p>
-</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/fire-watch/index.html" class="no-external-icon">
-<div class="listing-date">
-Nov 25, 2026
-</div>
-<div class="listing-reading-time">7 min</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="bWVkaWNhbCUyMGltYWdpbmclMkN0cnVzdHdvcnRoeSUyMEFJ" data-listing-date-sort="1795582800000" data-listing-file-modified-sort="1795615634805" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1038">
-<div class="thumbnail"><a href="./posts/scanner-shortcut/index.html" class="no-external-icon">
-
-<img loading="lazy" src="./posts/scanner-shortcut/sc-weights.png" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/scanner-shortcut/index.html" class="no-external-icon">When a model learns the scanner</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('bWVkaWNhbCUyMGltYWdpbmc='); return false;">medical imaging</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('dHJ1c3R3b3J0aHklMjBBSQ=='); return false;">trustworthy AI</div>
-
-</div>
-<div class="listing-description">
-<a href="./posts/scanner-shortcut/index.html" class="no-external-icon">
-<p>A small experiment with simulated images. The same model scores 0.97 or 0.69, and you can see inside it what it was looking at.</p>
-</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/scanner-shortcut/index.html" class="no-external-icon">
-<div class="listing-date">
-Nov 25, 2026
-</div>
-<div class="listing-reading-time">6 min</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-categories="cmVzcG9uc2libGUlMjBBSSUyQ3dvcms=" data-listing-date-sort="1795582800000" data-listing-file-modified-sort="1795618212089" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1079">
-<div class="thumbnail"><a href="./posts/chatbot-i-dont-know/index.html" class="no-external-icon">
-
-<img loading="lazy" src="./posts/chatbot-i-dont-know/chat1.png" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/chatbot-i-dont-know/index.html" class="no-external-icon">I gave a chatbot permission to say “I don’t know”. It changed less than I would have bet</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('cmVzcG9uc2libGUlMjBBSQ=='); return false;">responsible AI</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('d29yaw=='); return false;">work</div>
-
-</div>
-<div class="listing-description">
-<a href="./posts/chatbot-i-dont-know/index.html" class="no-external-icon">
-<p>270 answers of a university assistant, with and without the handbook, and the mistakes that were left.</p>
-</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/chatbot-i-dont-know/index.html" class="no-external-icon">
-<div class="listing-date">
-Nov 25, 2026
-</div>
-<div class="listing-reading-time">6 min</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
+<script>
+(()=>{const es=/^\/es(\/|$)/.test(location.pathname),p=location.pathname,other=es?p.replace(/^\/es/,"")||"/":"/es"+p;
+const nav=document.querySelector(".navbar");if(!nav)return;
+const sel=[...nav.querySelectorAll("a.nav-link")].find(a=>a.textContent.trim()==="ES");if(!sel)return;
+sel.href=other;sel.hreflang=es?"en":"es";sel.classList.remove("active");sel.classList.add("langsel");
+sel.innerHTML=es?"<span>EN</span><b>ES</b>":"<b>EN</b><span>ES</span>";sel.setAttribute("aria-label",es?"See this page in English":"Ver esta página en español");
+if(es){const M={"Research":["Investigación","research.html"],"AI for business":["IA para empresas","business.html"],"Explorations":["Exploraciones","explorations.html"],"All notes":["Todas las notas","blog.html"]};
+nav.querySelectorAll("a.nav-link").forEach(a=>{const m=M[a.textContent.trim()];if(!m)return;(a.querySelector(".menu-text")||a).textContent=m[0];a.href="/es/"+m[1];a.classList.toggle("active",p==="/es/"+m[1])});
+nav.querySelectorAll("a.navbar-brand").forEach(b=>b.href="/es/")}
+const c=sel.cloneNode(true);c.classList.add("langm");const q=nav.querySelector(".quarto-navbar-tools")||nav.querySelector("#quarto-search");(q?q.parentNode.insertBefore(c,q):nav.append(c));
+const h=document.createElement("link");h.rel="alternate";h.hreflang=es?"en":"es";h.href=location.origin+other;document.head.append(h)})();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.11.9">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Carolain Jiménez Bedoya">
+<meta name="description" content="Un experimento pequeño con imágenes simuladas. El mismo modelo saca 0,97 o 0,69, y se puede ver por dentro qué estaba mirando.">
+
+<title>Cuando un modelo aprende el escáner – Carolain Jiménez Bedoya</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/scrollable-regions/scrollable-regions.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-d31a0c91b01e363be7b7a36e602e2c70.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No se han encontrado resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Saltar al contenido principal</a>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark" aria-label="Sitio web">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">Carolain Jiménez Bedoya</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../research.html"> 
+<span class="menu-text">Research</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../business.html"> 
+<span class="menu-text">AI for business</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../explorations.html"> 
+<span class="menu-text">Explorations</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../blog.html"> 
+<span class="menu-text">All notes</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/carolain3472"> <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../es/index.html"> 
+<span class="menu-text">ES</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+            <div id="quarto-search" class="" title="Buscar"></div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+   
+  <ul>
+  <li><a href="#un-cerebro-muy-malo" id="toc-un-cerebro-muy-malo" class="nav-link active" data-scroll-target="#un-cerebro-muy-malo">Un cerebro muy malo</a></li>
+  <li><a href="#cambiar-un-solo-número" id="toc-cambiar-un-solo-número" class="nav-link" data-scroll-target="#cambiar-un-solo-número">Cambiar un solo número</a></li>
+  <li><a href="#mirar-adentro" id="toc-mirar-adentro" class="nav-link" data-scroll-target="#mirar-adentro">Mirar adentro</a></li>
+  <li><a href="#lo-que-ahora-le-pediría-a-un-resultado" id="toc-lo-que-ahora-le-pediría-a-un-resultado" class="nav-link" data-scroll-target="#lo-que-ahora-le-pediría-a-un-resultado">Lo que ahora le pediría a un resultado</a></li>
+  <li><a href="#pasa-con-imágenes-de-verdad" id="toc-pasa-con-imágenes-de-verdad" class="nav-link" data-scroll-target="#pasa-con-imágenes-de-verdad">Pasa con imágenes de verdad</a></li>
+  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias">Referencias</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content" tabindex="-1">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Cuando un modelo aprende el escáner</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">investigación</div>
+    <div class="quarto-category">imágenes médicas</div>
+    <div class="quarto-category">IA confiable</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    Un experimento pequeño con imágenes simuladas. El mismo modelo saca 0,97 o 0,69, y se puede ver por dentro qué estaba mirando.
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Autor/a</div>
+    <div class="quarto-title-meta-contents">
+             <p>Carolain Jiménez Bedoya </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Fecha de publicación</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">25 de noviembre de 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Trabajo con resonancias del cerebro y hay una pregunta que no puedo soltar: cuando un modelo separa dos grupos de personas, qué está mirando.</p>
+<p>Los datos de imágenes médicas suelen juntarse de varios hospitales, y cada hospital tiene su propio escáner. Si casi todos los pacientes vienen de uno y casi todas las personas sanas de otro, hay dos formas de llegar a la respuesta correcta. Una es ver la enfermedad. La otra es reconocer la máquina, que es mucho más fácil.</p>
+<p>Eso se lee en muchos artículos. Yo quería tenerlo en las manos, con algo tan pequeño que pudiera ver cada parte, así que construí un cerebro falso.</p>
+<section id="un-cerebro-muy-malo" class="level2">
+<h2 class="anchored" data-anchor-id="un-cerebro-muy-malo">Un cerebro muy malo</h2>
+<p>Es una elipse gris de 32 × 32 píxeles. Las personas varían un poco de tamaño, como en la vida. Los pacientes tienen una mancha oscura y tenue que se mueve un poco de una persona a otra. Y el escáner agrega una sombra suave: una máquina deja más claro el lado derecho de la imagen y la otra el izquierdo. Cada imagen se normaliza por separado, que es un paso común, y la sombra sobrevive.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../../../posts/scanner-shortcut/images.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Control en el escáner 0, paciente en el escáner 0, control en el escáner 1, paciente en el escáner 1."><img src="../../../posts/scanner-shortcut/images.png" class="img-fluid figure-img" alt="Cuatro imágenes simuladas de cerebro"></a></p>
+<figcaption>Control en el escáner 0, paciente en el escáner 0, control en el escáner 1, paciente en el escáner 1.</figcaption>
+</figure>
+</div>
+<p>Mirándolas una por una, no sé decir cuál es cuál. Si promedio 800 de cada una y resto, aparece todo:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="sc-changes.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="A la izquierda, lo que hace la enfermedad. A la derecha, lo que hace el escáner."><img src="sc-changes.png" class="img-fluid figure-img" alt="Dos mapas, una mancha azul para la enfermedad y un degradado de izquierda a derecha para el escáner"></a></p>
+<figcaption>A la izquierda, lo que hace la enfermedad. A la derecha, lo que hace el escáner.</figcaption>
+</figure>
+</div>
+<p>La enfermedad es una mancha pequeña. El escáner toca todo el cerebro. Guarda esas dos imágenes en la cabeza.</p>
+</section>
+<section id="cambiar-un-solo-número" class="level2">
+<h2 class="anchored" data-anchor-id="cambiar-un-solo-número">Cambiar un solo número</h2>
+<p>Entrené una regresión logística con 600 de estas imágenes, mitad pacientes y mitad controles. Dejé todo fijo menos cuántos pacientes venían del escáner 1. En 50 % el escáner no dice nada. En 90 %, nueve de cada diez pacientes vienen del escáner 1 y nueve de cada diez controles del escáner 0.</p>
+<p>Después probé cada modelo con 1.000 personas nuevas, dos veces. En la primera prueba tenían la misma mezcla de escáneres del entrenamiento, que es lo que pasa cuando uno divide al azar un solo conjunto de datos. En la segunda, el escáner no tenía nada que ver con la enfermedad. Todos los números son el promedio de 10 corridas.</p>
+<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 700 370" role="img" aria-label="AUC según la proporción de pacientes del escáner 1" style="width:100%;height:auto;font-family:system-ui,sans-serif">
+<rect width="700" height="370" fill="#fcfcfb"></rect>
+<text x="20" y="22" font-size="13" fill="#52514e">AUC (promedio de 10 corridas)</text>
+<line x1="60" x2="480" y1="300.0" y2="300.0" stroke="#e4e3df"></line><text x="50" y="304.0" font-size="12" text-anchor="end" fill="#52514e">0,5</text>
+<line x1="60" x2="480" y1="248.0" y2="248.0" stroke="#e4e3df"></line><text x="50" y="252.0" font-size="12" text-anchor="end" fill="#52514e">0,6</text>
+<line x1="60" x2="480" y1="196.0" y2="196.0" stroke="#e4e3df"></line><text x="50" y="200.0" font-size="12" text-anchor="end" fill="#52514e">0,7</text>
+<line x1="60" x2="480" y1="144.0" y2="144.0" stroke="#e4e3df"></line><text x="50" y="148.0" font-size="12" text-anchor="end" fill="#52514e">0,8</text>
+<line x1="60" x2="480" y1="92.0" y2="92.0" stroke="#e4e3df"></line><text x="50" y="96.0" font-size="12" text-anchor="end" fill="#52514e">0,9</text>
+<line x1="60" x2="480" y1="40.0" y2="40.0" stroke="#e4e3df"></line><text x="50" y="44.0" font-size="12" text-anchor="end" fill="#52514e">1,0</text>
+<text x="60" y="322" font-size="12" text-anchor="middle" fill="#52514e">50 %</text>
+<text x="165" y="322" font-size="12" text-anchor="middle" fill="#52514e">60 %</text>
+<text x="270" y="322" font-size="12" text-anchor="middle" fill="#52514e">70 %</text>
+<text x="375" y="322" font-size="12" text-anchor="middle" fill="#52514e">80 %</text>
+<text x="480" y="322" font-size="12" text-anchor="middle" fill="#52514e">90 %</text>
+<text x="270" y="350" font-size="13" text-anchor="middle" fill="#52514e">Pacientes que vienen del escáner 1</text>
+<polyline fill="none" stroke="#2a78d6" stroke-width="2" points="60.0,54.3 165.0,55.2 270.0,59.7 375.0,63.2 480.0,56.6"></polyline>
+<circle cx="60.0" cy="54.3" r="5" fill="#2a78d6" stroke="#fcfcfb" stroke-width="2"><title>Igual mezcla de escáneres, 50%: AUC 0,97</title></circle>
+<circle cx="165.0" cy="55.2" r="5" fill="#2a78d6" stroke="#fcfcfb" stroke-width="2"><title>Igual mezcla de escáneres, 60%: AUC 0,97</title></circle>
+<circle cx="270.0" cy="59.7" r="5" fill="#2a78d6" stroke="#fcfcfb" stroke-width="2"><title>Igual mezcla de escáneres, 70%: AUC 0,96</title></circle>
+<circle cx="375.0" cy="63.2" r="5" fill="#2a78d6" stroke="#fcfcfb" stroke-width="2"><title>Igual mezcla de escáneres, 80%: AUC 0,96</title></circle>
+<circle cx="480.0" cy="56.6" r="5" fill="#2a78d6" stroke="#fcfcfb" stroke-width="2"><title>Igual mezcla de escáneres, 90%: AUC 0,97</title></circle>
+<circle cx="502" cy="52.6" r="4" fill="#2a78d6"></circle><text x="514" y="56.6" font-size="13" fill="#0b0b0b">Igual mezcla de<tspan x="514" dy="17">escáneres</tspan><tspan x="514" dy="17" font-weight="600">AUC 0,97</tspan></text>
+<polyline fill="none" stroke="#eb6834" stroke-width="2" points="60.0,57.0 165.0,60.1 270.0,81.3 375.0,136.6 480.0,199.9"></polyline>
+<circle cx="60.0" cy="57.0" r="5" fill="#eb6834" stroke="#fcfcfb" stroke-width="2"><title>Escáner sin relación con la enfermedad, 50%: AUC 0,97</title></circle>
+<circle cx="165.0" cy="60.1" r="5" fill="#eb6834" stroke="#fcfcfb" stroke-width="2"><title>Escáner sin relación con la enfermedad, 60%: AUC 0,96</title></circle>
+<circle cx="270.0" cy="81.3" r="5" fill="#eb6834" stroke="#fcfcfb" stroke-width="2"><title>Escáner sin relación con la enfermedad, 70%: AUC 0,92</title></circle>
+<circle cx="375.0" cy="136.6" r="5" fill="#eb6834" stroke="#fcfcfb" stroke-width="2"><title>Escáner sin relación con la enfermedad, 80%: AUC 0,81</title></circle>
+<circle cx="480.0" cy="199.9" r="5" fill="#eb6834" stroke="#fcfcfb" stroke-width="2"><title>Escáner sin relación con la enfermedad, 90%: AUC 0,69</title></circle>
+<circle cx="502" cy="195.9" r="4" fill="#eb6834"></circle><text x="514" y="199.9" font-size="13" fill="#0b0b0b">Escáner sin relación<tspan x="514" dy="17">con la enfermedad</tspan><tspan x="514" dy="17" font-weight="600">AUC 0,69</tspan></text>
+</svg>
+
+<div style="height:1rem"></div>
+<p>La línea azul casi no se mueve, entre 0,96 y 0,97. Si esa fuera la única prueba que tuviera, me habría sentido bien en todos los puntos. La naranja termina en 0,69.</p>
+<table class="table-striped caption-top table">
+<caption>AUC, promedio de 10 corridas</caption>
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Pacientes del escáner 1</th>
+<th style="text-align: right;">Igual mezcla</th>
+<th style="text-align: right;">Cada escáner por separado</th>
+<th style="text-align: right;">Escáner sin relación con la enfermedad</th>
+<th style="text-align: right;">Solo la etiqueta del escáner</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">50 %</td>
+<td style="text-align: right;">0,97</td>
+<td style="text-align: right;">0,98</td>
+<td style="text-align: right;">0,97</td>
+<td style="text-align: right;">0,50</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">60 %</td>
+<td style="text-align: right;">0,97</td>
+<td style="text-align: right;">0,97</td>
+<td style="text-align: right;">0,96</td>
+<td style="text-align: right;">0,60</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">70 %</td>
+<td style="text-align: right;">0,96</td>
+<td style="text-align: right;">0,96</td>
+<td style="text-align: right;">0,92</td>
+<td style="text-align: right;">0,69</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">80 %</td>
+<td style="text-align: right;">0,96</td>
+<td style="text-align: right;">0,95</td>
+<td style="text-align: right;">0,81</td>
+<td style="text-align: right;">0,79</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">90 %</td>
+<td style="text-align: right;">0,97</td>
+<td style="text-align: right;">0,88</td>
+<td style="text-align: right;">0,69</td>
+<td style="text-align: right;">0,90</td>
+</tr>
+</tbody>
+</table>
+<p>La última columna es un «modelo» que nunca abre la imagen. Solo sabe qué máquina se usó, y en 90 % saca 0,90.</p>
+<p>También repetí todo sin la mancha, o sea sin enfermedad que encontrar. Con la mezcla del 90 % el modelo igual sacó 0,90 en la primera prueba y 0,50 en la segunda. Estaba reportando un resultado excelente sobre nada.</p>
+</section>
+<section id="mirar-adentro" class="level2">
+<h2 class="anchored" data-anchor-id="mirar-adentro">Mirar adentro</h2>
+<p>Una regresión logística tiene un peso por píxel, así que se pueden dibujar como una imagen. Esta es mi parte favorita.</p>
+<p><a href="sc-weights.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="sc-weights.png" class="img-fluid" alt="Mapas de pesos del modelo al 50, 70 y 90 por ciento"></a></p>
+<p>En 50 % el modelo encontró la mancha. En 90 % la mancha sigue ahí, más débil, y alrededor se ve la sombra del escáner de izquierda a derecha. Compárala con la imagen de lo que hace el escáner. Nadie le habló al modelo de escáneres. Tomó las dos cosas que le servían y las mezcló.</p>
+<p>Y esto es lo que eso les hace a los puntajes:</p>
+<p><a href="sc-scores.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="sc-scores.png" class="img-fluid" alt="Puntajes de controles y pacientes, separados por escáner"></a></p>
+<p>Dentro de cada escáner los pacientes tienen puntajes más altos que los controles, así que algo aprendió. Pero las personas sanas del escáner 1 tienen puntajes más altos que los pacientes del escáner 0. Cualquier corte que uno escoja va a ser injusto con uno de los dos hospitales.</p>
+<p>Eso explica un número de la tabla que me confundía. En 90 %, cada escáner por separado da 0,88 y todos juntos dan 0,69. Revisar cada sitio por separado está bien, y me habría mostrado solo una parte del problema, porque los puntajes de dos personas escaneadas en máquinas distintas ya no se pueden comparar.</p>
+</section>
+<section id="lo-que-ahora-le-pediría-a-un-resultado" class="level2">
+<h2 class="anchored" data-anchor-id="lo-que-ahora-le-pediría-a-un-resultado">Lo que ahora le pediría a un resultado</h2>
+<ol type="1">
+<li>Una tabla de cuántos pacientes y controles vinieron de cada escáner, y el AUC de esa sola etiqueta. Toma cinco minutos. Si está lejos de 0,5, hay algo que explicar.</li>
+<li>El AUC dentro de cada escáner y la distribución de puntajes de cada uno, no solo el número.</li>
+<li>Una prueba con personas cuyo escáner no tenga relación con el diagnóstico, o en un sitio que el modelo nunca vio.</li>
+<li>Si el modelo lo permite, una imagen de lo que mira. Por sí sola no prueba nada, pero te puede hacer sospechar a tiempo.</li>
+</ol>
+</section>
+<section id="pasa-con-imágenes-de-verdad" class="level2">
+<h2 class="anchored" data-anchor-id="pasa-con-imágenes-de-verdad">Pasa con imágenes de verdad</h2>
+<p>Zech y colegas entrenaron una red para encontrar neumonía en radiografías de tórax. Sacó un AUC de 0,931 en imágenes nuevas de los hospitales del entrenamiento y 0,815 en otro hospital. Ordenar las imágenes solo por hospital ya daba 0,861 <span class="citation" data-cites="zech">(<a href="#ref-zech" role="doc-biblioref">Zech et&nbsp;al. 2018</a>)</span>. Glocker y colegas tomaron resonancias de dos estudios, emparejaron a las personas por edad y sexo, preprocesaron todo con cuidado, y un clasificador todavía podía decir de qué estudio venía cada una <span class="citation" data-cites="glocker">(<a href="#ref-glocker" role="doc-biblioref">Glocker et&nbsp;al. 2019</a>)</span>.</p>
+<p>Mi versión es un juguete. Un escáner de verdad se diferencia en mucho más que una sombra, las lesiones reales no son redondas y una red profunda no es una regresión logística, así que mis números no significan nada fuera de esta página. Lo que me quedó es que ahora, cuando veo un AUC muy bueno, tengo en la cabeza una imagen de lo que podría haber adentro.</p>
+<p>Solo necesita NumPy y corre en menos de 15 segundos. Cambia <code>lesion</code> y <code>bias</code> y mira cómo cae la segunda prueba: <a href="https://github.com/carolain3472/carolain3472.github.io/blob/main/posts/scanner-shortcut/experiment.py">experiment.py</a>, y <a href="https://github.com/carolain3472/carolain3472.github.io/blob/main/posts/scanner-shortcut/figures2.py">figures2.py</a> para los mapas.</p>
+</section>
+<section id="referencias" class="level2">
+<h2 class="anchored" data-anchor-id="referencias">Referencias</h2>
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-glocker" class="csl-entry" role="listitem">
+Glocker, Ben, Robert Robinson, Daniel C. Castro, Qi Dou, y Ender Konukoglu. 2019. <em>Machine Learning with Multi-Site Imaging Data: An Empirical Study on the Impact of Scanner Effects</em>. <a href="https://arxiv.org/abs/1910.04597">https://arxiv.org/abs/1910.04597</a>.
+</div>
+<div id="ref-zech" class="csl-entry" role="listitem">
+Zech, John R., Marcus A. Badgeley, Manway Liu, Anthony B. Costa, Joseph J. Titano, y Eric Karl Oermann. 2018. <span>«Variable generalization performance of a deep learning model to detect pneumonia in chest radiographs: A cross-sectional study»</span>. <em>PLOS Medicine</em> 15 (11): e1002683. <a href="https://doi.org/10.1371/journal.pmed.1002683">https://doi.org/10.1371/journal.pmed.1002683</a>.
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script>
+(()=>{const es=/^\/es(\/|$)/.test(location.pathname),p=location.pathname,other=es?p.replace(/^\/es/,"")||"/":"/es"+p;
+const nav=document.querySelector(".navbar");if(!nav)return;
+const sel=[...nav.querySelectorAll("a.nav-link")].find(a=>a.textContent.trim()==="ES");if(!sel)return;
+sel.href=other;sel.hreflang=es?"en":"es";sel.classList.remove("active");sel.classList.add("langsel");
+sel.innerHTML=es?"<span>EN</span><b>ES</b>":"<b>EN</b><span>ES</span>";sel.setAttribute("aria-label",es?"See this page in English":"Ver esta página en español");
+if(es){const M={"Research":["Investigación","research.html"],"AI for business":["IA para empresas","business.html"],"Explorations":["Exploraciones","explorations.html"],"All notes":["Todas las notas","blog.html"]};
+nav.querySelectorAll("a.nav-link").forEach(a=>{const m=M[a.textContent.trim()];if(!m)return;(a.querySelector(".menu-text")||a).textContent=m[0];a.href="/es/"+m[1];a.classList.toggle("active",p==="/es/"+m[1])});
+nav.querySelectorAll("a.navbar-brand").forEach(b=>b.href="/es/")}
+const c=sel.cloneNode(true);c.classList.add("langm");const q=nav.querySelector(".quarto-navbar-tools")||nav.querySelector("#quarto-search");(q?q.parentNode.insertBefore(c,q):nav.append(c));
+const h=document.createElement("link");h.rel="alternate";h.hreflang=es?"en":"es";h.href=location.origin+other;document.head.append(h)})();
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/carolain3472\.github\.io\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+      window.quartoDecorateExternalLinks = function (root) {
+     var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+          if (!link.classList.contains('no-external-icon')) {
+          }
+        }
+      }
+      };
+      window.quartoDecorateExternalLinks(window.document);
+    // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
+    // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
+    const hideOnEscAndFocusOut = {
+      name: 'hideOnEscAndFocusOut',
+      defaultValue: true,
+      fn(instance) {
+        const dismiss = () => {
+          // A show scheduled by the trigger delay would otherwise reopen it
+          instance.clearDelayTimeouts();
+          instance.hide();
+        };
+        const onKeyDown = (event) => {
+          if (event.key !== 'Escape') {
+            return;
+          }
+          // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
+          // except an open reveal.js slide menu, which Esc should close too.
+          // The menu handles keys only when its keyboard option is on.
+          const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
+            window.Reveal.getConfig().menu?.keyboard !== false;
+          if (!menuHandlesEsc) {
+            event.stopPropagation();
+          }
+          if (instance.popper.contains(window.document.activeElement)) {
+            // Disabled while refocusing so the focus trigger does not reopen it
+            instance.disable();
+            instance.reference.focus();
+            instance.enable();
+          }
+          dismiss();
+        };
+        const onFocusOut = (event) => {
+          const target = event.relatedTarget;
+          if (target && !instance.reference.contains(target) &&
+              !instance.popper.contains(target)) {
+            dismiss();
+          }
+        };
+        // On the trigger too: a click trigger (code-annotations: select) has no
+        // blur handling. Attached for the instance's lifetime so leaving the
+        // trigger also cancels a show still pending on the trigger delay.
+        instance.reference.addEventListener('focusout', onFocusOut);
+        return {
+          onShow() {
+            window.document.addEventListener('keydown', onKeyDown, true);
+            instance.popper.addEventListener('focusout', onFocusOut);
+          },
+          onHide() {
+            window.document.removeEventListener('keydown', onKeyDown, true);
+            instance.popper.removeEventListener('focusout', onFocusOut);
+          },
+          onDestroy() {
+            instance.reference.removeEventListener('focusout', onFocusOut);
+          },
+        };
+      },
+    };
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+        plugins: [hideOnEscAndFocusOut],
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          // Each band is positioned against its own containing block, which is
+          // not the offsetParent of the lines, so place it from client rects.
+          const placeBand = (band, firstEl, lastEl, codeBlock) => {
+            const container = band.offsetParent;
+            if (container === null) {
+              return;
+            }
+            const containerRect = container.getBoundingClientRect();
+            // Reveal.js scales slides with a transform, so convert client
+            // pixels back to the CSS pixels of the container.
+            const scale = containerRect.height / container.offsetHeight || 1;
+            const firstRect = firstEl.getBoundingClientRect();
+            const lastRect = lastEl.getBoundingClientRect();
+            const top = (firstRect.top - containerRect.top) / scale - container.clientTop + container.scrollTop;
+            const height = (lastRect.bottom - firstRect.top) / scale;
+            band.style.top = top - 2 + "px";
+            band.style.height = height + 4 + "px";
+            if (codeBlock) {
+              // Without the copy button wrapper, the containing block is wider
+              // than the code block, so span the code block explicitly.
+              const blockRect = codeBlock.getBoundingClientRect();
+              band.style.left = (blockRect.left - containerRect.left) / scale - container.clientLeft + container.scrollLeft + "px";
+              band.style.width = blockRect.width / scale + "px";
+            }
+          };
+          if (lineIds.length > 0) {
+            const el = window.document.getElementById(lineIds[0]);
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const parent = el.parentElement.parentElement;
+            // cook up a div (if necessary) and position it
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            placeBand(div, el, lastEl, parent.closest("div.sourceCode") || parent);
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            placeBand(gutterDiv, el, lastEl);
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+  <script type="application/javascript">
+  window.quartoScrollableRegionsLabels = {"code":"Código desplazable","output":"Salida desplazable"};
+  </script>
+</div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
+
+
+
+
+</body></html>

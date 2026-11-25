@@ -121,13 +121,29 @@ div.csl-indent {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
+    <a class="nav-link" href="../../research.html"> 
+<span class="menu-text">Research</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../business.html"> 
+<span class="menu-text">AI for business</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../explorations.html"> 
+<span class="menu-text">Explorations</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="../../blog.html"> 
-<span class="menu-text">Notes</span></a>
+<span class="menu-text">All notes</span></a>
   </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/carolain3472"> <i class="bi bi-github" role="img" aria-label="GitHub">
 </i> 
 <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../es/index.html"> 
+<span class="menu-text">ES</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -161,6 +177,7 @@ div.csl-indent {
 <div class="quarto-title">
 <h1 class="title">When a model learns the scanner</h1>
   <div class="quarto-categories">
+    <div class="quarto-category">research</div>
     <div class="quarto-category">medical imaging</div>
     <div class="quarto-category">trustworthy AI</div>
   </div>
@@ -354,6 +371,18 @@ Zech, John R., Marcus A. Badgeley, Manway Liu, Anthony B. Costa, Joseph J. Titan
 </section>
 
 </main> <!-- /main -->
+<script>
+(()=>{const es=/^\/es(\/|$)/.test(location.pathname),p=location.pathname,other=es?p.replace(/^\/es/,"")||"/":"/es"+p;
+const nav=document.querySelector(".navbar");if(!nav)return;
+const sel=[...nav.querySelectorAll("a.nav-link")].find(a=>a.textContent.trim()==="ES");if(!sel)return;
+sel.href=other;sel.hreflang=es?"en":"es";sel.classList.remove("active");sel.classList.add("langsel");
+sel.innerHTML=es?"<span>EN</span><b>ES</b>":"<b>EN</b><span>ES</span>";sel.setAttribute("aria-label",es?"See this page in English":"Ver esta página en español");
+if(es){const M={"Research":["Investigación","research.html"],"AI for business":["IA para empresas","business.html"],"Explorations":["Exploraciones","explorations.html"],"All notes":["Todas las notas","blog.html"]};
+nav.querySelectorAll("a.nav-link").forEach(a=>{const m=M[a.textContent.trim()];if(!m)return;(a.querySelector(".menu-text")||a).textContent=m[0];a.href="/es/"+m[1];a.classList.toggle("active",p==="/es/"+m[1])});
+nav.querySelectorAll("a.navbar-brand").forEach(b=>b.href="/es/")}
+const c=sel.cloneNode(true);c.classList.add("langm");const q=nav.querySelector(".quarto-navbar-tools")||nav.querySelector("#quarto-search");(q?q.parentNode.insertBefore(c,q):nav.append(c));
+const h=document.createElement("link");h.rel="alternate";h.hreflang=es?"en":"es";h.href=location.origin+other;document.head.append(h)})();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

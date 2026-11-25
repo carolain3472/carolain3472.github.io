@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.11.9">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Carolain Jiménez Bedoya">
+<meta name="description" content="Un bosque en 3D, seis sensores y cuatro botones. Comparé dos modelos en la nube con dos que corren dentro del navegador, y los locales no supieron leer un termómetro.">
+
+<title>Fire Watch: hice un juego para ver cómo falla un modelo de decisión – Carolain Jiménez Bedoya</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/scrollable-regions/scrollable-regions.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-d31a0c91b01e363be7b7a36e602e2c70.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No se han encontrado resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Saltar al contenido principal</a>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark" aria-label="Sitio web">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">Carolain Jiménez Bedoya</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../research.html"> 
+<span class="menu-text">Research</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../business.html"> 
+<span class="menu-text">AI for business</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../explorations.html"> 
+<span class="menu-text">Explorations</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../blog.html"> 
+<span class="menu-text">All notes</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/carolain3472"> <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../es/index.html"> 
+<span class="menu-text">ES</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+            <div id="quarto-search" class="" title="Buscar"></div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+   
+  <ul>
+  <li><a href="#por-qué-fuego" id="toc-por-qué-fuego" class="nav-link active" data-scroll-target="#por-qué-fuego">Por qué fuego</a></li>
+  <li><a href="#un-evento-cuatro-maneras-de-decirlo" id="toc-un-evento-cuatro-maneras-de-decirlo" class="nav-link" data-scroll-target="#un-evento-cuatro-maneras-de-decirlo">Un evento, cuatro maneras de decirlo</a></li>
+  <li><a href="#el-error-también-era-mío" id="toc-el-error-también-era-mío" class="nav-link" data-scroll-target="#el-error-también-era-mío">El error también era mío</a></li>
+  <li><a href="#mi-primer-arreglo-no-funcionó" id="toc-mi-primer-arreglo-no-funcionó" class="nav-link" data-scroll-target="#mi-primer-arreglo-no-funcionó">Mi primer arreglo no funcionó</a></li>
+  <li><a href="#con-qué-me-quedo" id="toc-con-qué-me-quedo" class="nav-link" data-scroll-target="#con-qué-me-quedo">Con qué me quedo</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content" tabindex="-1">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Fire Watch: hice un juego para ver cómo falla un modelo de decisión</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">exploraciones</div>
+    <div class="quarto-category">modelos de decisión</div>
+    <div class="quarto-category">IA confiable</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    Un bosque en 3D, seis sensores y cuatro botones. Comparé dos modelos en la nube con dos que corren dentro del navegador, y los locales no supieron leer un termómetro.
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Autor/a</div>
+    <div class="quarto-title-meta-contents">
+             <p>Carolain Jiménez Bedoya </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Fecha de publicación</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">25 de noviembre de 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Hace unos días fui a un evento de tecnología y vi una demostración en la que me quedé pensando. Había un personaje en la pantalla, uno le hablaba, y un panel al lado mostraba la probabilidad de cada cosa que podía hacer. El modelo nunca escribía una palabra. Solo escogía de una lista.</p>
+<p>Los llaman modelos de decisión. Uno les da una situación y una lista cerrada de opciones, y devuelven una opción con un número al lado. Chrome está probando una API para esto, la <a href="https://github.com/explainers-by-googlers/decisions-api">Decisions API</a>, y el modelo corre en el computador de quien abre la página. Nada sale del dispositivo, y para alguien a quien le gustan los datos médicos y los sensores en lugares sin internet esa es una muy buena frase.</p>
+<p>Así que hice mi propio juego para ver dónde se rompe.</p>
+<video controls="" muted="" loop="" playsinline="" preload="metadata" poster="../../../posts/fire-watch/bad.jpg" style="width:100%;border-radius:12px">
+<source src="../../../posts/fire-watch/game.mp4" type="video/mp4">
+</video>
+<p><a href="../../../lab/fire-watch/index.html?lang=es"><strong>Jugar Fire Watch</strong></a>. También funciona en el celular y no hay que descargar ningún modelo.</p>
+<section id="por-qué-fuego" class="level2">
+<h2 class="anchored" data-anchor-id="por-qué-fuego">Por qué fuego</h2>
+<p>Con el Team Colombia de FIRST Global trabajo en Kawsay, un proyecto de detección de incendios forestales. Cuando hablamos con las brigadas municipales del Valle del Cauca nos dijeron algo sencillo: se enteran tarde de los incendios. Una llamada necesita a alguien que ya esté viendo humo, y los satélites pasan cada varias horas.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../../../posts/fire-watch/kawsay.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="La página de monitoreo de nodos de la plataforma Kawsay, que todavía es un prototipo. El juego solo toma la idea."><img src="../../../posts/fire-watch/kawsay.jpg" class="img-fluid figure-img" alt="Plataforma Kawsay con tarjetas de sensores y un mapa"></a></p>
+<figcaption>La página de monitoreo de nodos de la plataforma Kawsay, que todavía es un prototipo. El juego solo toma la idea.</figcaption>
+</figure>
+</div>
+<p>En un sistema así, alguien tiene que leer muchos mensajes cortos y decidir qué merece cada uno. Ese es el juego. Seis sensores, doce mensajes y cuatro botones: ignorar, vigilar, mandar el dron, llamar a la brigada. Tienes seis vuelos y cuatro viajes, así que no puedes mandarle todo a todo. Si ignoras el humo, pierdes árboles.</p>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../../../posts/fire-watch/brigade.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="La brigada llega a tiempo."><img src="../../../posts/fire-watch/brigade.jpg" class="img-fluid figure-img" alt="La brigada llega a tiempo."></a></p>
+<figcaption>La brigada llega a tiempo.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../../../posts/fire-watch/bad.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Ignoré el humo a propósito. Once árboles."><img src="../../../posts/fire-watch/bad.jpg" class="img-fluid figure-img" alt="Ignoré el humo a propósito. Once árboles."></a></p>
+<figcaption>Ignoré el humo a propósito. Once árboles.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>El manual es fijo, así que cada mensaje tiene una sola respuesta correcta:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Acción</th>
+<th style="text-align: left;">Cuándo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Brigada</td>
+<td style="text-align: left;">La cámara ve humo, pase lo que pase con lo demás</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Dron</td>
+<td style="text-align: left;">Sin humo, 45 °C o más y 20 % de humedad o menos</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Vigilar</td>
+<td style="text-align: left;">Sin humo y solo uno de esos dos problemas</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Ignorar</td>
+<td style="text-align: left;">Ninguno</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="un-evento-cuatro-maneras-de-decirlo" class="level2">
+<h2 class="anchored" data-anchor-id="un-evento-cuatro-maneras-de-decirlo">Un evento, cuatro maneras de decirlo</h2>
+<p>Escribí 24 eventos, seis por acción, y cada uno en cuatro versiones. Este es el mismo evento (dejo el original y lo traduzco cuando está en inglés):</p>
+<blockquote class="blockquote">
+<p><strong>Números.</strong> Sensor at the east gate. Temperature 47 °C. Humidity 65%. Camera: no smoke.</p>
+<p><strong>Español.</strong> Sensor en la puerta este. Temperatura 47 °C. Humedad 65 %. Cámara: sin humo.</p>
+<p><strong>Palabras.</strong> The battery was changed on Monday. At the east gate the air is very hot and humid as usual, and the camera shows nothing unusual. <em>(Cambiaron la batería el lunes. En la puerta este el aire está muy caliente y húmedo como siempre, y la cámara no muestra nada raro.)</em></p>
+<p><strong>Una frase distinta.</strong> Igual, pero termina con «the camera shows no smoke» <em>(la cámara no muestra humo)</em>.</p>
+</blockquote>
+<p>En todas la respuesta es <em>vigilar</em>. Si un modelo cambia de opinión porque yo cambié las palabras, quiero saberlo.</p>
+<p>Probé cuatro modelos. Claude Sonnet 5.5 y Claude Haiku 5.5 son modelos generales en la nube, y les pedí una sola palabra. Los otros dos corrieron en mi MacBook (un M4): la Decisions API de Chrome 158 con su opción experimental encendida, y EmbeddingGemma 2, que Google ofrece con MediaPipe y pesa unos 165 MB.</p>
+<p><a href="fw-heat.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="fw-heat.png" class="img-fluid" alt="Tabla de decisiones correctas por modelo y versión"></a></p>
+<p>La tabla me sorprendió porque los dos grupos fallan en lugares opuestos.</p>
+<p>Los modelos de la nube leen los números perfecto y el español no cambió nada. Haiku se pierde con las palabras. Los locales van al revés: les va mejor con palabras y no pueden con los números. EmbeddingGemma 2 acertó 6 de 24 con números, que es lo que uno saca con los ojos cerrados. Cuando abrí las respuestas vi que había dicho <em>vigilar</em> 24 veces de 24.</p>
+<p>Tiene sentido si uno piensa en lo que hace ese modelo. Convierte el mensaje y cada opción en vectores y mide cuáles están cerca. «47 °C» y «45 °C o más» están cerca como texto, y también lo están «30 °C» y «45 °C o más». En ningún lugar se compara 47 con 45.</p>
+</section>
+<section id="el-error-también-era-mío" class="level2">
+<h2 class="anchored" data-anchor-id="el-error-también-era-mío">El error también era mío</h2>
+<p>Haiku repetía una y otra vez el mismo error: el manual decía <em>vigilar</em> y decía <em>ignorar</em>. En un sistema de incendios esa es la dirección mala.</p>
+<p>Cuando miré mi propio texto encontré una razón posible. El mensaje decía «the camera shows <strong>nothing unusual</strong>» y mi descripción de <em>ignorar</em> terminaba con «<strong>Nothing is unusual</strong>». Había copiado mis propias palabras sin darme cuenta. En la cuarta versión cambié solo esa frase y Haiku pasó de 19 o 20 a 22. El modelo de Chrome se movió un punto y EmbeddingGemma 2 no se movió, así que es algo de Haiku, al menos aquí.</p>
+<p>Es una frase y son 24 eventos, así que no quiero hacerlo más grande de lo que es. Pero buscaría palabras repetidas en cualquier producto en el que un modelo escoja de una lista que escribió una persona.</p>
+</section>
+<section id="mi-primer-arreglo-no-funcionó" class="level2">
+<h2 class="anchored" data-anchor-id="mi-primer-arreglo-no-funcionó">Mi primer arreglo no funcionó</h2>
+<p>Mi idea era dejar de pedirle la acción. Le haría al modelo local tres preguntas de sí o no (si hay humo, si hace mucho calor, si está muy seco) y dejaría que el código normal aplicara el manual. De esta estaba segura.</p>
+<p>Con Chrome empeoró: de 11 a 6 con números y de 14 a 9 con palabras. EmbeddingGemma 2 pasó de 6 a 12 con números, sobre todo porque encontró el humo, y con palabras casi nada cambió. Entonces grafiqué la probabilidad de cada respuesta, un punto por evento, para ver qué estaba pasando.</p>
+<p><a href="fw-yesno.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="fw-yesno.png" class="img-fluid" alt="Puntos con la probabilidad de sí, para calor y sequedad, con números y con palabras"></a></p>
+<p>Mira las dos filas con palabras. Los puntos naranjas y azules están separados, o sea que el modelo sí sabe cuáles están calientes y cuáles secos. El problema es la línea de 0,5. En <em>seco</em> todos los eventos están por encima de 0,7, así que con esa línea todo está seco. Y en las filas con números los colores están mezclados, así que ninguna línea ayudaría.</p>
+<p>Después escribí 24 eventos nuevos, distintos de los primeros, los usé solo para escoger mejores cortes y volví a los 24 originales.</p>
+<p><a href="fw-strategies.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="fw-strategies.png" class="img-fluid" alt="Barras con tres estrategias para EmbeddingGemma 2"></a></p>
+<p>De 13 a 18 con palabras. Es mejor, sigue lejos de 24, y con números se queda en 12. Con Chrome, los cortes ajustados dieron 11 con palabras, menos que pedirle la acción directamente.</p>
+</section>
+<section id="con-qué-me-quedo" class="level2">
+<h2 class="anchored" data-anchor-id="con-qué-me-quedo">Con qué me quedo</h2>
+<p>Si tuviera que usar un modelo local pequeño para algo así, dejaría que el código leyera el termómetro, porque <code>if t &gt;= 45</code> nunca me ha fallado. Usaría el modelo para la parte que solo existe como lenguaje, como el mensaje de un vecino que dice que huele a hojas quemadas. Y escogería los cortes con datos, porque 0,5 es solo un número que viene por defecto.</p>
+<p>También probaría otros modelos. EmbeddingGemma es el más rápido y el más débil de los que está considerando Chrome. <a href="https://think.resoneo.com/chrome-decisions-api/">Resoneo probó más</a> con 1.365 decisiones y EmbeddingGemma también quedó de último, con 38 %, mientras que Gemma 4 sacó 85 %. No corrí Gemma 4 porque necesita más de 4 GB, y no usé modelos dedicados en la nube como Gemini Decision o Jev. Mi tiempo mediano fue de 55 ms por decisión con Chrome, y por eso a la gente le interesan.</p>
+<p>Algunos límites: 24 eventos, textos hechos con plantillas que escribí yo, una corrida de Sonnet y una de cada modelo local, un solo portátil. La API es experimental y puede cambiar la próxima semana.</p>
+<p>Todo está en <a href="https://github.com/carolain3472/carolain3472.github.io/tree/main/lab/fire-watch">lab/fire-watch</a>: los eventos, las respuestas (de Haiku, la última de las tres corridas) y el código. También hay una <a href="../../../lab/fire-watch/experiment.html">página del experimento</a>, en inglés, para correr los modelos locales en tu navegador. Hice el juego y corrí las pruebas con ayuda de Claude Code. El 3D usa three.js.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../../../posts/fire-watch/end.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="La pantalla final del juego, en inglés."><img src="../../../posts/fire-watch/end.jpg" class="img-fluid figure-img" alt="Pantalla final que compara a la persona con el modelo"></a></p>
+<figcaption>La pantalla final del juego, en inglés.</figcaption>
+</figure>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script>
+(()=>{const es=/^\/es(\/|$)/.test(location.pathname),p=location.pathname,other=es?p.replace(/^\/es/,"")||"/":"/es"+p;
+const nav=document.querySelector(".navbar");if(!nav)return;
+const sel=[...nav.querySelectorAll("a.nav-link")].find(a=>a.textContent.trim()==="ES");if(!sel)return;
+sel.href=other;sel.hreflang=es?"en":"es";sel.classList.remove("active");sel.classList.add("langsel");
+sel.innerHTML=es?"<span>EN</span><b>ES</b>":"<b>EN</b><span>ES</span>";sel.setAttribute("aria-label",es?"See this page in English":"Ver esta página en español");
+if(es){const M={"Research":["Investigación","research.html"],"AI for business":["IA para empresas","business.html"],"Explorations":["Exploraciones","explorations.html"],"All notes":["Todas las notas","blog.html"]};
+nav.querySelectorAll("a.nav-link").forEach(a=>{const m=M[a.textContent.trim()];if(!m)return;(a.querySelector(".menu-text")||a).textContent=m[0];a.href="/es/"+m[1];a.classList.toggle("active",p==="/es/"+m[1])});
+nav.querySelectorAll("a.navbar-brand").forEach(b=>b.href="/es/")}
+const c=sel.cloneNode(true);c.classList.add("langm");const q=nav.querySelector(".quarto-navbar-tools")||nav.querySelector("#quarto-search");(q?q.parentNode.insertBefore(c,q):nav.append(c));
+const h=document.createElement("link");h.rel="alternate";h.hreflang=es?"en":"es";h.href=location.origin+other;document.head.append(h)})();
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/carolain3472\.github\.io\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+      window.quartoDecorateExternalLinks = function (root) {
+     var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+          if (!link.classList.contains('no-external-icon')) {
+          }
+        }
+      }
+      };
+      window.quartoDecorateExternalLinks(window.document);
+    // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
+    // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
+    const hideOnEscAndFocusOut = {
+      name: 'hideOnEscAndFocusOut',
+      defaultValue: true,
+      fn(instance) {
+        const dismiss = () => {
+          // A show scheduled by the trigger delay would otherwise reopen it
+          instance.clearDelayTimeouts();
+          instance.hide();
+        };
+        const onKeyDown = (event) => {
+          if (event.key !== 'Escape') {
+            return;
+          }
+          // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
+          // except an open reveal.js slide menu, which Esc should close too.
+          // The menu handles keys only when its keyboard option is on.
+          const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
+            window.Reveal.getConfig().menu?.keyboard !== false;
+          if (!menuHandlesEsc) {
+            event.stopPropagation();
+          }
+          if (instance.popper.contains(window.document.activeElement)) {
+            // Disabled while refocusing so the focus trigger does not reopen it
+            instance.disable();
+            instance.reference.focus();
+            instance.enable();
+          }
+          dismiss();
+        };
+        const onFocusOut = (event) => {
+          const target = event.relatedTarget;
+          if (target && !instance.reference.contains(target) &&
+              !instance.popper.contains(target)) {
+            dismiss();
+          }
+        };
+        // On the trigger too: a click trigger (code-annotations: select) has no
+        // blur handling. Attached for the instance's lifetime so leaving the
+        // trigger also cancels a show still pending on the trigger delay.
+        instance.reference.addEventListener('focusout', onFocusOut);
+        return {
+          onShow() {
+            window.document.addEventListener('keydown', onKeyDown, true);
+            instance.popper.addEventListener('focusout', onFocusOut);
+          },
+          onHide() {
+            window.document.removeEventListener('keydown', onKeyDown, true);
+            instance.popper.removeEventListener('focusout', onFocusOut);
+          },
+          onDestroy() {
+            instance.reference.removeEventListener('focusout', onFocusOut);
+          },
+        };
+      },
+    };
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+        plugins: [hideOnEscAndFocusOut],
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          // Each band is positioned against its own containing block, which is
+          // not the offsetParent of the lines, so place it from client rects.
+          const placeBand = (band, firstEl, lastEl, codeBlock) => {
+            const container = band.offsetParent;
+            if (container === null) {
+              return;
+            }
+            const containerRect = container.getBoundingClientRect();
+            // Reveal.js scales slides with a transform, so convert client
+            // pixels back to the CSS pixels of the container.
+            const scale = containerRect.height / container.offsetHeight || 1;
+            const firstRect = firstEl.getBoundingClientRect();
+            const lastRect = lastEl.getBoundingClientRect();
+            const top = (firstRect.top - containerRect.top) / scale - container.clientTop + container.scrollTop;
+            const height = (lastRect.bottom - firstRect.top) / scale;
+            band.style.top = top - 2 + "px";
+            band.style.height = height + 4 + "px";
+            if (codeBlock) {
+              // Without the copy button wrapper, the containing block is wider
+              // than the code block, so span the code block explicitly.
+              const blockRect = codeBlock.getBoundingClientRect();
+              band.style.left = (blockRect.left - containerRect.left) / scale - container.clientLeft + container.scrollLeft + "px";
+              band.style.width = blockRect.width / scale + "px";
+            }
+          };
+          if (lineIds.length > 0) {
+            const el = window.document.getElementById(lineIds[0]);
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const parent = el.parentElement.parentElement;
+            // cook up a div (if necessary) and position it
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            placeBand(div, el, lastEl, parent.closest("div.sourceCode") || parent);
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            placeBand(gutterDiv, el, lastEl);
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+  <script type="application/javascript">
+  window.quartoScrollableRegionsLabels = {"code":"Código desplazable","output":"Salida desplazable"};
+  </script>
+</div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
+
+
+
+
+</body></html>

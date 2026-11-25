@@ -111,7 +111,7 @@ VILLAGE.forEach(([x, z], i) => { const g = new THREE.Group(); add(g, new THREE.B
 // sensors
 const label = t => { const c = document.createElement('canvas'); c.width = 512; c.height = 96; const x = c.getContext('2d'); x.font = '600 44px Fredoka, system-ui'; const w = x.measureText(t).width + 56; x.fillStyle = 'rgba(24,30,34,.82)'; x.beginPath(); x.roundRect(256 - w / 2, 8, w, 76, 38); x.fill(); x.fillStyle = '#f7f1e6'; x.textAlign = 'center'; x.textBaseline = 'middle'; x.fillText(t, 256, 48); const tx = new THREE.CanvasTexture(c); tx.colorSpace = THREE.SRGBColorSpace; const s = new THREE.Sprite(new THREE.SpriteMaterial({ map: tx, transparent: true, depthTest: false })); s.scale.set(6.4, 1.2, 1); s.renderOrder = 9; return s; };
 try { await Promise.race([document.fonts.load('600 44px Fredoka'), new Promise(r => setTimeout(r, 1500))]); } catch {}
-const sensors = PLACES.map(([name, , x, z]) => {
+const sensors = PLACES.map(([en, esName, x, z]) => { const name = window.FW_ES ? esName : en;
   const g = new THREE.Group(), y = H(x, z);
   add(g, new THREE.CylinderGeometry(.55, .7, .35, 6), 0x8d857a, 0, .15); add(g, new THREE.CylinderGeometry(.09, .12, 3.4, 6), 0xe7e3da, 0, 1.8);
   const pan = add(g, new THREE.BoxGeometry(1.35, .08, .95), 0x22416b, 0, 3.5, 0, { roughness: .25, metalness: .4 }); pan.rotation.x = -.5;
@@ -210,7 +210,7 @@ function begin() {
 async function next() {
   k++; if (k >= deck.length) return finish();
   cur = deck[k]; answered = false; opinion = null; const s = sensors[placeOf(cur)]; setLed(s, 'alert'); focus = s; beep(660, .16, 'sine', .05, 880);
-  $('msg').hidden = false; $('place').textContent = PLACES[placeOf(cur)][0].replace(/^./, c => c.toUpperCase()); $('style').textContent = STYLE[cur.style]; $('text').textContent = cur.text[cur.style]; bars(null); timer = limit; hud();
+  $('msg').hidden = false; $('place').textContent = PLACES[placeOf(cur)][window.FW_ES ? 1 : 0].replace(/^./, c => c.toUpperCase()); $('style').textContent = STYLE[cur.style]; $('text').textContent = cur.text[cur.style]; bars(null); timer = limit; hud();
   if (E.f) { $('mnote').textContent = 'Thinking…'; await ask(); } else $('mnote').textContent = E === ENGINES.none ? 'No model selected.' : 'Load the model to see its decision.';
   if ($('auto').checked && E.f && playing) { const me = cur; await wait(1700); if (cur === me && !answered) { const a = opinion?.answer || 'ignore'; choose(res[a] === 0 ? 'monitor' : a, true); } }
 }
@@ -237,7 +237,7 @@ async function driveTruck(s, fire) {
 function finish() {
   playing = false; const last = cur; cur = null; $('msg').hidden = true; focus = null; hud(); const me = log.filter(l => l.a === l.e.label).length, seen = log.filter(l => l.model), mo = seen.filter(l => l.model === l.e.label).length, h = health();
   $('eT').textContent = h > 85 ? 'The forest is still standing.' : h > 55 ? 'You lost part of the forest.' : 'It was a hard night for the forest.';
-  $('eB').innerHTML = `<div class="big"><div><span>${log[0]?.byModel ? 'Decisions' : 'You'}</span><b>${me}/12</b></div>${seen.length ? `<div><span>${E.n.replace(/ \(.*/, '')}</span><b>${mo}/${seen.length}</b></div>` : ''}<div><span>Forest</span><b>${h}%</b></div></div><div class="scroll"><table><tr><th>Message</th><th>Rule book</th><th>${log[0]?.byModel ? 'Played' : 'You'}</th><th>Model</th></tr>${log.map(l => `<tr><td>${STYLE[l.e.style]}, ${PLACES[placeOf(l.e)][0]}</td><td>${l.e.label}</td><td class="${l.a === l.e.label ? 'y' : 'n'}">${l.a}</td><td class="${l.model ? l.model === l.e.label ? 'y' : 'n' : ''}">${l.model || '–'}</td></tr>`).join('')}</table></div>`;
+  $('eB').innerHTML = `<div class="big"><div><span>${log[0]?.byModel ? 'Decisions' : 'You'}</span><b>${me}/12</b></div>${seen.length ? `<div><span>${E.n.replace(/ \(.*/, '')}</span><b>${mo}/${seen.length}</b></div>` : ''}<div><span>Forest</span><b>${h}%</b></div></div><div class="scroll"><table><tr><th>Message</th><th>Rule book</th><th>${log[0]?.byModel ? 'Played' : 'You'}</th><th>Model</th></tr>${log.map(l => `<tr><td>${STYLE[l.e.style]}, ${PLACES[placeOf(l.e)][window.FW_ES ? 1 : 0]}</td><td>${l.e.label}</td><td class="${l.a === l.e.label ? 'y' : 'n'}">${l.a}</td><td class="${l.model ? l.model === l.e.label ? 'y' : 'n' : ''}">${l.model || '–'}</td></tr>`).join('')}</table></div>`;
   $('end').hidden = false;
 }
 setInterval(() => { if (!playing || !limit || answered || !cur) { $('timer').textContent = ''; return; } timer--; $('timer').textContent = Math.max(0, timer) + ' s'; if (timer <= 0) choose('ignore'); }, 1000);
