@@ -3,10 +3,10 @@
     "listing": "/blog.html",
     "items": [
       "/posts/negative-result/index.html",
+      "/posts/who-does-the-math/index.html",
       "/posts/fire-watch/index.html",
-      "/posts/chatbot-no-se/index.html",
       "/posts/scanner-shortcut/index.html",
-      "/posts/ia-propone/index.html"
+      "/posts/chatbot-i-dont-know/index.html"
     ]
   }
 ]
