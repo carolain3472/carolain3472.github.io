@@ -1,0 +1,4002 @@
+[
+{
+"cond": "vague",
+"order": 0,
+"rep": 0,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": null, \"shipping\": null, \"question\": \"Café Mirto es cliente desde 2022 y el pedido es de 24 Ladera 250 g ($504.000) y 6 Kit filtro ($384.000), para un subtotal de $888.000 antes de descuento y envío. ¿Qué descuento aplicamos, entre 5 % y 10 %? Y ¿asumimos el envío (sin costo) o lo cobramos (normal: $25.000)?\"}",
+"ms": 3619,
+"cost": 0.0005082,
+"exact": 913000
+},
+{
+"cond": "vague",
+"order": 0,
+"rep": 1,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": 10, \"shipping\": null, \"question\": \"Subtotal: 24 × $21.000 + 6 × $64.000 = $888.000; con 10 % de descuento queda $799.200 antes de envío. ¿Asumimos el envío (total $799.200) o lo cobramos (normal $25.000, total $824.200)?\"}",
+"ms": 93607,
+"cost": 0.0003147,
+"exact": 913000
+},
+{
+"cond": "vague",
+"order": 0,
+"rep": 2,
+"total": 824200,
+"raw": "{\"total\": 824200, \"discount_percent\": 10, \"shipping\": 25000, \"question\": \"¿Asumimos el envío para este pedido? Si sí, el total sería $799.200.\"}",
+"ms": 4477,
+"cost": 0.0005912000000000001,
+"exact": 913000
+},
+{
+"cond": "vague",
+"order": 0,
+"rep": 3,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": 10, \"shipping\": null, \"question\": \"Subtotal con 10 % de descuento: $799.200 antes de envío. ¿Asumimos el envío para Café Mirto o lo cobramos? Si se cobra, el envío normal es de unos $25.000, y el total sería $824.200.\"}",
+"ms": 4106,
+"cost": 0.0003102,
+"exact": 913000
+},
+{
+"cond": "vague",
+"order": 0,
+"rep": 4,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": null, \"shipping\": null, \"question\": \"Café Mirto (cliente desde 2022) pide 24 de Ladera 250 g ($504.000) y 6 de Kit filtro ($384.000), subtotal $888.000. ¿Qué porcentaje de descuento le aplicamos (entre 5 y 10 %) y asumimos el envío o lo cobramos (aprox. $25.000)?\"}",
+"ms": 3396,
+"cost": 0.00029570000000000003,
+"exact": 913000
+},
+{
+"cond": "vague",
+"order": 0,
+"rep": 5,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": null, \"shipping\": null, \"question\": \"Café Mirto (cliente desde 2022) pide 24 Ladera 250 g ($504.000) y 6 Kit filtro ($384.000), subtotal $888.000. ¿Qué descuento aplicamos (entre 5 % y 10 %) y cobramos o asumimos el envío (normal ~$25.000)?\"}",
+"ms": 3206,
+"cost": 0.00028720000000000004,
+"exact": 913000
+},
+{
+"cond": "vague",
+"order": 0,
+"rep": 6,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": null, \"shipping\": null, \"question\": \"Café Mirto es cliente desde 2022 y el pedido es de 24 Ladera 250 g ($504.000) y 6 Kit filtro ($384.000), para un subtotal de $888.000. ¿Qué porcentaje de descuento le aplicamos (la política normal es 5-10 %, y como es cliente antiguo podría ser más)? ¿Y el envío lo asumimos nosotros o lo cobramos (normal: unos $25.000)?\"}",
+"ms": 3113,
+"cost": 0.0002482,
+"exact": 913000
+},
+{
+"cond": "vague",
+"order": 0,
+"rep": 7,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": null, \"shipping\": null, \"question\": \"Subtotal sin descuento ni envío: $888.000 (24 × Ladera 250 g a $21.000 = $504.000; 6 × Kit filtro a $64.000 = $384.000). ¿Qué porcentaje de descuento (entre 5 % y 10 %) le aplicamos a Café Mirto como cliente desde 2022, y el envío (aprox. $25.000) lo asumimos nosotros o lo cobramos?\"}",
+"ms": 3276,
+"cost": 0.00029170000000000004,
+"exact": 913000
+},
+{
+"cond": "vague",
+"order": 0,
+"rep": 8,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": null, \"shipping\": null, \"question\": \"El subtotal del pedido es $888.000 (24 × $21.000 + 6 × $64.000). Para calcular el total necesito que me confirmes el porcentaje de descuento para Café Mirto (entre 5 % y 10 %) y si asumimos el envío (normal: aprox. $25.000) o se lo cobramos al cliente.\"}",
+"ms": 3292,
+"cost": 0.00028270000000000004,
+"exact": 913000
+},
+{
+"cond": "vague",
+"order": 0,
+"rep": 9,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": null, \"shipping\": null, \"question\": \"Subtotal sin descuento ni envío: $888.000 (24 × $21.000 + 6 × $64.000). Para Café Mirto (cliente desde 2022), ¿qué porcentaje de descuento aplicamos, entre 5 % y 10 %? ¿El envío lo asumimos nosotros o lo cobramos (normalmente $25.000)?\"}",
+"ms": 3238,
+"cost": 0.0004682,
+"exact": 913000
+},
+{
+"cond": "vague",
+"order": 1,
+"rep": 0,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": null, \"shipping\": null, \"question\": \"Hotel Las Garzas es cliente nuevo y pide 60 unidades de Nube 250 g (subtotal $1.560.000 a $26.000 c/u). ¿Le aplicamos descuento por pedido grande (entre 5 % y 10 %) y cuánto? ¿El envío lo asumimos nosotros o lo cobramos (normal unos $25.000)?\"}",
+"ms": 2904,
+"cost": 0.00043789999999999996,
+"exact": 1482000
+},
+{
+"cond": "vague",
+"order": 1,
+"rep": 1,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": null, \"shipping\": null, \"question\": \"Hotel Las Garzas es cliente nuevo y pide 60 unidades de Nube 250 g ($26.000 c/u, subtotal $1.560.000). ¿Qué porcentaje de descuento (entre 5 % y 10 %) le aplicamos? ¿Asumimos el envío o lo cobramos (un envío normal cuesta unos $25.000)?\"}",
+"ms": 3290,
+"cost": 0.0004549,
+"exact": 1482000
+},
+{
+"cond": "vague",
+"order": 1,
+"rep": 2,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": null, \"shipping\": null, \"question\": \"Hotel Las Garzas es cliente nuevo y pide 60 unidades de Nube 250 g (subtotal $1.560.000). ¿Qué porcentaje de descuento (entre 5 % y 10 %) le aplicamos a este cliente y el envío lo asumimos nosotros o lo cobramos (normalmente unos $25.000)?\"}",
+"ms": 3523,
+"cost": 0.0004389,
+"exact": 1482000
+},
+{
+"cond": "vague",
+"order": 1,
+"rep": 3,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": null, \"shipping\": null, \"question\": \"Hotel Las Garzas es cliente nuevo y pide 60 unidades de Nube 250 g a $26.000 c/u (subtotal $1.560.000). ¿Qué porcentaje de descuento (entre 5 % y 10 %) le aplicamos y asumimos el envío o lo cobramos (normalmente $25.000)?\"}",
+"ms": 3009,
+"cost": 0.00024861,
+"exact": 1482000
+},
+{
+"cond": "vague",
+"order": 1,
+"rep": 4,
+"total": null,
+"raw": "```json\n{\"total\": null, \"discount_percent\": null, \"shipping\": null, \"question\": \"Hotel Las Garzas es cliente nuevo y el pedido es de 60 unidades de Nube 250 g ($1.560.000 antes de descuento). ¿Qué descuento le aplicamos (entre 5 % y 10 %) y asumimos el envío (normalmente unos $25.000) o se lo cobramos?\"}\n```",
+"ms": 4309,
+"cost": 0.00035761,
+"exact": 1482000
+},
+{
+"cond": "vague",
+"order": 1,
+"rep": 5,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": null, \"shipping\": null, \"question\": \"El subtotal es 60 x $26.000 = $1.560.000. Para calcular el total necesito saber: ¿qué descuento (entre 5 % y 10 %) le aplicamos a Hotel Las Garzas por ser cliente nuevo, y asumimos el envío (sin costo) o lo cobramos (aprox. $25.000)?\"}",
+"ms": 3171,
+"cost": 0.00027111,
+"exact": 1482000
+},
+{
+"cond": "vague",
+"order": 1,
+"rep": 6,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": null, \"shipping\": null, \"question\": \"Hotel Las Garzas es cliente nuevo y pide 60 unidades de Nube 250 g, que suman $1.560.000 antes de descuento y envío. ¿Qué porcentaje de descuento (entre 5 % y 10 %) le aplicamos y el envío lo asumimos nosotros o lo cobramos (normalmente unos $25.000)?\"}",
+"ms": 2783,
+"cost": 0.00023161,
+"exact": 1482000
+},
+{
+"cond": "vague",
+"order": 1,
+"rep": 7,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": null, \"shipping\": null, \"question\": \"Hotel Las Garzas es cliente nuevo y pide 60 unidades de Nube 250 g a $26.000 c/u (subtotal $1.560.000). ¿Qué porcentaje de descuento (entre 5 % y 10 %) le aplicamos y el envío lo asumimos nosotros o lo cobramos (normal, unos $25.000)?\"}",
+"ms": 3303,
+"cost": 0.00028511000000000004,
+"exact": 1482000
+},
+{
+"cond": "vague",
+"order": 1,
+"rep": 8,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": null, \"shipping\": null, \"question\": \"El pedido es de 60 unidades de Nube 250 g a $26.000 cada una, es decir $1.560.000 antes de descuento y envío. Hotel Las Garzas es cliente nuevo: ¿qué porcentaje de descuento (entre 5 % y 10 %) le aplicamos y cuánto cobramos de envío (o lo asumimos nosotros)?\"}",
+"ms": 2983,
+"cost": 0.00022911,
+"exact": 1482000
+},
+{
+"cond": "vague",
+"order": 1,
+"rep": 9,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": null, \"shipping\": null, \"question\": \"Pedido de 60 unidades de Nube 250 g a $26.000 c/u (subtotal $1.560.000) para Hotel Las Garzas, cliente nuevo. ¿Qué porcentaje de descuento (entre 5 y 10 %) aplicamos a este cliente y el envío lo asumimos nosotros o lo cobramos (normal, unos $25.000)?\"}",
+"ms": 2674,
+"cost": 0.00020961,
+"exact": 1482000
+},
+{
+"cond": "vague",
+"order": 2,
+"rep": 0,
+"total": 1817800,
+"raw": "{\"total\": 1817800, \"discount_percent\": 10, \"shipping\": 25000, \"question\": null}",
+"ms": 4304,
+"cost": 0.0005510000000000001,
+"exact": 1892400
+},
+{
+"cond": "vague",
+"order": 2,
+"rep": 1,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": 10, \"shipping\": null, \"question\": \"Subtotal: 36 × $38.000 + 24 × $26.000 = $1.992.000. Con 10 % de descuento (cliente desde 2024) queda $1.792.800 antes de envío. ¿Asumimos el envío o lo cobramos? Si se cobra el envío normal de $25.000, el total es $1.817.800.\"}",
+"ms": 4680,
+"cost": 0.0006175,
+"exact": 1892400
+},
+{
+"cond": "vague",
+"order": 2,
+"rep": 2,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": 10, \"shipping\": null, \"question\": \"¿Asumimos el envío para Tienda Azafrán (un envío normal cuesta unos $25.000) o se lo cobramos al cliente? Con el 10 % de descuento, el subtotal con descuento es $1.792.800; el total final es $1.792.800 si asumimos el envío, o $1.817.800 si se cobra.\"}",
+"ms": 4542,
+"cost": 0.0006095,
+"exact": 1892400
+},
+{
+"cond": "vague",
+"order": 2,
+"rep": 3,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": null, \"shipping\": null, \"question\": \"El subtotal sin descuento es $1.992.000 (36 × $38.000 + 24 × $26.000). Para el total necesito saber: ¿qué porcentaje de descuento le damos a Tienda Azafrán, cliente desde 2024, dentro del rango de 5 a 10 %? ¿Y se asume el envío (normal: $25.000) o lo paga el cliente?\"}",
+"ms": 3659,
+"cost": 0.00032674,
+"exact": 1892400
+},
+{
+"cond": "vague",
+"order": 2,
+"rep": 4,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": 10, \"shipping\": null, \"question\": \"¿Asumimos el envío de este pedido (sin cargo, total $1.792.800) o se cobra el envío normal de $25.000 (total $1.817.800)?\"}",
+"ms": 3721,
+"cost": 0.00033374,
+"exact": 1892400
+},
+{
+"cond": "vague",
+"order": 2,
+"rep": 5,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": 10, \"shipping\": null, \"question\": \"Subtotal: $1.992.000 (36 × $38.000 + 24 × $26.000). Con descuento del 10 % por ser cliente desde 2024, queda $1.792.800. ¿Asumimos el envío para este pedido o lo cobramos? Si lo cobramos, el envío normal es $25.000 y el total sería $1.817.800. ¿Confirmas también el 10 % de descuento?\"}",
+"ms": 3867,
+"cost": 0.00036474,
+"exact": 1892400
+},
+{
+"cond": "vague",
+"order": 2,
+"rep": 6,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": null, \"shipping\": null, \"question\": \"El subtotal del pedido de Tienda Azafrán es $1.992.000 (36 × $38.000 + 24 × $26.000). ¿Qué porcentaje de descuento aplicamos, entre 5 % y 10 %, dado que es cliente desde 2024? Y ¿asumimos el envío (costo $0) o lo cobramos (normal: $25.000)?\"}",
+"ms": 83467,
+"cost": 0.00021824,
+"exact": 1892400
+},
+{
+"cond": "vague",
+"order": 2,
+"rep": 7,
+"total": 1817800,
+"raw": "{\"total\": 1817800, \"discount_percent\": 10, \"shipping\": 25000, \"question\": \"¿Asumimos el envío para este pedido? Si sí, el total sería $1.792.800 en lugar de $1.817.800.\"}",
+"ms": 3865,
+"cost": 0.00037424,
+"exact": 1892400
+},
+{
+"cond": "vague",
+"order": 2,
+"rep": 8,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": 10, \"shipping\": null, \"question\": \"Subtotal antes de descuento: $1.992.000 (36 × $38.000 + 24 × $26.000). Con 10 % de descuento queda en $1.792.800. ¿Asumimos el envío (aprox. $25.000) o lo cobramos al cliente? Si lo cobramos, el total es $1.817.800. ¿Confirmas también el 10 % de descuento para Tienda Azafrán?\"}",
+"ms": 4463,
+"cost": 0.00042224,
+"exact": 1892400
+},
+{
+"cond": "vague",
+"order": 2,
+"rep": 9,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": 10, \"shipping\": null, \"question\": \"¿Asumimos el envío para el pedido de Tienda Azafrán? Si lo asumimos, el total con 10 % de descuento sobre $1.992.000 es $1.792.800. Si lo cobramos, el envío normal es de $25.000 y el total sería $1.817.800.\"}",
+"ms": 3028,
+"cost": 0.00027974,
+"exact": 1892400
+},
+{
+"cond": "vague",
+"order": 3,
+"rep": 0,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": null, \"shipping\": null, \"question\": \"Panadería Trigal es cliente nuevo y el pedido es de 12 Ladera 500 g ($456.000 antes de descuento y envío). ¿Qué descuento (entre 5% y 10%) le aplicamos y asumimos el envío (aprox. $25.000) o lo cobramos al cliente?\"}",
+"ms": 2781,
+"cost": 0.0004247,
+"exact": 481000
+},
+{
+"cond": "vague",
+"order": 3,
+"rep": 1,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": null, \"shipping\": null, \"question\": \"El subtotal es 12 × $38.000 = $456.000. Para calcular el total necesito saber: ¿qué porcentaje de descuento (5 % o 10 %) le aplicamos a Panadería Trigal, que es cliente nuevo, y asumimos el envío (que cuesta unos $25.000) o se lo cobramos?\"}",
+"ms": 3082,
+"cost": 0.00047020000000000005,
+"exact": 481000
+},
+{
+"cond": "vague",
+"order": 3,
+"rep": 2,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": null, \"shipping\": null, \"question\": \"Panadería Trigal es cliente nuevo y pide 12 unidades de Ladera 500 g ($456.000 antes de descuento y envío). ¿Aplicamos descuento (entre 5 % y 10 %) y de cuánto? ¿Asumimos el envío o lo cobramos (normalmente unos $25.000)?\"}",
+"ms": 3213,
+"cost": 0.0004487,
+"exact": 481000
+},
+{
+"cond": "vague",
+"order": 3,
+"rep": 3,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": null, \"shipping\": null, \"question\": \"Panadería Trigal es cliente nuevo y pide 12 unidades de Ladera 500 g (subtotal $456.000). ¿Qué descuento aplicamos (entre 5 y 10 %) y el envío lo asumimos nosotros o lo cobramos (normalmente $25.000)?\"}",
+"ms": 2483,
+"cost": 0.0001901,
+"exact": 481000
+},
+{
+"cond": "vague",
+"order": 3,
+"rep": 4,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": null, \"shipping\": null, \"question\": \"Panadería Trigal es cliente nuevo y el pedido es de 12 unidades de Ladera 500 g a $38.000 c/u (subtotal $456.000). ¿Qué descuento aplicamos (entre 5 % y 10 %) y el envío lo asume La Ladera o lo paga el cliente (un envío normal cuesta unos $25.000)?\"}",
+"ms": 3794,
+"cost": 0.0002311,
+"exact": 481000
+},
+{
+"cond": "vague",
+"order": 3,
+"rep": 5,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": null, \"shipping\": null, \"question\": \"Panadería Trigal es cliente nuevo y pide 12 unidades de Ladera 500 g ($38.000 c/u, subtotal $456.000). ¿Le aplicamos descuento por pedido grande, y de cuánto (5 % o 10 %)? ¿El envío lo asume La Ladera o lo paga el cliente (aprox. $25.000)?\"}",
+"ms": 3304,
+"cost": 0.00028010000000000003,
+"exact": 481000
+},
+{
+"cond": "vague",
+"order": 3,
+"rep": 6,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": null, \"shipping\": null, \"question\": \"Panadería Trigal (cliente nuevo) pide 12 unidades de Ladera 500 g a $38.000 c/u, subtotal $456.000. ¿Qué porcentaje de descuento (entre 5 % y 10 %) aplicamos a este cliente nuevo? ¿Y el envío lo asumimos nosotros o lo cobramos (normalmente unos $25.000)?\"}",
+"ms": 3075,
+"cost": 0.00028960000000000005,
+"exact": 481000
+},
+{
+"cond": "vague",
+"order": 3,
+"rep": 7,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": null, \"shipping\": null, \"question\": \"Subtotal: 12 x $38.000 = $456.000. ¿Le aplicamos descuento por volumen a Panadería Trigal (cliente nuevo) y de qué porcentaje (5 % o 10 %)? ¿Asumimos el envío o lo cobramos (normal: ~$25.000)?\"}",
+"ms": 3324,
+"cost": 0.00026060000000000005,
+"exact": 481000
+},
+{
+"cond": "vague",
+"order": 3,
+"rep": 8,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": null, \"shipping\": null, \"question\": \"Pedido de Panadería Trigal (cliente nuevo): 12 × Ladera 500 g a $38.000 = $456.000 de subtotal. ¿Se aplica algún descuento (entre 5 y 10 %) a este pedido? ¿Y el envío lo asume La Ladera o lo cobramos al cliente (normal, unos $25.000)?\"}",
+"ms": 2647,
+"cost": 0.00022360000000000001,
+"exact": 481000
+},
+{
+"cond": "vague",
+"order": 3,
+"rep": 9,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": null, \"shipping\": null, \"question\": \"El subtotal es 12 x $38.000 = $456.000. Para Panadería Trigal (cliente nuevo) no tengo claro el porcentaje de descuento, que va del 5 % al 10 % según el cliente, ni si asumimos el envío (normal: ~$25.000). ¿Qué descuento aplico y el envío lo cobramos o lo asumimos?\"}",
+"ms": 2730,
+"cost": 0.00022810000000000001,
+"exact": 481000
+},
+{
+"cond": "vague",
+"order": 4,
+"rep": 0,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": 10, \"shipping\": null, \"question\": \"Subtotal sin descuento: $3.216.000 (48 Ladera 250 g + 48 Ladera 500 g + 6 Kit filtro). Con 10 % de descuento queda en $2.894.400. ¿Asumimos el envío para este pedido o lo cobramos (normal: $25.000)? Con envío cobrado el total sería $2.919.400; si lo asumimos, $2.894.400.\"}",
+"ms": 6848,
+"cost": 0.0006514,
+"exact": 2894400
+},
+{
+"cond": "vague",
+"order": 4,
+"rep": 1,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": null, \"shipping\": null, \"question\": \"El subtotal del pedido es $3.216.000 (48 × Ladera 250 g a $21.000, 48 × Ladera 500 g a $38.000 y 6 × Kit filtro a $64.000). Para dar el total necesito saber qué porcentaje de descuento (entre 5 % y 10 %) le corresponde a Mercado Ceibo, como cliente desde 2021, y si el envío lo asume la tostadora o se cobra (normalmente unos $25.000).\"}",
+"ms": 4671,
+"cost": 0.0004069,
+"exact": 2894400
+},
+{
+"cond": "vague",
+"order": 4,
+"rep": 2,
+"total": null,
+"raw": "```json\n{\"total\": null, \"discount_percent\": null, \"shipping\": null, \"question\": \"Subtotal del pedido de Mercado Ceibo: $3.216.000 (48 Ladera 250 g + 48 Ladera 500 g + 6 Kit filtro). ¿Qué porcentaje de descuento (entre 5 % y 10 %) le aplicamos a este cliente desde 2021? ¿Y asumimos el envío (aprox. $25.000) o lo cobramos?\"}\n```",
+"ms": 4474,
+"cost": 0.0005039,
+"exact": 2894400
+},
+{
+"cond": "vague",
+"order": 4,
+"rep": 3,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": null, \"shipping\": null, \"question\": \"Mercado Ceibo (cliente desde 2021) tiene un subtotal de $3.216.000 (48 Ladera 250 g, 48 Ladera 500 g y 6 Kit filtro). ¿Qué descuento aplicamos, entre 5 % y 10 %? ¿Asumimos el envío o lo cobramos (normalmente $25.000)?\"}",
+"ms": 5016,
+"cost": 0.0005904,
+"exact": 2894400
+},
+{
+"cond": "vague",
+"order": 4,
+"rep": 4,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": null, \"shipping\": null, \"question\": \"Subtotal sin descuento ni envío: $3.216.000 (48 x Ladera 250 g a $21.000 = $1.008.000; 48 x Ladera 500 g a $38.000 = $1.824.000; 6 x Kit filtro a $64.000 = $384.000). ¿Qué porcentaje de descuento aplicamos a Mercado Ceibo, cliente desde 2021, dentro del rango habitual de 5 a 10 %? Y ¿asumimos el envío (normalmente unos $25.000) o lo cobramos al cliente?\"}",
+"ms": 4022,
+"cost": 0.00038636,
+"exact": 2894400
+},
+{
+"cond": "vague",
+"order": 4,
+"rep": 5,
+"total": 2919400,
+"raw": "{\"total\": 2919400, \"discount_percent\": 10, \"shipping\": 25000, \"question\": null}",
+"ms": 4593,
+"cost": 0.00039886,
+"exact": 2894400
+},
+{
+"cond": "vague",
+"order": 4,
+"rep": 6,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": null, \"shipping\": null, \"question\": \"Subtotal sin descuento ni envío: $3.216.000 (48 Ladera 250 g = $1.008.000; 48 Ladera 500 g = $1.824.000; 6 Kit filtro = $384.000). ¿Qué porcentaje de descuento (entre 5 % y 10 %) le damos a Mercado Ceibo, cliente desde 2021, y asumimos el envío (aprox. $25.000) o se lo cobramos?\"}",
+"ms": 3510,
+"cost": 0.00034436,
+"exact": 2894400
+},
+{
+"cond": "vague",
+"order": 4,
+"rep": 7,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": null, \"shipping\": null, \"question\": \"El subtotal sin descuento ni envío es $3.216.000 (48 Ladera 250 g a $1.008.000, 48 Ladera 500 g a $1.824.000 y 6 Kit filtro a $384.000). Para calcular el total necesito saber: ¿qué porcentaje de descuento aplicamos a Mercado Ceibo, entre 5 % y 10 %, dado que es cliente desde 2021? ¿Y asumimos el envío o lo cobramos (normalmente $25.000)?\"}",
+"ms": 3301,
+"cost": 0.00029736,
+"exact": 2894400
+},
+{
+"cond": "vague",
+"order": 4,
+"rep": 8,
+"total": 2919400,
+"raw": "{\"total\": 2919400, \"discount_percent\": 10, \"shipping\": 25000, \"question\": \"¿Asumimos el envío para este pedido de Mercado Ceibo (cliente desde 2021) o se cobra el envío normal de $25.000? Si se asume, el total sería $2.894.400.\"}",
+"ms": 4209,
+"cost": 0.00039086,
+"exact": 2894400
+},
+{
+"cond": "vague",
+"order": 4,
+"rep": 9,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": 10, \"shipping\": null, \"question\": \"Subtotal: $3.216.000 (48 Ladera 250 g a $21.000 = $1.008.000; 48 Ladera 500 g a $38.000 = $1.824.000; 6 Kit filtro a $64.000 = $384.000). Con 10 % de descuento por ser cliente desde 2021, quedan $2.894.400. ¿Asumimos el envío de este pedido o lo cobramos? Si lo cobramos, el envío normal es de $25.000 y el total sería $2.919.400.\"}",
+"ms": 4366,
+"cost": 0.00039486,
+"exact": 2894400
+},
+{
+"cond": "vague",
+"order": 5,
+"rep": 0,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": null, \"shipping\": null, \"question\": \"Subtotal: 60 × $38.000 + 12 × $64.000 = $3.048.000. Para cliente nuevo la política da entre 5 % y 10 % de descuento, ¿cuál aplicamos? Y el envío: ¿lo asumimos nosotros (sin costo) o lo cobramos (normal ~$25.000)?\"}",
+"ms": 3433,
+"cost": 0.000513,
+"exact": 2743200
+},
+{
+"cond": "vague",
+"order": 5,
+"rep": 1,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": null, \"shipping\": null, \"question\": \"El subtotal es $3.048.000 (60 × Ladera 500 g a $38.000 = $2.280.000, más 12 × Kit filtro a $64.000 = $768.000), antes de descuento y envío. Cliente nuevo: ¿qué porcentaje de descuento aplicamos (entre 5 y 10 %) y asumimos el envío (normal ~$25.000) o lo cobramos al cliente?\"}",
+"ms": 3308,
+"cost": 0.00033874,
+"exact": 2743200
+},
+{
+"cond": "vague",
+"order": 5,
+"rep": 2,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": null, \"shipping\": null, \"question\": \"Subtotal sin descuento ni envío: $3.048.000 (60 × Ladera 500 g a $38.000 = $2.280.000; 12 × Kit filtro a $64.000 = $768.000). Para Restaurante Palo Alto, cliente nuevo: ¿qué porcentaje de descuento aplicamos (entre 5 % y 10 %) y asumimos el envío (costo normal $25.000) o lo cobramos al cliente?\"}",
+"ms": 3551,
+"cost": 0.00034574000000000003,
+"exact": 2743200
+},
+{
+"cond": "vague",
+"order": 5,
+"rep": 3,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": null, \"shipping\": null, \"question\": \"¿Qué descuento (entre 5 % y 10 %) le damos al Restaurante Palo Alto por ser cliente nuevo, y asumimos el envío o lo cobramos (normalmente $25.000)? El subtotal sin descuento ni envío es $3.048.000 (60 × $38.000 + 12 × $64.000).\"}",
+"ms": 2553,
+"cost": 0.00020174,
+"exact": 2743200
+},
+{
+"cond": "vague",
+"order": 5,
+"rep": 4,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": null, \"shipping\": null, \"question\": \"Subtotal sin descuento ni envío: $3.048.000 (60 × Ladera 500 g a $38.000 = $2.280.000; 12 × Kit filtro a $64.000 = $768.000). Para cliente nuevo, ¿qué porcentaje de descuento aplicamos (entre 5 % y 10 %)? Y ¿el envío lo asumimos nosotros o lo cobramos (normalmente $25.000)?\"}",
+"ms": 3516,
+"cost": 0.00031574,
+"exact": 2743200
+},
+{
+"cond": "vague",
+"order": 5,
+"rep": 5,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": null, \"shipping\": null, \"question\": \"Subtotal sin descuento ni envío: $3.048.000 (60 × Ladera 500 g a $38.000 = $2.280.000; 12 × Kit filtro a $64.000 = $768.000). Para cerrar el total necesito saber: (1) qué porcentaje de descuento aplicar a Restaurante Palo Alto, que es cliente nuevo, dentro del rango 5-10 %; (2) si asumimos el envío o lo cobramos, y en ese caso si usamos el valor normal de $25.000.\"}",
+"ms": 3091,
+"cost": 0.00028174,
+"exact": 2743200
+},
+{
+"cond": "vague",
+"order": 5,
+"rep": 6,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": null, \"shipping\": null, \"question\": \"El subtotal del pedido es $3.048.000 (60 × Ladera 500 g a $38.000 = $2.280.000, más 12 × Kit filtro a $64.000 = $768.000). Para calcular el total necesito saber qué porcentaje de descuento (entre 5 % y 10 %) quieres aplicar a Restaurante Palo Alto, que es cliente nuevo, y si asumes el envío o lo cobramos (normal, unos $25.000).\"}",
+"ms": 3268,
+"cost": 0.00029274,
+"exact": 2743200
+},
+{
+"cond": "vague",
+"order": 5,
+"rep": 7,
+"total": null,
+"raw": "```json\n{\"total\": null, \"discount_percent\": null, \"shipping\": null, \"question\": \"El subtotal del pedido es $3.048.000 (60 × Ladera 500 g a $38.000 = $2.280.000, más 12 × Kit filtro a $64.000 = $768.000). Para calcular el total necesito saber: ¿qué porcentaje de descuento (entre 5 % y 10 %) le aplicamos al cliente nuevo Restaurante Palo Alto, y asumimos el envío (normalmente $25.000) o se lo cobramos?\"}\n```",
+"ms": 3070,
+"cost": 0.00027424000000000003,
+"exact": 2743200
+},
+{
+"cond": "vague",
+"order": 5,
+"rep": 8,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": null, \"shipping\": null, \"question\": \"Subtotal del pedido: $3.048.000 (60 × Ladera 500 g a $38.000 = $2.280.000; 12 × Kit filtro a $64.000 = $768.000). Para el cliente nuevo Restaurante Palo Alto, ¿qué porcentaje de descuento (entre 5 % y 10 %) aplicamos, y se asume el envío (normalmente $25.000) o lo cobramos al cliente?\"}",
+"ms": 3091,
+"cost": 0.00026124,
+"exact": 2743200
+},
+{
+"cond": "vague",
+"order": 5,
+"rep": 9,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": null, \"shipping\": null, \"question\": \"Restaurante Palo Alto es cliente nuevo y el subtotal es $3.048.000 (60 × Ladera 500 g a $38.000 = $2.280.000, más 12 × Kit filtro a $64.000 = $768.000). ¿Qué descuento aplicamos, dentro del rango de 5 % a 10 %, y cobramos envío (normal $25.000) o lo asumimos nosotros?\"}",
+"ms": 4006,
+"cost": 0.00037174,
+"exact": 2743200
+},
+{
+"cond": "vague",
+"order": 6,
+"rep": 0,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": 10, \"shipping\": null, \"question\": \"Subtotal: $846.000 (18 × $21.000 + 18 × $26.000). Con 10 % de descuento por ser cliente desde 2023, queda en $761.400 antes de envío. ¿Asumimos el envío de $25.000 para este pedido o lo cobramos al cliente? Y, ¿confirmas el 10 % de descuento?\"}",
+"ms": 3740,
+"cost": 0.0005233,
+"exact": 871000
+},
+{
+"cond": "vague",
+"order": 6,
+"rep": 1,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": null, \"shipping\": null, \"question\": \"Subtotal: 18 × $21.000 + 18 × $26.000 = $846.000, antes de descuento y envío. Para el total necesito saber: (1) ¿qué porcentaje de descuento aplicamos a La Esquina, cliente desde 2023, entre 5 % y 10 %? (2) ¿asumimos el envío o lo cobramos? Si lo cobramos, el normal es de $25.000.\"}",
+"ms": 21661,
+"cost": 0.00034523,
+"exact": 871000
+},
+{
+"cond": "vague",
+"order": 6,
+"rep": 2,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": 10, \"shipping\": null, \"question\": \"¿Asumimos el envío para este pedido (sin cargo) o lo cobramos? Un envío normal cuesta unos $25.000. Con el descuento del 10 %, el subtotal es $761.400 si el envío lo asumimos, o $786.400 si lo cobramos.\"}",
+"ms": 4050,
+"cost": 0.00036323000000000003,
+"exact": 871000
+},
+{
+"cond": "vague",
+"order": 6,
+"rep": 3,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": 10, \"shipping\": null, \"question\": \"¿Confirmas un descuento del 10 % para La Esquina por ser cliente desde 2023? Con ese descuento, el subtotal de 761.400 COP queda antes del envío. ¿Asumimos el envío o lo cobramos (aprox. $25.000)?\"}",
+"ms": 4619,
+"cost": 0.00040923,
+"exact": 871000
+},
+{
+"cond": "vague",
+"order": 6,
+"rep": 4,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": 10, \"shipping\": 25000, \"question\": \"¿Le asumimos el envío a Librería La Esquina o se lo cobramos? Con el envío cobrado (25.000) y 10 % de descuento sobre $846.000, el total sería $786.400. Sin envío, sería $761.400. ¿Confirma también el 10 % de descuento por ser cliente desde 2023?\"}",
+"ms": 4730,
+"cost": 0.00045223,
+"exact": 871000
+},
+{
+"cond": "vague",
+"order": 6,
+"rep": 5,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": 10, \"shipping\": null, \"question\": \"¿Asumimos el envío de este pedido o lo cobramos? Con 10 % de descuento sobre $846.000 (18 × $21.000 + 18 × $26.000), el subtotal es $761.400. Si el envío lo asumimos, el total es $761.400; si se cobra el envío normal de $25.000, el total es $786.400. ¿Confirma también el 10 % de descuento para esta cliente desde 2023?\"}",
+"ms": 4983,
+"cost": 0.00046123000000000003,
+"exact": 871000
+},
+{
+"cond": "vague",
+"order": 6,
+"rep": 6,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": null, \"shipping\": null, \"question\": \"Para La Esquina (cliente desde 2023, 18 de Ladera 250 g y 18 de Nube 250 g, subtotal $846.000) necesito saber: ¿qué porcentaje de descuento aplica (entre 5 % y 10 %) y si el envío lo asumimos nosotros o lo cobramos (normalmente $25.000)?\"}",
+"ms": 3984,
+"cost": 0.00036023,
+"exact": 871000
+},
+{
+"cond": "vague",
+"order": 6,
+"rep": 7,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": 10, \"shipping\": null, \"question\": \"Subtotal: $846.000 (18 × $21.000 + 18 × $26.000). Con 10 % de descuento por cliente desde 2023, queda en $761.400. ¿Asumimos el envío (total $761.400) o lo cobramos (normal ~$25.000, total $786.400)?\"}",
+"ms": 4342,
+"cost": 0.00038423,
+"exact": 871000
+},
+{
+"cond": "vague",
+"order": 6,
+"rep": 8,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": 10, \"shipping\": null, \"question\": \"El subtotal con 10 % de descuento es $761.400 (18 × $21.000 + 18 × $26.000 = $846.000, menos el 10 %). ¿Le asumimos el envío a La Librería La Esquina o se lo cobramos? Si se cobra, el envío normal es de unos $25.000 y el total sería $786.400.\"}",
+"ms": 4642,
+"cost": 0.00040623,
+"exact": 871000
+},
+{
+"cond": "vague",
+"order": 6,
+"rep": 9,
+"total": 786400,
+"raw": "{\"total\": 786400, \"discount_percent\": 10, \"shipping\": 25000, \"question\": \"¿Asumimos el envío para este pedido? Si lo asumimos, el total es $761.400 y shipping sería 0. También confirme si el 10 % de descuento es correcto por ser cliente desde 2023, o si prefiere 5 %.\"}",
+"ms": 4870,
+"cost": 0.00042773,
+"exact": 871000
+},
+{
+"cond": "vague",
+"order": 7,
+"rep": 0,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": null, \"shipping\": null, \"question\": \"El subtotal es 90 × $38.000 = $3.420.000. Para el total necesito saber: ¿qué porcentaje de descuento aplicamos a Oficinas Norte, que es cliente nuevo (entre 5 y 10 %)? ¿Y asumimos el envío o lo cobramos? Si lo cobramos, el envío normal ronda los $25.000.\"}",
+"ms": 3099,
+"cost": 0.0004502,
+"exact": 3078000
+},
+{
+"cond": "vague",
+"order": 7,
+"rep": 1,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": null, \"shipping\": null, \"question\": \"Pedido de Oficinas Norte (cliente nuevo): 90 x Ladera 500 g = $3.420.000 antes de descuento y envío. ¿Qué porcentaje de descuento (entre 5 % y 10 %) le aplicamos a este cliente nuevo, y el envío lo asumimos nosotros o lo cobramos (aprox. $25.000)?\"}",
+"ms": 3479,
+"cost": 0.0002521,
+"exact": 3078000
+},
+{
+"cond": "vague",
+"order": 7,
+"rep": 2,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": null, \"shipping\": null, \"question\": \"Oficinas Norte es cliente nuevo y pide 90 unidades de Ladera 500 g a $38.000 c/u (subtotal $3.420.000). ¿Qué descuento aplicamos (entre 5 % y 10 %) y asumimos el envío o lo cobramos (normal aprox. $25.000)?\"}",
+"ms": 2788,
+"cost": 0.0002406,
+"exact": 3078000
+},
+{
+"cond": "vague",
+"order": 7,
+"rep": 3,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": null, \"shipping\": null, \"question\": \"Oficinas Norte es cliente nuevo y 90 unidades de Ladera 500 g suman $3.420.000 antes de descuento y envío. ¿Qué porcentaje de descuento (entre 5 % y 10 %) quieres aplicarle y el envío lo asumimos nosotros o se cobra (normalmente unos $25.000)?\"}",
+"ms": 2994,
+"cost": 0.0002406,
+"exact": 3078000
+},
+{
+"cond": "vague",
+"order": 7,
+"rep": 4,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": null, \"shipping\": null, \"question\": \"Oficinas Norte es cliente nuevo y el pedido son 90 unidades de Ladera 500 g (subtotal $3.420.000). ¿Qué porcentaje de descuento (entre 5 % y 10 %) le aplicamos, y asumimos el envío o lo cobramos (aprox. $25.000)?\"}",
+"ms": 3627,
+"cost": 0.00028960000000000005,
+"exact": 3078000
+},
+{
+"cond": "vague",
+"order": 7,
+"rep": 5,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": null, \"shipping\": null, \"question\": \"Oficinas Norte es cliente nuevo y pide 90 unidades de Ladera 500 g (subtotal $3.420.000). ¿Qué porcentaje de descuento (entre 5 y 10 %) aplicamos a este cliente, y el envío lo asume La Ladera o lo cobramos al cliente (normal: unos $25.000)?\"}",
+"ms": 3429,
+"cost": 0.0002271,
+"exact": 3078000
+},
+{
+"cond": "vague",
+"order": 7,
+"rep": 6,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": null, \"shipping\": null, \"question\": \"Oficinas Norte es cliente nuevo y pide 90 unidades de Ladera 500 g (subtotal $3.420.000). Para calcular el total necesito saber: ¿qué porcentaje de descuento aplicamos, entre 5 % y 10 %? Y ¿el envío lo asumimos nosotros o lo cobramos (normal unos $25.000)?\"}",
+"ms": 2919,
+"cost": 0.0002216,
+"exact": 3078000
+},
+{
+"cond": "vague",
+"order": 7,
+"rep": 7,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": null, \"shipping\": null, \"question\": \"Subtotal sin descuento: 90 × $38.000 = $3.420.000. Para Oficinas Norte (cliente nuevo) ¿qué porcentaje de descuento aplico, entre 5 % y 10 %, y el envío lo asumimos nosotros o lo cobramos? Si lo cobramos, ¿los $25.000 de envío normal?\"}",
+"ms": 3261,
+"cost": 0.00026510000000000005,
+"exact": 3078000
+},
+{
+"cond": "vague",
+"order": 7,
+"rep": 8,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": null, \"shipping\": null, \"question\": \"Oficinas Norte es cliente nuevo y 90 x Ladera 500 g suman $3.420.000 antes de descuento y envío. ¿Qué descuento (entre 5 % y 10 %) aplicamos y asumimos el envío o lo cobramos (normalmente unos $25.000)?\"}",
+"ms": 2518,
+"cost": 0.0002266,
+"exact": 3078000
+},
+{
+"cond": "vague",
+"order": 7,
+"rep": 9,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": null, \"shipping\": null, \"question\": \"Oficinas Norte es cliente nuevo y el pedido es de 90 unidades de Ladera 500 g ($3.420.000 antes de descuento y envío). ¿Qué descuento aplicamos, entre 5 % y 10 %, y el envío lo asumimos nosotros o lo cobramos (normal, unos $25.000)?\"}",
+"ms": 2892,
+"cost": 0.0002126,
+"exact": 3078000
+},
+{
+"cond": "vague",
+"order": 8,
+"rep": 0,
+"total": 1904200,
+"raw": "{\"total\": 1904200, \"discount_percent\": 10, \"shipping\": 25000, \"question\": \"¿Asumimos el envío de este pedido? Si sí, el total sería $1.879.200.\"}",
+"ms": 3727,
+"cost": 0.000555,
+"exact": 1983600
+},
+{
+"cond": "vague",
+"order": 8,
+"rep": 1,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": 10, \"shipping\": null, \"question\": \"¿Asumimos el envío de este pedido (sin costo para Café del Puente) o lo cobramos a tarifa normal de $25.000? Con descuento del 10 % sobre $2.088.000, el subtotal es $1.879.200; el total sería $1.879.200 si no cobramos envío, o $1.904.200 si cobramos $25.000.\"}",
+"ms": 3908,
+"cost": 0.00038868999999999997,
+"exact": 1983600
+},
+{
+"cond": "vague",
+"order": 8,
+"rep": 2,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": 10, \"shipping\": null, \"question\": \"Subtotal antes de descuento y envío: $2.088.000 (36 × $26.000 + 18 × $64.000). Con 10 % de descuento queda $1.879.200. ¿Asumimos el envío para Café del Puente (sin cargo) o lo cobramos al cliente (aprox. $25.000)? Con envío cobrado el total sería $1.904.200.\"}",
+"ms": 4239,
+"cost": 0.00039968999999999996,
+"exact": 1983600
+},
+{
+"cond": "vague",
+"order": 8,
+"rep": 3,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": null, \"shipping\": null, \"question\": \"Subtotal del pedido: $2.088.000 (36 × $26.000 + 18 × $64.000). Para calcular el total necesito saber: ¿qué porcentaje de descuento le aplicamos a Café del Puente (cliente desde 2020, entre 5 % y 10 %), y el envío lo asumimos nosotros o le cobramos los $25.000 normales?\"}",
+"ms": 3492,
+"cost": 0.00030919,
+"exact": 1983600
+},
+{
+"cond": "vague",
+"order": 8,
+"rep": 4,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": 10, \"shipping\": null, \"question\": \"Subtotal: 36 × $26.000 = $936.000 y 18 × $64.000 = $1.152.000, total $2.088.000. Con 10 % de descuento (cliente desde 2020) queda $1.879.200 antes de envío. ¿Asumimos el envío para Café del Puente o lo cobramos? Si se cobra, son aprox. $25.000 y el total sería $1.904.200.\"}",
+"ms": 4956,
+"cost": 0.00046069,
+"exact": 1983600
+},
+{
+"cond": "vague",
+"order": 8,
+"rep": 5,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": null, \"shipping\": null, \"question\": \"Subtotal sin descuento ni envío: $2.088.000 (36 × Nube 250 g a $26.000 = $936.000; 18 × Kit filtro a $64.000 = $1.152.000). ¿Qué descuento le aplicamos a Café del Puente, entre 5 % y 10 % por ser cliente desde 2020? ¿Asumimos el envío o lo cobramos (normal, unos $25.000)?\"}",
+"ms": 4369,
+"cost": 0.00033669,
+"exact": 1983600
+},
+{
+"cond": "vague",
+"order": 8,
+"rep": 6,
+"total": 1904200,
+"raw": "{\"total\": 1904200, \"discount_percent\": 10, \"shipping\": 25000, \"question\": \"Subtotal $2.088.000 (36 × Nube 250 g a $26.000 + 18 × Kit filtro a $64.000). Asumo 10 % de descuento por ser cliente desde 2020 y envío normal de $25.000. ¿Confirmas el descuento o asumimos el envío por ser pedido grande?\"}",
+"ms": 4348,
+"cost": 0.00040719,
+"exact": 1983600
+},
+{
+"cond": "vague",
+"order": 8,
+"rep": 7,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": 10, \"shipping\": null, \"question\": \"¿Asumimos el envío para el pedido de Café del Puente (36 de Nube 250 g y 18 de Kit filtro, subtotal $2.088.000 antes de descuento) o lo cobramos? Si lo cobramos, el envío normal es de $25.000. Con el 10 % de descuento, el total sería $1.879.200 sin envío o $1.904.200 con envío.\"}",
+"ms": 3240,
+"cost": 0.00030618999999999997,
+"exact": 1983600
+},
+{
+"cond": "vague",
+"order": 8,
+"rep": 8,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": 10, \"shipping\": null, \"question\": \"El subtotal con 10 % de descuento es $1.879.200 antes de envío. ¿Asumimos el envío (costo normal de $25.000) o lo cobramos al cliente? Con el envío cobrado, el total sería $1.904.200.\"}",
+"ms": 4042,
+"cost": 0.00029718999999999997,
+"exact": 1983600
+},
+{
+"cond": "vague",
+"order": 8,
+"rep": 9,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": 10, \"shipping\": null, \"question\": \"Subtotal: 36 × $26.000 + 18 × $64.000 = $2.088.000. Con 10 % de descuento (cliente desde 2020) queda $1.879.200 antes de envío. ¿Asumimos el envío de este pedido (sin costo) o lo cobramos (aprox. $25.000)? ¿Confirmas el 10 % de descuento?\"}",
+"ms": 46131,
+"cost": 0.00041919,
+"exact": 1983600
+},
+{
+"cond": "vague",
+"order": 9,
+"rep": 0,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": null, \"shipping\": null, \"question\": \"¿Qué descuento (entre 5 y 10 %) le aplicamos a Fundación Río Claro, cliente nuevo, y asumimos el envío o lo cobramos? Subtotal sin descuento ni envío: $4.296.000 COP.\"}",
+"ms": 2770,
+"cost": 0.0004215,
+"exact": 3866400
+},
+{
+"cond": "vague",
+"order": 9,
+"rep": 1,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": null, \"shipping\": null, \"question\": \"El subtotal sin descuento es $4.296.000 (72 Ladera 250 g a $1.512.000, 48 Nube 250 g a $1.248.000 y 24 Kit filtro a $1.536.000). Para calcular el total necesito saber: ¿qué porcentaje de descuento (entre 5 y 10 %) le aplicamos a Fundación Río Claro, que es cliente nuevo? ¿Y asumimos el envío o lo cobramos (normalmente $25.000)?\"}",
+"ms": 3322,
+"cost": 0.00032034,
+"exact": 3866400
+},
+{
+"cond": "vague",
+"order": 9,
+"rep": 2,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": null, \"shipping\": null, \"question\": \"Subtotal sin descuento ni envío: $4.296.000 (72 Ladera 250 g = $1.512.000; 48 Nube 250 g = $1.248.000; 24 Kit filtro = $1.536.000). Fundación Río Claro es cliente nuevo: ¿qué porcentaje de descuento (entre 5 % y 10 %) le aplicamos y asumimos el envío (normal ~$25.000) o se lo cobramos?\"}",
+"ms": 3538,
+"cost": 0.00033034000000000004,
+"exact": 3866400
+},
+{
+"cond": "vague",
+"order": 9,
+"rep": 3,
+"total": null,
+"raw": "```json\n{\"total\": null, \"discount_percent\": null, \"shipping\": null, \"question\": \"Fundación Río Claro es cliente nuevo. ¿Qué porcentaje de descuento (entre 5 y 10 %) le aplicamos? Y el envío, ¿lo asumimos nosotros sin costo o se cobra el envío normal de $25.000? El subtotal sin descuento ni envío es $4.296.000 (72 × $21.000 + 48 × $26.000 + 24 × $64.000).\"}\n```",
+"ms": 3290,
+"cost": 0.00032534,
+"exact": 3866400
+},
+{
+"cond": "vague",
+"order": 9,
+"rep": 4,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": null, \"shipping\": null, \"question\": \"Subtotal del pedido sin descuento ni envío: $4.296.000 (72 × $21.000 + 48 × $26.000 + 24 × $64.000). ¿Qué porcentaje de descuento (entre 5 % y 10 %) le aplicamos a Fundación Río Claro, cliente nuevo, y asumimos el envío (normalmente $25.000) o se lo cobramos?\"}",
+"ms": 3747,
+"cost": 0.00034334000000000003,
+"exact": 3866400
+},
+{
+"cond": "vague",
+"order": 9,
+"rep": 5,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": null, \"shipping\": null, \"question\": \"El subtotal del pedido es $4.296.000 (72 × $21.000 + 48 × $26.000 + 24 × $64.000). Para calcular el total necesito saber: 1) ¿Qué porcentaje de descuento (entre 5 % y 10 %) se le aplica a Fundación Río Claro, que es cliente nuevo? 2) ¿El envío lo asume La Ladera o se cobra el envío normal de $25.000?\"}",
+"ms": 3639,
+"cost": 0.00031334,
+"exact": 3866400
+},
+{
+"cond": "vague",
+"order": 9,
+"rep": 6,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": null, \"shipping\": null, \"question\": \"Subtotal sin descuento ni envío: $4.296.000 (72 Ladera 250 g = $1.512.000; 48 Nube 250 g = $1.248.000; 24 Kit filtro = $1.536.000). Para Fundación Río Claro, cliente nuevo, ¿qué porcentaje de descuento (entre 5 % y 10 %) aplicamos y asumimos el envío (normal, ~$25.000) o lo cobramos al cliente?\"}",
+"ms": 2963,
+"cost": 0.00027634000000000003,
+"exact": 3866400
+},
+{
+"cond": "vague",
+"order": 9,
+"rep": 7,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": null, \"shipping\": null, \"question\": \"El subtotal sin descuento ni envío es $4.296.000 (72 × $21.000 + 48 × $26.000 + 24 × $64.000). ¿Qué porcentaje de descuento (entre 5 % y 10 %) le aplicamos a Fundación Río Claro, cliente nuevo? ¿Y el envío (aprox. $25.000) lo asumimos nosotros o lo cobramos al cliente?\"}",
+"ms": 2994,
+"cost": 0.00025684,
+"exact": 3866400
+},
+{
+"cond": "vague",
+"order": 9,
+"rep": 8,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": null, \"shipping\": null, \"question\": \"El subtotal del pedido de Fundación Río Claro es $4.296.000 (72 × $21.000 + 48 × $26.000 + 24 × $64.000). Para calcular el total necesito saber: ¿qué porcentaje de descuento (entre 5 % y 10 %) se le aplica a este cliente nuevo? ¿Y el envío lo asumimos nosotros o lo cobramos (normalmente unos $25.000)?\"}",
+"ms": 3359,
+"cost": 0.00027284,
+"exact": 3866400
+},
+{
+"cond": "vague",
+"order": 9,
+"rep": 9,
+"total": null,
+"raw": "{\"total\": null, \"discount_percent\": null, \"shipping\": null, \"question\": \"Para Fundación Río Claro (cliente nuevo, subtotal $4.296.000 COP), ¿qué descuento aplicamos entre 5 % y 10 % y asumimos el envío o lo cobramos (normalmente $25.000)?\"}",
+"ms": 2743,
+"cost": 0.00021584000000000002,
+"exact": 3866400
+},
+{
+"cond": "rules",
+"order": 0,
+"rep": 0,
+"total": 913000,
+"raw": "{\"total\": 913000, \"discount_percent\": 0, \"shipping\": 25000, \"question\": null}",
+"ms": 3225,
+"cost": 0.00028450000000000003,
+"exact": 913000
+},
+{
+"cond": "rules",
+"order": 0,
+"rep": 1,
+"total": 913000,
+"raw": "{\"total\": 913000, \"discount_percent\": 0, \"shipping\": 25000, \"question\": null}",
+"ms": 2696,
+"cost": 0.0002795,
+"exact": 913000
+},
+{
+"cond": "rules",
+"order": 0,
+"rep": 2,
+"total": 913000,
+"raw": "{\"total\": 913000, \"discount_percent\": 0, \"shipping\": 25000, \"question\": null}",
+"ms": 2684,
+"cost": 0.000277,
+"exact": 913000
+},
+{
+"cond": "rules",
+"order": 0,
+"rep": 3,
+"total": 913000,
+"raw": "{\"total\": 913000, \"discount_percent\": 0, \"shipping\": 25000, \"question\": null}",
+"ms": 1371,
+"cost": 0.00028,
+"exact": 913000
+},
+{
+"cond": "rules",
+"order": 0,
+"rep": 4,
+"total": 913000,
+"raw": "{\"total\": 913000, \"discount_percent\": 0, \"shipping\": 25000, \"question\": null}",
+"ms": 1142,
+"cost": 0.000273,
+"exact": 913000
+},
+{
+"cond": "rules",
+"order": 0,
+"rep": 5,
+"total": 913000,
+"raw": "{\"total\": 913000, \"discount_percent\": 0, \"shipping\": 25000, \"question\": null}",
+"ms": 55136,
+"cost": 9.139e-05,
+"exact": 913000
+},
+{
+"cond": "rules",
+"order": 0,
+"rep": 6,
+"total": 913000,
+"raw": "{\"total\": 913000, \"discount_percent\": 0, \"shipping\": 25000, \"question\": null}",
+"ms": 1313,
+"cost": 8.389e-05,
+"exact": 913000
+},
+{
+"cond": "rules",
+"order": 0,
+"rep": 7,
+"total": 913000,
+"raw": "{\"total\": 913000, \"discount_percent\": 0, \"shipping\": 25000, \"question\": null}",
+"ms": 1271,
+"cost": 8.939e-05,
+"exact": 913000
+},
+{
+"cond": "rules",
+"order": 0,
+"rep": 8,
+"total": 913000,
+"raw": "{\"total\": 913000, \"discount_percent\": 0, \"shipping\": 25000, \"question\": null}",
+"ms": 1280,
+"cost": 8.989e-05,
+"exact": 913000
+},
+{
+"cond": "rules",
+"order": 0,
+"rep": 9,
+"total": 913000,
+"raw": "{\"total\": 913000, \"discount_percent\": 0, \"shipping\": 25000, \"question\": null}",
+"ms": 1290,
+"cost": 9.289e-05,
+"exact": 913000
+},
+{
+"cond": "rules",
+"order": 1,
+"rep": 0,
+"total": 1482000,
+"raw": "{\"total\": 1482000, \"discount_percent\": 5, \"shipping\": 0, \"question\": null}",
+"ms": 2776,
+"cost": 0.00028970000000000005,
+"exact": 1482000
+},
+{
+"cond": "rules",
+"order": 1,
+"rep": 1,
+"total": 1482000,
+"raw": "{\"total\": 1482000, \"discount_percent\": 5, \"shipping\": 0, \"question\": null}",
+"ms": 3177,
+"cost": 0.00032720000000000004,
+"exact": 1482000
+},
+{
+"cond": "rules",
+"order": 1,
+"rep": 2,
+"total": 1482000,
+"raw": "{\"total\": 1482000, \"discount_percent\": 5, \"shipping\": 0, \"question\": null}",
+"ms": 1483,
+"cost": 0.0002887,
+"exact": 1482000
+},
+{
+"cond": "rules",
+"order": 1,
+"rep": 3,
+"total": 1482000,
+"raw": "{\"total\": 1482000, \"discount_percent\": 5, \"shipping\": 0, \"question\": null}",
+"ms": 1375,
+"cost": 9.730000000000001e-05,
+"exact": 1482000
+},
+{
+"cond": "rules",
+"order": 1,
+"rep": 4,
+"total": 1482000,
+"raw": "{\"total\": 1482000, \"discount_percent\": 5, \"shipping\": 0, \"question\": null}",
+"ms": 1800,
+"cost": 0.0001388,
+"exact": 1482000
+},
+{
+"cond": "rules",
+"order": 1,
+"rep": 5,
+"total": 1482000,
+"raw": "{\"total\": 1482000, \"discount_percent\": 5, \"shipping\": 0, \"question\": null}",
+"ms": 1689,
+"cost": 0.0001238,
+"exact": 1482000
+},
+{
+"cond": "rules",
+"order": 1,
+"rep": 6,
+"total": 1482000,
+"raw": "{\"total\": 1482000, \"discount_percent\": 5, \"shipping\": 0, \"question\": null}",
+"ms": 1406,
+"cost": 0.0001078,
+"exact": 1482000
+},
+{
+"cond": "rules",
+"order": 1,
+"rep": 7,
+"total": 1482000,
+"raw": "{\"total\": 1482000, \"discount_percent\": 5, \"shipping\": 0, \"question\": null}",
+"ms": 1813,
+"cost": 0.0001308,
+"exact": 1482000
+},
+{
+"cond": "rules",
+"order": 1,
+"rep": 8,
+"total": 1482000,
+"raw": "{\"total\": 1482000, \"discount_percent\": 5, \"shipping\": 0, \"question\": null}",
+"ms": 1459,
+"cost": 9.730000000000001e-05,
+"exact": 1482000
+},
+{
+"cond": "rules",
+"order": 1,
+"rep": 9,
+"total": 1482000,
+"raw": "{\"total\": 1482000, \"discount_percent\": 5, \"shipping\": 0, \"question\": null}",
+"ms": 1424,
+"cost": 9.88e-05,
+"exact": 1482000
+},
+{
+"cond": "rules",
+"order": 2,
+"rep": 0,
+"total": 1892400,
+"raw": "{\"total\": 1892400, \"discount_percent\": 5, \"shipping\": 0, \"question\": null}",
+"ms": 3418,
+"cost": 0.0003118,
+"exact": 1892400
+},
+{
+"cond": "rules",
+"order": 2,
+"rep": 1,
+"total": 1892400,
+"raw": "{\"total\": 1892400, \"discount_percent\": 5, \"shipping\": 0, \"question\": null}",
+"ms": 3307,
+"cost": 0.0002928,
+"exact": 1892400
+},
+{
+"cond": "rules",
+"order": 2,
+"rep": 2,
+"total": 1892400,
+"raw": "{\"total\": 1892400, \"discount_percent\": 5, \"shipping\": 0, \"question\": null}",
+"ms": 3506,
+"cost": 0.0002948,
+"exact": 1892400
+},
+{
+"cond": "rules",
+"order": 2,
+"rep": 3,
+"total": 1892400,
+"raw": "{\"total\": 1892400, \"discount_percent\": 5, \"shipping\": 0, \"question\": null}",
+"ms": 1834,
+"cost": 0.00029330000000000003,
+"exact": 1892400
+},
+{
+"cond": "rules",
+"order": 2,
+"rep": 4,
+"total": 1892400,
+"raw": "{\"total\": 1892400, \"discount_percent\": 5, \"shipping\": 0, \"question\": null}",
+"ms": 1930,
+"cost": 0.0002943,
+"exact": 1892400
+},
+{
+"cond": "rules",
+"order": 2,
+"rep": 5,
+"total": 1892400,
+"raw": "{\"total\": 1892400, \"discount_percent\": 5, \"shipping\": 0, \"question\": null}",
+"ms": 1480,
+"cost": 0.0002973,
+"exact": 1892400
+},
+{
+"cond": "rules",
+"order": 2,
+"rep": 6,
+"total": 1892400,
+"raw": "{\"total\": 1892400, \"discount_percent\": 5, \"shipping\": 0, \"question\": null}",
+"ms": 1518,
+"cost": 0.00010293,
+"exact": 1892400
+},
+{
+"cond": "rules",
+"order": 2,
+"rep": 7,
+"total": 1892400,
+"raw": "{\"total\": 1892400, \"discount_percent\": 5, \"shipping\": 0, \"question\": null}",
+"ms": 1370,
+"cost": 0.00010593000000000001,
+"exact": 1892400
+},
+{
+"cond": "rules",
+"order": 2,
+"rep": 8,
+"total": 1892400,
+"raw": "{\"total\": 1892400, \"discount_percent\": 5, \"shipping\": 0, \"question\": null}",
+"ms": 1652,
+"cost": 0.00012543,
+"exact": 1892400
+},
+{
+"cond": "rules",
+"order": 2,
+"rep": 9,
+"total": 1892400,
+"raw": "{\"total\": 1892400, \"discount_percent\": 5, \"shipping\": 0, \"question\": null}",
+"ms": 1347,
+"cost": 0.00010193000000000001,
+"exact": 1892400
+},
+{
+"cond": "rules",
+"order": 3,
+"rep": 0,
+"total": 481000,
+"raw": "{\"total\": 481000, \"discount_percent\": 0, \"shipping\": 25000, \"question\": null}",
+"ms": 2319,
+"cost": 0.000264,
+"exact": 481000
+},
+{
+"cond": "rules",
+"order": 3,
+"rep": 1,
+"total": 481000,
+"raw": "{\"total\": 481000, \"discount_percent\": 0, \"shipping\": 25000, \"question\": null}",
+"ms": 1496,
+"cost": 0.000264,
+"exact": 481000
+},
+{
+"cond": "rules",
+"order": 3,
+"rep": 2,
+"total": 481000,
+"raw": "{\"total\": 481000, \"discount_percent\": 0, \"shipping\": 25000, \"question\": null}",
+"ms": 1235,
+"cost": 7.528999999999999e-05,
+"exact": 481000
+},
+{
+"cond": "rules",
+"order": 3,
+"rep": 3,
+"total": 481000,
+"raw": "{\"total\": 481000, \"discount_percent\": 0, \"shipping\": 25000, \"question\": null}",
+"ms": 1151,
+"cost": 7.229e-05,
+"exact": 481000
+},
+{
+"cond": "rules",
+"order": 3,
+"rep": 4,
+"total": 481000,
+"raw": "{\"total\": 481000, \"discount_percent\": 0, \"shipping\": 25000, \"question\": null}",
+"ms": 1164,
+"cost": 7.029e-05,
+"exact": 481000
+},
+{
+"cond": "rules",
+"order": 3,
+"rep": 5,
+"total": 481000,
+"raw": "{\"total\": 481000, \"discount_percent\": 0, \"shipping\": 25000, \"question\": null}",
+"ms": 63821,
+"cost": 7.479000000000001e-05,
+"exact": 481000
+},
+{
+"cond": "rules",
+"order": 3,
+"rep": 6,
+"total": 481000,
+"raw": "{\"total\": 481000, \"discount_percent\": 0, \"shipping\": 25000, \"question\": null}",
+"ms": 1510,
+"cost": 8.379000000000001e-05,
+"exact": 481000
+},
+{
+"cond": "rules",
+"order": 3,
+"rep": 7,
+"total": 481000,
+"raw": "{\"total\": 481000, \"discount_percent\": 0, \"shipping\": 25000, \"question\": null}",
+"ms": 1272,
+"cost": 7.029e-05,
+"exact": 481000
+},
+{
+"cond": "rules",
+"order": 3,
+"rep": 8,
+"total": 481000,
+"raw": "{\"total\": 481000, \"discount_percent\": 0, \"shipping\": 25000, \"question\": null}",
+"ms": 13944,
+"cost": 7.029e-05,
+"exact": 481000
+},
+{
+"cond": "rules",
+"order": 3,
+"rep": 9,
+"total": 481000,
+"raw": "{\"total\": 481000, \"discount_percent\": 0, \"shipping\": 25000, \"question\": null}",
+"ms": 1170,
+"cost": 7.279000000000001e-05,
+"exact": 481000
+},
+{
+"cond": "rules",
+"order": 4,
+"rep": 0,
+"total": 2894400,
+"raw": "{\"total\": 2894400, \"discount_percent\": 10, \"shipping\": 0, \"question\": null}",
+"ms": 2348,
+"cost": 0.0003247,
+"exact": 2894400
+},
+{
+"cond": "rules",
+"order": 4,
+"rep": 1,
+"total": 2894400,
+"raw": "{\"total\": 2894400, \"discount_percent\": 10, \"shipping\": 0, \"question\": null}",
+"ms": 1677,
+"cost": 0.00013005000000000002,
+"exact": 2894400
+},
+{
+"cond": "rules",
+"order": 4,
+"rep": 2,
+"total": 2894400,
+"raw": "{\"total\": 2894400, \"discount_percent\": 10, \"shipping\": 0, \"question\": null}",
+"ms": 1515,
+"cost": 0.00012205,
+"exact": 2894400
+},
+{
+"cond": "rules",
+"order": 4,
+"rep": 3,
+"total": 2894400,
+"raw": "{\"total\": 2894400, \"discount_percent\": 10, \"shipping\": 0, \"question\": null}",
+"ms": 1485,
+"cost": 0.00012805,
+"exact": 2894400
+},
+{
+"cond": "rules",
+"order": 4,
+"rep": 4,
+"total": 2894400,
+"raw": "{\"total\": 2894400, \"discount_percent\": 10, \"shipping\": 0, \"question\": null}",
+"ms": 1680,
+"cost": 0.00014255000000000002,
+"exact": 2894400
+},
+{
+"cond": "rules",
+"order": 4,
+"rep": 5,
+"total": 2894400,
+"raw": "{\"total\": 2894400, \"discount_percent\": 10, \"shipping\": 0, \"question\": null}",
+"ms": 1557,
+"cost": 0.00012755,
+"exact": 2894400
+},
+{
+"cond": "rules",
+"order": 4,
+"rep": 6,
+"total": 2894400,
+"raw": "{\"total\": 2894400, \"discount_percent\": 10, \"shipping\": 0, \"question\": null}",
+"ms": 1641,
+"cost": 0.00012905,
+"exact": 2894400
+},
+{
+"cond": "rules",
+"order": 4,
+"rep": 7,
+"total": 2894400,
+"raw": "{\"total\": 2894400, \"discount_percent\": 10, \"shipping\": 0, \"question\": null}",
+"ms": 1596,
+"cost": 0.00012855,
+"exact": 2894400
+},
+{
+"cond": "rules",
+"order": 4,
+"rep": 8,
+"total": 2894400,
+"raw": "{\"total\": 2894400, \"discount_percent\": 10, \"shipping\": 0, \"question\": null}",
+"ms": 1651,
+"cost": 0.00014205,
+"exact": 2894400
+},
+{
+"cond": "rules",
+"order": 4,
+"rep": 9,
+"total": 2894400,
+"raw": "{\"total\": 2894400, \"discount_percent\": 10, \"shipping\": 0, \"question\": null}",
+"ms": 1372,
+"cost": 0.00010405,
+"exact": 2894400
+},
+{
+"cond": "rules",
+"order": 5,
+"rep": 0,
+"total": 2743200,
+"raw": "{\"total\": 2743200, \"discount_percent\": 10, \"shipping\": 0, \"question\": null}",
+"ms": 3308,
+"cost": 0.0002938,
+"exact": 2743200
+},
+{
+"cond": "rules",
+"order": 5,
+"rep": 1,
+"total": 2743200,
+"raw": "{\"total\": 2743200, \"discount_percent\": 10, \"shipping\": 0, \"question\": null}",
+"ms": 2916,
+"cost": 0.0003088,
+"exact": 2743200
+},
+{
+"cond": "rules",
+"order": 5,
+"rep": 2,
+"total": 2743200,
+"raw": "{\"total\": 2743200, \"discount_percent\": 10, \"shipping\": 0, \"question\": null}",
+"ms": 1277,
+"cost": 0.0002863,
+"exact": 2743200
+},
+{
+"cond": "rules",
+"order": 5,
+"rep": 3,
+"total": 2743200,
+"raw": "{\"total\": 2743200, \"discount_percent\": 10, \"shipping\": 0, \"question\": null}",
+"ms": 1669,
+"cost": 0.00012393,
+"exact": 2743200
+},
+{
+"cond": "rules",
+"order": 5,
+"rep": 4,
+"total": 2743200,
+"raw": "{\"total\": 2743200, \"discount_percent\": 10, \"shipping\": 0, \"question\": null}",
+"ms": 1496,
+"cost": 0.00011093000000000001,
+"exact": 2743200
+},
+{
+"cond": "rules",
+"order": 5,
+"rep": 5,
+"total": 2743200,
+"raw": "{\"total\": 2743200, \"discount_percent\": 10, \"shipping\": 0, \"question\": null}",
+"ms": 1368,
+"cost": 0.00010443,
+"exact": 2743200
+},
+{
+"cond": "rules",
+"order": 5,
+"rep": 6,
+"total": 2743200,
+"raw": "{\"total\": 2743200, \"discount_percent\": 10, \"shipping\": 0, \"question\": null}",
+"ms": 1648,
+"cost": 0.00011943000000000001,
+"exact": 2743200
+},
+{
+"cond": "rules",
+"order": 5,
+"rep": 7,
+"total": 2743200,
+"raw": "{\"total\": 2743200, \"discount_percent\": 10, \"shipping\": 0, \"question\": null}",
+"ms": 1291,
+"cost": 9.943e-05,
+"exact": 2743200
+},
+{
+"cond": "rules",
+"order": 5,
+"rep": 8,
+"total": 2743200,
+"raw": "{\"total\": 2743200, \"discount_percent\": 10, \"shipping\": 0, \"question\": null}",
+"ms": 1467,
+"cost": 0.00010493000000000001,
+"exact": 2743200
+},
+{
+"cond": "rules",
+"order": 5,
+"rep": 9,
+"total": 2743200,
+"raw": "{\"total\": 2743200, \"discount_percent\": 10, \"shipping\": 0, \"question\": null}",
+"ms": 1311,
+"cost": 9.893e-05,
+"exact": 2743200
+},
+{
+"cond": "rules",
+"order": 6,
+"rep": 0,
+"total": 871000,
+"raw": "{\"total\": 871000, \"discount_percent\": 0, \"shipping\": 25000, \"question\": null}",
+"ms": 2303,
+"cost": 0.00028209999999999997,
+"exact": 871000
+},
+{
+"cond": "rules",
+"order": 6,
+"rep": 1,
+"total": 871000,
+"raw": "{\"total\": 871000, \"discount_percent\": 0, \"shipping\": 25000, \"question\": null}",
+"ms": 2220,
+"cost": 0.0002766,
+"exact": 871000
+},
+{
+"cond": "rules",
+"order": 6,
+"rep": 2,
+"total": 871000,
+"raw": "{\"total\": 871000, \"discount_percent\": 0, \"shipping\": 25000, \"question\": null}",
+"ms": 1662,
+"cost": 0.0002736,
+"exact": 871000
+},
+{
+"cond": "rules",
+"order": 6,
+"rep": 3,
+"total": 871000,
+"raw": "{\"total\": 871000, \"discount_percent\": 0, \"shipping\": 25000, \"question\": null}",
+"ms": 1748,
+"cost": 0.00028209999999999997,
+"exact": 871000
+},
+{
+"cond": "rules",
+"order": 6,
+"rep": 4,
+"total": 871000,
+"raw": "{\"total\": 871000, \"discount_percent\": 0, \"shipping\": 25000, \"question\": null}",
+"ms": 1676,
+"cost": 0.00028209999999999997,
+"exact": 871000
+},
+{
+"cond": "rules",
+"order": 6,
+"rep": 5,
+"total": 871000,
+"raw": "{\"total\": 871000, \"discount_percent\": 0, \"shipping\": 25000, \"question\": null}",
+"ms": 1376,
+"cost": 9.392e-05,
+"exact": 871000
+},
+{
+"cond": "rules",
+"order": 6,
+"rep": 6,
+"total": 871000,
+"raw": "{\"total\": 871000, \"discount_percent\": 0, \"shipping\": 25000, \"question\": null}",
+"ms": 1324,
+"cost": 9.142e-05,
+"exact": 871000
+},
+{
+"cond": "rules",
+"order": 6,
+"rep": 7,
+"total": 871000,
+"raw": "{\"total\": 871000, \"discount_percent\": 0, \"shipping\": 25000, \"question\": null}",
+"ms": 1536,
+"cost": 7.392e-05,
+"exact": 871000
+},
+{
+"cond": "rules",
+"order": 6,
+"rep": 8,
+"total": 871000,
+"raw": "{\"total\": 871000, \"discount_percent\": 0, \"shipping\": 25000, \"question\": null}",
+"ms": 1864,
+"cost": 8.242e-05,
+"exact": 871000
+},
+{
+"cond": "rules",
+"order": 6,
+"rep": 9,
+"total": 871000,
+"raw": "{\"total\": 871000, \"discount_percent\": 0, \"shipping\": 25000, \"question\": null}",
+"ms": 1630,
+"cost": 9.142e-05,
+"exact": 871000
+},
+{
+"cond": "rules",
+"order": 7,
+"rep": 0,
+"total": 3078000,
+"raw": "{\"total\": 3078000, \"discount_percent\": 10, \"shipping\": 0, \"question\": null}",
+"ms": 2609,
+"cost": 0.000299,
+"exact": 3078000
+},
+{
+"cond": "rules",
+"order": 7,
+"rep": 1,
+"total": 3078000,
+"raw": "{\"total\": 3078000, \"discount_percent\": 10, \"shipping\": 0, \"question\": null}",
+"ms": 2567,
+"cost": 0.0002995,
+"exact": 3078000
+},
+{
+"cond": "rules",
+"order": 7,
+"rep": 2,
+"total": 3078000,
+"raw": "{\"total\": 3078000, \"discount_percent\": 10, \"shipping\": 0, \"question\": null}",
+"ms": 2211,
+"cost": 0.000276,
+"exact": 3078000
+},
+{
+"cond": "rules",
+"order": 7,
+"rep": 3,
+"total": 3078000,
+"raw": "{\"total\": 3078000, \"discount_percent\": 10, \"shipping\": 0, \"question\": null}",
+"ms": 2036,
+"cost": 0.0002985,
+"exact": 3078000
+},
+{
+"cond": "rules",
+"order": 7,
+"rep": 4,
+"total": 3078000,
+"raw": "{\"total\": 3078000, \"discount_percent\": 10, \"shipping\": 0, \"question\": null}",
+"ms": 2011,
+"cost": 0.0002985,
+"exact": 3078000
+},
+{
+"cond": "rules",
+"order": 7,
+"rep": 5,
+"total": 3078000,
+"raw": "{\"total\": 3078000, \"discount_percent\": 10, \"shipping\": 0, \"question\": null}",
+"ms": 1479,
+"cost": 0.00010529000000000002,
+"exact": 3078000
+},
+{
+"cond": "rules",
+"order": 7,
+"rep": 6,
+"total": 3078000,
+"raw": "{\"total\": 3078000, \"discount_percent\": 10, \"shipping\": 0, \"question\": null}",
+"ms": 1575,
+"cost": 0.00010929,
+"exact": 3078000
+},
+{
+"cond": "rules",
+"order": 7,
+"rep": 7,
+"total": 3078000,
+"raw": "{\"total\": 3078000, \"discount_percent\": 10, \"shipping\": 0, \"question\": null}",
+"ms": 1410,
+"cost": 8.879e-05,
+"exact": 3078000
+},
+{
+"cond": "rules",
+"order": 7,
+"rep": 8,
+"total": 3078000,
+"raw": "{\"total\": 3078000, \"discount_percent\": 10, \"shipping\": 0, \"question\": null}",
+"ms": 1375,
+"cost": 9.029e-05,
+"exact": 3078000
+},
+{
+"cond": "rules",
+"order": 7,
+"rep": 9,
+"total": 3078000,
+"raw": "{\"total\": 3078000, \"discount_percent\": 10, \"shipping\": 0, \"question\": null}",
+"ms": 1504,
+"cost": 0.00010629000000000001,
+"exact": 3078000
+},
+{
+"cond": "rules",
+"order": 8,
+"rep": 0,
+"total": 1983600,
+"raw": "{\"total\": 1983600, \"discount_percent\": 5, \"shipping\": 0, \"question\": null}",
+"ms": 1823,
+"cost": 0.00029380000000000004,
+"exact": 1983600
+},
+{
+"cond": "rules",
+"order": 8,
+"rep": 1,
+"total": 1983600,
+"raw": "{\"total\": 1983600, \"discount_percent\": 5, \"shipping\": 0, \"question\": null}",
+"ms": 1652,
+"cost": 0.0003168,
+"exact": 1983600
+},
+{
+"cond": "rules",
+"order": 8,
+"rep": 2,
+"total": 1983600,
+"raw": "{\"total\": 1983600, \"discount_percent\": 5, \"shipping\": 0, \"question\": null}",
+"ms": 1759,
+"cost": 0.00012838,
+"exact": 1983600
+},
+{
+"cond": "rules",
+"order": 8,
+"rep": 3,
+"total": 1983600,
+"raw": "{\"total\": 1983600, \"discount_percent\": 5, \"shipping\": 0, \"question\": null}",
+"ms": 1716,
+"cost": 0.00011338,
+"exact": 1983600
+},
+{
+"cond": "rules",
+"order": 8,
+"rep": 4,
+"total": 1983600,
+"raw": "{\"total\": 1983600, \"discount_percent\": 5, \"shipping\": 0, \"question\": null}",
+"ms": 1715,
+"cost": 0.00013538,
+"exact": 1983600
+},
+{
+"cond": "rules",
+"order": 8,
+"rep": 5,
+"total": 1983600,
+"raw": "{\"total\": 1983600, \"discount_percent\": 5, \"shipping\": 0, \"question\": null}",
+"ms": 1726,
+"cost": 0.00013388,
+"exact": 1983600
+},
+{
+"cond": "rules",
+"order": 8,
+"rep": 6,
+"total": 1983600,
+"raw": "{\"total\": 1983600, \"discount_percent\": 5, \"shipping\": 0, \"question\": null}",
+"ms": 1642,
+"cost": 0.00012088000000000001,
+"exact": 1983600
+},
+{
+"cond": "rules",
+"order": 8,
+"rep": 7,
+"total": 1983600,
+"raw": "{\"total\": 1983600, \"discount_percent\": 5, \"shipping\": 0, \"question\": null}",
+"ms": 1971,
+"cost": 0.00015937999999999998,
+"exact": 1983600
+},
+{
+"cond": "rules",
+"order": 8,
+"rep": 8,
+"total": 1983600,
+"raw": "{\"total\": 1983600, \"discount_percent\": 5, \"shipping\": 0, \"question\": null}",
+"ms": 1512,
+"cost": 0.00012538000000000002,
+"exact": 1983600
+},
+{
+"cond": "rules",
+"order": 8,
+"rep": 9,
+"total": 1983600,
+"raw": "{\"total\": 1983600, \"discount_percent\": 5, \"shipping\": 0, \"question\": null}",
+"ms": 1370,
+"cost": 0.00010488000000000001,
+"exact": 1983600
+},
+{
+"cond": "rules",
+"order": 9,
+"rep": 0,
+"total": 3866400,
+"raw": "{\"total\": 3866400, \"discount_percent\": 10, \"shipping\": 0, \"question\": null}",
+"ms": 1827,
+"cost": 0.0003133,
+"exact": 3866400
+},
+{
+"cond": "rules",
+"order": 9,
+"rep": 1,
+"total": 3866400,
+"raw": "{\"total\": 3866400, \"discount_percent\": 10, \"shipping\": 0, \"question\": null}",
+"ms": 1591,
+"cost": 0.00032680000000000003,
+"exact": 3866400
+},
+{
+"cond": "rules",
+"order": 9,
+"rep": 2,
+"total": 3866400,
+"raw": "{\"total\": 3866400, \"discount_percent\": 10, \"shipping\": 0, \"question\": null}",
+"ms": 1710,
+"cost": 0.00033630000000000004,
+"exact": 3866400
+},
+{
+"cond": "rules",
+"order": 9,
+"rep": 3,
+"total": 3866400,
+"raw": "{\"total\": 3866400, \"discount_percent\": 10, \"shipping\": 0, \"question\": null}",
+"ms": 1717,
+"cost": 0.00014103,
+"exact": 3866400
+},
+{
+"cond": "rules",
+"order": 9,
+"rep": 4,
+"total": 3866400,
+"raw": "{\"total\": 3866400, \"discount_percent\": 10, \"shipping\": 0, \"question\": null}",
+"ms": 183718,
+"cost": 0.00013403,
+"exact": 3866400
+},
+{
+"cond": "rules",
+"order": 9,
+"rep": 5,
+"total": 3866400,
+"raw": "{\"total\": 3866400, \"discount_percent\": 10, \"shipping\": 0, \"question\": null}",
+"ms": 1542,
+"cost": 0.00011253000000000001,
+"exact": 3866400
+},
+{
+"cond": "rules",
+"order": 9,
+"rep": 6,
+"total": 3866400,
+"raw": "{\"total\": 3866400, \"discount_percent\": 10, \"shipping\": 0, \"question\": null}",
+"ms": 1452,
+"cost": 0.00010153000000000001,
+"exact": 3866400
+},
+{
+"cond": "rules",
+"order": 9,
+"rep": 7,
+"total": 3866400,
+"raw": "{\"total\": 3866400, \"discount_percent\": 10, \"shipping\": 0, \"question\": null}",
+"ms": 1582,
+"cost": 0.00012253,
+"exact": 3866400
+},
+{
+"cond": "rules",
+"order": 9,
+"rep": 8,
+"total": 3866400,
+"raw": "{\"total\": 3866400, \"discount_percent\": 10, \"shipping\": 0, \"question\": null}",
+"ms": 1400,
+"cost": 0.00011103000000000001,
+"exact": 3866400
+},
+{
+"cond": "rules",
+"order": 9,
+"rep": 9,
+"total": 3866400,
+"raw": "{\"total\": 3866400, \"discount_percent\": 10, \"shipping\": 0, \"question\": null}",
+"ms": 1480,
+"cost": 0.00011853,
+"exact": 3866400
+},
+{
+"cond": "reads",
+"order": 0,
+"rep": 0,
+"total": 913000,
+"raw": "{\"items\": {\"Ladera 250 g\": 24, \"Kit filtro\": 6}}",
+"ms": 1022,
+"cost": 0.00016400000000000003,
+"exact": 913000
+},
+{
+"cond": "reads",
+"order": 0,
+"rep": 1,
+"total": 913000,
+"raw": "{\"items\": {\"Ladera 250 g\": 24, \"Kit filtro\": 6}}",
+"ms": 1034,
+"cost": 0.00016400000000000003,
+"exact": 913000
+},
+{
+"cond": "reads",
+"order": 0,
+"rep": 2,
+"total": 913000,
+"raw": "{\"items\": {\"Ladera 250 g\": 24, \"Kit filtro\": 6}}",
+"ms": 2909,
+"cost": 2.359e-05,
+"exact": 913000
+},
+{
+"cond": "reads",
+"order": 0,
+"rep": 3,
+"total": 913000,
+"raw": "{\"items\": {\"Ladera 250 g\": 24, \"Kit filtro\": 6}}",
+"ms": 3010,
+"cost": 2.359e-05,
+"exact": 913000
+},
+{
+"cond": "reads",
+"order": 0,
+"rep": 4,
+"total": 913000,
+"raw": "{\"items\": {\"Ladera 250 g\": 24, \"Kit filtro\": 6}}",
+"ms": 2971,
+"cost": 2.359e-05,
+"exact": 913000
+},
+{
+"cond": "reads",
+"order": 0,
+"rep": 5,
+"total": 913000,
+"raw": "{\"items\": {\"Ladera 250 g\": 24, \"Kit filtro\": 6}}",
+"ms": 1856,
+"cost": 2.359e-05,
+"exact": 913000
+},
+{
+"cond": "reads",
+"order": 0,
+"rep": 6,
+"total": 913000,
+"raw": "{\"items\": {\"Ladera 250 g\": 24, \"Kit filtro\": 6}}",
+"ms": 1620,
+"cost": 2.359e-05,
+"exact": 913000
+},
+{
+"cond": "reads",
+"order": 0,
+"rep": 7,
+"total": 913000,
+"raw": "{\"items\": {\"Ladera 250 g\": 24, \"Kit filtro\": 6}}",
+"ms": 1615,
+"cost": 2.359e-05,
+"exact": 913000
+},
+{
+"cond": "reads",
+"order": 0,
+"rep": 8,
+"total": 913000,
+"raw": "{\"items\": {\"Ladera 250 g\": 24, \"Kit filtro\": 6}}",
+"ms": 1581,
+"cost": 2.359e-05,
+"exact": 913000
+},
+{
+"cond": "reads",
+"order": 0,
+"rep": 9,
+"total": 913000,
+"raw": "{\"items\": {\"Ladera 250 g\": 24, \"Kit filtro\": 6}}",
+"ms": 1434,
+"cost": 2.359e-05,
+"exact": 913000
+},
+{
+"cond": "reads",
+"order": 1,
+"rep": 0,
+"total": 1482000,
+"raw": "{\"items\": {\"Nube 250 g\": 60}}",
+"ms": 1037,
+"cost": 0.0001562,
+"exact": 1482000
+},
+{
+"cond": "reads",
+"order": 1,
+"rep": 1,
+"total": 1482000,
+"raw": "{\"items\": {\"Nube 250 g\": 60}}",
+"ms": 1470,
+"cost": 1.75e-05,
+"exact": 1482000
+},
+{
+"cond": "reads",
+"order": 1,
+"rep": 2,
+"total": 1482000,
+"raw": "{\"items\": {\"Nube 250 g\": 60}}",
+"ms": 2411,
+"cost": 1.75e-05,
+"exact": 1482000
+},
+{
+"cond": "reads",
+"order": 1,
+"rep": 3,
+"total": 1482000,
+"raw": "{\"items\": {\"Nube 250 g\": 60}}",
+"ms": 3481,
+"cost": 1.75e-05,
+"exact": 1482000
+},
+{
+"cond": "reads",
+"order": 1,
+"rep": 4,
+"total": 1482000,
+"raw": "{\"items\": {\"Nube 250 g\": 60}}",
+"ms": 3494,
+"cost": 1.75e-05,
+"exact": 1482000
+},
+{
+"cond": "reads",
+"order": 1,
+"rep": 5,
+"total": 1482000,
+"raw": "{\"items\": {\"Nube 250 g\": 60}}",
+"ms": 3537,
+"cost": 1.75e-05,
+"exact": 1482000
+},
+{
+"cond": "reads",
+"order": 1,
+"rep": 6,
+"total": 1482000,
+"raw": "{\"items\": {\"Nube 250 g\": 60}}",
+"ms": 2610,
+"cost": 1.75e-05,
+"exact": 1482000
+},
+{
+"cond": "reads",
+"order": 1,
+"rep": 7,
+"total": 1482000,
+"raw": "{\"items\": {\"Nube 250 g\": 60}}",
+"ms": 2433,
+"cost": 1.75e-05,
+"exact": 1482000
+},
+{
+"cond": "reads",
+"order": 1,
+"rep": 8,
+"total": 1482000,
+"raw": "{\"items\": {\"Nube 250 g\": 60}}",
+"ms": 1531,
+"cost": 1.75e-05,
+"exact": 1482000
+},
+{
+"cond": "reads",
+"order": 1,
+"rep": 9,
+"total": 1482000,
+"raw": "{\"items\": {\"Nube 250 g\": 60}}",
+"ms": 2422,
+"cost": 1.75e-05,
+"exact": 1482000
+},
+{
+"cond": "reads",
+"order": 2,
+"rep": 0,
+"total": 1892400,
+"raw": "{\"items\": {\"Ladera 500 g\": 36, \"Nube 250 g\": 24}}",
+"ms": 1319,
+"cost": 0.0001653,
+"exact": 1892400
+},
+{
+"cond": "reads",
+"order": 2,
+"rep": 1,
+"total": 1892400,
+"raw": "{\"items\": {\"Ladera 500 g\": 36, \"Nube 250 g\": 24}}",
+"ms": 3052,
+"cost": 2.413e-05,
+"exact": 1892400
+},
+{
+"cond": "reads",
+"order": 2,
+"rep": 2,
+"total": 1892400,
+"raw": "{\"items\": {\"Ladera 500 g\": 36, \"Nube 250 g\": 24}}",
+"ms": 3020,
+"cost": 2.413e-05,
+"exact": 1892400
+},
+{
+"cond": "reads",
+"order": 2,
+"rep": 3,
+"total": 1892400,
+"raw": "{\"items\": {\"Ladera 500 g\": 36, \"Nube 250 g\": 24}}",
+"ms": 3091,
+"cost": 2.413e-05,
+"exact": 1892400
+},
+{
+"cond": "reads",
+"order": 2,
+"rep": 4,
+"total": 1892400,
+"raw": "{\"items\": {\"Ladera 500 g\": 36, \"Nube 250 g\": 24}}",
+"ms": 2340,
+"cost": 2.413e-05,
+"exact": 1892400
+},
+{
+"cond": "reads",
+"order": 2,
+"rep": 5,
+"total": 1892400,
+"raw": "{\"items\": {\"Ladera 500 g\": 36, \"Nube 250 g\": 24}}",
+"ms": 2731,
+"cost": 2.413e-05,
+"exact": 1892400
+},
+{
+"cond": "reads",
+"order": 2,
+"rep": 6,
+"total": 1892400,
+"raw": "{\"items\": {\"Ladera 500 g\": 36, \"Nube 250 g\": 24}}",
+"ms": 2351,
+"cost": 2.413e-05,
+"exact": 1892400
+},
+{
+"cond": "reads",
+"order": 2,
+"rep": 7,
+"total": 1892400,
+"raw": "{\"items\": {\"Ladera 500 g\": 36, \"Nube 250 g\": 24}}",
+"ms": 1234,
+"cost": 2.413e-05,
+"exact": 1892400
+},
+{
+"cond": "reads",
+"order": 2,
+"rep": 8,
+"total": 1892400,
+"raw": "{\"items\": {\"Ladera 500 g\": 36, \"Nube 250 g\": 24}}",
+"ms": 1020,
+"cost": 2.413e-05,
+"exact": 1892400
+},
+{
+"cond": "reads",
+"order": 2,
+"rep": 9,
+"total": 1892400,
+"raw": "{\"items\": {\"Ladera 500 g\": 36, \"Nube 250 g\": 24}}",
+"ms": 2211,
+"cost": 2.413e-05,
+"exact": 1892400
+},
+{
+"cond": "reads",
+"order": 3,
+"rep": 0,
+"total": 481000,
+"raw": "{\"items\": {\"Ladera 500 g\": 12}}",
+"ms": 992,
+"cost": 0.0001565,
+"exact": 481000
+},
+{
+"cond": "reads",
+"order": 3,
+"rep": 1,
+"total": 481000,
+"raw": "{\"items\": {\"Ladera 500 g\": 12}}",
+"ms": 959,
+"cost": 0.0001565,
+"exact": 481000
+},
+{
+"cond": "reads",
+"order": 3,
+"rep": 2,
+"total": 481000,
+"raw": "{\"items\": {\"Ladera 500 g\": 12}}",
+"ms": 1408,
+"cost": 1.799e-05,
+"exact": 481000
+},
+{
+"cond": "reads",
+"order": 3,
+"rep": 3,
+"total": 481000,
+"raw": "{\"items\": {\"Ladera 500 g\": 12}}",
+"ms": 1483,
+"cost": 0.0001565,
+"exact": 481000
+},
+{
+"cond": "reads",
+"order": 3,
+"rep": 4,
+"total": 481000,
+"raw": "{\"items\": {\"Ladera 500 g\": 12}}",
+"ms": 1463,
+"cost": 0.0001565,
+"exact": 481000
+},
+{
+"cond": "reads",
+"order": 3,
+"rep": 5,
+"total": 481000,
+"raw": "{\"items\": {\"Ladera 500 g\": 12}}",
+"ms": 1467,
+"cost": 1.799e-05,
+"exact": 481000
+},
+{
+"cond": "reads",
+"order": 3,
+"rep": 6,
+"total": 481000,
+"raw": "{\"items\": {\"Ladera 500 g\": 12}}",
+"ms": 2929,
+"cost": 1.799e-05,
+"exact": 481000
+},
+{
+"cond": "reads",
+"order": 3,
+"rep": 7,
+"total": 481000,
+"raw": "{\"items\": {\"Ladera 500 g\": 12}}",
+"ms": 3363,
+"cost": 1.799e-05,
+"exact": 481000
+},
+{
+"cond": "reads",
+"order": 3,
+"rep": 8,
+"total": 481000,
+"raw": "{\"items\": {\"Ladera 500 g\": 12}}",
+"ms": 2104,
+"cost": 1.799e-05,
+"exact": 481000
+},
+{
+"cond": "reads",
+"order": 3,
+"rep": 9,
+"total": 481000,
+"raw": "{\"items\": {\"Ladera 500 g\": 12}}",
+"ms": 1446,
+"cost": 1.799e-05,
+"exact": 481000
+},
+{
+"cond": "reads",
+"order": 4,
+"rep": 0,
+"total": 2894400,
+"raw": "{\"items\": {\"Ladera 250 g\": 48, \"Ladera 500 g\": 48, \"Kit filtro\": 6}}",
+"ms": 1570,
+"cost": 0.00017370000000000002,
+"exact": 2894400
+},
+{
+"cond": "reads",
+"order": 4,
+"rep": 1,
+"total": 2894400,
+"raw": "{\"items\": {\"Ladera 250 g\": 48, \"Ladera 500 g\": 48, \"Kit filtro\": 6}}",
+"ms": 3135,
+"cost": 3.0250000000000003e-05,
+"exact": 2894400
+},
+{
+"cond": "reads",
+"order": 4,
+"rep": 2,
+"total": 2894400,
+"raw": "{\"items\": {\"Ladera 250 g\": 48, \"Ladera 500 g\": 48, \"Kit filtro\": 6}}",
+"ms": 3130,
+"cost": 3.0250000000000003e-05,
+"exact": 2894400
+},
+{
+"cond": "reads",
+"order": 4,
+"rep": 3,
+"total": 2894400,
+"raw": "{\"items\": {\"Ladera 250 g\": 48, \"Ladera 500 g\": 48, \"Kit filtro\": 6}}",
+"ms": 1052,
+"cost": 0.00017370000000000002,
+"exact": 2894400
+},
+{
+"cond": "reads",
+"order": 4,
+"rep": 4,
+"total": 2894400,
+"raw": "{\"items\": {\"Ladera 250 g\": 48, \"Ladera 500 g\": 48, \"Kit filtro\": 6}}",
+"ms": 3075,
+"cost": 3.0250000000000003e-05,
+"exact": 2894400
+},
+{
+"cond": "reads",
+"order": 4,
+"rep": 5,
+"total": 2894400,
+"raw": "{\"items\": {\"Ladera 250 g\": 48, \"Ladera 500 g\": 48, \"Kit filtro\": 6}}",
+"ms": 1201,
+"cost": 3.0250000000000003e-05,
+"exact": 2894400
+},
+{
+"cond": "reads",
+"order": 4,
+"rep": 6,
+"total": 2894400,
+"raw": "{\"items\": {\"Ladera 250 g\": 48, \"Ladera 500 g\": 48, \"Kit filtro\": 6}}",
+"ms": 1940,
+"cost": 3.0250000000000003e-05,
+"exact": 2894400
+},
+{
+"cond": "reads",
+"order": 4,
+"rep": 7,
+"total": 2894400,
+"raw": "{\"items\": {\"Ladera 250 g\": 48, \"Ladera 500 g\": 48, \"Kit filtro\": 6}}",
+"ms": 1865,
+"cost": 3.0250000000000003e-05,
+"exact": 2894400
+},
+{
+"cond": "reads",
+"order": 4,
+"rep": 8,
+"total": 2894400,
+"raw": "{\"items\": {\"Ladera 250 g\": 48, \"Ladera 500 g\": 48, \"Kit filtro\": 6}}",
+"ms": 1464,
+"cost": 3.0250000000000003e-05,
+"exact": 2894400
+},
+{
+"cond": "reads",
+"order": 4,
+"rep": 9,
+"total": 2894400,
+"raw": "{\"items\": {\"Ladera 250 g\": 48, \"Ladera 500 g\": 48, \"Kit filtro\": 6}}",
+"ms": 1136,
+"cost": 3.0250000000000003e-05,
+"exact": 2894400
+},
+{
+"cond": "reads",
+"order": 5,
+"rep": 0,
+"total": 2743200,
+"raw": "{\"items\": {\"Ladera 500 g\": 60, \"Kit filtro\": 12}}",
+"ms": 1010,
+"cost": 0.0001648,
+"exact": 2743200
+},
+{
+"cond": "reads",
+"order": 5,
+"rep": 1,
+"total": 2743200,
+"raw": "{\"items\": {\"Ladera 500 g\": 60, \"Kit filtro\": 12}}",
+"ms": 3102,
+"cost": 2.3630000000000002e-05,
+"exact": 2743200
+},
+{
+"cond": "reads",
+"order": 5,
+"rep": 2,
+"total": 2743200,
+"raw": "{\"items\": {\"Ladera 500 g\": 60, \"Kit filtro\": 12}}",
+"ms": 3108,
+"cost": 2.3630000000000002e-05,
+"exact": 2743200
+},
+{
+"cond": "reads",
+"order": 5,
+"rep": 3,
+"total": 2743200,
+"raw": "{\"items\": {\"Ladera 500 g\": 60, \"Kit filtro\": 12}}",
+"ms": 2908,
+"cost": 2.3630000000000002e-05,
+"exact": 2743200
+},
+{
+"cond": "reads",
+"order": 5,
+"rep": 4,
+"total": 2743200,
+"raw": "{\"items\": {\"Ladera 500 g\": 60, \"Kit filtro\": 12}}",
+"ms": 2510,
+"cost": 2.3630000000000002e-05,
+"exact": 2743200
+},
+{
+"cond": "reads",
+"order": 5,
+"rep": 5,
+"total": 2743200,
+"raw": "{\"items\": {\"Ladera 500 g\": 60, \"Kit filtro\": 12}}",
+"ms": 3275,
+"cost": 7.163e-05,
+"exact": 2743200
+},
+{
+"cond": "reads",
+"order": 5,
+"rep": 6,
+"total": 2743200,
+"raw": "{\"items\": {\"Ladera 500 g\": 60, \"Kit filtro\": 12}}",
+"ms": 2915,
+"cost": 2.3630000000000002e-05,
+"exact": 2743200
+},
+{
+"cond": "reads",
+"order": 5,
+"rep": 7,
+"total": 2743200,
+"raw": "{\"items\": {\"Ladera 500 g\": 60, \"Kit filtro\": 12}}",
+"ms": 2421,
+"cost": 2.3630000000000002e-05,
+"exact": 2743200
+},
+{
+"cond": "reads",
+"order": 5,
+"rep": 8,
+"total": 2743200,
+"raw": "{\"items\": {\"Ladera 500 g\": 60, \"Kit filtro\": 12}}",
+"ms": 2366,
+"cost": 2.3630000000000002e-05,
+"exact": 2743200
+},
+{
+"cond": "reads",
+"order": 5,
+"rep": 9,
+"total": 2743200,
+"raw": "{\"items\": {\"Ladera 500 g\": 60, \"Kit filtro\": 12}}",
+"ms": 1943,
+"cost": 2.3630000000000002e-05,
+"exact": 2743200
+},
+{
+"cond": "reads",
+"order": 6,
+"rep": 0,
+"total": 871000,
+"raw": "{\"items\": {\"Ladera 250 g\": 18, \"Nube 250 g\": 18}}",
+"ms": 1081,
+"cost": 0.00016510000000000003,
+"exact": 871000
+},
+{
+"cond": "reads",
+"order": 6,
+"rep": 1,
+"total": 871000,
+"raw": "{\"items\": {\"Ladera 250 g\": 18, \"Nube 250 g\": 18}}",
+"ms": 1030,
+"cost": 0.00016510000000000003,
+"exact": 871000
+},
+{
+"cond": "reads",
+"order": 6,
+"rep": 2,
+"total": 871000,
+"raw": "{\"items\": {\"Ladera 250 g\": 18, \"Nube 250 g\": 18}}",
+"ms": 3029,
+"cost": 2.4120000000000003e-05,
+"exact": 871000
+},
+{
+"cond": "reads",
+"order": 6,
+"rep": 3,
+"total": 871000,
+"raw": "{\"items\": {\"Ladera 250 g\": 18, \"Nube 250 g\": 18}}",
+"ms": 2626,
+"cost": 2.4120000000000003e-05,
+"exact": 871000
+},
+{
+"cond": "reads",
+"order": 6,
+"rep": 4,
+"total": 871000,
+"raw": "{\"items\": {\"Ladera 250 g\": 18, \"Nube 250 g\": 18}}",
+"ms": 1728,
+"cost": 2.4120000000000003e-05,
+"exact": 871000
+},
+{
+"cond": "reads",
+"order": 6,
+"rep": 5,
+"total": 871000,
+"raw": "{\"items\": {\"Ladera 250 g\": 18, \"Nube 250 g\": 18}}",
+"ms": 1792,
+"cost": 2.4120000000000003e-05,
+"exact": 871000
+},
+{
+"cond": "reads",
+"order": 6,
+"rep": 6,
+"total": 871000,
+"raw": "{\"items\": {\"Ladera 250 g\": 18, \"Nube 250 g\": 18}}",
+"ms": 1566,
+"cost": 2.4120000000000003e-05,
+"exact": 871000
+},
+{
+"cond": "reads",
+"order": 6,
+"rep": 7,
+"total": 871000,
+"raw": "{\"items\": {\"Ladera 250 g\": 18, \"Nube 250 g\": 18}}",
+"ms": 1649,
+"cost": 2.4120000000000003e-05,
+"exact": 871000
+},
+{
+"cond": "reads",
+"order": 6,
+"rep": 8,
+"total": 871000,
+"raw": "{\"items\": {\"Ladera 250 g\": 18, \"Nube 250 g\": 18}}",
+"ms": 3176,
+"cost": 2.4120000000000003e-05,
+"exact": 871000
+},
+{
+"cond": "reads",
+"order": 6,
+"rep": 9,
+"total": 871000,
+"raw": "{\"items\": {\"Ladera 250 g\": 18, \"Nube 250 g\": 18}}",
+"ms": 2919,
+"cost": 2.4120000000000003e-05,
+"exact": 871000
+},
+{
+"cond": "reads",
+"order": 7,
+"rep": 0,
+"total": 3078000,
+"raw": "{\"items\": {\"Ladera 500 g\": 90}}",
+"ms": 956,
+"cost": 0.0001565,
+"exact": 3078000
+},
+{
+"cond": "reads",
+"order": 7,
+"rep": 1,
+"total": 3078000,
+"raw": "{\"items\": {\"Ladera 500 g\": 90}}",
+"ms": 2972,
+"cost": 1.799e-05,
+"exact": 3078000
+},
+{
+"cond": "reads",
+"order": 7,
+"rep": 2,
+"total": 3078000,
+"raw": "{\"items\": {\"Ladera 500 g\": 90}}",
+"ms": 3225,
+"cost": 1.799e-05,
+"exact": 3078000
+},
+{
+"cond": "reads",
+"order": 7,
+"rep": 3,
+"total": 3078000,
+"raw": "{\"items\": {\"Ladera 500 g\": 90}}",
+"ms": 3120,
+"cost": 1.799e-05,
+"exact": 3078000
+},
+{
+"cond": "reads",
+"order": 7,
+"rep": 4,
+"total": 3078000,
+"raw": "{\"items\": {\"Ladera 500 g\": 90}}",
+"ms": 3085,
+"cost": 1.799e-05,
+"exact": 3078000
+},
+{
+"cond": "reads",
+"order": 7,
+"rep": 5,
+"total": 3078000,
+"raw": "{\"items\": {\"Ladera 500 g\": 90}}",
+"ms": 3083,
+"cost": 1.799e-05,
+"exact": 3078000
+},
+{
+"cond": "reads",
+"order": 7,
+"rep": 6,
+"total": 3078000,
+"raw": "{\"items\": {\"Ladera 500 g\": 90}}",
+"ms": 3113,
+"cost": 1.799e-05,
+"exact": 3078000
+},
+{
+"cond": "reads",
+"order": 7,
+"rep": 7,
+"total": 3078000,
+"raw": "{\"items\": {\"Ladera 500 g\": 90}}",
+"ms": 2412,
+"cost": 1.799e-05,
+"exact": 3078000
+},
+{
+"cond": "reads",
+"order": 7,
+"rep": 8,
+"total": 3078000,
+"raw": "{\"items\": {\"Ladera 500 g\": 90}}",
+"ms": 1267,
+"cost": 1.799e-05,
+"exact": 3078000
+},
+{
+"cond": "reads",
+"order": 7,
+"rep": 9,
+"total": 3078000,
+"raw": "{\"items\": {\"Ladera 500 g\": 90}}",
+"ms": 1119,
+"cost": 1.799e-05,
+"exact": 3078000
+},
+{
+"cond": "reads",
+"order": 8,
+"rep": 0,
+"total": 1983600,
+"raw": "{\"items\": {\"Nube 250 g\": 36, \"Kit filtro\": 18}}",
+"ms": 1264,
+"cost": 0.0001633,
+"exact": 1983600
+},
+{
+"cond": "reads",
+"order": 8,
+"rep": 1,
+"total": 1983600,
+"raw": "{\"items\": {\"Nube 250 g\": 36, \"Kit filtro\": 18}}",
+"ms": 985,
+"cost": 0.0001633,
+"exact": 1983600
+},
+{
+"cond": "reads",
+"order": 8,
+"rep": 2,
+"total": 1983600,
+"raw": "{\"items\": {\"Nube 250 g\": 36, \"Kit filtro\": 18}}",
+"ms": 1820,
+"cost": 2.3080000000000003e-05,
+"exact": 1983600
+},
+{
+"cond": "reads",
+"order": 8,
+"rep": 3,
+"total": 1983600,
+"raw": "{\"items\": {\"Nube 250 g\": 36, \"Kit filtro\": 18}}",
+"ms": 1357,
+"cost": 2.3080000000000003e-05,
+"exact": 1983600
+},
+{
+"cond": "reads",
+"order": 8,
+"rep": 4,
+"total": 1983600,
+"raw": "{\"items\": {\"Nube 250 g\": 36, \"Kit filtro\": 18}}",
+"ms": 1176,
+"cost": 2.3080000000000003e-05,
+"exact": 1983600
+},
+{
+"cond": "reads",
+"order": 8,
+"rep": 5,
+"total": 1983600,
+"raw": "{\"items\": {\"Nube 250 g\": 36, \"Kit filtro\": 18}}",
+"ms": 1278,
+"cost": 2.3080000000000003e-05,
+"exact": 1983600
+},
+{
+"cond": "reads",
+"order": 8,
+"rep": 6,
+"total": 1983600,
+"raw": "{\"items\": {\"Nube 250 g\": 36, \"Kit filtro\": 18}}",
+"ms": 1184,
+"cost": 2.3080000000000003e-05,
+"exact": 1983600
+},
+{
+"cond": "reads",
+"order": 8,
+"rep": 7,
+"total": 1983600,
+"raw": "{\"items\": {\"Nube 250 g\": 36, \"Kit filtro\": 18}}",
+"ms": 3412,
+"cost": 2.3080000000000003e-05,
+"exact": 1983600
+},
+{
+"cond": "reads",
+"order": 8,
+"rep": 8,
+"total": 1983600,
+"raw": "{\"items\": {\"Nube 250 g\": 36, \"Kit filtro\": 18}}",
+"ms": 1174,
+"cost": 2.3080000000000003e-05,
+"exact": 1983600
+},
+{
+"cond": "reads",
+"order": 8,
+"rep": 9,
+"total": 1983600,
+"raw": "{\"items\": {\"Nube 250 g\": 36, \"Kit filtro\": 18}}",
+"ms": 3173,
+"cost": 2.3080000000000003e-05,
+"exact": 1983600
+},
+{
+"cond": "reads",
+"order": 9,
+"rep": 0,
+"total": 3866400,
+"raw": "{\"items\": {\"Ladera 250 g\": 72, \"Nube 250 g\": 48, \"Kit filtro\": 24}}",
+"ms": 1131,
+"cost": 0.0001728,
+"exact": 3866400
+},
+{
+"cond": "reads",
+"order": 9,
+"rep": 1,
+"total": 3866400,
+"raw": "{\"items\": {\"Ladera 250 g\": 72, \"Nube 250 g\": 48, \"Kit filtro\": 24}}",
+"ms": 1726,
+"cost": 0.0001728,
+"exact": 3866400
+},
+{
+"cond": "reads",
+"order": 9,
+"rep": 2,
+"total": 3866400,
+"raw": "{\"items\": {\"Ladera 250 g\": 72, \"Nube 250 g\": 48, \"Kit filtro\": 24}}",
+"ms": 3012,
+"cost": 2.973e-05,
+"exact": 3866400
+},
+{
+"cond": "reads",
+"order": 9,
+"rep": 3,
+"total": 3866400,
+"raw": "{\"items\": {\"Ladera 250 g\": 72, \"Nube 250 g\": 48, \"Kit filtro\": 24}}",
+"ms": 1248,
+"cost": 2.973e-05,
+"exact": 3866400
+},
+{
+"cond": "reads",
+"order": 9,
+"rep": 4,
+"total": 3866400,
+"raw": "{\"items\": {\"Ladera 250 g\": 72, \"Nube 250 g\": 48, \"Kit filtro\": 24}}",
+"ms": 2986,
+"cost": 2.973e-05,
+"exact": 3866400
+},
+{
+"cond": "reads",
+"order": 9,
+"rep": 5,
+"total": 3866400,
+"raw": "{\"items\": {\"Ladera 250 g\": 72, \"Nube 250 g\": 48, \"Kit filtro\": 24}}",
+"ms": 2934,
+"cost": 2.973e-05,
+"exact": 3866400
+},
+{
+"cond": "reads",
+"order": 9,
+"rep": 6,
+"total": 3866400,
+"raw": "{\"items\": {\"Ladera 250 g\": 72, \"Nube 250 g\": 48, \"Kit filtro\": 24}}",
+"ms": 2948,
+"cost": 2.973e-05,
+"exact": 3866400
+},
+{
+"cond": "reads",
+"order": 9,
+"rep": 7,
+"total": 3866400,
+"raw": "{\"items\": {\"Ladera 250 g\": 72, \"Nube 250 g\": 48, \"Kit filtro\": 24}}",
+"ms": 2933,
+"cost": 2.973e-05,
+"exact": 3866400
+},
+{
+"cond": "reads",
+"order": 9,
+"rep": 8,
+"total": 3866400,
+"raw": "{\"items\": {\"Ladera 250 g\": 72, \"Nube 250 g\": 48, \"Kit filtro\": 24}}",
+"ms": 2821,
+"cost": 2.973e-05,
+"exact": 3866400
+},
+{
+"cond": "reads",
+"order": 9,
+"rep": 9,
+"total": 3866400,
+"raw": "{\"items\": {\"Ladera 250 g\": 72, \"Nube 250 g\": 48, \"Kit filtro\": 24}}",
+"ms": 2139,
+"cost": 2.973e-05,
+"exact": 3866400
+},
+{
+"cond": "vague_forced",
+"order": 0,
+"rep": 0,
+"total": 799200,
+"raw": "{\"total\": 799200, \"discount_percent\": 10, \"shipping\": 0}",
+"ms": 3769,
+"cost": 0.00018075,
+"exact": 913000
+},
+{
+"cond": "vague_forced",
+"order": 0,
+"rep": 1,
+"total": 799200,
+"raw": "{\"total\": 799200, \"discount_percent\": 10, \"shipping\": 0}",
+"ms": 4647,
+"cost": 0.00019575,
+"exact": 913000
+},
+{
+"cond": "vague_forced",
+"order": 0,
+"rep": 2,
+"total": 799200,
+"raw": "{\"total\": 799200, \"discount_percent\": 10, \"shipping\": 0}",
+"ms": 4102,
+"cost": 0.00016575,
+"exact": 913000
+},
+{
+"cond": "vague_forced",
+"order": 0,
+"rep": 3,
+"total": 799200,
+"raw": "{\"total\": 799200, \"discount_percent\": 10, \"shipping\": 0}",
+"ms": 4549,
+"cost": 0.00020774999999999998,
+"exact": 913000
+},
+{
+"cond": "vague_forced",
+"order": 0,
+"rep": 4,
+"total": 799200,
+"raw": "{\"total\": 799200, \"discount_percent\": 10, \"shipping\": 0}",
+"ms": 4082,
+"cost": 0.00016525,
+"exact": 913000
+},
+{
+"cond": "vague_forced",
+"order": 0,
+"rep": 5,
+"total": 824200,
+"raw": "{\"total\": 824200, \"discount_percent\": 10, \"shipping\": 25000}",
+"ms": 4649,
+"cost": 0.00022925,
+"exact": 913000
+},
+{
+"cond": "vague_forced",
+"order": 0,
+"rep": 6,
+"total": 799200,
+"raw": "{\"total\": 799200, \"discount_percent\": 10, \"shipping\": 0}",
+"ms": 3854,
+"cost": 0.00013675,
+"exact": 913000
+},
+{
+"cond": "vague_forced",
+"order": 0,
+"rep": 7,
+"total": 799200,
+"raw": "{\"total\": 799200, \"discount_percent\": 10, \"shipping\": 0}",
+"ms": 3703,
+"cost": 0.00013075,
+"exact": 913000
+},
+{
+"cond": "vague_forced",
+"order": 0,
+"rep": 8,
+"total": 799200,
+"raw": "{\"total\": 799200, \"discount_percent\": 10, \"shipping\": 0}",
+"ms": 4890,
+"cost": 0.00024775000000000003,
+"exact": 913000
+},
+{
+"cond": "vague_forced",
+"order": 0,
+"rep": 9,
+"total": 799200,
+"raw": "{\"total\": 799200, \"discount_percent\": 10, \"shipping\": 0}",
+"ms": 3982,
+"cost": 0.00018825,
+"exact": 913000
+},
+{
+"cond": "vague_forced",
+"order": 1,
+"rep": 0,
+"total": 1507000,
+"raw": "{\"total\": 1507000, \"discount_percent\": 5, \"shipping\": 25000}",
+"ms": 2576,
+"cost": 0.0003794,
+"exact": 1482000
+},
+{
+"cond": "vague_forced",
+"order": 1,
+"rep": 1,
+"total": 1507000,
+"raw": "{\"total\": 1507000, \"discount_percent\": 5, \"shipping\": 25000}",
+"ms": 2299,
+"cost": 0.00034940000000000004,
+"exact": 1482000
+},
+{
+"cond": "vague_forced",
+"order": 1,
+"rep": 2,
+"total": 1507000,
+"raw": "{\"total\": 1507000, \"discount_percent\": 5, \"shipping\": 25000}",
+"ms": 3896,
+"cost": 0.00015566,
+"exact": 1482000
+},
+{
+"cond": "vague_forced",
+"order": 1,
+"rep": 3,
+"total": 1507000,
+"raw": "{\"total\": 1507000, \"discount_percent\": 5, \"shipping\": 25000}",
+"ms": 4050,
+"cost": 0.00015466,
+"exact": 1482000
+},
+{
+"cond": "vague_forced",
+"order": 1,
+"rep": 4,
+"total": 1507000,
+"raw": "{\"total\": 1507000, \"discount_percent\": 5, \"shipping\": 25000}",
+"ms": 4676,
+"cost": 0.00023166000000000001,
+"exact": 1482000
+},
+{
+"cond": "vague_forced",
+"order": 1,
+"rep": 5,
+"total": 1507000,
+"raw": "{\"total\": 1507000, \"discount_percent\": 5, \"shipping\": 25000}",
+"ms": 3848,
+"cost": 0.00016516000000000002,
+"exact": 1482000
+},
+{
+"cond": "vague_forced",
+"order": 1,
+"rep": 6,
+"total": 1507000,
+"raw": "{\"total\": 1507000, \"discount_percent\": 5, \"shipping\": 25000}",
+"ms": 4412,
+"cost": 0.00019116,
+"exact": 1482000
+},
+{
+"cond": "vague_forced",
+"order": 1,
+"rep": 7,
+"total": 1507000,
+"raw": "{\"total\": 1507000, \"discount_percent\": 5, \"shipping\": 25000}",
+"ms": 3957,
+"cost": 0.00015766,
+"exact": 1482000
+},
+{
+"cond": "vague_forced",
+"order": 1,
+"rep": 8,
+"total": 1507000,
+"raw": "{\"total\": 1507000, \"discount_percent\": 5, \"shipping\": 25000}",
+"ms": 4262,
+"cost": 0.00019516000000000002,
+"exact": 1482000
+},
+{
+"cond": "vague_forced",
+"order": 1,
+"rep": 9,
+"total": 1507000,
+"raw": "{\"total\": 1507000, \"discount_percent\": 5, \"shipping\": 25000}",
+"ms": 4457,
+"cost": 0.00019316,
+"exact": 1482000
+},
+{
+"cond": "vague_forced",
+"order": 2,
+"rep": 0,
+"total": 1792800,
+"raw": "{\"total\": 1792800, \"discount_percent\": 10, \"shipping\": 0}",
+"ms": 2283,
+"cost": 0.0003805,
+"exact": 1892400
+},
+{
+"cond": "vague_forced",
+"order": 2,
+"rep": 1,
+"total": 1817800,
+"raw": "{\"total\": 1817800, \"discount_percent\": 10, \"shipping\": 25000}",
+"ms": 2244,
+"cost": 0.0003655,
+"exact": 1892400
+},
+{
+"cond": "vague_forced",
+"order": 2,
+"rep": 2,
+"total": 1792800,
+"raw": "{\"total\": 1792800, \"discount_percent\": 10, \"shipping\": 0}",
+"ms": 2465,
+"cost": 0.00021379,
+"exact": 1892400
+},
+{
+"cond": "vague_forced",
+"order": 2,
+"rep": 3,
+"total": 1792800,
+"raw": "{\"total\": 1792800, \"discount_percent\": 10, \"shipping\": 0}",
+"ms": 2048,
+"cost": 0.00017229,
+"exact": 1892400
+},
+{
+"cond": "vague_forced",
+"order": 2,
+"rep": 4,
+"total": 1817800,
+"raw": "{\"total\": 1817800, \"discount_percent\": 10, \"shipping\": 25000}",
+"ms": 3719,
+"cost": 0.00020329,
+"exact": 1892400
+},
+{
+"cond": "vague_forced",
+"order": 2,
+"rep": 5,
+"total": 1792800,
+"raw": "{\"total\": 1792800, \"discount_percent\": 10, \"shipping\": 0}",
+"ms": 2922,
+"cost": 0.00015929,
+"exact": 1892400
+},
+{
+"cond": "vague_forced",
+"order": 2,
+"rep": 6,
+"total": 1792800,
+"raw": "{\"total\": 1792800, \"discount_percent\": 10, \"shipping\": 0}",
+"ms": 3908,
+"cost": 0.00017129,
+"exact": 1892400
+},
+{
+"cond": "vague_forced",
+"order": 2,
+"rep": 7,
+"total": 1792800,
+"raw": "{\"total\": 1792800, \"discount_percent\": 10, \"shipping\": 0}",
+"ms": 3307,
+"cost": 0.00016379,
+"exact": 1892400
+},
+{
+"cond": "vague_forced",
+"order": 2,
+"rep": 8,
+"total": 1792800,
+"raw": "{\"total\": 1792800, \"discount_percent\": 10, \"shipping\": 0}",
+"ms": 3676,
+"cost": 0.00022779,
+"exact": 1892400
+},
+{
+"cond": "vague_forced",
+"order": 2,
+"rep": 9,
+"total": 1792800,
+"raw": "{\"total\": 1792800, \"discount_percent\": 10, \"shipping\": 0}",
+"ms": 3712,
+"cost": 0.00018679,
+"exact": 1892400
+},
+{
+"cond": "vague_forced",
+"order": 3,
+"rep": 0,
+"total": 481000,
+"raw": "{\"total\": 481000, \"discount_percent\": 0, \"shipping\": 25000}",
+"ms": 2901,
+"cost": 0.00041720000000000006,
+"exact": 481000
+},
+{
+"cond": "vague_forced",
+"order": 3,
+"rep": 1,
+"total": 458200,
+"raw": "{\"total\": 458200, \"discount_percent\": 5, \"shipping\": 25000}",
+"ms": 63746,
+"cost": 0.00014365,
+"exact": 481000
+},
+{
+"cond": "vague_forced",
+"order": 3,
+"rep": 2,
+"total": 458200,
+"raw": "{\"total\": 458200, \"discount_percent\": 5, \"shipping\": 25000}",
+"ms": 2149,
+"cost": 0.00014915000000000002,
+"exact": 481000
+},
+{
+"cond": "vague_forced",
+"order": 3,
+"rep": 3,
+"total": 458200,
+"raw": "{\"total\": 458200, \"discount_percent\": 5, \"shipping\": 25000}",
+"ms": 2367,
+"cost": 0.00017315,
+"exact": 481000
+},
+{
+"cond": "vague_forced",
+"order": 3,
+"rep": 4,
+"total": 458200,
+"raw": "{\"total\": 458200, \"discount_percent\": 5, \"shipping\": 25000}",
+"ms": 3529,
+"cost": 0.00019765,
+"exact": 481000
+},
+{
+"cond": "vague_forced",
+"order": 3,
+"rep": 5,
+"total": 458200,
+"raw": "{\"total\": 458200, \"discount_percent\": 5, \"shipping\": 25000}",
+"ms": 3808,
+"cost": 0.00012415,
+"exact": 481000
+},
+{
+"cond": "vague_forced",
+"order": 3,
+"rep": 6,
+"total": 458200,
+"raw": "{\"total\": 458200, \"discount_percent\": 5, \"shipping\": 25000}",
+"ms": 4122,
+"cost": 0.00016615,
+"exact": 481000
+},
+{
+"cond": "vague_forced",
+"order": 3,
+"rep": 7,
+"total": 458200,
+"raw": "{\"total\": 458200, \"discount_percent\": 5, \"shipping\": 25000}",
+"ms": 2831,
+"cost": 0.00020915000000000002,
+"exact": 481000
+},
+{
+"cond": "vague_forced",
+"order": 3,
+"rep": 8,
+"total": 458200,
+"raw": "{\"total\": 458200, \"discount_percent\": 5, \"shipping\": 25000}",
+"ms": 3864,
+"cost": 0.00014314999999999998,
+"exact": 481000
+},
+{
+"cond": "vague_forced",
+"order": 3,
+"rep": 9,
+"total": 458200,
+"raw": "{\"total\": 458200, \"discount_percent\": 5, \"shipping\": 25000}",
+"ms": 3369,
+"cost": 0.00015065,
+"exact": 481000
+},
+{
+"cond": "vague_forced",
+"order": 4,
+"rep": 0,
+"total": 2894400,
+"raw": "{\"total\": 2894400, \"discount_percent\": 10, \"shipping\": 0}",
+"ms": 1705,
+"cost": 0.0003269,
+"exact": 2894400
+},
+{
+"cond": "vague_forced",
+"order": 4,
+"rep": 1,
+"total": 2894400,
+"raw": "{\"total\": 2894400, \"discount_percent\": 10, \"shipping\": 0}",
+"ms": 1968,
+"cost": 0.0003549,
+"exact": 2894400
+},
+{
+"cond": "vague_forced",
+"order": 4,
+"rep": 2,
+"total": 2894400,
+"raw": "{\"total\": 2894400, \"discount_percent\": 10, \"shipping\": 0}",
+"ms": 3800,
+"cost": 0.0003949,
+"exact": 2894400
+},
+{
+"cond": "vague_forced",
+"order": 4,
+"rep": 3,
+"total": 2894400,
+"raw": "{\"total\": 2894400, \"discount_percent\": 10, \"shipping\": 0}",
+"ms": 4350,
+"cost": 0.00019140999999999999,
+"exact": 2894400
+},
+{
+"cond": "vague_forced",
+"order": 4,
+"rep": 4,
+"total": 2894400,
+"raw": "{\"total\": 2894400, \"discount_percent\": 10, \"shipping\": 0}",
+"ms": 4005,
+"cost": 0.00016941,
+"exact": 2894400
+},
+{
+"cond": "vague_forced",
+"order": 4,
+"rep": 5,
+"total": 2894400,
+"raw": "{\"total\": 2894400, \"discount_percent\": 10, \"shipping\": 0}",
+"ms": 4264,
+"cost": 0.00020341,
+"exact": 2894400
+},
+{
+"cond": "vague_forced",
+"order": 4,
+"rep": 6,
+"total": 2894400,
+"raw": "{\"total\": 2894400, \"discount_percent\": 10, \"shipping\": 0}",
+"ms": 4220,
+"cost": 0.00018591000000000001,
+"exact": 2894400
+},
+{
+"cond": "vague_forced",
+"order": 4,
+"rep": 7,
+"total": 2894400,
+"raw": "{\"total\": 2894400, \"discount_percent\": 10, \"shipping\": 0}",
+"ms": 3824,
+"cost": 0.00023341000000000003,
+"exact": 2894400
+},
+{
+"cond": "vague_forced",
+"order": 4,
+"rep": 8,
+"total": 2894400,
+"raw": "{\"total\": 2894400, \"discount_percent\": 10, \"shipping\": 0}",
+"ms": 3196,
+"cost": 0.00018441000000000003,
+"exact": 2894400
+},
+{
+"cond": "vague_forced",
+"order": 4,
+"rep": 9,
+"total": 2894400,
+"raw": "{\"total\": 2894400, \"discount_percent\": 10, \"shipping\": 0}",
+"ms": 2646,
+"cost": 0.00020541,
+"exact": 2894400
+},
+{
+"cond": "vague_forced",
+"order": 5,
+"rep": 0,
+"total": 2920600,
+"raw": "{\"total\": 2920600, \"discount_percent\": 5, \"shipping\": 25000}",
+"ms": 2303,
+"cost": 0.000373,
+"exact": 2743200
+},
+{
+"cond": "vague_forced",
+"order": 5,
+"rep": 1,
+"total": 2920600,
+"raw": "{\"total\": 2920600, \"discount_percent\": 5, \"shipping\": 25000}",
+"ms": 2836,
+"cost": 0.00017279,
+"exact": 2743200
+},
+{
+"cond": "vague_forced",
+"order": 5,
+"rep": 2,
+"total": 2920600,
+"raw": "{\"total\": 2920600, \"discount_percent\": 5, \"shipping\": 25000}",
+"ms": 4092,
+"cost": 0.00019879,
+"exact": 2743200
+},
+{
+"cond": "vague_forced",
+"order": 5,
+"rep": 3,
+"total": 2920600,
+"raw": "{\"total\": 2920600, \"discount_percent\": 5, \"shipping\": 25000}",
+"ms": 4627,
+"cost": 0.00021879,
+"exact": 2743200
+},
+{
+"cond": "vague_forced",
+"order": 5,
+"rep": 4,
+"total": 2920600,
+"raw": "{\"total\": 2920600, \"discount_percent\": 5, \"shipping\": 25000}",
+"ms": 4137,
+"cost": 0.00017479,
+"exact": 2743200
+},
+{
+"cond": "vague_forced",
+"order": 5,
+"rep": 5,
+"total": 2920600,
+"raw": "{\"total\": 2920600, \"discount_percent\": 5, \"shipping\": 25000}",
+"ms": 4219,
+"cost": 0.00018429,
+"exact": 2743200
+},
+{
+"cond": "vague_forced",
+"order": 5,
+"rep": 6,
+"total": 2920600,
+"raw": "{\"total\": 2920600, \"discount_percent\": 5, \"shipping\": 25000}",
+"ms": 3662,
+"cost": 0.00017829,
+"exact": 2743200
+},
+{
+"cond": "vague_forced",
+"order": 5,
+"rep": 7,
+"total": 2920600,
+"raw": "{\"total\": 2920600, \"discount_percent\": 5, \"shipping\": 25000}",
+"ms": 3628,
+"cost": 0.00017029,
+"exact": 2743200
+},
+{
+"cond": "vague_forced",
+"order": 5,
+"rep": 8,
+"total": 2920600,
+"raw": "{\"total\": 2920600, \"discount_percent\": 5, \"shipping\": 25000}",
+"ms": 4150,
+"cost": 0.00022879,
+"exact": 2743200
+},
+{
+"cond": "vague_forced",
+"order": 5,
+"rep": 9,
+"total": 2920600,
+"raw": "{\"total\": 2920600, \"discount_percent\": 5, \"shipping\": 25000}",
+"ms": 4042,
+"cost": 0.00019529,
+"exact": 2743200
+},
+{
+"cond": "vague_forced",
+"order": 6,
+"rep": 0,
+"total": 761400,
+"raw": "{\"total\": 761400, \"discount_percent\": 10, \"shipping\": 0}",
+"ms": 2034,
+"cost": 0.0003463,
+"exact": 871000
+},
+{
+"cond": "vague_forced",
+"order": 6,
+"rep": 1,
+"total": 761400,
+"raw": "{\"total\": 761400, \"discount_percent\": 10, \"shipping\": 0}",
+"ms": 3219,
+"cost": 0.00016578,
+"exact": 871000
+},
+{
+"cond": "vague_forced",
+"order": 6,
+"rep": 2,
+"total": 761400,
+"raw": "{\"total\": 761400, \"discount_percent\": 10, \"shipping\": 0}",
+"ms": 4471,
+"cost": 0.00020178,
+"exact": 871000
+},
+{
+"cond": "vague_forced",
+"order": 6,
+"rep": 3,
+"total": 761400,
+"raw": "{\"total\": 761400, \"discount_percent\": 10, \"shipping\": 0}",
+"ms": 3863,
+"cost": 0.00014628000000000002,
+"exact": 871000
+},
+{
+"cond": "vague_forced",
+"order": 6,
+"rep": 4,
+"total": 761400,
+"raw": "{\"total\": 761400, \"discount_percent\": 10, \"shipping\": 0}",
+"ms": 4323,
+"cost": 0.00018478,
+"exact": 871000
+},
+{
+"cond": "vague_forced",
+"order": 6,
+"rep": 5,
+"total": 786400,
+"raw": "{\"total\": 786400, \"discount_percent\": 10, \"shipping\": 25000}",
+"ms": 4096,
+"cost": 0.00016828,
+"exact": 871000
+},
+{
+"cond": "vague_forced",
+"order": 6,
+"rep": 6,
+"total": 761400,
+"raw": "{\"total\": 761400, \"discount_percent\": 10, \"shipping\": 0}",
+"ms": 4228,
+"cost": 0.00016328,
+"exact": 871000
+},
+{
+"cond": "vague_forced",
+"order": 6,
+"rep": 7,
+"total": 761400,
+"raw": "{\"total\": 761400, \"discount_percent\": 10, \"shipping\": 0}",
+"ms": 4037,
+"cost": 0.00018478,
+"exact": 871000
+},
+{
+"cond": "vague_forced",
+"order": 6,
+"rep": 8,
+"total": 761400,
+"raw": "{\"total\": 761400, \"discount_percent\": 10, \"shipping\": 0}",
+"ms": 4896,
+"cost": 0.00023928,
+"exact": 871000
+},
+{
+"cond": "vague_forced",
+"order": 6,
+"rep": 9,
+"total": 761400,
+"raw": "{\"total\": 761400, \"discount_percent\": 10, \"shipping\": 0}",
+"ms": 4627,
+"cost": 0.00021578,
+"exact": 871000
+},
+{
+"cond": "vague_forced",
+"order": 7,
+"rep": 0,
+"total": 3274000,
+"raw": "{\"total\": 3274000, \"discount_percent\": 5, \"shipping\": 25000}",
+"ms": 2114,
+"cost": 0.0003482,
+"exact": 3078000
+},
+{
+"cond": "vague_forced",
+"order": 7,
+"rep": 1,
+"total": 3274000,
+"raw": "{\"total\": 3274000, \"discount_percent\": 5, \"shipping\": 25000}",
+"ms": 3976,
+"cost": 0.00015315,
+"exact": 3078000
+},
+{
+"cond": "vague_forced",
+"order": 7,
+"rep": 2,
+"total": 3274000,
+"raw": "{\"total\": 3274000, \"discount_percent\": 5, \"shipping\": 25000}",
+"ms": 4376,
+"cost": 0.00020015,
+"exact": 3078000
+},
+{
+"cond": "vague_forced",
+"order": 7,
+"rep": 3,
+"total": 3274000,
+"raw": "{\"total\": 3274000, \"discount_percent\": 5, \"shipping\": 25000}",
+"ms": 3552,
+"cost": 0.00015715,
+"exact": 3078000
+},
+{
+"cond": "vague_forced",
+"order": 7,
+"rep": 4,
+"total": 3274000,
+"raw": "{\"total\": 3274000, \"discount_percent\": 5, \"shipping\": 25000}",
+"ms": 3267,
+"cost": 0.00014115,
+"exact": 3078000
+},
+{
+"cond": "vague_forced",
+"order": 7,
+"rep": 5,
+"total": 3274000,
+"raw": "{\"total\": 3274000, \"discount_percent\": 5, \"shipping\": 25000}",
+"ms": 4550,
+"cost": 0.00022265000000000002,
+"exact": 3078000
+},
+{
+"cond": "vague_forced",
+"order": 7,
+"rep": 6,
+"total": 3274000,
+"raw": "{\"total\": 3274000, \"discount_percent\": 5, \"shipping\": 25000}",
+"ms": 4075,
+"cost": 0.00016215,
+"exact": 3078000
+},
+{
+"cond": "vague_forced",
+"order": 7,
+"rep": 7,
+"total": 3274000,
+"raw": "{\"total\": 3274000, \"discount_percent\": 5, \"shipping\": 25000}",
+"ms": 3588,
+"cost": 0.00015165000000000003,
+"exact": 3078000
+},
+{
+"cond": "vague_forced",
+"order": 7,
+"rep": 8,
+"total": 3274000,
+"raw": "{\"total\": 3274000, \"discount_percent\": 5, \"shipping\": 25000}",
+"ms": 3226,
+"cost": 0.00018065000000000003,
+"exact": 3078000
+},
+{
+"cond": "vague_forced",
+"order": 7,
+"rep": 9,
+"total": 3274000,
+"raw": "{\"total\": 3274000, \"discount_percent\": 5, \"shipping\": 25000}",
+"ms": 3870,
+"cost": 0.00014065000000000003,
+"exact": 3078000
+},
+{
+"cond": "vague_forced",
+"order": 8,
+"rep": 0,
+"total": 1879200,
+"raw": "{\"total\": 1879200, \"discount_percent\": 10, \"shipping\": 0}",
+"ms": 2087,
+"cost": 0.000355,
+"exact": 1983600
+},
+{
+"cond": "vague_forced",
+"order": 8,
+"rep": 1,
+"total": 1879200,
+"raw": "{\"total\": 1879200, \"discount_percent\": 10, \"shipping\": 0}",
+"ms": 3783,
+"cost": 0.00032950000000000004,
+"exact": 1983600
+},
+{
+"cond": "vague_forced",
+"order": 8,
+"rep": 2,
+"total": 1879200,
+"raw": "{\"total\": 1879200, \"discount_percent\": 10, \"shipping\": 0}",
+"ms": 4217,
+"cost": 0.00018873999999999999,
+"exact": 1983600
+},
+{
+"cond": "vague_forced",
+"order": 8,
+"rep": 3,
+"total": 1879200,
+"raw": "{\"total\": 1879200, \"discount_percent\": 10, \"shipping\": 0}",
+"ms": 4018,
+"cost": 0.00017524,
+"exact": 1983600
+},
+{
+"cond": "vague_forced",
+"order": 8,
+"rep": 4,
+"total": 1879200,
+"raw": "{\"total\": 1879200, \"discount_percent\": 10, \"shipping\": 0}",
+"ms": 3519,
+"cost": 0.00016324,
+"exact": 1983600
+},
+{
+"cond": "vague_forced",
+"order": 8,
+"rep": 5,
+"total": 1879200,
+"raw": "{\"total\": 1879200, \"discount_percent\": 10, \"shipping\": 0}",
+"ms": 3738,
+"cost": 0.00016224,
+"exact": 1983600
+},
+{
+"cond": "vague_forced",
+"order": 8,
+"rep": 6,
+"total": 1879200,
+"raw": "{\"total\": 1879200, \"discount_percent\": 10, \"shipping\": 0}",
+"ms": 4066,
+"cost": 0.00016974,
+"exact": 1983600
+},
+{
+"cond": "vague_forced",
+"order": 8,
+"rep": 7,
+"total": 1879200,
+"raw": "{\"total\": 1879200, \"discount_percent\": 10, \"shipping\": 0}",
+"ms": 3941,
+"cost": 0.00016274,
+"exact": 1983600
+},
+{
+"cond": "vague_forced",
+"order": 8,
+"rep": 8,
+"total": 1879200,
+"raw": "{\"total\": 1879200, \"discount_percent\": 10, \"shipping\": 0}",
+"ms": 3680,
+"cost": 0.00015424,
+"exact": 1983600
+},
+{
+"cond": "vague_forced",
+"order": 8,
+"rep": 9,
+"total": 1879200,
+"raw": "{\"total\": 1879200, \"discount_percent\": 10, \"shipping\": 0}",
+"ms": 2988,
+"cost": 0.00014674,
+"exact": 1983600
+},
+{
+"cond": "vague_forced",
+"order": 9,
+"rep": 0,
+"total": 4106200,
+"raw": "{\"total\": 4106200, \"discount_percent\": 5, \"shipping\": 25000}",
+"ms": 2174,
+"cost": 0.00037050000000000006,
+"exact": 3866400
+},
+{
+"cond": "vague_forced",
+"order": 9,
+"rep": 1,
+"total": 4106200,
+"raw": "{\"total\": 4106200, \"discount_percent\": 5, \"shipping\": 25000}",
+"ms": 3899,
+"cost": 0.00022689,
+"exact": 3866400
+},
+{
+"cond": "vague_forced",
+"order": 9,
+"rep": 2,
+"total": 4106200,
+"raw": "{\"total\": 4106200, \"discount_percent\": 5, \"shipping\": 25000}",
+"ms": 3987,
+"cost": 0.00019489,
+"exact": 3866400
+},
+{
+"cond": "vague_forced",
+"order": 9,
+"rep": 3,
+"total": 4106200,
+"raw": "{\"total\": 4106200, \"discount_percent\": 5, \"shipping\": 25000}",
+"ms": 4273,
+"cost": 0.00019639,
+"exact": 3866400
+},
+{
+"cond": "vague_forced",
+"order": 9,
+"rep": 4,
+"total": 4106200,
+"raw": "{\"total\": 4106200, \"discount_percent\": 5, \"shipping\": 25000}",
+"ms": 4274,
+"cost": 0.00019839,
+"exact": 3866400
+},
+{
+"cond": "vague_forced",
+"order": 9,
+"rep": 5,
+"total": 4106200,
+"raw": "{\"total\": 4106200, \"discount_percent\": 5, \"shipping\": 25000}",
+"ms": 4555,
+"cost": 0.00023489,
+"exact": 3866400
+},
+{
+"cond": "vague_forced",
+"order": 9,
+"rep": 6,
+"total": 4106200,
+"raw": "{\"total\": 4106200, \"discount_percent\": 5, \"shipping\": 25000}",
+"ms": 3804,
+"cost": 0.00022539,
+"exact": 3866400
+},
+{
+"cond": "vague_forced",
+"order": 9,
+"rep": 7,
+"total": 4106200,
+"raw": "{\"total\": 4106200, \"discount_percent\": 5, \"shipping\": 25000}",
+"ms": 4603,
+"cost": 0.00023189,
+"exact": 3866400
+},
+{
+"cond": "vague_forced",
+"order": 9,
+"rep": 8,
+"total": 4106200,
+"raw": "{\"total\": 4106200, \"discount_percent\": 5, \"shipping\": 25000}",
+"ms": 4394,
+"cost": 0.00020539,
+"exact": 3866400
+},
+{
+"cond": "vague_forced",
+"order": 9,
+"rep": 9,
+"total": 4106200,
+"raw": "{\"total\": 4106200, \"discount_percent\": 5, \"shipping\": 25000}",
+"ms": 3750,
+"cost": 0.00020189,
+"exact": 3866400
+}
+]

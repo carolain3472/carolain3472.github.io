@@ -1,0 +1,1466 @@
+[
+{
+"business": "bakery",
+"cond": "asks_better",
+"rep": 0,
+"talk": [
+[
+"Dueña",
+"Tengo una panadería con domicilios en un barrio. Somos cuatro. Siento que no me alcanza el día y todo el mundo me dice que use inteligencia artificial."
+],
+[
+"Asesora",
+"Pregunta 1 de 5: ¿Qué es lo que más tiempo te quita en un día normal, desde que abres hasta que cierras?"
+],
+[
+"Dueña",
+"Lo que más me come el tiempo es pasar a un cuaderno, cada noche, los pedidos que me llegan por WhatsApp para saber qué hornear: me quedo como hora y media copiando."
+],
+[
+"Asesora",
+"Pregunta 2 de 5: ¿Has intentado antes alguna forma de organizar esos pedidos (una aplicación, una hoja de cálculo, pedirle a los clientes que los envíen de otra manera), y cómo te fue?"
+],
+[
+"Dueña",
+"Lo intenté hace un año con un chatbot para los pedidos, pero lo quité al mes porque les confirmaba a los clientes productos que ya se habían agotado."
+],
+[
+"Asesora",
+"Pregunta 3 de 5: ¿Qué cosas no puedes cambiar en tu panadería, por ejemplo las personas que trabajan contigo, el dinero que puedes gastar, los datos que ya tienes (como las conversaciones de WhatsApp) o la conexión a internet?"
+],
+[
+"Dueña",
+"Lo que no puedo cambiar es que la persona que hornea tiene 64 años, no usa computador y necesita la lista impresa a las 4 de la mañana. Sobre el dinero que puedo gastar o la conexión a internet, la verdad es que no lo he pensado."
+],
+[
+"Asesora",
+"Pregunta 4 de 5: ¿Cuánto dinero podrías gastar al mes en una ayuda para los pedidos, y qué tan bien funciona el internet en tu panadería?"
+],
+[
+"Dueña",
+"No sé cuánto podría gastar al mes; la verdad es que no lo he pensado. Sobre el internet de la panadería, tampoco sé decirle qué tan bien funciona."
+],
+[
+"Asesora",
+"Pregunta 5 de 5: Si dentro de tres meses pudieras decir \"esto sí funcionó\", ¿qué tendría que haber cambiado en tu día a día?"
+],
+[
+"Dueña",
+"Quiero que en tres meses pueda cerrar los domingos sin perder pedidos, y que la lista de qué hornear ya esté impresa a las 4 de la mañana sin que me quite hora y media cada noche."
+]
+],
+"advice": "**Tres oportunidades, de la más fácil a la más difícil**\n\n**1. Que la IA te arme la lista de hornear**\nCada noche le pasas los mensajes de WhatsApp y ella suma y ordena todo: \"30 panes, 12 almojábanas...\". Tú solo revisas y la imprimes. Es lo que más te quita tiempo (hora y media) y no cambia nada para tus clientes ni para quien hornea: sigue recibiendo su hoja en papel.\n\n**2. Respuesta automática para recibir pedidos, sin prometer nada**\nAquí aprendemos de tu chatbot anterior. Este solo diría: \"Recibimos tu pedido, te confirmamos en la mañana\". Nunca dice que hay producto. Así los domingos no pierdes pedidos, y tú o alguien del equipo confirma después.\n\n**3. Confirmar disponibilidad automáticamente**\nEs lo más difícil, y es donde falló el chatbot anterior. Solo conviene cuando ya lleves un conteo diario confiable de lo que hay (por ejemplo, \"hoy hacemos 40 croissants\"). Déjalo para el final.\n\n**Antes de empezar, averigua dos cosas:**\n- Cuánto puedes gastar al mes (así sea un rango aproximado).\n- Qué tan bien funciona el internet en la panadería. Pídele a alguien del equipo que abra WhatsApp y un video en el local y te cuente si va lento.\n\nTe recomiendo empezar con la 1: es la que más rápido te devuelve las noches.",
+"seen": {
+"drain": true,
+"second": false,
+"root": false,
+"tried": true,
+"limit": true,
+"goal": true
+},
+"cost": 0.05446380000000001
+},
+{
+"business": "bakery",
+"cond": "asks_better",
+"rep": 1,
+"talk": [
+[
+"Dueña",
+"Tengo una panadería con domicilios en un barrio. Somos cuatro. Siento que no me alcanza el día y todo el mundo me dice que use inteligencia artificial."
+],
+[
+"Asesora",
+"Pregunta 1 de 5: ¿En qué cosas concretas se te va el día en la panadería, desde que abres hasta que cierras?"
+],
+[
+"Dueña",
+"Me se va el día en copiar a mano los pedidos de WhatsApp en un cuaderno, para saber qué hornear. Y además, dos veces por semana, llamo uno por uno a los clientes de tortas para confirmar la hora."
+],
+[
+"Asesora",
+"Pregunta 2 de 5: ¿Has probado antes alguna herramienta o forma de organizar los pedidos y las confirmaciones (una aplicación, un formulario, mensajes automáticos, lo que sea), y cómo te fue?"
+],
+[
+"Dueña",
+"Pagué un chatbot hace un año, pero lo quité al mes porque les confirmaba a los clientes productos agotados."
+],
+[
+"Asesora",
+"Pregunta 3 de 5: ¿Qué cosas no puedes cambiar en tu panadería, por ejemplo las personas que te ayudan, el dinero que puedes gastar al mes, los datos que tienes de tus clientes o la conexión a internet?"
+],
+[
+"Dueña",
+"Lo que no puedo cambiar es el equipo: somos cuatro, y la que hornea tiene 64 años, no usa computador y necesita la lista impresa en papel a las 4 de la mañana. Del dinero que puedo gastar al mes, los datos de clientes o la conexión a internet no te sabría decir, porque todavía no lo he pensado."
+],
+[
+"Asesora",
+"Pregunta 4 de 5: Si pasaran tres meses y todo hubiera salido bien, ¿qué te gustaría que ya estuviera resuelto en tu panadería?"
+],
+[
+"Dueña",
+"Dentro de tres meses quisiera poder cerrar los domingos sin perder pedidos, y que la lista de lo que hay que hornear le llegue impresa a la que hornea a las 4 de la mañana, sin que yo tenga que copiar nada a mano."
+],
+[
+"Asesora",
+"Pregunta 5 de 5: Aunque no lo hayas pensado antes, ¿más o menos cuánto dinero al mes podrías gastar en una ayuda para los pedidos sin que te pese?"
+],
+[
+"Dueña",
+"Pues no lo he pensado todavía, la verdad. Lo que sí sé es que no quiero que la ayuda me quite tiempo ni que le cause problemas a la que hornea."
+]
+],
+"advice": "**1. Lista de hornear lista para imprimir (la más fácil)**\nLa IA lee los pedidos de WhatsApp y arma una sola lista: cuántos panes, tortas y demás hay que hornear. Tú la revisas y la imprimes. Tu panadera sigue con su papel a las 4 a.m., sin tocar ningún computador. Tú dejas de copiar en el cuaderno. Las primeras semanas revisa la lista antes de imprimirla, para confiar en ella.\n\n**2. Confirmar las tortas sin llamar**\nUn mensaje automático de WhatsApp les pregunta a los clientes: \"¿Confirmas tu torta para el sábado a las 3?\". Ellos responden \"sí\" o piden otra hora. Tú solo llamas a los que no contestaron. Así te ahorras las llamadas de dos veces por semana.\n\n**3. Domingos cerrados sin perder pedidos (la más difícil)**\nUn asistente recibe pedidos cuando estás cerrada y los deja anotados para el lunes. Aquí está el riesgo de tu chatbot anterior, que confirmaba productos agotados. La solución es que solo ofrezca lo que tú marcas como disponible y que, ante cualquier duda, diga \"te confirmamos mañana\". Exige mantener al día esa lista de productos.\n\n**Antes de empezar**\nPiensa cuánto podrías gastar al mes y revisa que el internet de la panadería aguante. Empieza por la 1: es la que más tiempo te devuelve con menos riesgo.",
+"seen": {
+"drain": true,
+"second": true,
+"root": false,
+"tried": true,
+"limit": true,
+"goal": true
+},
+"cost": 0.05782760000000001
+},
+{
+"business": "bakery",
+"cond": "asks_better",
+"rep": 2,
+"talk": [
+[
+"Dueña",
+"Tengo una panadería con domicilios en un barrio. Somos cuatro. Siento que no me alcanza el día y todo el mundo me dice que use inteligencia artificial."
+],
+[
+"Asesora",
+"Pregunta 1 de 5: ¿En qué parte del día sientes que pierdes más tiempo, y qué es lo que haces en ese momento?"
+],
+[
+"Dueña",
+"Cada noche me paso hora y media copiando pedidos de WhatsApp a un cuaderno para saber qué hornear, y dos veces por semana llamo uno por uno a los clientes de tortas para confirmar la hora."
+],
+[
+"Asesora",
+"Pregunta 2 de 5: ¿Has probado antes alguna herramienta, aplicación o forma distinta de llevar los pedidos o confirmar las tortas, y cómo te fue?"
+],
+[
+"Dueña",
+"Sí, probé un chatbot hace un año, pero lo quité al mes porque les confirmaba a los clientes productos agotados."
+],
+[
+"Asesora",
+"Pregunta 3 de 5: ¿Qué cosas no puedes cambiar en tu panadería, por ejemplo las personas que tienes, el dinero que puedes gastar, la información de tus clientes o la conexión a internet?"
+],
+[
+"Dueña",
+"Lo que me preguntan ahora es qué no puedo cambiar: tengo cuatro personas, un presupuesto ajustado y a la persona que hornea no le sirve nada que no sea una lista impresa a las 4 de la mañana."
+],
+[
+"Asesora",
+"Pregunta 4 de 5: Si dentro de tres meses pudieras mirar atrás y decir \"esto sí valió la pena\", ¿qué tendría que haber cambiado en tu día a día?"
+],
+[
+"Dueña",
+"Quiero que dejar de pasar las noches copiando pedidos a mano y que la lista para la persona que hornea esté impresa y lista antes de las 4 de la mañana, sin que yo tenga que llamar a nadie dos veces por semana. Si eso pasa en tres meses, sí valdrá la pena."
+],
+[
+"Asesora",
+"Pregunta 5 de 5: ¿Cómo te llegan hoy los pedidos (solo por WhatsApp o también por llamada y en persona), y más o menos cuántos pedidos recibes al día?"
+],
+[
+"Dueña",
+"Contesta en una frase lo que me preguntan: ¿cómo llegan hoy los pedidos y cuántos recibo al día? Me llegan solo por WhatsApp, desde tres números distintos (el mío y los de dos empleados), y no tengo claro el número diario porque nunca lo he contado."
+]
+],
+"advice": "**Tres oportunidades, de la más fácil a la más difícil**\n\n**1. Que la IA arme la lista de hornear (la más fácil)**\nCada noche copias los chats de los tres números y se los pegas a una IA (ChatGPT o Claude). Ella te devuelve la lista ordenada: cuántos panes, cuántas tortas y para qué hora. Tú la revisas, la imprimes y listo. Pasas de 90 minutos a unos 10, y casi no cuesta nada. Además, durante una semana pídele que cuente los pedidos, así por fin sabrás cuántos recibes al día.\n\n**2. Confirmar las tortas sin llamar**\nEn lugar de llamar una por una, envía un mensaje igual para todos: \"Su torta es para el sábado a las 3 p. m., ¿confirma?\". La IA te ayuda a redactarlo y WhatsApp Business permite programar mensajes. Tú solo miras quién no respondió y llamas a esas pocas personas.\n\n**3. Un asistente que reciba los pedidos (la más difícil)**\nPrimero junta los tres números en un solo WhatsApp Business. Después, un asistente anota los pedidos y arma la lista de las 4 a. m. sin que tú copies nada. Es lo que falló la vez pasada, así que ahora haría falta una regla: cada mañana, tú marcas qué se agotó y el asistente solo confirma lo que sí hay. Además, para dudas raras, te pasa la conversación a ti.\n\nMi consejo: empieza por la 1, y la 3 déjala para más adelante.",
+"seen": {
+"drain": true,
+"second": true,
+"root": true,
+"tried": true,
+"limit": true,
+"goal": false
+},
+"cost": 0.0516684
+},
+{
+"business": "bakery",
+"cond": "asks_better",
+"rep": 3,
+"talk": [
+[
+"Dueña",
+"Tengo una panadería con domicilios en un barrio. Somos cuatro. Siento que no me alcanza el día y todo el mundo me dice que use inteligencia artificial."
+],
+[
+"Asesora",
+"**Pregunta 1 de 5:** Cuéntame un día normal en tu panadería: ¿en qué momento sientes que se te va el tiempo y no te alcanza?"
+],
+[
+"Dueña",
+"Lo que más me agota es la noche: cada día paso hora y media copiando los pedidos de WhatsApp a un cuaderno para saber qué hornear. Y como llegan por tres números distintos, a veces se me pierde alguno."
+],
+[
+"Asesora",
+"**Pregunta 2 de 5:** ¿Has probado antes alguna forma de organizar los pedidos, como una aplicación, una plantilla o pedirle ayuda a alguien, y cómo te fue?"
+],
+[
+"Dueña",
+"Pasé por varios intentos: hace un año pagué un chatbot, pero lo quité al mes porque les confirmaba a los clientes productos que ya se habían agotado. Y nunca probé nada más en serio, porque cada vez que cambio algo también tengo que explicárselo a mis empleados."
+],
+[
+"Asesora",
+"**Pregunta 3 de 5:** ¿Qué cosas no puedes cambiar en tu panadería, por ejemplo las personas que trabajan contigo, el dinero que puedes gastar, los tres números de WhatsApp o la conexión a internet?"
+],
+[
+"Dueña",
+"Pregunta 3: Lo que no puedo cambiar son los tres números de WhatsApp, porque los clientes ya nos escriben por ahí, y a mis dos empleados tampoco los voy a cambiar."
+],
+[
+"Asesora",
+"**Pregunta 4 de 5:** Si dentro de tres meses todo saliera bien, ¿qué quisieras haber logrado en tu panadería?"
+],
+[
+"Dueña",
+"Lo que más quiero es cerrar los domingos sin perder pedidos. Hoy los domingos no puedo descansar porque tengo que estar pendiente de los pedidos de los tres números, y no quiero que nadie se quede sin su torta."
+],
+[
+"Asesora",
+"**Pregunta 5 de 5:** ¿Cuánto tiempo y dinero podrías dedicar cada mes a probar algo nuevo, y quién de tu equipo se sentiría cómodo usando el celular o el computador para ayudarte?"
+],
+[
+"Dueña",
+"No he pensado cuánto tiempo ni cuánto dinero podría dedicar al mes a probar algo nuevo. La que hornea tiene 64 años, no usa computador y necesita la lista impresa a las 4 de la mañana; de mis dos empleados no sé si se sentirían cómodos con el celular o el computador."
+]
+],
+"advice": "Estas son las 3 oportunidades, de la más fácil a la más difícil:\n\n**1. Lista de hornear lista y impresa (la más fácil)**\nLa IA lee los pedidos de WhatsApp y arma sola la lista del día, y tú la imprimes para la panadera de las 4 a. m. Así recuperas la hora y media de la noche. Ella sigue con papel, sin aprender nada nuevo. Solo una persona del equipo revisaría la lista antes de imprimirla.\n\n**2. Un solo lugar para los tres números**\nLos clientes siguen escribiendo a los mismos números, pero todos los mensajes llegan a una sola bandeja y la IA los ordena: quién pidió qué, para cuándo y a qué dirección. Con eso no se pierde ningún pedido. Pide que alguien del equipo lo use con tu acompañamiento, de a poco.\n\n**3. Respuestas automáticas para los domingos (la más difícil)**\nLa IA contesta a los clientes y toma pedidos cuando tú descansas. Aquí falló tu chatbot anterior, así que solo lo haría con cantidades máximas por producto, y que ante la duda diga \"te confirmamos en un rato\". Hazlo cuando las dos primeras ya funcionen.\n\n**Antes de empezar:** necesito saber cuánto dinero y tiempo puedes dedicar al mes, y cuál de tus empleados se anima con el celular. Con eso te digo por dónde arrancar esta semana.",
+"seen": {
+"drain": true,
+"second": false,
+"root": true,
+"tried": true,
+"limit": true,
+"goal": true
+},
+"cost": 0.050053700000000007
+},
+{
+"business": "clinic",
+"cond": "asks_better",
+"rep": 0,
+"talk": [
+[
+"Dueña",
+"Soy dueña de un consultorio odontológico pequeño. Tenemos dos sillas y una recepcionista. Quiero ver cómo me ayuda la IA porque se me va la plata y no sé por dónde."
+],
+[
+"Asesora",
+"Pregunta 1 de 5: ¿Qué has intentado antes para frenar esa fuga de dinero en el consultorio, y cómo te fue?"
+],
+[
+"Dueña",
+"Lo que he probado hasta ahora son recordatorios automáticos por mensaje para las citas, pero muchos pacientes mayores no los leían y la cantidad de inasistencias no bajó."
+],
+[
+"Asesora",
+"Pregunta 2 de 5: ¿Qué cosas no puedes cambiar en tu consultorio, ya sea el equipo de personas, los datos que tienes de los pacientes, el dinero que puedes invertir o la conexión a internet?"
+],
+[
+"Dueña",
+"No puedo subir historias clínicas a ninguna herramienta externa por protección de datos. Mi equipo es la recepcionista, que hoy gasta dos horas diarias confirmando citas."
+],
+[
+"Asesora",
+"Pregunta 3 de 5: Si pasaran tres meses y todo hubiera salido bien, ¿qué te gustaría haber logrado en tu consultorio?"
+],
+[
+"Dueña",
+"Quiero que en tres meses bajen las sillas vacías de diez a tres por semana."
+],
+[
+"Asesora",
+"Pregunta 4 de 5: ¿Cuánto te cuesta, más o menos, cada silla vacía y cuándo suelen quedar vacías: por cancelaciones de último momento, por pacientes que no llegan o por huecos en la agenda que nadie llena?"
+],
+[
+"Dueña",
+"No tengo ese dato exacto, pero calculo que cada silla vacía me cuesta una consulta perdida, y no lo he medido. Las sillas quedan vacías sobre todo por pacientes que no llegan y por huecos que nadie llena, aunque no tengo registrado por qué cancelan."
+],
+[
+"Asesora",
+"Pregunta 5 de 5: ¿Cómo se manejan hoy tu agenda y los datos de tus pacientes (en papel, en un programa, en el celular de la recepcionista), y quién puede ver o cambiar esa información?"
+],
+[
+"Dueña",
+"La agenda y los datos de los pacientes están en un Excel que solo se abre en un computador. No sé exactamente quién puede verlo o cambiarlo, porque no lo he revisado."
+]
+],
+"advice": "# Tus 3 oportunidades, de la más fácil a la más difícil\n\n**1. Confirmar citas con llamada automática (fácil)**\nLos mensajes de texto no funcionaron con tus pacientes mayores, así que prueba una llamada con voz que diga la cita y pida responder \"1\" para confirmar o \"2\" para cambiar. Solo necesita nombre, teléfono y hora, **sin historias clínicas**. Además, la recepcionista recupera parte de sus dos horas diarias. Empieza anotando en el Excel el motivo de cada cancelación o falta, para empezar a medir.\n\n**2. Lista de espera para llenar huecos (media)**\nCuando alguien cancela, la IA avisa a pacientes en espera y les ofrece ese horario. Ataca directamente los \"huecos que nadie llena\". Tampoco necesita datos clínicos, solo contacto y disponibilidad. Antes tendrás que ordenar el Excel y decidir quién puede verlo y cambiarlo.\n\n**3. Detectar quién probablemente no llegará (difícil)**\nCon unos meses de datos ordenados (día, hora, tipo de cita, si asistió), la IA puede señalar las citas de riesgo. Así la recepcionista llama primero a esas personas o agenda a alguien de reserva. Esto se hace con datos dentro de tu consultorio, sin enviar historias clínicas a nadie. Solo funciona si antes registras bien las faltas.\n\n**Mi consejo:** empieza por la 1 y registra datos desde la primera semana. Así, en tres meses sabrás cuánto te cuesta realmente cada silla vacía y si vas camino a bajar de diez a tres por semana.",
+"seen": {
+"drain": true,
+"second": false,
+"root": true,
+"tried": true,
+"limit": true,
+"goal": true
+},
+"cost": 0.0542841
+},
+{
+"business": "clinic",
+"cond": "asks_better",
+"rep": 1,
+"talk": [
+[
+"Dueña",
+"Soy dueña de un consultorio odontológico pequeño. Tenemos dos sillas y una recepcionista. Quiero ver cómo me ayuda la IA porque se me va la plata y no sé por dónde."
+],
+[
+"Asesora",
+"Pregunta 1 de 5: ¿Qué has intentado antes para controlar los gastos o ahorrar tiempo en el consultorio, y cómo te fue?"
+],
+[
+"Dueña",
+"Lo que he intentado hasta ahora es poco: revisar la agenda en el Excel, que solo se abre en un computador, y mandar recordatorios automáticos a los pacientes. Los recordatorios no cambiaron nada, sobre todo con los pacientes mayores, que no los leían."
+],
+[
+"Asesora",
+"Pregunta 2 de 5: ¿Qué cosas no puedes cambiar en tu consultorio, por ejemplo las personas, la información que manejas, el dinero disponible o la conexión a internet?"
+],
+[
+"Dueña",
+"Lo que no puedo cambiar son las personas que trabajan conmigo, o sea, la recepcionista y la doctora, y tampoco puedo subir historias clínicas a herramientas externas por protección de datos."
+],
+[
+"Asesora",
+"Pregunta 3 de 5: ¿Qué te gustaría haber logrado dentro de tres meses para sentir que valió la pena?"
+],
+[
+"Dueña",
+"Dentro de tres meses quiero bajar las sillas vacías de diez a tres por semana."
+],
+[
+"Asesora",
+"Pregunta 4 de 5: Cuando una silla queda vacía, ¿normalmente pasa porque el paciente cancela a último momento, porque no llega sin avisar, o porque no hay pacientes agendados para ese horario?"
+],
+[
+"Dueña",
+"No lo sé todavía. Nunca he registrado el motivo de cada silla vacía, así que no puedo decir cuál de las tres es la más frecuente."
+],
+[
+"Asesora",
+"Pregunta 5 de 5: ¿Cuánto cobras en promedio por una cita y cuántas citas atiende cada silla en una semana normal?"
+],
+[
+"Dueña",
+"No tengo ese dato a mano: nunca he sacado la cuenta del precio promedio por cita ni de cuántas citas atiende cada silla en una semana normal."
+]
+],
+"advice": "**1. Anotar por qué queda vacía cada silla (la más fácil)**\nPasa la agenda del Excel a una hoja compartida en línea, sin datos clínicos, solo nombre, hora y estado. Tu recepcionista marca cada hueco: canceló, no llegó o no había cita. La IA te resume cada semana qué pasa más y cuánto dinero pierdes. Así también sacas el precio promedio y las citas por silla, que hoy no tienes. Sin esto, cualquier otra mejora es adivinar.\n\n**2. Recordatorios que sí lean los pacientes mayores (dificultad media)**\nLos mensajes no funcionaron con ellos, así que cambia el método: llamada corta de tu recepcionista o mensaje de voz, y pedir que respondan \"sí voy\". La IA te ayuda a redactar mensajes claros y a avisarte quién tiene más riesgo de faltar, según su historial de asistencia. No necesita historias clínicas.\n\n**3. Lista de espera para llenar cancelaciones (la más difícil)**\nCuando alguien cancela, la IA propone a quién avisar de inmediato, entre pacientes que quieren adelantar su cita. Necesita que los pasos 1 y 2 ya funcionen y que tu recepcionista lo maneje con calma.\n\n**Importante:** en todos los casos, mantén las historias clínicas fuera de estas herramientas, como ya planeas.\n\nSi quieres, te armo la hoja del paso 1 con las columnas exactas.",
+"seen": {
+"drain": false,
+"second": false,
+"root": true,
+"tried": true,
+"limit": true,
+"goal": false
+},
+"cost": 0.05187518
+},
+{
+"business": "clinic",
+"cond": "asks_better",
+"rep": 2,
+"talk": [
+[
+"Dueña",
+"Soy dueña de un consultorio odontológico pequeño. Tenemos dos sillas y una recepcionista. Quiero ver cómo me ayuda la IA porque se me va la plata y no sé por dónde."
+],
+[
+"Asesora",
+"Pregunta 1 de 5: ¿Qué has intentado antes para controlar los gastos o ahorrar tiempo en el consultorio, y cómo te fue?"
+],
+[
+"Dueña",
+"Lo que he intentado hasta ahora es poco: la recepcionista llama a confirmar citas unas dos horas al día, y mandamos recordatorios automáticos, pero muchos pacientes mayores no los leían y la inasistencia no bajó. La agenda está en un Excel que solo se abre en un computador."
+],
+[
+"Asesora",
+"Pregunta 2 de 5: ¿Qué cosas no puedes cambiar en tu consultorio, ya sea por las personas, la información de los pacientes, el dinero disponible o la conexión a internet?"
+],
+[
+"Dueña",
+"Las cosas que no puedo cambiar son que no podemos subir historias clínicas a herramientas externas por protección de datos, y que tenemos solo dos sillas y una recepcionista, con un presupuesto que se nos va rápido."
+],
+[
+"Asesora",
+"Pregunta 3 de 5: Dentro de tres meses, ¿qué te gustaría haber logrado en el consultorio para sentir que valió la pena probar la IA?"
+],
+[
+"Dueña",
+"Que las citas se confirmen solas, que la doctora deje de pasar los viernes escribiendo informes a mano y que las sillas vacías bajen de diez a tres por semana."
+],
+[
+"Asesora",
+"Pregunta 4 de 5: ¿Cuándo un paciente falta a su cita, qué suele pasar: avisa a último momento, simplemente no llega, o no logran contactarlo, y qué día o tipo de paciente falta más?"
+],
+[
+"Dueña",
+"No lo tengo claro. Nadie registra por qué cancelan los pacientes, así que no sé si avisan a último momento, simplemente no llegan, ni qué días o tipo de paciente faltan más."
+],
+[
+"Asesora",
+"Pregunta 5 de 5: ¿Cuánto te cuesta, más o menos, cada silla vacía (lo que dejas de ganar por una cita perdida), y cuánto dinero al mes podrías destinar a una solución sin que te apriete?"
+],
+[
+"Dueña",
+"No sé cuánto me cuesta cada silla vacía, porque nunca lo he calculado y no tengo claro cuánto gano por cita. Tampoco tengo definido cuánto podría destinar al mes sin que me apriete."
+]
+],
+"advice": "# Tus 3 oportunidades, de la más fácil a la más difícil\n\n**1. Confirmación de citas que sí se contesta (fácil)**\nLos mensajes de texto no funcionan con tus pacientes mayores. Una llamada automática con voz, o un mensaje de WhatsApp donde solo respondan \"1 = confirmo, 2 = cambio\", puede quitarle a tu recepcionista esas dos horas diarias. Además, si alguien cancela, el sistema puede ofrecer ese espacio a pacientes en lista de espera.\n\n**2. Informes de los viernes (medio)**\nLa doctora puede dictar sus notas por voz y la IA las convierte en un informe ordenado, que ella revisa y firma. Como no pueden subir historias clínicas a herramientas externas, hay que escoger una herramienta que guarde los datos solo en tu consultorio, o que la doctora dicte sin nombres de pacientes. Consulta esto antes de empezar.\n\n**3. Entender por qué faltan los pacientes (más difícil)**\nHoy nadie registra los motivos, así que la IA no tiene de dónde aprender. Primero hay que anotar, durante un mes, cada falta: día, tipo de paciente y motivo. Después, la IA puede decirte quién falta más y cuándo, y puedes llenar esas sillas mejor.\n\n**Antes de todo, dos tareas tuyas:**\n- Calcula cuánto ganas por cita. Sin ese número no sabrás si la IA se paga sola.\n- Define un tope mensual. Con diez sillas vacías por semana, probablemente ya estás perdiendo bastante.\n\nPasar el Excel a una agenda en línea también ayudaría mucho.",
+"seen": {
+"drain": true,
+"second": true,
+"root": true,
+"tried": true,
+"limit": true,
+"goal": false
+},
+"cost": 0.050142299999999994
+},
+{
+"business": "clinic",
+"cond": "asks_better",
+"rep": 3,
+"talk": [
+[
+"Dueña",
+"Soy dueña de un consultorio odontológico pequeño. Tenemos dos sillas y una recepcionista. Quiero ver cómo me ayuda la IA porque se me va la plata y no sé por dónde."
+],
+[
+"Asesora",
+"Pregunta 1 de 5: ¿Cuándo sientes que se te va la plata en el consultorio: en qué momentos o en qué cosas lo notas más, aunque no sepas bien la causa?"
+],
+[
+"Dueña",
+"Lo noto en las sillas vacías: hoy tenemos unas diez por semana y quiero bajarlas a tres. No sé bien por qué los pacientes cancelan, porque nunca lo hemos anotado."
+],
+[
+"Asesora",
+"Pregunta 2 de 5: ¿Qué has intentado antes para llenar esas sillas vacías (recordatorios, llamadas, lista de espera, lo que sea) y cómo te fue?"
+],
+[
+"Dueña",
+"Como dueña, respondo solo lo que me preguntan: antes intentamos mandar recordatorios automáticos por mensaje, pero muchos pacientes mayores no los leían y la cantidad de inasistencias no cambió."
+],
+[
+"Asesora",
+"Pregunta 3 de 5: ¿Qué cosas no puedes cambiar en tu consultorio, por ejemplo las personas que trabajan contigo, los datos que tienes de los pacientes, el dinero que puedes gastar o la conexión a internet?"
+],
+[
+"Dueña",
+"Lo que me preguntas no lo tenemos claro: por ahora no sé qué datos de los pacientes sí podríamos usar en una herramienta externa, porque por protección de datos no podemos subir historias clínicas. Lo que sí sé es que la agenda está en un Excel que solo abre un computador."
+],
+[
+"Asesora",
+"Pregunta 4 de 5: Dentro de tres meses, ¿qué te gustaría haber logrado para sentir que valió la pena, y cómo lo notarías (por ejemplo, cuántas sillas vacías por semana)?"
+],
+[
+"Dueña",
+"Tres meses después, quiero bajar las sillas vacías de diez a tres por semana, y lo notaría en la agenda, que deberíamos empezar a registrar."
+],
+[
+"Asesora",
+"Pregunta 5 de 5: Cuando un paciente cancela o no llega, ¿cómo te enteras y qué hacen en ese momento con ese horario (por ejemplo, llaman a alguien, lo dejan vacío)?"
+],
+[
+"Dueña",
+"Pregunta 5: Cuando un paciente cancela o no llega, no lo registramos de forma sistemática, así que no sé bien cómo nos enteramos ni qué hacemos con ese horario en el momento."
+]
+],
+"advice": "**Las 3 oportunidades, de la más fácil a la más difícil**\n\n**1. Anotar por qué cancelan (esta semana)**\nHoy no tienes datos, y sin ellos es difícil mejorar. Basta una hoja simple con fecha, hora, si canceló o no llegó, y el motivo en una palabra. No lleva historias clínicas. Después de 4 a 6 semanas, la IA puede resumirte los patrones: qué días fallan más, qué tipo de cita y qué pacientes. Así sabrás dónde se va la plata.\n\n**2. Lista de espera para llenar huecos rápido (mes 1-2)**\nCuando alguien cancela, la recepcionista ya tiene una lista de pacientes que quieren adelantar su cita. La IA te redacta mensajes cortos y amables para ofrecerles el horario. Solo usarías nombre, teléfono y hora, nunca datos clínicos. También sirve para pacientes mayores: confirmar con una llamada breve, en vez de mensaje, 2 días antes.\n\n**3. Agenda compartida con avisos inteligentes (mes 2-3)**\nHoy tu agenda vive en un solo computador, y eso limita todo. Pasarla a una agenda en línea permitiría que la IA detecte quién suele faltar, avise antes y proponga a quién llamar. Es lo más difícil porque implica cambiar hábitos y revisar la protección de datos con tu asesor legal antes de empezar.\n\n**Meta:** pasar de 10 a 3 sillas vacías por semana. Empieza por el punto 1, porque sin esa información los otros dos funcionan a ciegas.",
+"seen": {
+"drain": false,
+"second": false,
+"root": true,
+"tried": true,
+"limit": true,
+"goal": true
+},
+"cost": 0.054798299999999994
+},
+{
+"business": "hardware",
+"cond": "asks_better",
+"rep": 0,
+"talk": [
+[
+"Dueña",
+"Tengo una ferretería que heredé de mi papá. Vendemos a constructoras y al público. Me dijeron que con IA podía vender más pero no sé ni qué pedir."
+],
+[
+"Asesora",
+"Pregunta 1 de 5: ¿Qué has intentado antes para vender más en la ferretería (anuncios, redes sociales, WhatsApp, algún programa) y cómo te fue?"
+],
+[
+"Dueña",
+"Hace dos años compré un programa de inventario, pero nadie lo alimentó después del primer mes. No he intentado nada más para vender más."
+],
+[
+"Asesora",
+"Pregunta 2 de 5: ¿Qué cosas no puedes cambiar en tu ferretería hoy: las personas que trabajan contigo, la información que tienes, el dinero que puedes gastar o la conexión a internet?"
+],
+[
+"Dueña",
+"Creo que lo que más puedo cambiar es el dinero que gasto y cómo organizo la información, pero las personas que trabajan conmigo y el internet del local no los tengo pensados como algo que pueda modificar; no lo he pensado a fondo."
+],
+[
+"Asesora",
+"Pregunta 3 de 5: Dentro de tres meses, ¿qué te gustaría haber logrado en tu ferretería para sentir que valió la pena?"
+],
+[
+"Dueña",
+"Dentro de tres meses quiero poder responder cualquier cotización de una constructora el mismo día, sin pasarme las mañanas copiando listas escritas a mano en fotos."
+],
+[
+"Asesora",
+"Pregunta 4 de 5: Cuando una constructora te pide una cotización, ¿cómo te llega el pedido y qué pasos haces hasta enviarle el precio?"
+],
+[
+"Dueña",
+"Me llega por WhatsApp o por correo, a veces como foto de una lista escrita a mano, y yo tengo que pasarla a números para cotizarla."
+],
+[
+"Asesora",
+"Pregunta 5 de 5: ¿Dónde tienes hoy los precios de tus productos: en un Excel o en el programa de inventario, en papel, o solo en la cabeza de alguien del equipo?"
+],
+[
+"Dueña",
+"Los precios los tengo en un Excel viejo y en el programa de inventario, pero el Excel no está al día y los PDFs de los proveedores llegan cada semana. Esa parte la sé yo de memoria, así que en realidad depende de mí."
+]
+],
+"advice": "**1. Pasar las fotos de listas a números (la más fácil)**\nLa IA puede leer la foto de una lista escrita a mano y convertirla en una tabla ordenada. Tú solo revisas lo dudoso. Puedes probarlo esta semana, sin comprar nada especial. Esto te quita las mañanas copiando.\n\n**2. Armar la cotización con esa lista (dificultad media)**\nUna vez que la lista está en tabla, la IA busca cada producto en tus precios y te deja un borrador de cotización listo para enviar por WhatsApp o correo. Tú lo revisas y lo mandas. Así llegas a responder el mismo día. Funciona bien solo si tus precios son confiables, por eso va antes de la siguiente.\n\n**3. Mantener los precios al día y sacarlos de tu memoria (la más difícil)**\nCada semana llegan PDFs de proveedores. La IA puede leerlos y señalarte qué precios cambiaron para actualizar una sola lista. Lo difícil es ordenar primero el Excel viejo y anotar lo que hoy solo sabes tú. También es lo que más te libera, porque el negocio dejaría de depender de ti.\n\n**Un consejo por lo del programa de inventario:** empieza solo con la primera y deja a una persona encargada de la rutina semanal. Lo simple que se usa vale más que lo completo que se abandona.",
+"seen": {
+"drain": true,
+"second": false,
+"root": true,
+"tried": true,
+"limit": false,
+"goal": true
+},
+"cost": 0.054635500000000004
+},
+{
+"business": "hardware",
+"cond": "asks_better",
+"rep": 1,
+"talk": [
+[
+"Dueña",
+"Tengo una ferretería que heredé de mi papá. Vendemos a constructoras y al público. Me dijeron que con IA podía vender más pero no sé ni qué pedir."
+],
+[
+"Asesora",
+"**Pregunta 1 de 5:** ¿Qué has intentado antes para vender más en la ferretería (anuncios, redes sociales, WhatsApp, algún programa) y cómo te fue con eso?"
+],
+[
+"Dueña",
+"Compramos y vendemos, pero lo que hemos probado es un programa de inventario que compré hace dos años y que se dejó de alimentar después del primer mes."
+],
+[
+"Asesora",
+"**Pregunta 2 de 5:** ¿Qué cosas no puedes cambiar en tu negocio hoy: cuánta gente tienes para ayudarte, qué tan ordenados están tus datos (ventas, clientes, precios), cuánto dinero puedes gastar y si tienes buen internet en la tienda?"
+],
+[
+"Dueña",
+"Tengo dos vendedores, y atienden de pie con solo celular, porque no hay computador en el mostrador. Los datos están desordenados: los precios llegan en PDFs distintos cada semana y el programa de inventario no lo hemos alimentado desde el primer mes. No te sabría decir cuánto dinero podemos gastar ni cómo está el internet en la tienda."
+],
+[
+"Asesora",
+"**Pregunta 3 de 5:** Si dentro de tres meses miras tu ferretería y piensas \"esto sí valió la pena\", ¿qué tendría que haber pasado (por ejemplo, más ventas, menos tiempo cotizando, o menos errores en precios)?"
+],
+[
+"Dueña",
+"Respondo como la dueña, en una o dos frases, solo con lo que dice la ficha: en tres meses quiero poder responder cualquier cotización de una constructora el mismo día, sin perder las mañanas en listas escritas a mano en fotos."
+],
+[
+"Asesora",
+"**Pregunta 4 de 5:** Cuando una constructora te pide una cotización, ¿cómo te llega el pedido (WhatsApp, llamada, foto de una lista) y qué pasos haces hasta darle el precio?"
+],
+[
+"Dueña",
+"Me llega la cotización por WhatsApp, llamada o foto de una lista escrita a mano, y no lo he pensado en detalle; lo que sí sé es que cotizar me toma las mañanas completas."
+],
+[
+"Asesora",
+"**Pregunta 5 de 5:** Cuando le llega una cotización a tu vendedor o a ti, ¿quién la responde y cuántas te llegan en una semana normal?"
+],
+[
+"Dueña",
+"No sé cuántas cotizaciones llegan en una semana normal, porque nunca las he contado. Lo que sí sé es que cotizar me toma las mañanas completas, pero no tengo claro qué parte le toca a cada vendedor."
+]
+],
+"advice": "**Las 3 oportunidades, de la más fácil a la más difícil**\n\n**1. Pasar las fotos de listas a mano a una lista ordenada**\nLa IA lee la foto que manda la constructora y la convierte en una lista clara de materiales y cantidades. Se hace desde el celular, sin comprar equipo ni programas grandes. Es lo que más te quita de las mañanas, y puedes probarlo esta semana.\n\n**2. Juntar los precios de los PDFs en una sola lista**\nCada semana llegan PDFs distintos. La IA los lee y actualiza una sola lista de precios, así nadie tiene que buscar en varios archivos. Requiere algo de orden al inicio, pero después se mantiene con poco esfuerzo. Esto no es como el programa de inventario, que dependía de que alguien lo alimentara todos los días.\n\n**3. Cotización casi automática**\nLa IA compara la lista del cliente con tu lista de precios y prepara un borrador de respuesta. Tu vendedor lo revisa y lo manda por WhatsApp. Es lo que cumple tu meta de cotizar el mismo día, pero depende de que las dos primeras funcionen bien.\n\n**Antes de empezar, dos tareas sencillas:**\n- Cuenta cuántas cotizaciones llegan durante una semana y quién responde cada una.\n- Revisa cómo está el internet en la tienda.\n\nCon eso podemos decidir cuánto vale la pena invertir.",
+"seen": {
+"drain": true,
+"second": false,
+"root": true,
+"tried": true,
+"limit": true,
+"goal": true
+},
+"cost": 0.051056599999999994
+},
+{
+"business": "hardware",
+"cond": "asks_better",
+"rep": 2,
+"talk": [
+[
+"Dueña",
+"Tengo una ferretería que heredé de mi papá. Vendemos a constructoras y al público. Me dijeron que con IA podía vender más pero no sé ni qué pedir."
+],
+[
+"Asesora",
+"**Pregunta 1 de 5:** ¿Qué has intentado antes para vender más en la ferretería (publicidad, redes, WhatsApp, lo que sea) y cómo te fue?"
+],
+[
+"Dueña",
+"Lo que he intentado es poco: nada de publicidad ni redes. Mi cliente de constructoras me llega por teléfono y por recomendación de siempre, y al público lo atiende el mostrador como lo hacía mi papá."
+],
+[
+"Asesora",
+"**Pregunta 2 de 5:** ¿Qué cosas no puedes cambiar en tu ferretería, por ejemplo la gente que tienes, el dinero que puedes invertir, la información que llevas (clientes, inventario) o la conexión a internet?"
+],
+[
+"Dueña",
+"Lo que no puedo cambiar es sobre todo el tiempo: las mañanas se me van en cotizar a las constructoras y los sábados en contar tornillos a mano. El dinero para invertir no lo he calculado, y la información de clientes e inventario está en listas escritas a mano y en un programa que compré hace dos años y que nadie alimentó después del primer mes."
+],
+[
+"Asesora",
+"**Pregunta 3 de 5:** Si dentro de tres meses pudieras decir \"esto sí valió la pena\", ¿qué tendría que haber pasado en tu ferretería?"
+],
+[
+"Dueña",
+"Lo que quiero es que en tres meses las mañanas ya no se me vayan en cotizar: que las constructoras reciban su cotización el mismo día, y que el inventario y los precios estén al día sin que yo tenga que contar tornillos ni buscar qué PDF es el vigente."
+],
+[
+"Asesora",
+"**Pregunta 4 de 5:** Cuando cotizas a una constructora, ¿cómo lo haces paso a paso (de dónde sacas los precios, cómo armas el documento y cómo se lo mandas)?"
+],
+[
+"Dueña",
+"Como la ficha no describe el paso a paso de cómo cotizo, no sé decirte con precisión cómo lo hago. Lo que sí sé es que me llegan listas escritas a mano en fotos y que tengo que buscar cuál de los PDF de proveedores es el vigente."
+],
+[
+"Asesora",
+"**Pregunta 5 de 5:** ¿Cuántas constructoras le cotizas más o menos por semana, y qué tan seguido te cambian los precios tus proveedores?"
+],
+[
+"Dueña",
+"No tengo una cuenta exacta de cuántas constructoras cotizo por semana. Los proveedores me mandan PDF distintos cada semana, así que los precios cambian semanalmente, aunque no sé cuánto cambian en cada envío."
+]
+],
+"advice": "**Tus 3 oportunidades, de la más fácil a la más difícil:**\n\n**1. Leer tus listas y fotos sin teclear (fácil)**\nLa IA puede \"leer\" las fotos de listas escritas a mano y los PDF de proveedores, y pasarlos a una hoja ordenada. Hoy pierdes tiempo buscando cuál PDF es el vigente; esto lo resuelve. Puedes empezar esta semana, sin comprar nada grande.\n\n**2. Cotizaciones listas el mismo día (medio)**\nCon los precios ya ordenados, la IA arma la cotización: tú le pasas lo que pide la constructora, ella busca los precios vigentes y deja el documento listo para que lo revises y lo mandes. Tú sigues decidiendo, pero ya no gastas la mañana entera. Antes necesito entender cómo cotizas hoy, porque no lo tenemos claro todavía.\n\n**3. Inventario al día sin contar a mano (difícil)**\nEs lo más valioso para tus sábados, pero requiere más: alguien que alimente el programa con cada venta y compra, y hábitos nuevos en el mostrador. Tu programa de hace dos años murió porque nadie lo alimentó; sin ese hábito, la IA tampoco funcionaría.\n\n**Mi recomendación:** empieza por la 1, porque la 2 depende de ella.\n\n**Para el siguiente paso:** anota durante una semana cuántas cotizaciones haces y cuánto tardas en cada una. Con eso calculamos cuánto dinero te conviene invertir.",
+"seen": {
+"drain": true,
+"second": true,
+"root": true,
+"tried": true,
+"limit": false,
+"goal": true
+},
+"cost": 0.047415900000000004
+},
+{
+"business": "hardware",
+"cond": "asks_better",
+"rep": 3,
+"talk": [
+[
+"Dueña",
+"Tengo una ferretería que heredé de mi papá. Vendemos a constructoras y al público. Me dijeron que con IA podía vender más pero no sé ni qué pedir."
+],
+[
+"Asesora",
+"Pregunta 1 de 5: ¿Qué has intentado antes para vender más en la ferretería (publicidad, redes, vendedores, lo que sea) y cómo te fue?"
+],
+[
+"Dueña",
+"Hace dos años compré un programa de inventario, pero nadie lo alimentó después del primer mes. En publicidad o redes no he probado nada que me acuerde."
+],
+[
+"Asesora",
+"Pregunta 2 de 5: ¿Qué cosas en tu ferretería no se pueden cambiar, por ejemplo las personas que trabajan contigo, el dinero que puedes gastar, la información que tienes o la conexión a internet?"
+],
+[
+"Dueña",
+"Lo que no se puede cambiar es la gente: tengo dos vendedores que atienden de pie y solo tienen celular, y el presupuesto lo decido yo, pero no sé cuánto puedo gastar sin revisarlo primero."
+],
+[
+"Asesora",
+"Pregunta 3 de 5: Pensando en los próximos tres meses, ¿qué te gustaría haber logrado en la ferretería para sentir que valió la pena probar algo con IA?"
+],
+[
+"Dueña",
+"Quiero que en tres meses pueda responder cualquier cotización a las constructoras el mismo día, en vez de perder las mañanas enteras con las listas escritas a mano en fotos."
+],
+[
+"Asesora",
+"Pregunta 4 de 5: Cuando una constructora te pide una cotización, ¿cómo te llega el pedido y qué pasos haces tú o tus vendedores hasta mandarle el precio?"
+],
+[
+"Dueña",
+"Las constructoras nos mandan el pedido como listas escritas a mano y fotografiadas, y yo o mis vendedores tenemos que revisar cada producto, buscar el precio vigente en los PDFs de los proveedores y armar la cotización, lo que nos toma las mañanas completas."
+],
+[
+"Asesora",
+"Pregunta 5 de 5: ¿Cuántas cotizaciones a constructoras hacen en una semana normal, y los PDFs de los proveedores los tienes ya en computadora o celular, o están en papel?"
+],
+[
+"Dueña",
+"Ahora mismo no tengo un número exacto: cotizamos a constructoras varias veces por semana, pero no lo he contado. Los PDFs de los proveedores los recibo por correo y algunos los tengo en el celular, pero otros están impresos en el mostrador."
+]
+],
+"advice": "**Tres oportunidades, de la más fácil a la más difícil**\n\n**1. Convertir las fotos de las listas en una lista ordenada**\nTus vendedores toman la foto con el celular y la IA la lee y la pasa a texto. Se prueba esta semana, con las listas reales de dos o tres constructoras, y casi no cuesta. Con esto ya te ahorras la parte más lenta de leer y teclear.\n\n**2. Juntar los precios de los proveedores en un solo lugar**\nHoy los precios están en correos, celulares y papeles. La IA puede leer esos documentos y pasarlos a una sola hoja de precios. A los impresos solo les tomas foto. Ojo: igual que pasó con el programa de inventario, esto solo sirve si alguien lo mantiene al día. Asigna a una persona y 15 minutos cada vez que llegue una lista nueva.\n\n**3. Armar la cotización casi sola**\nLa IA toma la lista del paso 1, busca cada producto en la hoja del paso 2 y te deja la cotización lista. Tú solo la revisas y la mandas. Es lo que te daría el \"mismo día\", pero depende de que los dos pasos anteriores funcionen bien.\n\n**Para empezar**\n- Cuenta cuántas cotizaciones hacen en las próximas dos semanas, así sabrás cuánto tiempo ahorras.\n- Prueba el paso 1 con una herramienta de pocos dólares al mes antes de gastar más.\n\n¿Quieres que te diga cómo hacer la primera prueba paso a paso?",
+"seen": {
+"drain": true,
+"second": false,
+"root": true,
+"tried": true,
+"limit": true,
+"goal": true
+},
+"cost": 0.052185
+},
+{
+"business": "tourism",
+"cond": "asks_better",
+"rep": 0,
+"talk": [
+[
+"Dueña",
+"Organizo caminatas y avistamiento de aves. Somos mi hermano y yo. Tengo clientes extranjeros y siento que estoy perdiendo oportunidades."
+],
+[
+"Asesora",
+"Pregunta 1 de 5: ¿Cuándo sientes que pierdes a esos clientes extranjeros: cuando te escriben y tardas en responder, cuando no logran encontrarte, o cuando preguntan y no terminan reservando?"
+],
+[
+"Dueña",
+"Cuando me escriben y tardo en responder, sobre todo porque cada correo en inglés me toma unos cuarenta minutos con traductor, y en temporada llego a seis al día."
+],
+[
+"Asesora",
+"Pregunta 2 de 5: ¿Qué has intentado antes para responder más rápido a esos clientes (plantillas, ayuda de alguien, otra herramienta) y cómo te fue?"
+],
+[
+"Dueña",
+"Uso un traductor para cada correo, pero sigo tardando unos cuarenta minutos por respuesta. Contraté a alguien para redes sociales durante seis meses: llegaron seguidores, pero ninguna reserva."
+],
+[
+"Asesora",
+"Pregunta 3 de 5: ¿Qué cosas no puedes cambiar en tu negocio, por ejemplo personas, información de clientes, dinero que puedes gastar o la conexión a internet en tus salidas?"
+],
+[
+"Dueña",
+"Lo que más me pesa de tu pregunta es que no puedo cambiar la conexión a internet: en la finca no hay internet de lunes a jueves cuando estoy con grupos, así que no puedo contestar correos ni usar el traductor en esos días."
+],
+[
+"Asesora",
+"Pregunta 4 de 5: Dentro de tres meses, ¿qué te gustaría haber logrado con estos clientes extranjeros (por ejemplo, responder en menos tiempo, más reservas, o tener menos carga de correos)?"
+],
+[
+"Dueña",
+"Tengo en mente tener cerrados ocho grupos para la temporada de migración dentro de tres meses. Lo demás, como cuántas respuestas por día o cuánto tiempo quiero ahorrar, todavía no lo he pensado."
+],
+[
+"Asesora",
+"Pregunta 5 de 5: Cuando un cliente extranjero te escribe, ¿qué es lo que casi siempre te preguntan (fechas, precios, qué se ve, qué llevar), y dónde tienes hoy esa información guardada?"
+],
+[
+"Dueña",
+"Las condiciones como clima, dificultad, qué incluye y cancelaciones no están escritas en ningún lado, así que las explico cada vez. Los itinerarios sí los tengo en Word, cada uno armado a mano."
+]
+],
+"advice": "**1. Escribir una sola vez tus condiciones (la más fácil)**\nHoy explicas clima, dificultad, qué incluye y cancelaciones cada vez. Con IA, me cuentas todo en tus palabras y te lo deja ordenado en un documento claro, en español e inglés. Es una tarea de una tarde y te sirve para todo lo demás.\n\n**2. Borradores de respuesta en inglés**\nCon ese documento y tus itinerarios, la IA redacta la respuesta al correo. Tú la lees, ajustas y envías. Así dejas de traducir desde cero: lo que hoy te toma cuarenta minutos podría reducirse mucho. Además, configura un mensaje automático que diga: \"Respondo de viernes a domingo\". Así el cliente sabe cuándo esperar tu respuesta aunque no tengas internet de lunes a jueves.\n\n**3. Propuestas y seguimiento para cerrar tus 8 grupos (la más difícil)**\nConvertir tus itinerarios de Word en propuestas atractivas en inglés, listas para personalizar según cada grupo. También, mensajes de seguimiento para quienes preguntaron y no reservaron. Esto exige más orden y pruebas, por eso va al final.\n\n**Mi recomendación:** empieza por la 1 esta semana. Sin esa base, las otras dos no funcionan bien.\n\nY como tu meta son ocho grupos, anota cuántos te escriben y cuántos reservan. Eso te dirá si el cambio está funcionando.",
+"seen": {
+"drain": true,
+"second": false,
+"root": true,
+"tried": false,
+"limit": true,
+"goal": true
+},
+"cost": 0.0515935
+},
+{
+"business": "tourism",
+"cond": "asks_better",
+"rep": 1,
+"talk": [
+[
+"Dueña",
+"Organizo caminatas y avistamiento de aves. Somos mi hermano y yo. Tengo clientes extranjeros y siento que estoy perdiendo oportunidades."
+],
+[
+"Asesora",
+"Pregunta 1 de 5: ¿Cuándo sientes que pierdes a esos clientes extranjeros: cuando te escriben y tardas en responder, cuando no logran encontrarte o reservar, o en otro momento?"
+],
+[
+"Dueña",
+"Cuando me escriben y tardo en responder. Respondo los correos en inglés con traductor, cuarenta minutos cada uno, y en temporada son unos seis al día."
+],
+[
+"Asesora",
+"Pregunta 2 de 5: ¿Has intentado antes algo para responder más rápido a esos clientes (por ejemplo, respuestas ya escritas u otra herramienta), y cómo te fue?"
+],
+[
+"Dueña",
+"Pregunta 2: Sí, lo intenté con el traductor automático, pero cada correo me sigue tomando cuarenta minutos. Lo de las respuestas ya escritas no lo he probado."
+],
+[
+"Asesora",
+"Pregunta 3 de 5: ¿Qué cosas no puedes cambiar en tu negocio, por ejemplo cuánto dinero puedes gastar, quién puede ayudarte además de tu hermano, qué datos de clientes no se pueden compartir o si a veces no tienes buena conexión a internet?"
+],
+[
+"Dueña",
+"La finca no tiene internet de lunes a jueves cuando estoy con grupos. Sobre cuánto dinero puedo gastar, quién más podría ayudarme o qué datos de clientes no puedo compartir, no lo he pensado."
+],
+[
+"Asesora",
+"Pregunta 4 de 5: Dentro de tres meses, ¿qué te gustaría haber logrado con estos clientes extranjeros? Por ejemplo, responder en menos de una hora, reservar más grupos o dedicar menos horas a los correos."
+],
+[
+"Dueña",
+"Quiero responder más rápido a los correos sin perder calidad, y que en tres meses se noten menos horas dedicadas a ellos. Y, sobre todo, reservar más grupos: tengo ocho grupos como meta para la temporada de migración."
+],
+[
+"Asesora",
+"Pregunta 5 de 5: Cuando un cliente extranjero te escribe, ¿qué te piden o preguntan casi siempre (fechas, precios, qué aves verán, cómo llegar)?"
+],
+[
+"Dueña",
+"Las preguntas que más me llegan son fechas disponibles, precios, qué aves se pueden ver y cómo llegar a la finca."
+]
+],
+"advice": "**Tus 3 oportunidades, de la más fácil a la más difícil**\n\n**1. Respuestas base en inglés y español (fácil)**\nCon la IA escribes una sola vez las respuestas a lo que más te preguntan: fechas, precios, aves y cómo llegar. Luego solo cambias el nombre y los datos del cliente. Un correo que hoy te toma cuarenta minutos podría quedar en unos diez. Lo puedes preparar en una tarde y lo usas sin internet, copiándolo desde tu celular o un documento.\n\n**2. Asistente que redacta y traduce tus correos (medio)**\nLe cuentas en español lo que quieres decir y la IA te lo entrega en inglés natural, con buen tono, y te traduce lo que el cliente escribió. Tú revisas y envías. Así mantienes la calidad y ganas velocidad. Necesita internet, así que lo harías los viernes a domingo o cuando tengas señal, y dejarías los correos listos en lote.\n\n**3. Respuesta automática en tu página o WhatsApp (difícil)**\nUn asistente que contesta de inmediato las preguntas frecuentes, incluso cuando estás en la finca sin internet de lunes a jueves, y te deja los casos más complejos para ti. Es lo que más ayudaría a reservar tus ocho grupos, porque el cliente recibe respuesta al instante. Requiere más preparación y definir cuánto puedes invertir.\n\n**Mi recomendación:** empieza por la 1 esta semana.\n\nAntes de la 3, piensa cuánto puedes gastar y qué datos de clientes no deben compartirse.",
+"seen": {
+"drain": true,
+"second": false,
+"root": false,
+"tried": false,
+"limit": true,
+"goal": true
+},
+"cost": 0.045824000000000004
+},
+{
+"business": "tourism",
+"cond": "asks_better",
+"rep": 2,
+"talk": [
+[
+"Dueña",
+"Organizo caminatas y avistamiento de aves. Somos mi hermano y yo. Tengo clientes extranjeros y siento que estoy perdiendo oportunidades."
+],
+[
+"Asesora",
+"Pregunta 1 de 5: ¿Dónde sientes que se te escapan esos clientes extranjeros: cuando te escriben y tardas en responder, cuando no te encuentran, o cuando te preguntan y no llegan a reservar?"
+],
+[
+"Dueña",
+"Cuando te escriben y tardo en responder. Respondo cada correo en inglés con traductor y me toma unos cuarenta minutos cada uno, así que en temporada son unos seis al día."
+],
+[
+"Asesora",
+"Pregunta 2 de 5: ¿Qué has intentado antes para responder más rápido a esos correos y cómo te fue?"
+],
+[
+"Dueña",
+"Contesto como la dueña, en una o dos frases y solo con lo que dice mi ficha: Lo intenté con un traductor y cada correo me toma unos cuarenta minutos, así que en temporada son unos seis al día. También contraté a alguien para redes sociales durante seis meses; llegaron seguidores, pero ninguna reserva."
+],
+[
+"Asesora",
+"Pregunta 3 de 5: ¿Qué cosas no puedes cambiar en tu negocio, por ejemplo personas, información, dinero o conexión a internet?"
+],
+[
+"Dueña",
+"Lo que más me limita es el tiempo y la conexión: en la finca no hay internet de lunes a jueves cuando estoy con grupos, y los itinerarios los armo a mano en Word, casi una hora por grupo."
+],
+[
+"Asesora",
+"Pregunta 4 de 5: ¿Qué te gustaría haber logrado dentro de tres meses para sentir que esto valió la pena?"
+],
+[
+"Dueña",
+"Quiero tener cerrados ocho grupos para la temporada de migración en tres meses."
+],
+[
+"Asesora",
+"Pregunta 5 de 5: ¿Qué te preguntan más seguido los clientes extranjeros en esos correos (precios, fechas, qué llevar, qué aves verán)?"
+],
+[
+"Dueña",
+"Pregunta 5 de 5: mi ficha no dice qué preguntas hacen más los clientes extranjeros, así que no lo sé con certeza."
+]
+],
+"advice": "**1. Borradores de respuestas en inglés (la más fácil)**\nLe das a la IA el correo y tus datos (precios, fechas, qué llevar), y te escribe la respuesta en inglés. Tú la lees y la envías. Calculo que pasarías de 40 minutos a unos 10 por correo, pero lo confirmas con tus primeros correos. Como no hay internet de lunes a jueves, puedes responder en bloques cuando tengas conexión.\n\n**2. Itinerarios más rápidos**\nHoy tardas casi una hora por grupo en Word. Con la IA le dices cuántas personas son, qué nivel de caminata tienen y qué aves quieren ver, y te devuelve un borrador listo para ajustar. Tú corriges lo que sabes que solo tú conoces. Podrías bajar a unos 15 o 20 minutos por grupo.\n\n**3. Respuestas automáticas y seguimiento (la más difícil)**\nUn asistente que conteste solo las preguntas repetidas y escriba a quien preguntó y no reservó. Es lo que más tiempo libera, pero hoy no sé cuáles son tus preguntas más frecuentes. Además, sin internet entre semana, necesitarías que funcione cuando no estás.\n\n**Primer paso:** durante dos semanas, anota qué preguntan los clientes. Eso te dice qué automatizar en la oportunidad 3.\n\nCon seis correos al día ahorrarías varias horas diarias, y ese tiempo lo puedes usar para cerrar tus ocho grupos.",
+"seen": {
+"drain": true,
+"second": true,
+"root": false,
+"tried": false,
+"limit": true,
+"goal": true
+},
+"cost": 0.048761500000000006
+},
+{
+"business": "tourism",
+"cond": "asks_better",
+"rep": 3,
+"talk": [
+[
+"Dueña",
+"Organizo caminatas y avistamiento de aves. Somos mi hermano y yo. Tengo clientes extranjeros y siento que estoy perdiendo oportunidades."
+],
+[
+"Asesora",
+"Pregunta 1 de 5: ¿Qué es lo que más sientes que se te escapa con los clientes extranjeros: que no te encuentran, que te escriben y no alcanzas a responder a tiempo, o que te consultan y no reservan?"
+],
+[
+"Dueña",
+"Lo que más se me escapa es que consultan y no reservan. Me escriben, pero como respondo los correos en inglés con traductor y me toman unos cuarenta minutos cada uno, a veces la respuesta llega tarde y se van con otro."
+],
+[
+"Asesora",
+"Pregunta 2 de 5: ¿Qué has intentado antes para responder más rápido a los clientes de otros países (por ejemplo, plantillas, otra herramienta o ayuda de alguien) y cómo te fue?"
+],
+[
+"Dueña",
+"Hasta ahora intenté usar un traductor, y cada correo me toma unos cuarenta minutos. Nunca he probado plantillas ni he pedido ayuda a nadie para responder más rápido."
+],
+[
+"Asesora",
+"Pregunta 3 de 5: ¿Qué cosas no puedes cambiar en tu negocio, por ejemplo el número de personas, el dinero que puedes invertir, los datos de tus clientes o la conexión a internet donde trabajas?"
+],
+[
+"Dueña",
+"Las cosas que no puedo cambiar son el número de personas, que somos mi hermano y yo, y la conexión a internet en la finca, que no hay de lunes a jueves cuando estamos con grupos."
+],
+[
+"Asesora",
+"Pregunta 4 de 5: ¿Qué te gustaría haber logrado dentro de tres meses con los clientes extranjeros: por ejemplo, responder en menos tiempo, conseguir más reservas o algo distinto?"
+],
+[
+"Dueña",
+"Lo que más quiero en tres meses es responder a los correos en inglés en minutos, no en cuarenta, para no perder a los que ya están listos para reservar. Y si pudiera, cerrar ocho grupos para la temporada de migración."
+],
+[
+"Asesora",
+"Pregunta 5 de 5: ¿Qué te piden o preguntan con más frecuencia los clientes extranjeros antes de reservar (precios, fechas, qué aves verán, qué incluye el paquete)?"
+],
+[
+"Dueña",
+"Me preguntan sobre todo por las condiciones: clima, dificultad, qué incluye y cancelaciones. Nada de eso está escrito en ningún lado, así que se lo explico cada vez."
+]
+],
+"advice": "**1. Escribir una sola vez tus condiciones (la más fácil)**\nDile a la IA lo que explicas siempre: clima, dificultad, qué incluye y cancelaciones. Te lo deja ordenado en español e inglés, en una hoja clara. Lo revisas tú, porque tú conoces la realidad de tus caminatas. Con eso ya no explicas lo mismo cada vez, y los clientes lo leen antes de escribirte.\n\n**2. Respuestas en inglés en minutos**\nCuando llegue un correo, lo pegas en la IA junto con tu hoja de condiciones. Ella te prepara la respuesta en inglés, amable y completa. Tú la lees, cambias lo que haga falta y envías. Así pasas de cuarenta minutos a unos cinco. Como no tienes internet de lunes a jueves, reserva dos momentos fijos al día con conexión para responder.\n\n**3. Respuesta automática las 24 horas (la más difícil)**\nUn asistente en tu página o en WhatsApp que conteste al instante las preguntas de siempre y envíe tu hoja de condiciones. Si el cliente quiere reservar, te deja sus datos y fechas. Esto ayuda justo cuando estás con grupos y sin señal, porque el cliente no se queda esperando. Requiere más tiempo para configurarlo y probarlo, así que déjalo para después de los dos primeros pasos.\n\n**Mi consejo:** empieza esta semana con el paso 1, y en pocos días ya puedes usar el 2. Con eso solo deberías notar la diferencia antes de la temporada de migración.",
+"seen": {
+"drain": true,
+"second": false,
+"root": true,
+"tried": false,
+"limit": true,
+"goal": true
+},
+"cost": 0.0511012
+},
+{
+"business": "school",
+"cond": "asks_better",
+"rep": 0,
+"talk": [
+[
+"Dueña",
+"Dirijo una academia de música con noventa estudiantes. Todo es un desorden y no sé si la IA sirva para esto."
+],
+[
+"Asesora",
+"Pregunta 1 de 5: ¿Qué es lo que más te desordena hoy en la academia (por ejemplo, horarios, cobros, avisos a las familias) y qué has intentado antes para arreglarlo?"
+],
+[
+"Dueña",
+"Lo que más me desordena es el cobro y el seguimiento de pagos. Cada fin de mes paso dos días revisando fotos de comprobantes para saber quién pagó. Intenté que las familias pagaran por una aplicación, pero casi la mitad no la usó."
+],
+[
+"Asesora",
+"Pregunta 2 de 5: ¿Qué cosas no puedes cambiar en tu academia, por ejemplo las personas que te ayudan, los datos que tienes, el dinero que puedes gastar o la conexión a internet?"
+],
+[
+"Dueña",
+"Los datos y fotos de los estudiantes no los puedo compartir sin permiso de las familias, porque son menores de edad. Sobre el dinero, las personas que me ayudan o la conexión a internet, la verdad es que no lo he pensado."
+],
+[
+"Asesora",
+"Pregunta 3 de 5: Dentro de tres meses, ¿qué te gustaría haber logrado con el cobro y el seguimiento de pagos para sentir que valió la pena?"
+],
+[
+"Dueña",
+"Que en tres meses la mora baje de 30 a 10 por ciento, y que cada fin de mes ya no me pase dos días revisando fotos de comprobantes para saber quién pagó."
+],
+[
+"Asesora",
+"Pregunta 4 de 5: Para saber qué es posible, ¿cuánto dinero podrías gastar al mes en esto, quién te ayudaría a usarlo en la academia y qué tan buena es tu conexión a internet?"
+],
+[
+"Dueña",
+"No sé cuánto dinero podría gastar al mes; la verdad es que no lo he pensado. Tampoco sé quién me ayudaría a usarlo ni qué tan buena es mi conexión a internet, porque no lo he revisado."
+],
+[
+"Asesora",
+"Pregunta 5 de 5: ¿Cómo les pagan hoy las familias (transferencia, efectivo, otro) y por qué medio te escriben o les escribes normalmente, como WhatsApp o correo?"
+],
+[
+"Dueña",
+"Por ahora les pagan por transferencia o efectivo, y nos escribimos por WhatsApp, pero no tengo claro el desglose exacto de cuántas familias usan cada medio."
+]
+],
+"advice": "**1. Recordatorios de pago por WhatsApp (el más fácil)**\nLa IA escribe mensajes amables y los envía antes y después de la fecha de pago, con un tono distinto según el atraso. Va directo a bajar la mora de 30 a 10 por ciento. Las familias ya usan WhatsApp, así que no tienen que aprender nada nuevo.\n\n**2. Lectura automática de comprobantes (dificultad media)**\nLa IA lee cada foto (nombre, monto, fecha) y llena una lista de quién pagó. Tú solo revisas los casos dudosos. Tus dos días de fin de mes podrían quedar en unas pocas horas.\nComo son datos de menores, primero pide permiso escrito a las familias y elige una herramienta que no use esa información para otros fines.\n\n**3. Asistente que responde y concilia todo (el más difícil)**\nUn asistente que contesta \"¿cuánto debo?\" y junta transferencias y efectivo en un solo registro. Exige datos muy ordenados de cada estudiante y más cuidado con la privacidad.\n\n**Antes de empezar, te falta definir:**\n- Cuánto puedes gastar al mes.\n- Quién te ayudaría a manejarlo.\n- Qué tan buena es tu conexión a internet.\n- Cuántas familias pagan por transferencia y cuántas en efectivo.\n\nCon eso podemos elegir por cuál empezar.",
+"seen": {
+"drain": true,
+"second": false,
+"root": false,
+"tried": false,
+"limit": true,
+"goal": true
+},
+"cost": 0.059242699999999995
+},
+{
+"business": "school",
+"cond": "asks_better",
+"rep": 1,
+"talk": [
+[
+"Dueña",
+"Dirijo una academia de música con noventa estudiantes. Todo es un desorden y no sé si la IA sirva para esto."
+],
+[
+"Asesora",
+"Pregunta 1 de 5: ¿Qué es lo que más desorden te causa hoy (por ejemplo horarios, cobros, avisos a las familias) y qué has intentado antes para arreglarlo, y cómo te fue?"
+],
+[
+"Dueña",
+"Lo que más desorden me causa hoy son los cobros: cada fin de mes paso dos días revisando comprobantes de pago en fotos para saber quién pagó. Antes intenté que las familias pagaran por una aplicación, pero casi la mitad no la usó."
+],
+[
+"Asesora",
+"¿Qué cosas no puedes cambiar en tu academia, por ejemplo las personas que trabajan contigo, los datos de las familias, el dinero que puedes gastar o la conexión a internet?"
+],
+[
+"Dueña",
+"Los datos de las familias y de los estudiantes no los puedo compartir sin permiso de cada familia, porque son menores de edad. Lo demás sí podría cambiarlo, pero el presupuesto para gastar en herramientas todavía no lo tengo definido."
+],
+[
+"Asesora",
+"Pregunta 3 de 5: ¿Qué te gustaría haber logrado dentro de tres meses para decir \"esto sí valió la pena\"?"
+],
+[
+"Dueña",
+"En tres meses quiero que la mora baje de 30 a 10 por ciento."
+],
+[
+"Asesora",
+"Pregunta 4 de 5: ¿Cómo les avisas hoy a las familias que deben pagar y por qué medio te responden más rápido (WhatsApp, llamada, correo u otro)?"
+],
+[
+"Dueña",
+"Les aviso por WhatsApp, porque es donde más rápido me responden las familias."
+],
+[
+"Asesora",
+"Pregunta 5 de 5: ¿Cuántas personas te ayudan hoy con la academia (por ejemplo en recepción o administración) y quién podría encargarse de revisar los pagos si lo hiciéramos más sencillo?"
+],
+[
+"Dueña",
+"Pregunta 5: Ahora mismo me ayudan dos personas en recepción, pero no he pensado todavía quién podría encargarse de revisar los pagos."
+]
+],
+"advice": "**Tus 3 oportunidades, de la más fácil a la más difícil**\n\n**1. Recordatorios de pago por WhatsApp (fácil)**\nHoy ya les escribes por WhatsApp, así que no pides nada nuevo a las familias. La IA puede redactar mensajes amables y distintos según el caso: un aviso antes del vencimiento, otro el día del pago y otro si ya se pasó. Esto ataca directo la mora. Empieza con un grupo pequeño de familias que den su permiso.\n\n**2. Lectura automática de comprobantes (medio)**\nHoy pasas dos días mirando fotos. La IA puede leer cada foto, sacar el nombre, el monto y la fecha, y llenar una hoja de cálculo. Tú o alguien de recepción solo revisa los casos dudosos. Pasarías de dos días a unas pocas horas. Necesitas decidir quién de las dos personas de recepción lo supervisa.\n\n**3. Lista de quién debe, siempre al día (difícil)**\nEs juntar todo: inscripciones, pagos leídos y recordatorios en un solo lugar que te diga \"estas 12 familias deben\". Requiere ordenar primero los datos de los 90 estudiantes y pedir permiso por escrito a cada familia, porque son menores. También necesitarás definir presupuesto.\n\n**Mi recomendación:** empieza por la 1 y la 2 en el mismo mes. Con eso ya podrías ver si la mora baja de 30 a 10 por ciento.\n\n**Antes de avanzar, decide dos cosas:** quién de recepción revisará los pagos y cuánto puedes gastar al mes.",
+"seen": {
+"drain": true,
+"second": false,
+"root": false,
+"tried": true,
+"limit": true,
+"goal": true
+},
+"cost": 0.0473407
+},
+{
+"business": "school",
+"cond": "asks_better",
+"rep": 2,
+"talk": [
+[
+"Dueña",
+"Dirijo una academia de música con noventa estudiantes. Todo es un desorden y no sé si la IA sirva para esto."
+],
+[
+"Asesora",
+"Pregunta 1 de 5: ¿Qué es lo que más te desordena hoy en la academia (por ejemplo horarios, cobros, avisos a los padres) y qué has intentado antes para arreglarlo?"
+],
+[
+"Dueña",
+"Lo que más me desordena es cobrar: cada fin de mes paso dos días revisando fotos de comprobantes para saber quién pagó. Antes intenté que las familias pagaran por una aplicación, pero casi la mitad no la usó."
+],
+[
+"Asesora",
+"**Pregunta 2 de 5:** ¿Qué cosas no puedes cambiar en la academia, por ejemplo las personas que ayudan, el dinero que puedes gastar, la forma en que las familias te pagan o el internet que tienes?"
+],
+[
+"Dueña",
+"Las personas que me ayudan son los profesores, y cada uno lleva su propia lista de estudiantes en su celular, así que no puedo pedirles que cambien cómo lo hacen. Los datos y fotos de los menores solo se pueden compartir con permiso de las familias."
+],
+[
+"Asesora",
+"**Pregunta 3 de 5:** ¿Cuánto dinero y tiempo podrías dedicar a una solución, y cuentas con buen internet en la academia?"
+],
+[
+"Dueña",
+"No lo he pensado todavía, así que no sé cuánto dinero ni cuánto tiempo podría dedicar a una solución. Tampoco sé cómo está el internet de la academia."
+],
+[
+"Asesora",
+"**Pregunta 4 de 5:** Si dentro de tres meses pudieras decir \"esto ya mejoró\", ¿qué tendría que haber pasado exactamente?"
+],
+[
+"Dueña",
+"Quiero que dentro de tres meses la mora baje de 30 a 10 por ciento."
+],
+[
+"Asesora",
+"**Pregunta 5 de 5:** Cuando una familia se atrasa en el pago, ¿cómo se entera hoy y quién le avisa o le cobra?"
+],
+[
+"Dueña",
+"No lo he pensado todavía, así que no sabría decir cómo me entero hoy ni quién les avisa o les cobra."
+]
+],
+"advice": "Estas son las 3 oportunidades, de la más fácil a la más difícil:\n\n**1. Recordatorios de pago amables (fácil)**\nLa IA redacta y envía mensajes por WhatsApp unos días antes del vencimiento y otro después, si no hay pago. Las familias no tienen que aprender nada nuevo, y esto ataca directamente tu meta de bajar la mora de 30 a 10 por ciento.\n\n**2. Lectura automática de comprobantes (medio)**\nLas familias siguen mandando la foto como hoy. La IA lee nombre, monto y fecha, y llena una lista de quién pagó. Eso puede ahorrarte buena parte de los dos días de cada fin de mes. Antes de empezar, necesitas el permiso por escrito de las familias para usar esos datos.\n\n**3. Juntar las listas de los profesores (difícil)**\nCada profesor sigue usando su celular. Una vez por semana les llega un mensaje sencillo, ellos responden con su lista y la IA la une en una sola. Es lo más útil a largo plazo, pero depende de que los profesores colaboren y de cuidar los datos de los menores.\n\n**Antes de empezar, averigua tres cosas:**\n- Cuánto dinero y tiempo puedes dedicar.\n- Cómo está el internet de la academia.\n- Cómo te enteras hoy de que una familia se atrasó, y quién le avisa.\n\nMi recomendación es empezar por la 1 y la 2 juntas, porque así los recordatorios solo llegan a quien realmente debe.",
+"seen": {
+"drain": true,
+"second": false,
+"root": true,
+"tried": true,
+"limit": true,
+"goal": true
+},
+"cost": 0.048272999999999996
+},
+{
+"business": "school",
+"cond": "asks_better",
+"rep": 3,
+"talk": [
+[
+"Dueña",
+"Dirijo una academia de música con noventa estudiantes. Todo es un desorden y no sé si la IA sirva para esto."
+],
+[
+"Asesora",
+"Pregunta 1 de 5: ¿Qué es lo que más te desordena hoy en la academia (por ejemplo, horarios, cobros, avisos a las familias) y qué has intentado antes para arreglarlo?"
+],
+[
+"Dueña",
+"Lo que más me desordena es el cobro a fin de mes: reviso dos días enteros fotos de comprobantes para saber quién pagó. Antes intenté que las familias pagaran por una aplicación, pero casi la mitad no la usó."
+],
+[
+"Asesora",
+"Pregunta 2 de 5: ¿Qué cosas no puedes cambiar en tu academia, por ejemplo las personas que trabajan contigo, la forma en que las familias pagan, el dinero que puedes gastar o la conexión a internet?"
+],
+[
+"Dueña",
+"Las personas que trabajan conmigo son los profesores, y cada uno lleva su propia lista de estudiantes en su celular, así que eso no lo puedo cambiar de un día para otro. La forma en que las familias pagan también es algo que tengo que respetar, porque la mitad no quiso usar la aplicación."
+],
+[
+"Asesora",
+"Pregunta 3 de 5: ¿Qué te gustaría haber logrado dentro de tres meses para decir \"esto sí valió la pena\"?"
+],
+[
+"Dueña",
+"En tres meses quiero que la mora baje de 30 a 10 por ciento, y que el cobro de fin de mes me tome horas, no dos días enteros de revisar fotos."
+],
+[
+"Asesora",
+"Pregunta 4 de 5: ¿Cuánto dinero podrías gastar al mes en una solución y cómo es el internet que tienes en la academia?"
+],
+[
+"Dueña",
+"No sé cuánto podría gastar al mes ni cómo es el internet de la academia; todavía no lo he revisado."
+],
+[
+"Asesora",
+"Pregunta 5 de 5: ¿Cómo te llegan hoy los comprobantes de pago (por WhatsApp, correo, en persona) y quién los recibe?"
+],
+[
+"Dueña",
+"Me llegan como fotos de comprobantes, pero no tengo claro por qué canal ni quién los recibe exactamente, porque todavía no lo he revisado."
+]
+],
+"advice": "**1. Leer los comprobantes automáticamente (la más fácil)**\nLa IA lee cada foto (nombre, monto, fecha) y la anota en una hoja ordenada. Las familias siguen pagando igual que hoy. Esto ataca directamente tus dos días de revisión y puede dejarlos en horas.\n\n**2. Recordatorios de cobro automáticos (dificultad media)**\nCon la hoja del paso 1 ya se sabe quién no ha pagado. La IA redacta y envía mensajes amables antes y después de la fecha límite. Esto es lo que más ayuda a bajar la mora de 30 a 10 por ciento. Funciona con la forma de pago actual, sin obligar a nadie a usar una aplicación.\n\n**3. Juntar las listas de los profesores (la más difícil)**\nHoy cada profesor lleva su lista en el celular. La IA puede ayudar a unirlas en una sola lista de estudiantes. Es lo más difícil porque depende de cambiar hábitos de personas, no de tecnología. Lo haría al final y poco a poco, sin quitarle a nadie su forma de trabajar.\n\n**Antes de empezar, averigua tres cosas:**\n- Por qué canal llegan los comprobantes (WhatsApp, correo, en persona) y quién los recibe. Lo ideal es que todos lleguen a un solo lugar.\n- Cuánto puedes gastar al mes.\n- Cómo es el internet de la academia.\n\nCon eso puedo darte un plan concreto para los primeros 30 días.",
+"seen": {
+"drain": true,
+"second": false,
+"root": true,
+"tried": true,
+"limit": false,
+"goal": true
+},
+"cost": 0.055148390000000005
+},
+{
+"business": "textile",
+"cond": "asks_better",
+"rep": 0,
+"talk": [
+[
+"Dueña",
+"Hacemos uniformes para empresas pequeñas, tengo un taller con nueve operarias. Vendemos bien pero los clientes se quejan."
+],
+[
+"Asesora",
+"**Pregunta 1 de 5:** ¿De qué se quejan exactamente tus clientes: de que los uniformes llegan tarde, de que vienen con errores o mala calidad, o de otra cosa?"
+],
+[
+"Dueña",
+"Los clientes se quejan sobre todo de que los pedidos llegan tarde, porque tenemos que escribirles varias veces para completar tallas y logos, y eso nos toma cerca de una hora por pedido."
+],
+[
+"Asesora",
+"**Pregunta 2 de 5:** ¿Qué has intentado antes para resolver esto de pedir tallas y logos a los clientes, y cómo te fue?"
+],
+[
+"Dueña",
+"Pues, lo intentamos con un tablero en el computador para que las operarias registraran las tallas y logos, pero lo dejamos porque les interrumpía la costura."
+],
+[
+"Asesora",
+"**Pregunta 3 de 5:** ¿Qué cosas no puedes cambiar en tu taller: por ejemplo, el dinero que puedes gastar, la gente que tienes, la conexión a internet o el hecho de que tus clientes usan sobre todo WhatsApp o correo?"
+],
+[
+"Dueña",
+"Lo que no puedo cambiar es el dinero que puedo gastar: no tengo un presupuesto grande para herramientas nuevas. Las nueve operarias tampoco las puedo cambiar, y sé que ya no quieren que las interrumpan en la costura. Lo que sí es cierto es que mis clientes escriben por WhatsApp, correo o llamada, y no tengo un formato único para recibir los pedidos."
+],
+[
+"Asesora",
+"**Pregunta 4 de 5:** Dentro de tres meses, ¿qué quieres haber logrado: por ejemplo, ahorrar cuántas horas por semana, o que cuántos pedidos salgan a tiempo?"
+],
+[
+"Dueña",
+"Quiero que en tres meses, de cada diez pedidos, nueve salgan a tiempo."
+],
+[
+"Asesora",
+"**Pregunta 5 de 5:** Hoy, de cada diez pedidos, ¿cuántos salen a tiempo?"
+],
+[
+"Dueña",
+"No tengo un dato exacto. Por lo que veo cuando el pedido se atrasa, no llevo un registro de cuántos salen a tiempo, así que no sé cuántos de cada diez cumplimos hoy."
+]
+],
+"advice": "**Tres oportunidades, de la más fácil a la más difícil**\n\n**1. Un solo formulario de pedido (la más fácil, casi gratis)**\nLa IA te ayuda a crear un formulario sencillo (tallas, logo, fecha) y un mensaje listo para enviar por WhatsApp o correo. El cliente lo llena una sola vez y se acaban las idas y vueltas. Las operarias no participan.\n\n**2. Asistente que lee los mensajes y detecta lo que falta**\nLe pegas lo que el cliente escribió por WhatsApp, correo o llamada (anotada). La IA saca tallas y logos, los ordena en una tabla y te redacta el mensaje pidiendo solo lo que falta. Puede bajar esa hora por pedido a pocos minutos. Lo usas tú o una persona de oficina, no las costureras. Cuesta poco: hay herramientas gratuitas o de bajo costo.\n\n**3. Seguimiento de fechas y avisos de atraso (la más difícil)**\nUna hoja simple donde cada pedido tiene fecha prometida y fecha real de entrega. La IA te avisa qué pedidos van en riesgo y redacta mensajes para avisar a los clientes a tiempo. Es más difícil porque exige disciplina: alguien debe anotar cada pedido.\n\n**Un paso previo importante:** hoy no sabes cuántos pedidos salen a tiempo. Desde esta semana anota, para cada pedido, la fecha prometida y la de entrega. En un mes tendrás tu punto de partida y sabrás si vas hacia nueve de cada diez.",
+"seen": {
+"drain": true,
+"second": false,
+"root": true,
+"tried": true,
+"limit": false,
+"goal": true
+},
+"cost": 0.0525221
+},
+{
+"business": "textile",
+"cond": "asks_better",
+"rep": 1,
+"talk": [
+[
+"Dueña",
+"Hacemos uniformes para empresas pequeñas, tengo un taller con nueve operarias. Vendemos bien pero los clientes se quejan."
+],
+[
+"Asesora",
+"Pregunta 1 de 5: ¿De qué se quejan más tus clientes: de que los uniformes llegan tarde, de que vienen con errores o mal terminados, o de otra cosa?"
+],
+[
+"Dueña",
+"Según lo que me cuentan los clientes, la mayor queja es el retraso: cada pedido se atrasa porque hay que escribirles varias veces para completar tallas y logos."
+],
+[
+"Asesora",
+"Pregunta 2 de 5: ¿Qué has intentado antes para evitar esos retrasos (por ejemplo, una lista de tallas, un formulario o pedir todo desde el inicio) y cómo te fue?"
+],
+[
+"Dueña",
+"Lo que más me pasa es que cada pedido se atrasa porque hay que escribirle al cliente varias veces para completar tallas y logos. Antes intentamos pedir el tablero en el computador para llevar todo en un solo lugar, pero se lo dejamos porque interrumpía la costura de las operarias."
+],
+[
+"Asesora",
+"Pregunta 3 de 5: ¿Qué cosas no puedes cambiar en tu taller: por ejemplo, el tiempo de las operarias, el dinero que puedes invertir, o si tus clientes usan celular o internet para responderte?"
+],
+[
+"Dueña",
+"Las operarias no pueden dejar la costura para llenar formularios, eso ya nos frenó antes. Los clientes mandan el pedido por audio, correo o llamada como prefieran, y no tengo claro cuánto dinero podría invertir."
+],
+[
+"Asesora",
+"Pregunta 4 de 5: Dentro de tres meses, ¿qué te gustaría que ya estuviera funcionando distinto en tu taller (por ejemplo, cuántos pedidos salen a tiempo o cuántas veces tienes que escribirle a un cliente)?"
+],
+[
+"Dueña",
+"Dentro de tres meses quiero que la mayoría de mis pedidos salgan a tiempo, y que ya no tenga que escribirle a cada cliente varias veces para completar tallas y logos."
+],
+[
+"Asesora",
+"Pregunta 5 de 5: ¿Cuánto dinero te sentirías cómoda invirtiendo cada mes en resolver esto, aunque sea un rango aproximado (por ejemplo, casi nada, una suma pequeña o algo más importante)?"
+],
+[
+"Dueña",
+"No sé cuánto podría invertir cada mes; todavía no lo he calculado."
+]
+],
+"advice": "**Las 3 oportunidades, de la más fácil a la más difícil:**\n\n**1. Mensaje único con lista de lo que falta (fácil, casi sin costo)**\nLa IA te ayuda a redactar un mensaje claro que pides una sola vez: tallas por persona, logo en buena calidad, colores y fecha. Así evitas escribir cinco veces. Lo manejas tú o quien atiende ventas, no las operarias.\n\n**2. Pasar audios, correos y llamadas a una hoja ordenada (media)**\nLos clientes siguen mandando el pedido como prefieran. La IA convierte el audio o el correo en una ficha del pedido y marca en rojo lo que falta (por ejemplo, \"faltan 3 tallas, no llegó el logo\"). Tú solo revisas. Hay herramientas económicas para esto y puedes empezar con pocos pedidos.\n\n**3. Asistente que reclama lo pendiente y avisa de atrasos (más difícil)**\nLa IA le escribe sola al cliente cuando falta algo, le recuerda con amabilidad y te avisa qué pedidos están en riesgo de salir tarde. Requiere conectar todo lo anterior y ajustar el proceso, así que conviene hacerlo al final.\n\n**Mi recomendación:** empieza por la 1 esta semana y mide cuántas veces tienes que volver a escribir. Con eso en mano, calcula cuánto te cuesta cada atraso y define un monto mensual para pasar a la 2.\n\nLas operarias no tocan nada de esto, así que la costura sigue sin interrupciones.",
+"seen": {
+"drain": true,
+"second": false,
+"root": true,
+"tried": true,
+"limit": false,
+"goal": false
+},
+"cost": 0.04971250000000001
+},
+{
+"business": "textile",
+"cond": "asks_better",
+"rep": 2,
+"talk": [
+[
+"Dueña",
+"Hacemos uniformes para empresas pequeñas, tengo un taller con nueve operarias. Vendemos bien pero los clientes se quejan."
+],
+[
+"Asesora",
+"Pregunta 1 de 5: ¿De qué se quejan más los clientes: de que los uniformes llegan tarde, de que vienen con errores, de la calidad, o de otra cosa?"
+],
+[
+"Dueña",
+"Los que más se quejan es de que llegan tarde. Lo de los errores también pasa, porque cada pedido nos obliga a escribirle varias veces al cliente para completar tallas y logos, pero el retraso es lo que más escuchamos."
+],
+[
+"Asesora",
+"Pregunta 2 de 5: ¿Qué has intentado antes para que los pedidos salgan a tiempo y con menos errores, y cómo te fue?"
+],
+[
+"Dueña",
+"Lo que intenté fue pedirles a las operarias que llenaran un tablero en el computador para llevar los pedidos, pero lo dejamos porque les interrumpía la costura."
+],
+[
+"Asesora",
+"Pregunta 3 de 5: ¿Qué cosas no puedes cambiar en tu taller: por ejemplo, el número de personas, el dinero que puedes gastar, los datos que tienes de los clientes o la conexión a internet?"
+],
+[
+"Dueña",
+"Lo que no puedo cambiar es el número de personas: somos nueve operarias y no tengo intención de contratar en los próximos meses. Los datos de los clientes tampoco los puedo sacar del taller, porque el logo de cada cliente está firmado con un acuerdo de confidencialidad y no puede pasar a herramientas públicas."
+],
+[
+"Asesora",
+"Pregunta 4 de 5: Dentro de tres meses, ¿qué te gustaría haber logrado en tu taller para sentir que las cosas van mejor?"
+],
+[
+"Dueña",
+"Dentro de tres meses quiero entregar a tiempo nueve de cada diez pedidos, sin tener que escribirle al cliente varias veces para completar tallas y logos."
+],
+[
+"Asesora",
+"Pregunta 5 de 5: ¿Cómo te llega hoy un pedido, por WhatsApp, llamada, correo o en persona, y quién en el taller lo anota?"
+],
+[
+"Dueña",
+"Lo que te llega hoy es por WhatsApp, llamada, correo o en persona, según el cliente, y no tenemos un formato único para anotarlo."
+]
+],
+"advice": "**1. Un formulario único para todos los pedidos (el más fácil)**\nUn solo formulario, que el cliente llena una vez, con tallas, cantidades, colores y fecha deseada. La IA revisa que no falte nada y le pide lo que falta en un solo mensaje. Así se acaban los mensajes repetidos. Los logos se quedan en una carpeta privada del taller, sin pasar por herramientas públicas, así cumples el acuerdo de confidencialidad.\n\n**2. Pasar los pedidos de WhatsApp, correo y llamadas a una sola ficha (dificultad media)**\nQuien reciba el pedido, sea cual sea el canal, pega el mensaje o dicta la nota, y la IA lo convierte en una ficha ordenada con el mismo formato siempre. Lo hace una persona (tú o quien atienda), no las operarias, para no interrumpir la costura. Conviene usar una herramienta con privacidad garantizada, o dejar los logos fuera del texto.\n\n**3. Calcular fechas de entrega realistas y avisar al cliente (el más difícil)**\nCon las fichas ya ordenadas, la IA puede estimar cuánto tarda cada pedido según la carga de las nueve operarias, sugerir qué entregar primero y avisar al cliente si algo se va a atrasar. Es lo que más ayuda a llegar a 9 de cada 10 a tiempo, pero necesita varias semanas de datos reales de cuánto tarda cada tipo de uniforme.\n\n**Mi recomendación:** empieza por la 1. En un mes ya notarás menos mensajes y tendrás la base para las otras dos.",
+"seen": {
+"drain": true,
+"second": false,
+"root": true,
+"tried": true,
+"limit": true,
+"goal": true
+},
+"cost": 0.0490769
+},
+{
+"business": "textile",
+"cond": "asks_better",
+"rep": 3,
+"talk": [
+[
+"Dueña",
+"Hacemos uniformes para empresas pequeñas, tengo un taller con nueve operarias. Vendemos bien pero los clientes se quejan."
+],
+[
+"Asesora",
+"Pregunta 1 de 5: ¿De qué se quejan más los clientes: de que los uniformes llegan tarde, de que vienen con errores o de la calidad de la tela y la costura?"
+],
+[
+"Dueña",
+"De las tres, la queja que más escucho es la de los retrasos, porque cada pedido se atrasa al tener que escribirle al cliente varias veces para completar tallas y logos."
+],
+[
+"Asesora",
+"Pregunta 2 de 5: ¿Qué has intentado antes para evitar esos retrasos (por ejemplo, una lista de tallas, mensajes o llamadas) y cómo te fue?"
+],
+[
+"Dueña",
+"Pedí a las operarias que llenaran un tablero en el computador, pero lo dejaron porque les interrumpía la costura."
+],
+[
+"Asesora",
+"Pregunta 3 de 5: ¿Qué cosas no puedes cambiar en tu taller, por ejemplo las personas, los datos que ya tienes, el dinero que puedes gastar o la conexión a internet?"
+],
+[
+"Dueña",
+"Los logos de los clientes no pueden salir a herramientas públicas por el acuerdo de confidencialidad, y mis operarias no pueden dejar de coser para llenar formularios. Sobre el dinero o la conexión a internet no lo he pensado todavía."
+],
+[
+"Asesora",
+"Pregunta 4 de 5: ¿Qué quieres haber logrado dentro de tres meses para sentir que valió la pena, por ejemplo menos retrasos, menos mensajes a los clientes o entregar a tiempo cierto porcentaje de pedidos?"
+],
+[
+"Dueña",
+"Quiero entregar a tiempo nueve de cada diez pedidos en tres meses, y que mis operarias sigan cosiendo sin que les quiten tiempo con formularios."
+],
+[
+"Asesora",
+"Pregunta 5 de 5: ¿Con qué cuentas hoy en el taller para comunicarte con los clientes y llevar los pedidos (por ejemplo, WhatsApp, correo, un cuaderno o una hoja de cálculo), y quién se encarga de eso?"
+],
+[
+"Dueña",
+"Hoy respondo como la dueña: usamos WhatsApp para hablar con los clientes, y yo misma me encargo de esos mensajes y de llevar los pedidos."
+]
+],
+"advice": "# Tus 3 oportunidades, de la más fácil a la más difícil\n\n**1. Un solo mensaje claro para pedir todo al cliente**\nLa IA te ayuda a redactar un mensaje de WhatsApp que pida de una vez tallas, logo, colores y fecha límite, con recordatorios amables. Así dejas de escribir varias veces. Solo usa texto, sin logos. Lo puedes probar esta semana, casi sin costo.\n\n**2. Que la IA ordene los pedidos por ti**\nCopias la conversación del cliente (sin el logo) y la IA arma la ficha del pedido: tallas por persona y qué falta. Además te dice qué preguntarle al cliente. Lo haces tú, no las operarias, así que nadie deja de coser. Los logos se quedan guardados en tu carpeta, sin subirlos a ninguna herramienta pública.\n\n**3. Avisos automáticos de pedidos en riesgo**\nUn sistema que te avise: \"este pedido lleva 3 días sin tallas, mándale recordatorio\", y que envíe los recordatorios por WhatsApp Business. Ayuda mucho a llegar a 9 de cada 10 a tiempo, pero necesita configuración, algo de presupuesto y buena conexión a internet. Como aún no has definido esos dos puntos, lo dejaría para el segundo o tercer mes.\n\n**Mi recomendación:** empieza con la 1 y la 2 el primer mes. Mide cuántos pedidos salen a tiempo y, si mejora, pasa a la 3.",
+"seen": {
+"drain": true,
+"second": false,
+"root": false,
+"tried": true,
+"limit": true,
+"goal": true
+},
+"cost": 0.0504363
+}
+]

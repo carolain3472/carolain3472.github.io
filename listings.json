@@ -1,12 +1,28 @@
 [
   {
+    "listing": "/blog.html",
+    "items": [
+      "/posts/asks-first/index.html",
+      "/posts/before-you-paste/index.html",
+      "/posts/chatbot-i-dont-know/index.html",
+      "/posts/fire-watch/index.html",
+      "/posts/negative-result/index.html",
+      "/posts/same-quote/index.html",
+      "/posts/scanner-shortcut/index.html",
+      "/posts/who-does-the-math/index.html"
+    ]
+  },
+  {
     "listing": "/es/blog.html",
     "items": [
-      "/es/posts/negative-result/index.html",
-      "/es/posts/who-does-the-math/index.html",
+      "/es/posts/asks-first/index.html",
+      "/es/posts/before-you-paste/index.html",
+      "/es/posts/chatbot-i-dont-know/index.html",
       "/es/posts/fire-watch/index.html",
+      "/es/posts/negative-result/index.html",
+      "/es/posts/same-quote/index.html",
       "/es/posts/scanner-shortcut/index.html",
-      "/es/posts/chatbot-i-dont-know/index.html"
+      "/es/posts/who-does-the-math/index.html"
     ]
   }
 ]

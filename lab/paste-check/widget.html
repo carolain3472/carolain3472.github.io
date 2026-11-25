@@ -1,0 +1,9 @@
+<div class="maskw" data-lang="LANG">
+<label for="mw-in">IN_LABEL</label>
+<textarea id="mw-in" rows="5">SAMPLE</textarea>
+<div class="mw-b"><button type="button" id="mw-go">GO</button><button type="button" id="mw-copy">COPY</button></div>
+<label for="mw-out">OUT_LABEL</label><textarea id="mw-out" rows="5" readonly></textarea>
+<details><summary>KEY_LABEL</summary><div id="mw-key"></div></details>
+<p class="tiny">PRIV</p></div>
+<script src="../../lab/paste-check/mask.js"></script>
+<script>(()=>{const $=i=>document.getElementById(i);let K={};function go(){const r=mask($("mw-in").value);K=r.key;$("mw-out").value=r.out;const d=$("mw-key");d.textContent="";for(const[c,v]of Object.entries(K)){const p=document.createElement("div");p.textContent=c+"  →  "+v;d.append(p)}}$("mw-go").onclick=go;$("mw-copy").onclick=async()=>{try{await navigator.clipboard.writeText($("mw-out").value);$("mw-copy").textContent="✓"}catch{}};go()})();</script>

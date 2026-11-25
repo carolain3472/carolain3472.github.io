@@ -1,0 +1,142 @@
+[
+ {
+  "id": "voice2",
+  "model": "claude-haiku-5-5",
+  "run": 0,
+  "answer": "**Cómo escribes**\n\n1. Frases cortas y directas, casi siempre una acción o un dato concreto (horno, bandeja, pan de yuca, cuatro de la tarde).\n2. Usas \"ya\" para marcar el paso del tiempo (\"Ya aprendimos\", \"ya es puro afán\").\n3. Hablas del negocio con hechos prácticos y un tono seco y cercano, sin épica.\n4. Con solo tres textos no puedo hablar de muchas repeticiones; lo único que se repite es \"ya\".\n5. Nunca usas signos de exclamación, emojis ni frases de promoción; tampoco describes lo que sienten tus clientes.\n\n**Publicación**\n\nDesde el 6 de diciembre abrimos los domingos.\nDe 7 a 12.\nSolo pan y café.\nNada más por ahora.\nLos esperamos.\n\n**Frase que menos suena a ti:** \"Los esperamos.\"\n\nPropuesta: \"El domingo también sale pan.\"",
+  "cost": 0.000843
+ },
+ {
+  "id": "voice2",
+  "model": "claude-haiku-5-5",
+  "run": 1,
+  "answer": "**Cómo escribes:**\n1. Frases cortas y directas, casi siempre de menos de doce palabras, que cuentan hechos sin adornos.\n2. Repites \"ya\" (\"ya aprendimos\", \"ya es\") y el verbo \"pedir\" (\"pedir\", \"pidan\").\n3. Nunca usas exclamaciones ni adjetivos de emoción; los hechos hablan solos.\n4. No explicas lo que sientes ni lo que piensan tus clientes; describes lo que pasó en el horno, en la caja o en la tienda.\n5. Nunca cierras con una frase cálida o de despedida, ni con una moraleja: terminas en el dato útil.\n\n**Publicación:**\n\nLos domingos también abrimos.\nDesde el 6 de diciembre, de 7 a 12.\nSolo pan y café.\nNada más.\nNos vemos el domingo.\n\n**Frase que menos suena a ti:** \"Nos vemos el domingo.\" Es una despedida cálida, y en tus textos no hay ninguna.\n\n**Propuesta:** \"El domingo 6 empezamos. De 7 a 12.\"",
+  "cost": 0.0014865
+ },
+ {
+  "id": "voice2",
+  "model": "claude-haiku-5-5",
+  "run": 2,
+  "answer": "**Cómo escribes**\n\n1. Usas frases cortas y directas, casi siempre una acción o un dato por frase.\n2. Repites \"ya\" (\"Ya aprendimos\", \"ya es puro afán\") y nombras los productos con su palabra exacta: pan, torta, horno.\n3. Das información práctica sobre el día a día del negocio, sin adornos.\n4. Nunca usas signos de exclamación, emojis ni frases de marketing.\n5. No promocionas: cuentas lo que pasa o da un consejo concreto, como \"pidan el jueves\".\n\n**Publicación**\n\nDesde el 6 de diciembre abrimos también los domingos.\n\nDe 7 a 12.\n\nSolo pan y café.\n\nTe esperamos.\n\n*(28 palabras)*\n\n**Frase que menos suena a ti:** \"Te esperamos.\" Es un cierre genérico y no aparece en tus textos.\n\n**Propuesta:** \"Pan y café, de 7 a 12. Eso es todo.\"",
+  "cost": 0.0008905
+ },
+ {
+  "id": "voice2",
+  "model": "claude-haiku-5-5",
+  "run": 3,
+  "answer": "**Cómo escribes**\n\n1. Frases cortas y directas, casi siempre de una sola idea (entre 6 y 12 palabras).\n2. Repites \"ya\" (dos veces) y la forma imperativa de pedir (\"pidan\", \"pedir\"), así que tus avisos a los clientes son prácticos.\n3. Hablas de la operación diaria (horno, bandeja, hora de cierre, pan que se acaba) sin adornos.\n4. Tienes un humor seco y sin exclamaciones (\"El viernes ya es puro afán\").\n5. Nunca usas exclamaciones, emojis, hashtags ni frases de venta como \"¡no te lo pierdas!\", y tampoco describes lo que sienten los clientes.\n\n**Publicación**\n\nDesde el 6 de diciembre abrimos también los domingos.\nDe 7 a 12.\nSolo pan y café.\nNada más ese día.\n\n**Frase que menos suena a ti:** \"Desde el 6 de diciembre abrimos también los domingos.\"\nTiene el tono de anuncio genérico, con el \"también\" de relleno. Una alternativa más tuya sería: **\"Los domingos, desde el 6 de diciembre, hay pan y café.\"**",
+  "cost": 0.0011345
+ },
+ {
+  "id": "voice2",
+  "model": "claude-haiku-5-5",
+  "run": 4,
+  "answer": "**Cómo escribes:**\n1. Frases cortas o medianas, casi siempre una sola idea por oración.\n2. Repites \"ya\" (en dos textos) y el verbo \"pedir\" o \"pidan\" (en dos).\n3. Empiezas con lo práctico: una hora, un producto o un hecho del día, no con una introducción.\n4. Nunca usas signos de exclamación, emojis ni adjetivos sobre tus sentimientos.\n5. Nunca saludas, prometes algo grande ni cierras con frases de cortesía o de marca.\n\n**Publicación:**\n\nDesde el domingo 6 de diciembre abrimos los domingos.\nDe 7 a 12.\nSolo pan y café. Nada más.\nSi quieres pasar, es temprano: cerramos a las 12.\n\n*(38 palabras)*\n\n**Frase que menos suena a ti:** \"Desde el domingo 6 de diciembre abrimos los domingos.\" Suena a anuncio formal, y empezar con la fecha no es tu patrón.\n\n**Propuesta:** \"Ya abrimos los domingos. Desde el 6 de diciembre, de 7 a 12.\"",
+  "cost": 0.0010263399999999997
+ },
+ {
+  "id": "voice2",
+  "model": "claude-haiku-5-5",
+  "run": 5,
+  "answer": "**Cómo escribes**\n\n1. Usas frases cortas, casi siempre de una sola idea.\n2. Repites \"ya\" dos veces y usas dos formas del verbo pedir (\"pidan\", \"pedir\").\n3. Cuentas hechos concretos con hora, día o cantidad (\"a las cuatro\", \"el jueves\", \"por la izquierda\") y no das opiniones.\n4. Hablas en primera persona del plural de forma implícita (\"cerramos\", \"aprendimos\") y no describes emociones.\n5. En estos tres textos no usas exclamaciones, emojis, hashtags ni frases de venta.\n\n**Publicación**\n\nDesde el 6 de diciembre abrimos los domingos.\nDe 7 a 12.\nSolo pan y café.\nNo hay nada más.\n\n**Frase que menos suena a ti:** \"Desde el 6 de diciembre abrimos los domingos.\" Suena a anuncio genérico.\n\n**Propuesta:** \"El domingo 6 de diciembre empezamos: de 7 a 12.\"",
+  "cost": 0.0018753399999999999
+ },
+ {
+  "id": "voice2",
+  "model": "claude-haiku-5-5",
+  "run": 6,
+  "answer": "1. Frases cortas, de unas 6 a 12 palabras, casi siempre con un dato concreto (hora, producto, día).\n2. Repite poco vocabulario, pero usa \"ya\" dos veces para marcar avance o final (\"ya aprendimos\", \"ya es puro afán\").\n3. Da instrucciones directas, como \"gira la bandeja\" o \"pidan el jueves\", en vez de explicar o justificar.\n4. No usa signos de exclamación, emojis, adjetivos de promoción ni agradecimientos.\n5. No habla de sus sentimientos ni de lo que quieren los clientes. Describe lo que pasa en el local.\n\n**Publicación:**\n\nDesde el 6 de diciembre abrimos los domingos.\nDe 7 a 12.\nSolo pan y café.\nVengan a desayunar con nosotros.\n\n**Frase que menos suena a usted:** \"Vengan a desayunar con nosotros.\"\nEs la única invitación cálida y genérica del texto, y \"desayunar\" no está en los datos. Una alternativa más en su tono: *\"El domingo se puede venir por pan y café.\"*",
+  "cost": 0.0011153399999999998
+ },
+ {
+  "id": "voice2",
+  "model": "claude-haiku-5-5",
+  "run": 7,
+  "answer": "**Cómo escribes:**\n\n1. Frases cortas, de una sola idea. Cuando alargas una, la unes con \"y\" o \"que\".\n2. Repites \"ya\" y el verbo \"pedir\" (o \"pidan\"), y te gustan las instrucciones prácticas, como \"girar la bandeja\".\n3. Describes lo que pasa en el local con sustantivos concretos (horno, bandeja, pan de yuca) y no usas adjetivos de elogio.\n4. Nunca usas signos de exclamación, emojis ni frases de venta o cierre emotivo. Suenas a notas de trabajo.\n5. Nunca explicas por qué ni prometes nada: das el dato y te detienes.\n\n**Publicación:**\n\nDesde el 6 de diciembre abrimos los domingos.\nDe 7 a 12.\nSolo pan y café.\nLos esperamos el domingo.\n\n**Frase que menos suena a ti:** \"Los esperamos el domingo.\" Es un cierre de publicidad y no encaja con tus textos.\n\n**Propuesta:** \"El domingo empezamos a las siete.\"",
+  "cost": 0.0010913399999999999
+ },
+ {
+  "id": "voice2",
+  "model": "claude-haiku-5-5",
+  "run": 8,
+  "answer": "**Cómo escribes**\n\n1. Frases cortas o medianas, de unas 5 a 14 palabras, y casi siempre una sola idea por frase.\n2. Repites \"ya\" (dos veces) y dices los momentos con precisión: \"a las cuatro\", \"el jueves\", \"el viernes\".\n3. Das un hecho y luego una consecuencia o instrucción: \"Se acabó el pan… y la gente siguió llegando\", \"Si van a pedir torta, pidan el jueves\".\n4. Nunca usas adjetivos de elogio, signos de exclamación, emojis ni preguntas.\n5. Nunca expresas emociones ni prometes nada: describes lo que pasó o lo que hay que hacer.\n\n**Publicación**\n\nDesde el domingo 6 de diciembre abrimos los domingos, de 7 a 12.\nSolo pan y café.\nNos vemos el domingo.\n\n**Frase que menos suena a ti:** \"Nos vemos el domingo.\"\nEs un cierre cálido y genérico, y tus textos no despiden ni invitan así.\n\n**Propuesta:** \"Si quieren pan el domingo, vengan antes de las 12.\"\nSigue el patrón de \"pidan el jueves\": una instrucción concreta con día y hora.",
+  "cost": 0.00139534
+ },
+ {
+  "id": "voice2",
+  "model": "claude-haiku-5-5",
+  "run": 9,
+  "answer": "**Cómo escribes**\n\n1. Frases cortas con sujeto claro, casi siempre una acción o un dato: \"Se acabó el pan de yuca a las cuatro\".\n2. Entre 6 y 12 palabras por frase, y los párrafos tienen pocas oraciones.\n3. Repites \"ya\" (en dos textos) y el verbo \"pedir\" en dos formas (\"pedir\", \"pidan\"). Usas \"la gente\" como sujeto sin adjetivos.\n4. En estos tres textos no aparecen exclamaciones, elogios, promesas ni cierres de cortesía. Los datos van primero.\n5. No explicas motivos. Describes lo que pasó, con hora o cantidad, y dejas ver el cansancio con un tono seco (\"puro afán\").\n\n**Publicación**\n\nDesde el 6 de diciembre abrimos los domingos.\nDe 7 a 12.\nSolo pan y café. Nada más.\nNos vemos el domingo.\n\n**Frase que menos suena a ti:** \"Nos vemos el domingo.\"\nEs un cierre cálido y genérico, y no aparece nada parecido en tus textos. Propuesta: \"El domingo, a las siete.\"",
+  "cost": 0.00107684
+ },
+ {
+  "id": "voice2",
+  "model": "claude-sonnet-5-5",
+  "run": 0,
+  "answer": "**Cómo escribes**\n1. Frases cortas, de 5 a 12 palabras, con punto y seguido. Cada texto tiene dos o tres frases y no hay subordinadas largas.\n2. Repites \"ya\" (*ya aprendimos*, *ya es puro afán*) y el verbo pedir (*pedir*, *pidan*). Repites palabras en vez de buscar sinónimos.\n3. Empiezas por el hecho (*Hoy cerramos tarde*, *El horno nuevo quema*) y la explicación viene después.\n4. Hablas en \"nosotros\" y en \"ustedes\" con el imperativo (*pidan*), con palabras cotidianas como *afán* y *torta*.\n5. Nunca usas exclamaciones, emojis, saludos ni \"queridos clientes\". Tampoco adjetivos de elogio, preguntas ni frases de venta.\n\n**Publicación**\n\nVamos a abrir los domingos.\n\nDesde el 6 de diciembre, de 7 a 12. Solo pan y café.\n\nA las doce cerramos.\n\n**Frase que menos suena a ti:** \"Desde el 6 de diciembre, de 7 a 12.\" Es una frase sin verbo, tipo aviso, y tú escribes frases con verbo y sujeto claros.\n\n**Alternativa:** \"Abrimos desde el 6 de diciembre, de 7 a 12.\"",
+  "cost": 0.019476
+ },
+ {
+  "id": "voice2",
+  "model": "claude-sonnet-5-5",
+  "run": 1,
+  "answer": "**Cómo escribes**\n1. Frases cortas, casi siempre de 5 a 9 palabras. Escribes dos por texto, y la más larga (la del pan de yuca) llega a unas 16.\n2. Cada frase dice una sola cosa y suele ser un hecho o una consecuencia: \"Se acabó el pan\", \"El horno quema por la izquierda\".\n3. Repites poco, pero \"ya\" aparece dos veces (\"Ya aprendimos\", \"ya es puro afán\"). También repites la raíz \"pedir/pidan\" y empiezas dos textos con \"El/Hoy\" más un hecho.\n4. Hablas en plural (\"cerramos\", \"aprendimos\") y con palabras de tu entorno, como \"afán\".\n5. Nunca usas exclamaciones, emojis, saludos, hashtags, adjetivos de venta ni cierres tipo \"los esperamos\". Tampoco explicas de más.\n\n**Publicación**\n\nVamos a abrir los domingos.\n\nDesde el domingo 6 de diciembre, de 7 a 12.\n\nSolo pan y café. Nada más.\n\n**Frase que menos suena a ti:** \"Vamos a abrir los domingos.\" Suena a comunicado. Tú escribes más pegado al hecho.\n\n**Alternativa:** \"Los domingos también abrimos.\"",
+  "cost": 0.0201433
+ },
+ {
+  "id": "voice2",
+  "model": "claude-sonnet-5-5",
+  "run": 2,
+  "answer": "**Cómo escribes**\n\n1. Frases cortas, de 5 a 12 palabras, casi todas afirmaciones. Solo una lleva condición (\"Si van a pedir torta…\") y va seguida de una orden corta.\n2. Repites \"ya\" (\"Ya aprendimos\", \"ya es puro afán\") y hablas en plural: \"cerramos\", \"aprendimos\", \"pidan\".\n3. Empiezas por el hecho (la hora, el horno, el día) y dejas la explicación para después, si la das.\n4. Usas palabras de tu región y de tu oficio (\"afán\", \"pan de yuca\", \"bandeja\", \"torta\"), sin adornos.\n5. Nunca saludas, ni exclamas, ni usas emojis, ni elogias lo tuyo (\"delicioso\", \"recién hecho\"), ni cierras con frases de cortesía.\n\n**Publicación**\n\nVamos a abrir los domingos.\n\nDesde el 6 de diciembre, de 7 a 12. Solo pan y café.\n\nEl primer domingo es el 6. Ya saben: domingo, de 7 a 12.\n\n*(Ahí nos vemos.)*\n\nCorrección: la frase final entre paréntesis no va. Esa era la marcada, pero la reemplacé por la propuesta. Para que quede claro:\n\n**Frase que menos suena a ti:** \"Ahí nos vemos.\" Es un cierre de cortesía, y tú no cierras así.\n\n**Propuesta:** \"Ya saben: domingo, de 7 a 12.\" Repite tu \"ya\", da el dato y no suena a despedida. La dejé en la publicación.",
+  "cost": 0.0204133
+ },
+ {
+  "id": "voice2",
+  "model": "claude-sonnet-5-5",
+  "run": 3,
+  "answer": "**Cómo escribes**\n\n1. Frases cortas, casi siempre de 3 a 8 palabras. La más larga (13) es la que cuenta lo del pan de yuca, y la rompes con una \"y\".\n2. Escribes en plural (\"cerramos\", \"aprendimos\") y das instrucciones directas (\"pidan el jueves\").\n3. Repites \"ya\" (\"Ya aprendimos\", \"ya es puro afán\") y los artículos con sustantivos concretos: el pan, el horno, la bandeja, el viernes.\n4. Usas datos precisos (las cuatro, el jueves, por la izquierda) y expresiones de la calle como \"puro afán\".\n5. Nunca saludas, ni usas exclamaciones, emojis, adjetivos de elogio ni \"queridos clientes\". Tampoco explicas de más ni cierras con una invitación.\n\n**Publicación**\n\nVamos a abrir los domingos.\n\nDesde el 6 de diciembre, de 7 a 12.\n\nSolo pan y café. Nada más.\n\nVengan temprano.\n\n**Frase que menos suena a ti:** \"Vengan temprano.\"\n\nDas la instrucción, pero no dices por qué ni cuándo, y eso en tus textos siempre queda concreto.\n\n**Alternativa:** \"Ya pueden venir desde las siete.\"",
+  "cost": 0.0183233
+ },
+ {
+  "id": "voice2",
+  "model": "claude-sonnet-5-5",
+  "run": 4,
+  "answer": "**Cómo escribes**\n\n1. Frases cortas, de 6 a 10 palabras. Casi siempre un punto y otra idea, sin conectores largos.\n2. Repites \"ya\" (\"Ya aprendimos\", \"ya es puro afán\") y los verbos de instrucción en plural (\"pidan\"). Hablas de \"ustedes\" sin saludar.\n3. Empiezas por el hecho concreto (la hora, el horno, el día) y cierras con algo práctico o una pequeña resignación con humor.\n4. Usas palabras de tu tierra y tu oficio: \"afán\", \"torta\", \"pan de yuca\", \"bandeja\".\n5. Nunca usas exclamaciones, emojis, hashtags, saludos tipo \"queridos clientes\", adjetivos de elogio (\"delicioso\", \"increíble\") ni promesas grandes.\n\n**Publicación**\n\nVamos a abrir los domingos.\n\nDesde el 6 de diciembre, de 7 a 12. Solo pan y café.\n\nAnótenlo.\n\n**Frase que menos suena a ti:** \"Anótenlo.\" Es una orden de publicidad, sin un dato detrás, y tú siempre das la instrucción con una razón concreta.\n\n**Propuesta:** \"Vengan antes de las 12.\"",
+  "cost": 0.0165433
+ },
+ {
+  "id": "voice2",
+  "model": "claude-sonnet-5-5",
+  "run": 5,
+  "answer": "**Cómo escribes**\n\n1. Frases cortas, casi siempre de 5 a 12 palabras, una idea por frase y punto seguido.\n2. Empiezas con el hecho (qué pasó, qué hay, qué toca hacer) y sin saludo ni preámbulo.\n3. Repites \"ya\" (en dos de los tres textos) y hablas en plural: \"cerramos\", \"aprendimos\", \"pidan\".\n4. Usas palabras de tu oficio y de tu tierra: pan de yuca, bandeja, torta, afán.\n5. Nunca usas exclamaciones, emojis, preguntas, adjetivos de elogio ni cierres de cortesía como \"los esperamos con gusto\".\n\n**Publicación**\n\nVamos a abrir los domingos.\n\nDesde el 6 de diciembre, de 7 a 12.\n\nSolo pan y café.\n\nLos esperamos.\n\n**Frase que menos suena a ti:** \"Los esperamos.\" Es un cierre de cortesía, y tú terminas con un dato o una instrucción.\n\n**Alternativa:** \"Abrimos a las 7.\"",
+  "cost": 0.0137233
+ },
+ {
+  "id": "voice2",
+  "model": "claude-sonnet-5-5",
+  "run": 6,
+  "answer": "**Cómo escribes**\n\n1. Tus frases son cortas, de 6 a 12 palabras, y casi siempre van en afirmativo, una tras otra, con punto y sin conectores largos.\n2. Dices el hecho y enseguida la consecuencia o el consejo: \"El horno quema por la izquierda. Ya aprendimos a girar la bandeja.\"\n3. Repites \"ya\" (ya aprendimos, ya es puro afán) y los artículos con cosas concretas: el pan de yuca, el horno, la bandeja, la torta.\n4. Usas palabras de tu tierra y del oficio (\"afán\", \"torta\", \"pan de yuca\") y hablas directo a la gente en plural: \"pidan\".\n5. Nunca usas exclamaciones, emojis, saludos, adjetivos de venta ni preguntas, y tampoco explicas lo que sientes.\n\n**Publicación**\n\nVamos a abrir los domingos.\n\nDesde el 6 de diciembre, de 7 a 12. Solo pan y café. Nada más.\n\nYa lo decidimos. Los domingos, pan y café.\n\n**Frase que menos suena a ti:** \"Los domingos, pan y café.\"\n\nParece un eslogan, y tú no cierras con frases de ese tipo. Cierras con un dato útil. Propongo:\n\n\"A las doce cerramos.\"",
+  "cost": 0.018893300000000002
+ },
+ {
+  "id": "voice2",
+  "model": "claude-sonnet-5-5",
+  "run": 7,
+  "answer": "**Cómo escribes**\n\n1. Frases cortas: entre 3 y 14 palabras, casi siempre de 6 a 8, y cada una dice una sola cosa.\n2. Usas el nosotros (\"cerramos\", \"aprendimos\") y el imperativo plural (\"pidan\"), y hablas en presente o en pasado cercano.\n3. Repites poco. Lo más visible es \"ya\" (dos veces en tres textos) y la raíz \"pedir/pidan\". Casi todas las frases arrancan con \"el\", \"hoy\", \"ya\" o \"si\".\n4. Nunca usas exclamaciones, emojis, saludos, adjetivos de elogio (\"delicioso\", \"artesanal\") ni \"te esperamos\". Tampoco agradeces ni te disculpas.\n5. Dices el hecho y sigues: el pan se acabó, el horno quema, el viernes es afán. No explicas ni adornas. (En el tercer texto quedó un punto doble al final: \"afán..\").\n\n**Publicación**\n\nVamos a abrir los domingos.\n\nEmpezamos el 6 de diciembre. Abrimos a las 7 y cerramos a las 12.\n\nSolo pan y café.\n\n**Frase que menos suena a ti:** \"Abrimos a las 7 y cerramos a las 12.\"\n\nRepite el verbo y arma una simetría que no aparece en tus textos, donde todo va más seco.\n\n**Propuesta:** \"De 7 a 12.\"",
+  "cost": 0.0229533
+ },
+ {
+  "id": "voice2",
+  "model": "claude-sonnet-5-5",
+  "run": 8,
+  "answer": "**Cómo escribes**\n\n1. Frases cortas: entre 3 y 14 palabras, y casi todas de 6 a 8. La más larga une dos hechos con una \"y\".\n2. Hablas en plural (\"cerramos\", \"aprendimos\") y das instrucciones directas a ustedes (\"pidan el jueves\").\n3. Repites poco. Lo único que se repite es \"ya\" (dos veces) y los artículos \"el\" y \"la\". Prefieres palabras de tu oficio (\"horno\", \"bandeja\", \"afán\").\n4. Das un hecho y sigues, sin adornos ni explicaciones de más.\n5. Nunca saludas, no usas exclamaciones, emojis ni adjetivos de elogio, y no haces preguntas ni cierras con despedidas.\n\n**Publicación**\n\nVamos a abrir los domingos.\n\nEl primero es el 6 de diciembre. Abrimos a las 7 y cerramos a las 12. Ese día hay solo pan y café.\n\n~~Nos vemos el domingo.~~\n\n**Frase que menos suena a ti:** \"Nos vemos el domingo.\" Es una despedida, y en tus textos no hay ninguna.\n\n**Propuesta:** \"Lleguen antes de las doce.\" Es una instrucción corta, como \"pidan el jueves\".",
+  "cost": 0.0171933
+ },
+ {
+  "id": "voice2",
+  "model": "claude-sonnet-5-5",
+  "run": 9,
+  "answer": "**Cómo escribes**\n\n1. Frases cortas: de 3 a 13 palabras, casi todas entre 6 y 8. Solo una pasa de diez, y es la que cuenta lo que pasó con el pan de yuca.\n2. Usas la primera persona del plural (\"cerramos\", \"aprendimos\") y el imperativo plural (\"pidan\"). Hablas desde el equipo y le dices a la gente qué hacer.\n3. Repites \"ya\" (\"Ya aprendimos\", \"ya es puro afán\") y los artículos \"el/la\". Con tres textos, \"ya\" es lo único que se nota como muletilla.\n4. Pones el dato concreto antes que el adjetivo: la hora, el día, el lado del horno. Cuentas el problema tal cual y sigues.\n5. Nunca usas exclamaciones, emojis, saludos, disculpas ni adjetivos de venta como \"delicioso\" o \"artesanal\". Tampoco cierras con una invitación.\n\n**Publicación**\n\nVamos a abrir los domingos.\n\nDesde el 6 de diciembre, de 7 a 12. Solo pan y café.\n\nApunten la fecha. El domingo 6 ya abrimos.\n\n**Frase que menos suena a ti:** \"Apunten la fecha.\"\n\nEs una orden que no sale de ningún dato y se siente como cierre de publicidad. En tus textos las órdenes vienen con una razón práctica, como \"pidan el jueves\".\n\n**Propuesta:** quítala y deja \"El domingo 6 ya abrimos.\" (usa tu \"ya\" y no pide nada).",
+  "cost": 0.0201933
+ }
+]
