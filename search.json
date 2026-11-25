@@ -4,7 +4,63 @@
     "href": "blog.html",
     "title": "Notes",
     "section": "",
-    "text": "When a model learns the scanner\n\n\n\nA small experiment with simulated images: the same model scores 0.97 or 0.69, depending on which people I test it on.\n\n\n\n\n\n\nNov 25, 2026\n\n4 min\n\n\n\n\nNo matching items"
+    "text": "More training, and the model did not improve\n\n\n\nclinical NLP\n\nresearch\n\n\n\n\nA second look, with intervals, at a fine-tuning experiment on Spanish clinical text.\n\n\n\n\n\n\nNov 25, 2026\n\n2 min\n\n\n\n\n\n\nFire Watch: the same event, written four ways\n\n\n\ndecision models\n\ntrustworthy AI\n\n\n\n\nA small game to see if a model takes the same decision when the same event is described with other words.\n\n\n\n\n\n\nNov 25, 2026\n\n3 min\n\n\n\n\n\n\nUn chatbot que puede decir «no tengo esa información»\n\n\n\nIA responsable\n\ntrabajo\n\n\n\n\nLas decisiones detrás de un asistente universitario donde una respuesta inventada tiene consecuencias.\n\n\n\n\n\n\nNov 25, 2026\n\n2 min\n\n\n\n\n\n\nWhen a model learns the scanner\n\n\n\nmedical imaging\n\ntrustworthy AI\n\n\n\n\nA small experiment with simulated images: the same model scores 0.97 or 0.69, depending on which people I test it on.\n\n\n\n\n\n\nNov 25, 2026\n\n4 min\n\n\n\n\n\n\nLa IA propone, el programa calcula y una persona firma\n\n\n\ntransformación digital\n\nIA responsable\n\ntrabajo\n\n\n\n\nCómo repartir las tareas cuando una cifra equivocada termina en una multa.\n\n\n\n\n\n\nNov 25, 2026\n\n2 min\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/ia-propone/index.html",
+    "href": "posts/ia-propone/index.html",
+    "title": "La IA propone, el programa calcula y una persona firma",
+    "section": "",
+    "text": "Cuando una empresa quiere usar IA en un proceso, la conversación suele empezar por la herramienta. A mí me sirve más empezar por otra cosa: qué parte del proceso acepta un error y cuál no.\nUn ejemplo de mi trabajo es una plataforma para contadores que ayuda a liquidar el impuesto de industria y comercio en Colombia. Cada municipio tiene sus tarifas, sus sanciones y su calendario, y todo eso cambia. El contador lee el acuerdo, depura la contabilidad del cliente, clasifica las actividades y llena un formulario renglón por renglón. Es lento, y una cifra mal puesta significa una multa. (Yo soy ingeniera, no contadora, y por eso la firma en este sistema nunca es mía ni del modelo.)\nEl trabajo está repartido en tres:\n\nEl modelo lee. Extrae tarifas, códigos y fechas de los acuerdos municipales y de los documentos del cliente, y los deja como propuesta.\nUn programa calcula. Las cuentas las hace un motor con reglas escritas y probadas, con aritmética decimal exacta y el redondeo que pide la norma. Si lo corres dos veces con los mismos datos, da lo mismo.\nUna persona aprueba. Nada llega a una declaración oficial sin que un contador lo revise y lo confirme.\n\nLos modelos de lenguaje leen muy bien documentos desordenados, que era la parte lenta. Pero pueden leer un 5 donde hay un 6, y lo hacen con la misma seguridad con la que aciertan. Con este reparto, ese error aparece en una propuesta que alguien va a revisar antes de que exista un formulario.\nTambién ayuda a saber quién responde. Si la cifra está mal, se puede ver si el documento se leyó mal, si la regla estaba mal escrita o si se aprobó sin revisar. Cuando un modelo hace los tres pasos, nadie puede contestar eso.\nSi fuera a hacer lo mismo con otro proceso, marcaría cada paso con una letra: L si es leer o resumir, C si es calcular o aplicar una regla y D si es decidir. Los pasos L son buenos para empezar con IA, los C casi siempre necesitan un programa, y los D se quedan con una persona que tenga nombre. Se puede hacer con papel, y sirve para hablar de riesgos antes de comprar nada."
+  },
+  {
+    "objectID": "posts/chatbot-no-se/index.html",
+    "href": "posts/chatbot-no-se/index.html",
+    "title": "Un chatbot que puede decir «no tengo esa información»",
+    "section": "",
+    "text": "Trabajé en un chatbot para estudiantes de primer semestre. Preguntan por el reglamento, la matrícula, los calendarios y los servicios de bienestar, y las oficinas responden lo mismo cientos de veces. Un asistente puede ayudar mucho ahí, siempre que no invente. Si le dice a alguien un plazo que no existe, esa persona puede quedarse por fuera de un trámite.\nPor eso casi todo el trabajo de diseño estuvo en lo que el bot no hace.\nLa primera decisión fue tener una sola base de conocimiento, verificada por la institución. El modelo responde con lo que encuentra ahí, y el prompt le prohíbe completar con lo que aprendió en su entrenamiento. Un modelo de lenguaje sabe muchas cosas sobre universidades en general, y en este caso eso es un problema, porque suena correcto y puede ser de otra universidad.\nLa segunda fue darle una salida. Cuando la base no tiene la respuesta, el bot dice «no tengo esa información». Cuando la pregunta se sale de su alcance, pasa el caso a una persona. Parece un detalle, pero un sistema sin esa opción queda obligado a responder algo.\nLa tercera fue probar con preguntas reales de estudiantes y corregir hasta que dejaron de aparecer respuestas inventadas en esas pruebas. Eso no garantiza que nunca vaya a pasar, y por eso la salida hacia una persona sigue ahí.\nUsé la misma idea en otro sistema, uno que compara los documentos de un área de recursos humanos con un marco internacional. Si la búsqueda no encuentra un fragmento suficientemente relevante, el resultado es «no hay información suficiente», y al final se revisa que cada afirmación tenga un fragmento que la respalde. En un diagnóstico, un hallazgo inventado hace más daño que uno que falta.\nSi estás montando un asistente en tu empresa o en tu universidad, yo empezaría por escribir la lista de preguntas que no debe responder y quién las recibe. Con esa lista lista, lo demás es más fácil."
+  },
+  {
+    "objectID": "posts/negative-result/index.html",
+    "href": "posts/negative-result/index.html",
+    "title": "More training, and the model did not improve",
+    "section": "",
+    "text": "In the summer of 2024 I did a research internship at TecNM Morelia, in Mexico, with Programa Delfín. I worked with Spanish clinical text, and one part of the project was to see if a language model could recover clinical words hidden in a note. It is a first step towards removing personal details from clinical text.\nI compared a biomedical RoBERTa for Spanish with versions of the same model that I trained further on diabetes notes, using 100, 6,000 and 10,000 of them. The test had 101 notes, each with one clinical word masked by hand.\n\nExact recovery of the masked word, 101 notes. Wilson intervals, computed for this note.\n\n\nExtra training\nWords recovered\n95% interval\n\n\n\n\nNone\n81.2%\n72.5 to 87.6\n\n\n10,000 notes\n79.2%\n70.3 to 86.0\n\n\n100 notes\n76.2%\n67.1 to 83.5\n\n\n\nThe model without extra training had the highest score. In my portfolio I wrote that extra training lowered the score, and it is true for these notes. Looking at the intervals now, they overlap almost completely, and the difference between the first two rows is two notes out of 101. The same notes were used for every model, so a paired test on each answer would be more precise than these intervals, and I would need the individual answers to do it.\nWhat I can say is that extra training showed no improvement on this test. I cannot say that it hurts.\nThere are three more limits I would fix before repeating it. The test notes were synthetic, written by GPT-3.5 in the style of a real case report, and real hospital notes have more abbreviations. Each note tested a single word. And exact match counts “enfermedad” as wrong when the hidden word was “diabetes”, although both fit the sentence.\nIf I repeated it, I would choose the size of the test before training and write down which difference is big enough to matter.\nMore about the project: Language models for Spanish clinical notes and the repository."
+  },
+  {
+    "objectID": "posts/fire-watch/index.html",
+    "href": "posts/fire-watch/index.html",
+    "title": "Fire Watch: the same event, written four ways",
+    "section": "",
+    "text": "At a tech event I learned about decision models for interfaces. Instead of writing text, they receive a situation and a closed list of options, and they return one option with a probability. Chrome is testing an API for this, the Decisions API, where the model runs on the computer of the person using the page.\nI wanted to try the idea on something close to my work, so I made a small game. I lead the AI research of Kawsay, a wildfire detection project with FIRST Global Team Colombia, and the game borrows that setting. You read a message from a forest sensor and choose one of four actions: ignore, monitor, send a drone or call the brigade. The rule book is fixed, so there is always one correct answer.\nPlay Fire Watch"
+  },
+  {
+    "objectID": "posts/fire-watch/index.html#the-test",
+    "href": "posts/fire-watch/index.html#the-test",
+    "title": "Fire Watch: the same event, written four ways",
+    "section": "The test",
+    "text": "The test\nI made 24 events, six per action, and wrote each one in four ways: with numbers, in Spanish with numbers, in plain words, and in plain words again with one phrase changed. The event is the same in the four versions, so the answer should be the same too.\n\nNumbers. Sensor at the east gate. Temperature 47 °C. Humidity 65%. Camera: no smoke.\nPlain words. The battery was changed on Monday. At the east gate the air is very hot and humid as usual, and the camera shows nothing unusual."
+  },
+  {
+    "objectID": "posts/fire-watch/index.html#first-results-in-the-cloud",
+    "href": "posts/fire-watch/index.html#first-results-in-the-cloud",
+    "title": "Fire Watch: the same event, written four ways",
+    "section": "First results, in the cloud",
+    "text": "First results, in the cloud\nI started with two general models in the cloud, asking them to pick one option from the list. I ran Claude Haiku 5.5 three times and Claude Sonnet 5.5 once.\n\nCorrect decisions out of 24\n\n\nVersion\nHaiku 5.5 (three runs)\nSonnet 5.5 (one run)\n\n\n\n\nNumbers\n24, 24, 24\n24\n\n\nSpanish\n24, 24, 24\n24\n\n\nPlain words\n19, 20, 19\n24\n\n\nPlain words, one phrase changed\n22, 22, 22\n24\n\n\n\nChanging the language made no difference. Taking the numbers away did, for the smaller model. Almost every mistake went in the same direction: the rule book said monitor and the model said ignore. For an alarm this is the bad direction, because an event that needed attention gets no attention."
+  },
+  {
+    "objectID": "posts/fire-watch/index.html#what-i-found-in-my-own-prompt",
+    "href": "posts/fire-watch/index.html#what-i-found-in-my-own-prompt",
+    "title": "Fire Watch: the same event, written four ways",
+    "section": "What I found in my own prompt",
+    "text": "What I found in my own prompt\nThe mistakes had something in common. My message said the camera shows “nothing unusual”, and my description of the ignore option ended with “Nothing is unusual”. The model may have been matching the words I repeated. In the fourth version I only changed that phrase to “no smoke”, and Haiku went from 19 or 20 to 22.\nIt is a small test with 24 events, one rule book and wording that I invented, and 22 is still not 24, so the repeated phrase does not explain everything. I would still check it in any product where a model chooses from a list, because the person who writes the options can push the answer without noticing."
+  },
+  {
+    "objectID": "posts/fire-watch/index.html#next",
+    "href": "posts/fire-watch/index.html#next",
+    "title": "Fire Watch: the same event, written four ways",
+    "section": "Next",
+    "text": "Next\nThe page can run the same decisions with a local model, through Chrome or with EmbeddingGemma 2 in the browser. That part is still experimental, and I will add the numbers here when I have them.\nCode, and the answers of the last run of each model: lab/fire-watch. The game is a toy made to compare models. It is not a fire detection system."
   },
   {
     "objectID": "posts/scanner-shortcut/index.html",
@@ -53,7 +109,14 @@
     "href": "index.html",
     "title": "Carolain Jiménez Bedoya",
     "section": "",
-    "text": "I’m a systems engineer from Colombia working on medical image analysis and applied AI. I’m a research member of the MMV group at Universidad del Valle and lead AI engineering at S&S IP S.A.S. My first-author paper on traumatic brain injury and MRI was presented at CIARP 2025 (Springer LNCS). I care about methods that are measured honestly and reported next to their limits."
+    "text": "I’m a systems engineer from Colombia working on medical image analysis and applied AI. I’m a research member of the MMV group at Universidad del Valle and lead AI engineering at S&S IP S.A.S. My first-author paper on traumatic brain injury and MRI was presented at CIARP 2025 (Springer LNCS). I care about methods that are measured honestly and reported next to their limits.\nThis is where I write about my research, the AI systems I build at work, and what I learn teaching and mentoring. Some notes are in English and some in Spanish."
+  },
+  {
+    "objectID": "index.html#latest-notes",
+    "href": "index.html#latest-notes",
+    "title": "Carolain Jiménez Bedoya",
+    "section": "Latest notes",
+    "text": "Latest notes\n\n\n\n\n\nDate\n\n\nTitle\n\n\n\n\n\n\nNov 25, 2026\n\n\nMore training, and the model did not improve\n\n\n\n\nNov 25, 2026\n\n\nFire Watch: the same event, written four ways\n\n\n\n\nNov 25, 2026\n\n\nUn chatbot que puede decir «no tengo esa información»\n\n\n\n\nNov 25, 2026\n\n\nWhen a model learns the scanner\n\n\n\n\nNov 25, 2026\n\n\nLa IA propone, el programa calcula y una persona firma\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html#publications",
@@ -61,5 +124,12 @@
     "title": "Carolain Jiménez Bedoya",
     "section": "Publications",
     "text": "Publications\nIdentification of Traumatic Brain Injury on Magnetic Resonance Imaging. Jiménez, C., Chaves, D., Trujillo, M., Herrera, A., Ledesma, M. Progress in Pattern Recognition, Image Analysis, Computer Vision and Applications (CIARP 2025). Lecture Notes in Computer Science, vol. 16529. Springer, Cham. Oral presentation, Bogotá. DOI: 10.1007/978-3-032-23176-5_14"
+  },
+  {
+    "objectID": "index.html#projects",
+    "href": "index.html#projects",
+    "title": "Carolain Jiménez Bedoya",
+    "section": "Projects",
+    "text": "Projects\n\nTraumatic brain injury on MRI, radiomics and machine learning on T1-weighted MRI.\nKawsay, wildfire detection with FIRST Global Team Colombia.\nRENOVA, aquatic plant classification on a Raspberry Pi.\nSpanish clinical notes, language models for clinical text."
   }
 ]

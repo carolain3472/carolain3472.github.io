@@ -86,9 +86,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-image','listing-date','listing-title','listing-description','listing-reading-time',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-date','listing-title','listing-description','listing-categories','listing-reading-time',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description"],
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -133,7 +133,7 @@ window.Quarto = {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a>
+<body class="nav-fixed quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -170,7 +170,9 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(5)</span></div><div class="category" data-category="Y2xpbmljYWwlMjBOTFA=">clinical NLP <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ZGVjaXNpb24lMjBtb2RlbHM=">decision models <span class="quarto-category-count">(1)</span></div><div class="category" data-category="SUElMjByZXNwb25zYWJsZQ==">IA responsable <span class="quarto-category-count">(2)</span></div><div class="category" data-category="bWVkaWNhbCUyMGltYWdpbmc=">medical imaging <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cmVzZWFyY2g=">research <span class="quarto-category-count">(1)</span></div><div class="category" data-category="dHJhYmFqbw==">trabajo <span class="quarto-category-count">(2)</span></div><div class="category" data-category="dHJhbnNmb3JtYWNpJUMzJUIzbiUyMGRpZ2l0YWw=">transformación digital <span class="quarto-category-count">(1)</span></div><div class="category" data-category="dHJ1c3R3b3J0aHklMjBBSQ==">trustworthy AI <span class="quarto-category-count">(2)</span></div></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content" tabindex="-1">
 
@@ -199,16 +201,99 @@ window.Quarto = {
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="bWVkaWNhbCUyMGltYWdpbmclMkN0cnVzdHdvcnRoeSUyMEFJ" data-listing-date-sort="1795582800000" data-listing-file-modified-sort="1795583130057" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="747">
-<div class="thumbnail"><a href="./posts/scanner-shortcut/index.html" class="no-external-icon">
+<div class="quarto-post image-right" data-index="0" data-categories="Y2xpbmljYWwlMjBOTFAlMkNyZXNlYXJjaA==" data-listing-date-sort="1795582800000" data-listing-file-modified-sort="1795584938072" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="338">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/negative-result/index.html" class="no-external-icon">More training, and the model did not improve</a>
+</h3>
+<div class="listing-categories">
 
-<img loading="lazy" src="./posts/scanner-shortcut/images.png" class="thumbnail-image">
+<div class="listing-category" onclick="window.quartoListingCategory('Y2xpbmljYWwlMjBOTFA='); return false;">clinical NLP</div>
 
-</a></div>
+<div class="listing-category" onclick="window.quartoListingCategory('cmVzZWFyY2g='); return false;">research</div>
+
+</div>
+<div class="listing-description">
+<a href="./posts/negative-result/index.html" class="no-external-icon">
+<p>A second look, with intervals, at a fine-tuning experiment on Spanish clinical text.</p>
+</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/negative-result/index.html" class="no-external-icon">
+<div class="listing-date">
+Nov 25, 2026
+</div>
+<div class="listing-reading-time">2 min</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="ZGVjaXNpb24lMjBtb2RlbHMlMkN0cnVzdHdvcnRoeSUyMEFJ" data-listing-date-sort="1795582800000" data-listing-file-modified-sort="1795584938071" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="542">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/fire-watch/index.html" class="no-external-icon">Fire Watch: the same event, written four ways</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('ZGVjaXNpb24lMjBtb2RlbHM='); return false;">decision models</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('dHJ1c3R3b3J0aHklMjBBSQ=='); return false;">trustworthy AI</div>
+
+</div>
+<div class="listing-description">
+<a href="./posts/fire-watch/index.html" class="no-external-icon">
+<p>A small game to see if a model takes the same decision when the same event is described with other words.</p>
+</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/fire-watch/index.html" class="no-external-icon">
+<div class="listing-date">
+Nov 25, 2026
+</div>
+<div class="listing-reading-time">3 min</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="2" data-categories="SUElMjByZXNwb25zYWJsZSUyQ3RyYWJham8=" data-listing-date-sort="1795582800000" data-listing-file-modified-sort="1795584938071" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="322">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/chatbot-no-se/index.html" class="no-external-icon">Un chatbot que puede decir «no tengo esa información»</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('SUElMjByZXNwb25zYWJsZQ=='); return false;">IA responsable</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('dHJhYmFqbw=='); return false;">trabajo</div>
+
+</div>
+<div class="listing-description">
+<a href="./posts/chatbot-no-se/index.html" class="no-external-icon">
+<p>Las decisiones detrás de un asistente universitario donde una respuesta inventada tiene consecuencias.</p>
+</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/chatbot-no-se/index.html" class="no-external-icon">
+<div class="listing-date">
+Nov 25, 2026
+</div>
+<div class="listing-reading-time">2 min</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="3" data-categories="bWVkaWNhbCUyMGltYWdpbmclMkN0cnVzdHdvcnRoeSUyMEFJ" data-listing-date-sort="1795582800000" data-listing-file-modified-sort="1795584938072" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="747">
 <div class="body">
 <h3 class="no-anchor listing-title">
 <a href="./posts/scanner-shortcut/index.html" class="no-external-icon">When a model learns the scanner</a>
 </h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('bWVkaWNhbCUyMGltYWdpbmc='); return false;">medical imaging</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('dHJ1c3R3b3J0aHklMjBBSQ=='); return false;">trustworthy AI</div>
+
+</div>
 <div class="listing-description">
 <a href="./posts/scanner-shortcut/index.html" class="no-external-icon">
 <p>A small experiment with simulated images: the same model scores 0.97 or 0.69, depending on which people I test it on.</p>
@@ -221,6 +306,35 @@ window.Quarto = {
 Nov 25, 2026
 </div>
 <div class="listing-reading-time">4 min</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="4" data-categories="dHJhbnNmb3JtYWNpJUMzJUIzbiUyMGRpZ2l0YWwlMkNJQSUyMHJlc3BvbnNhYmxlJTJDdHJhYmFqbw==" data-listing-date-sort="1795582800000" data-listing-file-modified-sort="1795584938072" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="372">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/ia-propone/index.html" class="no-external-icon">La IA propone, el programa calcula y una persona firma</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('dHJhbnNmb3JtYWNpJUMzJUIzbiUyMGRpZ2l0YWw='); return false;">transformación digital</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('SUElMjByZXNwb25zYWJsZQ=='); return false;">IA responsable</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('dHJhYmFqbw=='); return false;">trabajo</div>
+
+</div>
+<div class="listing-description">
+<a href="./posts/ia-propone/index.html" class="no-external-icon">
+<p>Cómo repartir las tareas cuando una cifra equivocada termina en una multa.</p>
+</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/ia-propone/index.html" class="no-external-icon">
+<div class="listing-date">
+Nov 25, 2026
+</div>
+<div class="listing-reading-time">2 min</div>
 </a>
 </div>
 </div>

@@ -1,0 +1,774 @@
+{
+ "engine": "claude-sonnet-5-5",
+ "where": "cloud",
+ "rows": [
+  {
+   "id": 8,
+   "style": "numbers",
+   "truth": "drone",
+   "answer": "drone",
+   "ms": 1586,
+   "usd": 0.0001244
+  },
+  {
+   "id": 8,
+   "style": "spanish",
+   "truth": "drone",
+   "answer": "drone",
+   "ms": 2888,
+   "usd": 0.0001248
+  },
+  {
+   "id": 8,
+   "style": "words",
+   "truth": "drone",
+   "answer": "drone",
+   "ms": 1353,
+   "usd": 0.0001248
+  },
+  {
+   "id": 8,
+   "style": "words_no_echo",
+   "truth": "drone",
+   "answer": "drone",
+   "ms": 894,
+   "usd": 0.003268
+  },
+  {
+   "id": 9,
+   "style": "numbers",
+   "truth": "drone",
+   "answer": "drone",
+   "ms": 2934,
+   "usd": 0.0001245
+  },
+  {
+   "id": 9,
+   "style": "spanish",
+   "truth": "drone",
+   "answer": "drone",
+   "ms": 1584,
+   "usd": 0.000125
+  },
+  {
+   "id": 9,
+   "style": "words",
+   "truth": "drone",
+   "answer": "drone",
+   "ms": 2918,
+   "usd": 0.0001247
+  },
+  {
+   "id": 9,
+   "style": "words_no_echo",
+   "truth": "drone",
+   "answer": "drone",
+   "ms": 911,
+   "usd": 0.0032640000000000004
+  },
+  {
+   "id": 6,
+   "style": "numbers",
+   "truth": "drone",
+   "answer": "drone",
+   "ms": 1076,
+   "usd": 0.0001244
+  },
+  {
+   "id": 6,
+   "style": "spanish",
+   "truth": "drone",
+   "answer": "drone",
+   "ms": 1202,
+   "usd": 0.0001249
+  },
+  {
+   "id": 6,
+   "style": "words",
+   "truth": "drone",
+   "answer": "drone",
+   "ms": 2116,
+   "usd": 0.0001247
+  },
+  {
+   "id": 6,
+   "style": "words_no_echo",
+   "truth": "drone",
+   "answer": "drone",
+   "ms": 842,
+   "usd": 0.0032640000000000004
+  },
+  {
+   "id": 22,
+   "style": "numbers",
+   "truth": "ignore",
+   "answer": "ignore",
+   "ms": 2885,
+   "usd": 0.00013440000000000001
+  },
+  {
+   "id": 22,
+   "style": "spanish",
+   "truth": "ignore",
+   "answer": "ignore",
+   "ms": 2859,
+   "usd": 0.00013480000000000002
+  },
+  {
+   "id": 22,
+   "style": "words",
+   "truth": "ignore",
+   "answer": "ignore",
+   "ms": 2635,
+   "usd": 0.0001352
+  },
+  {
+   "id": 22,
+   "style": "words_no_echo",
+   "truth": "ignore",
+   "answer": "ignore",
+   "ms": 877,
+   "usd": 0.0032939999999999996
+  },
+  {
+   "id": 3,
+   "style": "numbers",
+   "truth": "brigade",
+   "answer": "brigade",
+   "ms": 999,
+   "usd": 0.00013460000000000002
+  },
+  {
+   "id": 3,
+   "style": "spanish",
+   "truth": "brigade",
+   "answer": "brigade",
+   "ms": 1239,
+   "usd": 0.00013490000000000003
+  },
+  {
+   "id": 3,
+   "style": "words",
+   "truth": "brigade",
+   "answer": "brigade",
+   "ms": 3042,
+   "usd": 0.00013440000000000001
+  },
+  {
+   "id": 3,
+   "style": "words_no_echo",
+   "truth": "brigade",
+   "answer": "brigade",
+   "ms": 2899,
+   "usd": 0.00013440000000000001
+  },
+  {
+   "id": 20,
+   "style": "numbers",
+   "truth": "ignore",
+   "answer": "ignore",
+   "ms": 2826,
+   "usd": 0.00013440000000000001
+  },
+  {
+   "id": 20,
+   "style": "spanish",
+   "truth": "ignore",
+   "answer": "ignore",
+   "ms": 1054,
+   "usd": 0.00013490000000000003
+  },
+  {
+   "id": 20,
+   "style": "words",
+   "truth": "ignore",
+   "answer": "ignore",
+   "ms": 2855,
+   "usd": 0.0001352
+  },
+  {
+   "id": 20,
+   "style": "words_no_echo",
+   "truth": "ignore",
+   "answer": "ignore",
+   "ms": 997,
+   "usd": 0.0032939999999999996
+  },
+  {
+   "id": 5,
+   "style": "numbers",
+   "truth": "brigade",
+   "answer": "brigade",
+   "ms": 2886,
+   "usd": 0.00013460000000000002
+  },
+  {
+   "id": 5,
+   "style": "spanish",
+   "truth": "brigade",
+   "answer": "brigade",
+   "ms": 2939,
+   "usd": 0.00013490000000000003
+  },
+  {
+   "id": 5,
+   "style": "words",
+   "truth": "brigade",
+   "answer": "brigade",
+   "ms": 1343,
+   "usd": 0.000135
+  },
+  {
+   "id": 5,
+   "style": "words_no_echo",
+   "truth": "brigade",
+   "answer": "brigade",
+   "ms": 996,
+   "usd": 0.000135
+  },
+  {
+   "id": 23,
+   "style": "numbers",
+   "truth": "ignore",
+   "answer": "ignore",
+   "ms": 1114,
+   "usd": 0.00013450000000000002
+  },
+  {
+   "id": 23,
+   "style": "spanish",
+   "truth": "ignore",
+   "answer": "ignore",
+   "ms": 1568,
+   "usd": 0.0001351
+  },
+  {
+   "id": 23,
+   "style": "words",
+   "truth": "ignore",
+   "answer": "ignore",
+   "ms": 2817,
+   "usd": 0.00013550000000000001
+  },
+  {
+   "id": 23,
+   "style": "words_no_echo",
+   "truth": "ignore",
+   "answer": "ignore",
+   "ms": 913,
+   "usd": 0.003306
+  },
+  {
+   "id": 0,
+   "style": "numbers",
+   "truth": "brigade",
+   "answer": "brigade",
+   "ms": 2015,
+   "usd": 0.00013460000000000002
+  },
+  {
+   "id": 0,
+   "style": "spanish",
+   "truth": "brigade",
+   "answer": "brigade",
+   "ms": 2032,
+   "usd": 0.0001352
+  },
+  {
+   "id": 0,
+   "style": "words",
+   "truth": "brigade",
+   "answer": "brigade",
+   "ms": 2968,
+   "usd": 0.0001351
+  },
+  {
+   "id": 0,
+   "style": "words_no_echo",
+   "truth": "brigade",
+   "answer": "brigade",
+   "ms": 2197,
+   "usd": 0.0001351
+  },
+  {
+   "id": 12,
+   "style": "numbers",
+   "truth": "monitor",
+   "answer": "monitor",
+   "ms": 1979,
+   "usd": 0.00013440000000000001
+  },
+  {
+   "id": 12,
+   "style": "spanish",
+   "truth": "monitor",
+   "answer": "monitor",
+   "ms": 1690,
+   "usd": 0.00013480000000000002
+  },
+  {
+   "id": 12,
+   "style": "words",
+   "truth": "monitor",
+   "answer": "monitor",
+   "ms": 3162,
+   "usd": 0.0006349000000000001
+  },
+  {
+   "id": 12,
+   "style": "words_no_echo",
+   "truth": "monitor",
+   "answer": "monitor",
+   "ms": 1314,
+   "usd": 0.003682
+  },
+  {
+   "id": 7,
+   "style": "numbers",
+   "truth": "drone",
+   "answer": "drone",
+   "ms": 1570,
+   "usd": 0.0001244
+  },
+  {
+   "id": 7,
+   "style": "spanish",
+   "truth": "drone",
+   "answer": "drone",
+   "ms": 1366,
+   "usd": 0.0001248
+  },
+  {
+   "id": 7,
+   "style": "words",
+   "truth": "drone",
+   "answer": "drone",
+   "ms": 2873,
+   "usd": 0.0001252
+  },
+  {
+   "id": 7,
+   "style": "words_no_echo",
+   "truth": "drone",
+   "answer": "drone",
+   "ms": 889,
+   "usd": 0.003284
+  },
+  {
+   "id": 4,
+   "style": "numbers",
+   "truth": "brigade",
+   "answer": "brigade",
+   "ms": 974,
+   "usd": 0.00013450000000000002
+  },
+  {
+   "id": 4,
+   "style": "spanish",
+   "truth": "brigade",
+   "answer": "brigade",
+   "ms": 1117,
+   "usd": 0.00013490000000000003
+  },
+  {
+   "id": 4,
+   "style": "words",
+   "truth": "brigade",
+   "answer": "brigade",
+   "ms": 893,
+   "usd": 0.0001351
+  },
+  {
+   "id": 4,
+   "style": "words_no_echo",
+   "truth": "brigade",
+   "answer": "brigade",
+   "ms": 2880,
+   "usd": 0.0001351
+  },
+  {
+   "id": 16,
+   "style": "numbers",
+   "truth": "monitor",
+   "answer": "monitor",
+   "ms": 1622,
+   "usd": 0.00013450000000000002
+  },
+  {
+   "id": 16,
+   "style": "spanish",
+   "truth": "monitor",
+   "answer": "monitor",
+   "ms": 2845,
+   "usd": 0.000135
+  },
+  {
+   "id": 16,
+   "style": "words",
+   "truth": "monitor",
+   "answer": "monitor",
+   "ms": 3255,
+   "usd": 0.0005451
+  },
+  {
+   "id": 16,
+   "style": "words_no_echo",
+   "truth": "monitor",
+   "answer": "monitor",
+   "ms": 949,
+   "usd": 0.00329
+  },
+  {
+   "id": 13,
+   "style": "numbers",
+   "truth": "monitor",
+   "answer": "monitor",
+   "ms": 2692,
+   "usd": 0.00013450000000000002
+  },
+  {
+   "id": 13,
+   "style": "spanish",
+   "truth": "monitor",
+   "answer": "monitor",
+   "ms": 2895,
+   "usd": 0.00013480000000000002
+  },
+  {
+   "id": 13,
+   "style": "words",
+   "truth": "monitor",
+   "answer": "monitor",
+   "ms": 3208,
+   "usd": 0.0006054999999999999
+  },
+  {
+   "id": 13,
+   "style": "words_no_echo",
+   "truth": "monitor",
+   "answer": "monitor",
+   "ms": 1330,
+   "usd": 0.003706
+  },
+  {
+   "id": 1,
+   "style": "numbers",
+   "truth": "brigade",
+   "answer": "brigade",
+   "ms": 1733,
+   "usd": 0.00013450000000000002
+  },
+  {
+   "id": 1,
+   "style": "spanish",
+   "truth": "brigade",
+   "answer": "brigade",
+   "ms": 939,
+   "usd": 0.00013490000000000003
+  },
+  {
+   "id": 1,
+   "style": "words",
+   "truth": "brigade",
+   "answer": "brigade",
+   "ms": 2880,
+   "usd": 0.00013470000000000002
+  },
+  {
+   "id": 1,
+   "style": "words_no_echo",
+   "truth": "brigade",
+   "answer": "brigade",
+   "ms": 2923,
+   "usd": 0.00013470000000000002
+  },
+  {
+   "id": 14,
+   "style": "numbers",
+   "truth": "monitor",
+   "answer": "monitor",
+   "ms": 2857,
+   "usd": 0.00013440000000000001
+  },
+  {
+   "id": 14,
+   "style": "spanish",
+   "truth": "monitor",
+   "answer": "monitor",
+   "ms": 2808,
+   "usd": 0.00013480000000000002
+  },
+  {
+   "id": 14,
+   "style": "words",
+   "truth": "monitor",
+   "answer": "monitor",
+   "ms": 2322,
+   "usd": 0.000585
+  },
+  {
+   "id": 14,
+   "style": "words_no_echo",
+   "truth": "monitor",
+   "answer": "monitor",
+   "ms": 1164,
+   "usd": 0.003716
+  },
+  {
+   "id": 15,
+   "style": "numbers",
+   "truth": "monitor",
+   "answer": "monitor",
+   "ms": 2883,
+   "usd": 0.00013450000000000002
+  },
+  {
+   "id": 15,
+   "style": "spanish",
+   "truth": "monitor",
+   "answer": "monitor",
+   "ms": 2884,
+   "usd": 0.0001351
+  },
+  {
+   "id": 15,
+   "style": "words",
+   "truth": "monitor",
+   "answer": "monitor",
+   "ms": 1032,
+   "usd": 0.0001352
+  },
+  {
+   "id": 15,
+   "style": "words_no_echo",
+   "truth": "monitor",
+   "answer": "monitor",
+   "ms": 953,
+   "usd": 0.0032939999999999996
+  },
+  {
+   "id": 11,
+   "style": "numbers",
+   "truth": "drone",
+   "answer": "drone",
+   "ms": 1168,
+   "usd": 0.0001244
+  },
+  {
+   "id": 11,
+   "style": "spanish",
+   "truth": "drone",
+   "answer": "drone",
+   "ms": 1105,
+   "usd": 0.0001249
+  },
+  {
+   "id": 11,
+   "style": "words",
+   "truth": "drone",
+   "answer": "drone",
+   "ms": 1468,
+   "usd": 0.0001245
+  },
+  {
+   "id": 11,
+   "style": "words_no_echo",
+   "truth": "drone",
+   "answer": "drone",
+   "ms": 863,
+   "usd": 0.003256
+  },
+  {
+   "id": 19,
+   "style": "numbers",
+   "truth": "ignore",
+   "answer": "ignore",
+   "ms": 1067,
+   "usd": 0.00013450000000000002
+  },
+  {
+   "id": 19,
+   "style": "spanish",
+   "truth": "ignore",
+   "answer": "ignore",
+   "ms": 2818,
+   "usd": 0.000135
+  },
+  {
+   "id": 19,
+   "style": "words",
+   "truth": "ignore",
+   "answer": "ignore",
+   "ms": 1277,
+   "usd": 0.0001359
+  },
+  {
+   "id": 19,
+   "style": "words_no_echo",
+   "truth": "ignore",
+   "answer": "ignore",
+   "ms": 935,
+   "usd": 0.003322
+  },
+  {
+   "id": 10,
+   "style": "numbers",
+   "truth": "drone",
+   "answer": "drone",
+   "ms": 2240,
+   "usd": 0.0001245
+  },
+  {
+   "id": 10,
+   "style": "spanish",
+   "truth": "drone",
+   "answer": "drone",
+   "ms": 2846,
+   "usd": 0.0001248
+  },
+  {
+   "id": 10,
+   "style": "words",
+   "truth": "drone",
+   "answer": "drone",
+   "ms": 2336,
+   "usd": 0.0001253
+  },
+  {
+   "id": 10,
+   "style": "words_no_echo",
+   "truth": "drone",
+   "answer": "drone",
+   "ms": 881,
+   "usd": 0.003288
+  },
+  {
+   "id": 18,
+   "style": "numbers",
+   "truth": "ignore",
+   "answer": "ignore",
+   "ms": 2867,
+   "usd": 0.00013440000000000001
+  },
+  {
+   "id": 18,
+   "style": "spanish",
+   "truth": "ignore",
+   "answer": "ignore",
+   "ms": 2811,
+   "usd": 0.00013490000000000003
+  },
+  {
+   "id": 18,
+   "style": "words",
+   "truth": "ignore",
+   "answer": "ignore",
+   "ms": 2872,
+   "usd": 0.0001351
+  },
+  {
+   "id": 18,
+   "style": "words_no_echo",
+   "truth": "ignore",
+   "answer": "ignore",
+   "ms": 835,
+   "usd": 0.00329
+  },
+  {
+   "id": 17,
+   "style": "numbers",
+   "truth": "monitor",
+   "answer": "monitor",
+   "ms": 2668,
+   "usd": 0.00013450000000000002
+  },
+  {
+   "id": 17,
+   "style": "spanish",
+   "truth": "monitor",
+   "answer": "monitor",
+   "ms": 982,
+   "usd": 0.000135
+  },
+  {
+   "id": 17,
+   "style": "words",
+   "truth": "monitor",
+   "answer": "monitor",
+   "ms": 1735,
+   "usd": 0.0001351
+  },
+  {
+   "id": 17,
+   "style": "words_no_echo",
+   "truth": "monitor",
+   "answer": "monitor",
+   "ms": 977,
+   "usd": 0.00329
+  },
+  {
+   "id": 2,
+   "style": "numbers",
+   "truth": "brigade",
+   "answer": "brigade",
+   "ms": 1100,
+   "usd": 0.00013460000000000002
+  },
+  {
+   "id": 2,
+   "style": "spanish",
+   "truth": "brigade",
+   "answer": "brigade",
+   "ms": 1647,
+   "usd": 0.00013490000000000003
+  },
+  {
+   "id": 2,
+   "style": "words",
+   "truth": "brigade",
+   "answer": "brigade",
+   "ms": 1189,
+   "usd": 0.0001354
+  },
+  {
+   "id": 2,
+   "style": "words_no_echo",
+   "truth": "brigade",
+   "answer": "brigade",
+   "ms": 2922,
+   "usd": 0.0001354
+  },
+  {
+   "id": 21,
+   "style": "numbers",
+   "truth": "ignore",
+   "answer": "ignore",
+   "ms": 2846,
+   "usd": 0.00013450000000000002
+  },
+  {
+   "id": 21,
+   "style": "spanish",
+   "truth": "ignore",
+   "answer": "ignore",
+   "ms": 1522,
+   "usd": 0.00013480000000000002
+  },
+  {
+   "id": 21,
+   "style": "words",
+   "truth": "ignore",
+   "answer": "ignore",
+   "ms": 1304,
+   "usd": 0.00013550000000000001
+  },
+  {
+   "id": 21,
+   "style": "words_no_echo",
+   "truth": "ignore",
+   "answer": "ignore",
+   "ms": 887,
+   "usd": 0.003306
+  }
+ ]
+}

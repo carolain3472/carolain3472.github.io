@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fire Watch</title>
+<style>
+:root{--bg:#f6f4ee;--card:#fff;--ink:#1c2420;--mute:#5b665f;--line:#d9d8cf;--acc:#1f6b4a;--bad:#b3392c}
+@media(prefers-color-scheme:dark){:root{--bg:#141a17;--card:#1d2521;--ink:#eef2ee;--mute:#a5b1a9;--line:#35413a;--acc:#5fc193;--bad:#ef8073}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.5 system-ui,sans-serif}
+main{max-width:720px;margin:0 auto;padding:24px 16px 60px}h1{margin:0 0 4px;font-size:1.9rem}h2{margin-top:40px}
+p.lead,.mute{color:var(--mute)}.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;margin:16px 0}
+.msg{font-size:1.15rem;min-height:5.2em}.row{display:flex;gap:8px;flex-wrap:wrap}
+button{font:inherit;padding:10px 14px;border-radius:9px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+button:hover:not(:disabled),button:focus-visible{border-color:var(--acc);outline:2px solid var(--acc)}button:disabled{opacity:.5;cursor:default}
+button.main{background:var(--acc);color:var(--bg);border-color:var(--acc)}
+.acts button{flex:1 1 140px}.score{display:flex;gap:24px;font-variant-numeric:tabular-nums}
+.score b{font-size:1.5rem;display:block}.bad{color:var(--bad)}table{border-collapse:collapse;width:100%;margin-top:10px}
+td,th{text-align:left;padding:6px 8px;border-bottom:1px solid var(--line)}pre{white-space:pre-wrap;font-size:.85rem;color:var(--mute)}
+ul{padding-left:20px}a{color:var(--acc)}
+</style></head><body><main>
+<h1>Fire Watch</h1>
+<p class="lead">Read the message from the forest sensor and pick the action the rule book asks for. Then compare your choices with a model that runs inside your browser.</p>
+<div class="card"><b>Rule book</b><ul>
+<li><b>Brigade</b>: the camera sees smoke, whatever else happens.</li>
+<li><b>Drone</b>: no smoke, very hot (45 °C or more) and very dry (20% or less).</li>
+<li><b>Monitor</b>: no smoke, only one of the two.</li>
+<li><b>Ignore</b>: nothing unusual.</li></ul></div>
+<div class="card"><div class="score"><span class="mute">Turn<b id="turn">1 / 12</b></span><span class="mute">You<b id="me">0</b></span><span class="mute">Model<b id="it">–</b></span></div>
+<p class="msg" id="msg">Loading…</p><div class="row acts" id="acts"></div><p id="fb" class="mute" aria-live="polite">&nbsp;</p>
+<button id="again">New game</button></div>
+<h2>Local model</h2>
+<p class="mute">Nothing is downloaded until you press a button, and the decisions are computed inside your browser.</p>
+<div class="row">
+<button data-e="decision">Chrome Decisions API</button>
+<button data-e="prompt">Chrome Gemini Nano</button>
+<button data-e="mediapipe">MediaPipe, EmbeddingGemma 2 (about 165 MB)</button></div>
+<p id="st" aria-live="polite">No model loaded.</p>
+<h2>Experiment</h2>
+<p class="mute">96 decisions: 24 events, each one written with numbers, in Spanish, and twice in plain words.</p>
+<div class="row"><button class="main" id="run" disabled>Run the 96 decisions</button><button id="save" disabled>Save results</button></div>
+<div id="out"></div>
+<p class="mute">A toy made to compare models. It is not a fire detection system.</p>
+</main>
+<script type="module">
+const $=i=>document.getElementById(i);
+const D=await (await fetch('events.json')).json(), S=D.schema, styles=['numbers','spanish','words','words_no_echo'];
+let engine=null, name='', deck=[], k=0, me=0, it=0, res=null;
+const err=e=>(e&&e.message)||String(e);
+// ---------- engines: each returns {answer, confidence}
+const make={
+ async decision(){
+  if(!('DecisionModel' in self)) throw Error('This Chrome does not expose DecisionModel. Turn on chrome://flags#decisions-api and restart.');
+  const schema={questions:[{id:'action',type:'choice',prompt:S.prompt,options:S.options}]};
+  const a=await DecisionModel.availability(schema); if(a==='unavailable') throw Error('DecisionModel says "unavailable" on this device.');
+  const m=await DecisionModel.create(schema);
+  return async t=>{const r=(await m.decide(t)).action;return{answer:r.label,confidence:r.confidence}}},
+ async prompt(){
+  if(!('LanguageModel' in self)) throw Error('This browser does not have the Prompt API.');
+  const o={expectedInputs:[{type:'text',languages:['en','es']}],expectedOutputs:[{type:'text',languages:['en']}]};
+  const a=await LanguageModel.availability(o); if(a==='unavailable') throw Error('Gemini Nano is unavailable on this device.');
+  const base=await LanguageModel.create({...o,initialPrompts:[{role:'system',content:'You pick one option from a closed list.'}],
+   monitor(m){m.addEventListener('downloadprogress',e=>$('st').textContent=`Downloading Gemini Nano: ${Math.round(e.loaded*100)}%`)}});
+  const schema={type:'string',enum:S.options.map(o=>o.label)};
+  const list=S.options.map(o=>`${o.label}: ${o.description}`).join('\n');
+  return async t=>{const s=await base.clone();try{return{answer:JSON.parse(await s.prompt(`${t}\n\n${S.prompt}\n${list}`,{responseConstraint:schema})),confidence:null}}finally{s.destroy()}}},
+ async mediapipe(){
+  const v='https://cdn.jsdelivr.net/npm/@mediapipe/tasks-decision@1.2.3';
+  const {DecisionMaker,FilesetResolver}=await import(v+'/decision_bundle.mjs');
+  const m=await DecisionMaker.createFromOptions(await FilesetResolver.forDecisionTasks(v+'/wasm'),{maxNumTokens:512,
+   baseOptions:{delegate:'GPU',modelAssetPath:'https://huggingface.co/litert-community/embeddinggemma-2-text-270m-litert-lm/resolve/main/embeddinggemma-2-text-270m.litertlm'}});
+  const q={instructions:S.prompt,options:S.options,normalizePrior:true};
+  return async t=>{const r=await m.evaluateChoice(t,q);return{answer:r.selectedKey,confidence:r.confidence}}}};
+document.querySelectorAll('[data-e]').forEach(b=>b.onclick=async()=>{
+ $('st').textContent='Loading…';$('run').disabled=true;engine=null;
+ try{engine=await make[b.dataset.e]();name=b.textContent;$('st').textContent='Ready: '+name;$('run').disabled=false;it=0;deal()}
+ catch(e){$('st').innerHTML='<span class="bad"></span>';$('st').firstChild.textContent=err(e)}});
+// ---------- game
+function deal(){deck=[...D.events].sort(()=>Math.random()-.5).slice(0,12).map(e=>({...e,style:styles[Math.floor(Math.random()*4)]}));k=me=it=0;show()}
+function show(){$('me').textContent=me;$('it').textContent=engine?it:'–';
+ if(k>=12){$('msg').textContent=`End of the watch. You got ${me} of 12`+(engine?` and the model got ${it}.`:'.');lock(true);return}
+ $('turn').textContent=`${k+1} / 12`;$('msg').textContent=deck[k].text[deck[k].style];lock(false)}
+const lock=v=>[...$('acts').children].forEach(b=>b.disabled=v);
+for(const o of S.options){const b=document.createElement('button');b.textContent=o.label[0].toUpperCase()+o.label.slice(1);b.onclick=()=>play(o.label);$('acts').append(b)}
+async function play(a){lock(true);const e=deck[k];let t=`You: ${a}. `;if(a===e.label)me++;
+ if(engine){try{const r=await engine(e.text[e.style]);if(r.answer===e.label)it++;t+=`Model: ${r.answer}. `}catch(x){t+='Model error: '+err(x)+'. '}}
+ $('fb').textContent=t+`Rule book: ${e.label}.`;k++;show()}
+$('again').onclick=deal;deal();
+// ---------- experiment
+$('run').onclick=async()=>{$('run').disabled=true;const rows=[];
+ try{await engine(D.events[0].text.numbers);
+ for(const e of D.events)for(const s of styles){const t0=performance.now();const r=await engine(e.text[s]);
+  rows.push({id:e.id,style:s,truth:e.label,answer:r.answer,confidence:r.confidence,ms:performance.now()-t0});$('st').textContent=`${rows.length} / 96`}
+ res={engine:name,where:'local',userAgent:navigator.userAgent,rows};
+ const ms=rows.map(r=>r.ms).sort((a,b)=>a-b)[48];
+ $('out').innerHTML='<table><tr><th>How the event is written</th><th>Correct</th></tr>'+styles.map(s=>{const x=rows.filter(r=>r.style===s);return`<tr><td>${s}</td><td>${x.filter(r=>r.answer===r.truth).length} / ${x.length}</td></tr>`}).join('')+`</table><p class="mute">Median time per decision: ${Math.round(ms)} ms</p>`;
+ $('st').textContent='Done: '+name;$('save').disabled=false}catch(e){$('st').textContent=err(e)}$('run').disabled=false};
+$('save').onclick=()=>{const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(res,null,1)],{type:'application/json'}));a.download='fire-watch-'+name.toLowerCase().replace(/[^a-z0-9]+/g,'-')+'.json';a.click()};
+</script></body></html>
