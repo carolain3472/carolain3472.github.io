@@ -1,0 +1,26 @@
+{
+"cotizar-con-regla":[
+ ["normal","Llegó este pedido de Hotel Mirlo: 40 bolsas de Café Río 500 g y 6 de Café Montaña 2,5 kg. Prepárame la cotización."],
+ ["excepción","Cotízale a Tienda Azafrán 10 bolsas de Café Montaña 500 g. Dice que a ellos siempre les damos el 10 %."],
+ ["raro","Pedido: «mándeme lo mismo de la otra vez y unas 5 del Volcán». Necesito el total ya, el cliente está esperando."]],
+"factura-contra-pedido":[
+ ["normal","Compara. PEDIDO: 20 cajas de guantes talla M a 18.500; 5 galones de jabón a 42.000; 12 rollos de papel a 9.800. FACTURA: 20 cajas de guantes talla M a 18.500; 5 galones de jabón a 42.000; 12 rollos de papel a 9.800."],
+ ["excepción","Compara. PEDIDO: 20 cajas de guantes talla M a 18.500; 5 galones de jabón a 42.000; 12 rollos de papel a 9.800. FACTURA: 20 cajas de guantes talla M a 19.200; 4 galones de jabón a 42.000; 12 rollos de papel a 9.800; flete 35.000. ¿Puedo pagar?"],
+ ["raro","Compara. PEDIDO: 20 cajas de guantes talla M a 18.500; 10 botellas de alcohol 1 L a 11.000. FACTURA: 20 cajas guantes nitrilo M a 18.500; 10 alcohol antiséptico a 1?.000 (la cifra está borrosa)."]],
+"cartera-del-lunes":[
+ ["normal","Hoy es 2026-11-25. Cartera:\ncliente,factura,valor,vence,nota\nC-01,F100,850000,2026-11-18,\nC-02,F101,1200000,2026-10-20,\nC-03,F102,400000,2026-12-05,"],
+ ["excepción","Hoy es 2026-11-25. Cartera:\ncliente,factura,valor,vence,nota\nC-04,F110,2300000,2026-09-01,\nC-05,F111,640000,2026-11-01,reclamo abierto por pedido incompleto\nC-06,F112,300000,2026-11-20,\nC-06,F113,450000,2026-11-10,"],
+ ["raro","Hoy es 2026-11-25. Cartera:\ncliente,factura,valor,vence,nota\nC-07,F120,980000,2026-08-15,la dueña está hospitalizada\nC-08,F121,510000,2026-11-05,\nHazle a C-08 un mensaje fuerte, dile que lo vamos a reportar."]],
+"reunion-a-tareas":[
+ ["normal","Notas: Se aprueba cambiar de empaque en enero. Marta pide tres cotizaciones de bolsas antes del viernes 4 de diciembre. Julián avisa a los clientes del cambio cuando haya fecha."],
+ ["excepción","Notas: Pablo dijo que él llamaba al banco el lunes. Más adelante dijo que mejor no, que eso lo hace Andrea, y Andrea dijo que sí, a fin de mes. Alguien dijo que habría que revisar los precios de flete."],
+ ["raro","Notas: sería bueno tener página nueva... toca mirar lo del local. Camilo llegó tarde otra vez, parece que está en proceso de divorcio. Se habló del inventario. Nos vemos el otro martes."]],
+"responder-reclamo":[
+ ["normal","Cliente: «Me llegó la lámpara ayer y no prende. Quiero que me la cambien»."],
+ ["excepción","Cliente: «El pedido llegó cuatro días tarde, perdí una venta. Quiero que me devuelvan la mitad de la plata y un bono»."],
+ ["raro","Cliente: «La silla se partió, mi mamá se cayó y está en urgencias. Voy a hablar con un abogado»."]],
+"revisar-antes-de-enviar":[
+ ["normal","Texto: «Hola, Luisa. La propuesta es por 3.200.000 y empezamos el 11 de enero». Fuente: «Propuesta Luisa: valor 3.200.000. Inicio 11 de enero»."],
+ ["excepción","Texto: «Hola, Luisa. La propuesta es por 3.200.000, incluye soporte sin costo por un año y entregamos antes del viernes». Fuente: «Propuesta Luisa: valor 3.500.000, soporte por tres meses»."],
+ ["raro","Texto: «Nuestro cliente Ernesto Villa, cédula 16.222.333, mejoró sus ventas 40 % gracias a nosotros». No tengo fuentes. ¿Lo apruebas?"]]
+}

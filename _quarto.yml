@@ -1,7 +1,12 @@
 project:
   type: website
+  render:
+    - "*.qmd"
+    - "posts/**/*.qmd"
+    - "es/**/*.qmd"
   resources:
     - lab/**
+    - skills/**/*.zip
 
 website:
   title: "Carolain Jiménez Bedoya"
@@ -25,7 +30,7 @@ website:
 format:
   html:
     theme: cosmo
-    css: styles.css
+    css: [brand.css, styles.css]
     toc-title: " "
     lightbox: true
     include-after-body: lang.html

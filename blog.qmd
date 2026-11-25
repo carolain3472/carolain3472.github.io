@@ -1,0 +1,12 @@
+---
+title: "All notes"
+listing:
+  contents: "/posts/*/index.qmd"
+  type: default
+  sort: "date desc"
+  categories: true
+  fields: [image, date, title, description, categories, reading-time]
+---
+
+
+Notes about my research, the AI systems I build at work and things I try on my own. I use AI tools, mainly Claude, to help me with code, figures and editing, and I publish the data so anyone can check the numbers.

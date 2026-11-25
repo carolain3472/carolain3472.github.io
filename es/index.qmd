@@ -7,11 +7,11 @@ toc: false
 
 ```{=html}
 <section class="hero"><div>
-<p class="name" role="heading" aria-level="1">Carolain Jiménez Bedoya</p>
+<p class="name" role="heading" aria-level="1">Carolain <em>Jiménez Bedoya</em></p>
 <p>Soy ingeniera de sistemas, de Colombia. Trabajo con imágenes médicas en el grupo MMV de la Universidad del Valle y lidero la ingeniería de IA en S&amp;S IP S.A.S. También soy mentora del Team Colombia en FIRST Global.</p>
 <p>Aquí escribo lo que pruebo: experimentos tan pequeños que se pueden ver por dentro, sistemas del trabajo y resultados que no salieron como quería.</p>
 <div class="links"><a href="https://github.com/carolain3472">GitHub</a><a href="https://www.linkedin.com/in/carolain-jimenez-bedoya">LinkedIn</a><a href="https://orcid.org/0009-0006-0077-7890">ORCID</a><a href="https://carolain-jimenez.netlify.app/">Portafolio</a></div>
-</div><img src="../retrato.jpg" alt="Retrato de Carolain Jiménez Bedoya"></section>
+</div><img src="../portrait-brand.jpg" alt="Retrato de Carolain Jiménez Bedoya"></section>
 
 <div class="doors">
 <a href="research.html"><h2>Investigación</h2><p>Imágenes médicas, lenguaje de hospital y modelos que aciertan por la razón equivocada.</p></a>
@@ -27,6 +27,9 @@ toc: false
 <a href="posts/negative-result/"><div class="pic fit" style="background-image:url(posts/negative-result/cw-grid.png)"></div><div class="tx"><small>PLN clínico</small><h3>Entrené más el modelo y no mejoró</h3><p>101 notas, un error en mi propio evaluador y un modelo que cambió de vocabulario.</p></div></a>
 <a href="posts/chatbot-i-dont-know/"><div class="pic fit" style="background-image:url(posts/chatbot-i-dont-know/chat1.png)"></div><div class="tx"><small>IA responsable</small><h3>Le di permiso a un chatbot de decir «no sé»</h3><p>270 respuestas con y sin el reglamento, y los errores que quedaron.</p></div></a>
 <a href="posts/who-does-the-math/"><div class="pic fit" style="background-image:url(posts/who-does-the-math/exact.png)"></div><div class="tx"><small>Transformación digital</small><h3>Tres modelos leyeron bien 40 documentos. La cuenta fue otra historia</h3><p>Quién lee, quién calcula y quién firma.</p></div></a>
+<a href="posts/same-quote/"><div class="pic fit" style="background-image:url(posts/same-quote/discounts.png)"></div><div class="tx"><small>Reglas</small><h3>Dejé vaga mi regla de descuentos. Tres modelos la escribieron por mí</h3><p>1.200 cotizaciones de una tostadora inventada. La cuenta estaba bien.</p></div></a>
+<a href="posts/asks-first/"><div class="pic fit" style="background-image:url(posts/asks-first/facts.png)"></div><div class="tx"><small>Asesoría</small><h3>La asesora que pregunta primero nunca preguntó qué había fallado antes</h3><p>Seis negocios, 144 conversaciones y tres preguntas que faltaban.</p></div></a>
+<a href="posts/before-you-paste/"><div class="pic fit" style="background-image:url(posts/before-you-paste/paste-test.png)"></div><div class="tx"><small>Datos y una herramienta</small><h3>Antes de pegar tu lista de clientes en un chat</h3><p>Cambia los datos personales por códigos en tu navegador, y mira qué se escapa.</p></div></a>
 </div>
 
 <h2>Publicación</h2>

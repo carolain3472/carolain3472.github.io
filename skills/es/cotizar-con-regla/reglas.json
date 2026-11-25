@@ -1,0 +1,20 @@
+{
+  "productos": {
+    "Café Montaña 500 g": 32000,
+    "Café Río 500 g": 38000,
+    "Café Montaña 2,5 kg": 145000
+  },
+  "descuentos": [
+    [
+      1500000,
+      5
+    ],
+    [
+      3000000,
+      10
+    ]
+  ],
+  "envio": 25000,
+  "envio_gratis_desde": 1000000,
+  "quien_aprueba_excepciones": "escribe aquí nombre y cargo"
+}

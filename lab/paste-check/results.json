@@ -1,0 +1,59 @@
+{
+ "recall": {
+  "NOMBRE": {
+   "n": 50,
+   "ok": 10
+  },
+  "CC": {
+   "n": 10,
+   "ok": 10
+  },
+  "TEL": {
+   "n": 30,
+   "ok": 20
+  },
+  "DIR": {
+   "n": 20,
+   "ok": 10
+  },
+  "NIT": {
+   "n": 10,
+   "ok": 10
+  },
+  "EMAIL": {
+   "n": 10,
+   "ok": 10
+  },
+  "CUENTA": {
+   "n": 10,
+   "ok": 10
+  }
+ },
+ "false_positives": [],
+ "examples": [
+  [
+   "Buenas, soy Hernán Darío Pava, mi cédula es 29.504.766. Necesito la factura del pedido de $891.000.",
+   "Buenas, soy Hernán Darío Pava, mi [CC-1]. Necesito la factura del pedido de $891.000."
+  ],
+  [
+   "Cliente: Jhon Fredy Ríos - Tel 321 474 1950 - Dirección Diagonal 28 # 5-12.",
+   "Cliente: Jhon Fredy Ríos - Tel [TEL-1] - Dirección [DIR-1]."
+  ],
+  [
+   "La empresa con NIT 853.171.346-1 pide cotización. Contacto maria71@correo.example.",
+   "La empresa con [NIT-1] pide cotización. Contacto [EMAIL-1]."
+  ],
+  [
+   "Consigné a la cuenta de ahorros 160-967017-82 el valor de $2.128.000. Atentamente, María Camila Lucumí.",
+   "Consigné a la [CUENTA-1] el valor de $2.128.000. Atentamente, María Camila Lucumí."
+  ],
+  [
+   "Doña Luz Ocampo dice que se lo dejen en bodega 4 de la zona franca, y que llamen al 326 150 4622.",
+   "[NOMBRE-1] dice que se lo dejen en bodega 4 de la zona franca, y que llamen al [TEL-1]."
+  ],
+  [
+   "Habló Luz para cambiar la cita del martes 14, a las 3:30. Que le devuelvan la llamada al tres uno cinco, 770, 27, 47.",
+   "Habló Luz para cambiar la cita del martes 14, a las 3:30. Que le devuelvan la llamada al tres uno cinco, 770, 27, 47."
+  ]
+ ]
+}

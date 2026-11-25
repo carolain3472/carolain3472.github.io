@@ -1,0 +1,20 @@
+{
+  "products": {
+    "Mountain Coffee 500 g": 32000,
+    "River Coffee 500 g": 38000,
+    "Mountain Coffee 2.5 kg": 145000
+  },
+  "discounts": [
+    [
+      1500000,
+      5
+    ],
+    [
+      3000000,
+      10
+    ]
+  ],
+  "shipping": 25000,
+  "free_shipping_from": 1000000,
+  "who_approves_exceptions": "write a name and position here"
+}

@@ -1,0 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+/* Brand: Océano y mango. Same tokens as carolain-jimenez.netlify.app */
+:root{--main:#006f9a;--main-d:#005577;--light:#6fd3d8;--tint:#dcf2f4;--ink:#06283a;--ink-2:#4c6672;--bg:#f2f8f9;--line:#d6e8ec;--white:#fff;--accent:#ffb31a;--accent-soft:#fff5de;--chart-2:#d97c00;
+--r:22px;--h:"Plus Jakarta Sans",system-ui,-apple-system,sans-serif;--t:var(--h);--m:"IBM Plex Mono",monospace;--mute:var(--ink-2)}

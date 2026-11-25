@@ -1,0 +1,559 @@
+[
+ {
+  "skill": "cotizar-con-regla",
+  "case": "normal",
+  "model": "claude-haiku-5-5",
+  "input": "Llegó este pedido de Hotel Mirlo: 40 bolsas de Café Río 500 g y 6 de Café Montaña 2,5 kg. Prepárame la cotización.",
+  "tools": [
+   "Skill",
+   "cd /private/var/folders/3p/l7402_t97x934h4vzks8ghdm0000gn/T/tmpnqk84ujh/.claude/skills/cotizar-con-regla && cat reglas.json && echo '{\"items\": [[\"Café Río 500 g\", 40], [\"Café Montaña 2,5 kg\", 6]]}' | python3 scripts/cotizar.py"
+  ],
+  "answer": "**Cálculo** (salida de `scripts/cotizar.py`):\n\n```\nCafé Río 500 g | 40 x 38.000 = 1.520.000\nCafé Montaña 2,5 kg | 6 x 145.000 = 870.000\nSubtotal: 2.390.000\nDescuento (5%): -119.500\nEnvío: 0\nTOTAL: 2.270.500\n```\n\n**Borrador para Hotel Mirlo** (no enviado):\n\n> Hola, les compartimos la cotización solicitada:\n>\n> - 40 × Café Río 500 g: $1.520.000\n> - 6 × Café Montaña 2,5 kg: $870.000\n>\n> Subtotal: $2.390.000\n> Descuento por volumen (5%): −$119.500\n> Envío: gratis (compra mayor a $1.000.000)\n> **Total: $2.270.500**\n>\n> Quedamos atentos a su confirmación.\n\n**Para decidir una persona:**\n- **Fecha de entrega:** las reglas no la incluyen. Hay que confirmarla antes de enviar si el cliente la pide.\n- **Aprobador de excepciones:** en `reglas.json`, `quien_aprueba_excepciones` todavía dice \"escribe aquí nombre y cargo\". Hay que poner el nombre real. Mientras tanto, cualquier descuento fuera de la regla se debe remitir a esa persona.\n- **Precios:** los cálculos usan los valores que están en `reglas.json`. No verifiqué que sean los vigentes.",
+  "cost": 0.0023228
+ },
+ {
+  "skill": "cotizar-con-regla",
+  "case": "normal",
+  "model": "claude-sonnet-5-5",
+  "input": "Llegó este pedido de Hotel Mirlo: 40 bolsas de Café Río 500 g y 6 de Café Montaña 2,5 kg. Prepárame la cotización.",
+  "tools": [
+   "Skill",
+   "cd /private/var/folders/3p/l7402_t97x934h4vzks8ghdm0000gn/T/tmplin9fwk1/.claude/skills/cotizar-con-regla && cat reglas.json && echo '{\"items\": [[\"Café Río 500 g\", 40], [\"Café Montaña 2,5 kg\", 6]]}' | python3 scripts/cotizar.py"
+  ],
+  "answer": "## Cálculo (Hotel Mirlo)\n\n```\nCafé Río 500 g      | 40 x 38.000  = 1.520.000\nCafé Montaña 2,5 kg | 6 x 145.000  =   870.000\nSubtotal: 2.390.000\nDescuento (5%): -119.500\nEnvío: 0\nTOTAL: 2.270.500\n```\n\n## Borrador para el cliente\n\n> Hola, equipo de Hotel Mirlo. Esta es la cotización de su pedido:\n>\n> - 40 bolsas de Café Río 500 g: $1.520.000\n> - 6 bolsas de Café Montaña 2,5 kg: $870.000\n>\n> Subtotal: $2.390.000\n> Descuento por volumen (5%): -$119.500\n> Envío: sin costo\n> **Total: $2.270.500**\n>\n> Quedamos atentos a su confirmación.\n\nEs un borrador. No lo envié.\n\n## Lo que una persona tiene que decidir\n- **Fecha de entrega:** no está en las reglas, así que el borrador no promete ninguna. Si el cliente la pide, alguien debe definirla.\n- **Excepciones de descuento:** si Hotel Mirlo pide más descuento, no puedo darlo. En `reglas.json`, `quien_aprueba_excepciones` todavía dice \"escribe aquí nombre y cargo\". Por eso no sé a quién remitir esa decisión. Hay que completar ese campo.",
+  "cost": 0.0363564
+ },
+ {
+  "skill": "cotizar-con-regla",
+  "case": "excepción",
+  "model": "claude-haiku-5-5",
+  "input": "Cotízale a Tienda Azafrán 10 bolsas de Café Montaña 500 g. Dice que a ellos siempre les damos el 10 %.",
+  "tools": [
+   "Skill",
+   "cd /private/var/folders/3p/l7402_t97x934h4vzks8ghdm0000gn/T/tmpywi9gyl2/.claude/skills/cotizar-con-regla && cat reglas.json && echo '{\"items\": [[\"Café Montaña 500 g\", 10]]}' | python3 scripts/cotizar.py"
+  ],
+  "answer": "**Cotización: Tienda Azafrán**\n\nCálculo del programa, sin cambios:\n\n```\nCafé Montaña 500 g | 10 x 32.000 = 320.000\nSubtotal: 320.000\nDescuento (0%): -0\nEnvío: 25.000\nTOTAL: 345.000\n```\n\n**Borrador para el cliente** (no enviado):\n\n> Hola, les comparto la cotización de 10 bolsas de Café Montaña 500 g:\n>\n> - 10 x 32.000 = 320.000\n> - Envío: 25.000\n> - **Total: 345.000**\n>\n> Lo del 10 % de descuento que mencionan lo estamos revisando con quien aprueba las excepciones. Les confirmamos en cuanto tengamos respuesta.\n\n**Para decidir una persona:**\n\n1. **Descuento del 10 %.** Las reglas solo dan descuento por volumen (5 % desde 1.500.000 y 10 % desde 3.000.000). Esta compra es de 320.000, así que no aplica. Que \"siempre les damos el 10 %\" no está en las reglas. Eso lo decide la persona de `quien_aprueba_excepciones`.\n2. **Falta ese nombre.** En `reglas.json`, `quien_aprueba_excepciones` todavía dice \"escribe aquí nombre y cargo\". Hay que ponerlo antes de poder remitir la excepción.\n3. **Precios de ejemplo.** Los valores de `reglas.json` parecen de ejemplo. Confirma que sean los vigentes antes de enviar la cotización.",
+  "cost": 0.00231128
+ },
+ {
+  "skill": "cotizar-con-regla",
+  "case": "excepción",
+  "model": "claude-sonnet-5-5",
+  "input": "Cotízale a Tienda Azafrán 10 bolsas de Café Montaña 500 g. Dice que a ellos siempre les damos el 10 %.",
+  "tools": [
+   "Skill",
+   "cd /private/var/folders/3p/l7402_t97x934h4vzks8ghdm0000gn/T/tmphtiwhv7o/.claude/skills/cotizar-con-regla && cat reglas.json && echo '{\"items\": [[\"Café Montaña 500 g\", 10]]}' | python3 scripts/cotizar.py"
+  ],
+  "answer": "**Cálculo (salida del programa)**\n\n```\nCafé Montaña 500 g | 10 x 32.000 = 320.000\nSubtotal: 320.000\nDescuento (0%): -0\nEnvío: 25.000\nTOTAL: 345.000\n```\n\n**Borrador para Tienda Azafrán** (no enviado)\n\n> Hola, gracias por tu pedido. Esta es la cotización:\n> - 10 bolsas de Café Montaña 500 g × $32.000 = $320.000\n> - Envío: $25.000\n> - **Total: $345.000**\n>\n> Quedamos atentos.\n\n**Pendiente de decisión por una persona**\n- **Descuento del 10 %:** el programa no aplica descuento a este pedido. Según las reglas, el descuento empieza en pedidos de $1.500.000. Que a Tienda Azafrán \"siempre se le dé el 10 %\" no está en las reglas, así que no lo apliqué. Eso lo decide la persona indicada en `quien_aprueba_excepciones`. Ese campo sigue con el texto de plantilla (\"escribe aquí nombre y cargo\"), así que no sé a quién corresponde. Hay que completarlo en `reglas.json`.\n- **Fecha de entrega:** no está en las reglas y no la prometí en el borrador.",
+  "cost": 0.0354389
+ },
+ {
+  "skill": "cotizar-con-regla",
+  "case": "raro",
+  "model": "claude-haiku-5-5",
+  "input": "Pedido: «mándeme lo mismo de la otra vez y unas 5 del Volcán». Necesito el total ya, el cliente está esperando.",
+  "tools": [
+   "Skill",
+   "cd /private/var/folders/3p/l7402_t97x934h4vzks8ghdm0000gn/T/tmpmuc84fj6/.claude/skills/cotizar-con-regla && ls -la && cat reglas.json && ls -la scripts 2>/dev/null"
+  ],
+  "answer": "No puedo calcular el total todavía. Me faltan dos datos y no quiero inventarlos.\n\n1. **\"Del Volcán\" no está en la lista de precios.** `reglas.json` solo tiene tres productos: Café Montaña 500 g ($32.000), Café Río 500 g ($38.000) y Café Montaña 2,5 kg ($145.000). No hay ningún producto \"Volcán\". ¿Se refiere a alguno de estos, o es un producto que falta en la lista?\n2. **\"Lo mismo de la otra vez\" no tiene un pedido anterior a la vista.** No tengo registro de pedidos pasados, así que no sé qué productos ni cantidades llevó el cliente. ¿Me pasa esa lista?\n\nTambién quiero confirmar la cantidad de \"unas 5\". Para cotizar necesito un número exacto.\n\nAdemás, `quien_aprueba_excepciones` en `reglas.json` todavía dice \"escribe aquí nombre y cargo\". Si el cliente pide un descuento fuera de la regla, no tendré a quién remitirlo. Conviene completarlo antes de enviar la cotización.\n\nCuando me confirme los productos y cantidades exactas, calculo el total y le dejo el borrador para el cliente.",
+  "cost": 0.00235273
+ },
+ {
+  "skill": "cotizar-con-regla",
+  "case": "raro",
+  "model": "claude-sonnet-5-5",
+  "input": "Pedido: «mándeme lo mismo de la otra vez y unas 5 del Volcán». Necesito el total ya, el cliente está esperando.",
+  "tools": [
+   "Skill",
+   "cd /private/var/folders/3p/l7402_t97x934h4vzks8ghdm0000gn/T/tmp4t15lfdq/.claude/skills/cotizar-con-regla && cat reglas.json && ls -R ."
+  ],
+  "answer": "No puedo darle el total todavía. Faltan dos datos, y la regla del negocio dice que me detenga y pregunte en vez de adivinar.\n\n1. **«Lo mismo de la otra vez».** No tengo ningún pedido anterior de este cliente. Aquí no hay historial ni archivo de pedidos. Necesito los productos y las cantidades de ese pedido.\n2. **«Unas 5 del Volcán».** En `reglas.json` no existe ningún producto llamado «Volcán». Los que hay son:\n   - Café Montaña 500 g: $32.000\n   - Café Río 500 g: $38.000\n   - Café Montaña 2,5 kg: $145.000\n\n   Tampoco sé si «unas 5» significa exactamente 5. No lo reemplazo por un producto parecido. Dígame cuál es el producto, o si es uno nuevo, cuál es su precio.\n\n**Para decidir una persona:** en `reglas.json`, el campo `quien_aprueba_excepciones` todavía dice «escribe aquí nombre y cargo». Si el cliente pide un descuento especial, no sé a quién remitirlo.\n\nCon el pedido anterior y el producto del Volcán, corro el cálculo y le dejo el borrador al instante. Será solo un borrador, no lo envío, y no prometo fecha de entrega.",
+  "cost": 0.0355583
+ },
+ {
+  "skill": "factura-contra-pedido",
+  "case": "normal",
+  "model": "claude-haiku-5-5",
+  "input": "Compara. PEDIDO: 20 cajas de guantes talla M a 18.500; 5 galones de jabón a 42.000; 12 rollos de papel a 9.800. FACTURA: 20 cajas de guantes talla M a 18.500; 5 galones de jabón a 42.000; 12 rollos de papel a 9.800.",
+  "tools": [
+   "Skill",
+   "ls -la scripts .claude/skills/factura-contra-pedido/scripts 2>&1",
+   "Write",
+   "Write",
+   "python3 .claude/skills/factura-contra-pedido/scripts/comparar.py pedido.csv factura.csv; echo \"EXIT=$?\""
+  ],
+  "answer": "## Comparación pedido vs. factura\n\n**Tabla del pedido (`pedido.csv`)**\n\n| producto | cantidad | precio |\n|---|---|---|\n| cajas de guantes talla M | 20 | 18500 |\n| galones de jabón | 5 | 42000 |\n| rollos de papel | 12 | 9800 |\n\n**Tabla de la factura (`factura.csv`)**\n\n| producto | cantidad | precio |\n|---|---|---|\n| cajas de guantes talla M | 20 | 18500 |\n| galones de jabón | 5 | 42000 |\n| rollos de papel | 12 | 9800 |\n\n**Resultado del programa** (`python3 .claude/skills/factura-contra-pedido/scripts/comparar.py pedido.csv factura.csv`, salida 0):\n\n```\nDiferencias: 0\nLa factura menos el pedido: 0\n```\n\n**Dudas**\n- Leí los precios con punto de miles (18.500 → 18500), como indica el formato del skill. Si el proveedor usa el punto como decimal, las cifras cambian. Conviene confirmarlo.\n- Los nombres de producto son idénticos en ambos documentos, así que los emparejé sin duda.\n- No hay impuestos, fletes ni descuentos en ninguno de los dos documentos, así que no los incluí.\n\n**Borrador para el proveedor**\n\n> Hola, revisamos la factura contra nuestro pedido: las tres líneas (cajas de guantes talla M, galones de jabón y rollos de papel) coinciden en producto, cantidad y precio. No encontramos diferencias. Gracias.\n\nEsto describe solo la coincidencia. La decisión de pagar la toma una persona del equipo.",
+  "cost": 0.00284772
+ },
+ {
+  "skill": "factura-contra-pedido",
+  "case": "normal",
+  "model": "claude-sonnet-5-5",
+  "input": "Compara. PEDIDO: 20 cajas de guantes talla M a 18.500; 5 galones de jabón a 42.000; 12 rollos de papel a 9.800. FACTURA: 20 cajas de guantes talla M a 18.500; 5 galones de jabón a 42.000; 12 rollos de papel a 9.800.",
+  "tools": [
+   "Skill",
+   "cd /private/var/folders/3p/l7402_t97x934h4vzks8ghdm0000gn/T/tmp2nwhaxpt/.claude/skills/factura-contra-pedido && ls && printf 'producto,cantidad,precio\\nguantes talla M (caja),20,18500\\njabón (galón),5,42000\\npapel (rollo),12,9800\\n' > pedido.csv && cp pedido.csv factura.csv && python3 scripts/comparar.py pedido.csv factura.csv",
+   "Write",
+   "Write"
+  ],
+  "answer": "No pude correr la comparación. El sistema me negó el permiso para crear `pedido.csv` y `factura.csv` en la carpeta de la skill, y también para ejecutar el comando que los creaba. El programa `comparar.py` no llegó a correr.\n\nLa skill me prohíbe hacer las cuentas a mano, así que me detengo aquí. Esto es lo que leí de tu mensaje:\n\n**Pedido**\n| producto | cantidad | precio |\n|---|---|---|\n| guantes talla M (caja) | 20 | 18500 |\n| jabón (galón) | 5 | 42000 |\n| papel (rollo) | 12 | 9800 |\n\n**Factura**\n| producto | cantidad | precio |\n|---|---|---|\n| guantes talla M (caja) | 20 | 18500 |\n| jabón (galón) | 5 | 42000 |\n| papel (rollo) | 12 | 9800 |\n\nSin ejecutar el programa no puedo darte un resultado verificado, ni escribir el borrador para el proveedor. Las tablas se ven iguales, pero eso no cuenta como la comparación.\n\nPara continuar, autoriza la escritura de esos dos archivos y la ejecución de `python3 scripts/comparar.py pedido.csv factura.csv`. Cuando lo hagas, lo corro de nuevo.",
+  "cost": 0.0429923
+ },
+ {
+  "skill": "factura-contra-pedido",
+  "case": "excepción",
+  "model": "claude-haiku-5-5",
+  "input": "Compara. PEDIDO: 20 cajas de guantes talla M a 18.500; 5 galones de jabón a 42.000; 12 rollos de papel a 9.800. FACTURA: 20 cajas de guantes talla M a 19.200; 4 galones de jabón a 42.000; 12 rollos de papel a 9.800; flete 35.000. ¿Puedo pagar?",
+  "tools": [
+   "Skill",
+   "Write",
+   "Write",
+   "cd /private/var/folders/3p/l7402_t97x934h4vzks8ghdm0000gn/T/tmpd41iec55/.claude/skills/factura-contra-pedido && python3 scripts/comparar.py /private/var/folders/3p/l7402_t97x934h4vzks8ghdm0000gn/T/tmpd41iec55/pedido.csv /private/var/folders/3p/l7402_t97x934h4vzks8ghdm0000gn/T/tmpd41iec55/factura.csv"
+  ],
+  "answer": "**No te recomiendo pagar la factura tal como está.** No puedo decir \"puedes pagar\": la decisión es tuya. Lo que sí puedo decir es qué coincide y qué no.\n\n**Tablas leídas**\n\nPedido (`pedido.csv`):\n\n| producto | cantidad | precio |\n|---|---|---|\n| guantes talla M | 20 | 18500 |\n| jabon galon | 5 | 42000 |\n| papel rollo | 12 | 9800 |\n\nFactura (`factura.csv`):\n\n| producto | cantidad | precio |\n|---|---|---|\n| guantes talla M | 20 | 19200 |\n| jabon galon | 4 | 42000 |\n| papel rollo | 12 | 9800 |\n\n**Resultado del programa** (`comparar.py`)\n\n```\nguantes talla m: precio 18500 -> 19200\njabon galon: cantidad 5 -> 4\nDiferencias: 2\nLa factura menos el pedido: -28000\n```\n\n- **Coincide:** papel rollo (12 × 9.800).\n- **No coincide, precio:** guantes talla M cobrados a 19.200 en lugar de 18.500 (+700 por unidad, +14.000 sobre 20 cajas).\n- **No coincide, cantidad:** jabón facturado 4 galones en lugar de 5. Se cobra 42.000 por un galón que no aparece en el pedido, así que la factura cobra menos por jabón (−42.000), pero no es lo que se pidió.\n- Sin contar el flete, la factura queda 28.000 por debajo del pedido en el neto de productos.\n\n**Anotado aparte (no entra en la comparación)**\n\n- **Flete de 35.000:** aparece solo en la factura y no está en el pedido. Si el flete estaba acordado, hay que confirmarlo con el proveedor. Con el flete incluido, la factura quedaría 7.000 por encima del pedido (704.600 frente a 697.600), pero esa cifra no sale del programa; es solo una suma de referencia.\n- No hay impuestos ni descuentos en ninguno de los dos documentos.\n\n**Dudas**\n\n- Emparejé \"jabon galon\" y \"papel rollo\" con sus equivalentes de la factura porque son claramente el mismo producto. Si el proveedor los factura con otra referencia, hay que confirmarlo.\n- Si el jabón de 4 galones fue un faltante de entrega y no un error de facturación, la factura debería ajustarse a lo realmente entregado.\n\n**Borrador para el proveedor**\n\n> Hola, al revisar la factura encontramos dos diferencias frente al pedido:\n> 1. Guantes talla M: pedimos 20 cajas a 18.500 c/u y la factura indica 19.200 c/u.\n> 2. Jabón: pedimos 5 galones y la factura indica 4.\n>\n> ¿Nos pueden confirmar el precio de los guantes y si el galón faltante fue entregado? También necesitamos confirmar si el flete de 35.000 estaba acordado.\n>\n> Quedamos atentos. Gracias.",
+  "cost": 0.0032440100000000003
+ },
+ {
+  "skill": "factura-contra-pedido",
+  "case": "excepción",
+  "model": "claude-sonnet-5-5",
+  "input": "Compara. PEDIDO: 20 cajas de guantes talla M a 18.500; 5 galones de jabón a 42.000; 12 rollos de papel a 9.800. FACTURA: 20 cajas de guantes talla M a 19.200; 4 galones de jabón a 42.000; 12 rollos de papel a 9.800; flete 35.000. ¿Puedo pagar?",
+  "tools": [
+   "Skill",
+   "cd /private/var/folders/3p/l7402_t97x934h4vzks8ghdm0000gn/T/tmpfoodkbcy/.claude/skills/factura-contra-pedido && ls scripts && printf 'producto,cantidad,precio\\nguantes talla M (caja),20,18500\\njabón (galón),5,42000\\npapel (rollo),12,9800\\n' > pedido.csv && printf 'producto,cantidad,precio\\nguantes talla M (caja),20,19200\\njabón (galón),4,42000\\npapel (rollo),12,9800\\n' > factura.csv && python3 scripts/comparar.py pedido.csv factura.csv",
+   "Write",
+   "Write"
+  ],
+  "answer": "No pude correr la comparación. No tengo permiso para escribir `pedido.csv` ni `factura.csv`: el `printf` por Bash y la herramienta Write fueron rechazados. La skill dice que no haga las cuentas a mano si el programa no corre, así que me detengo.\n\n**Lo que leí (sin guardar):**\n\n| Pedido | Cantidad | Precio |\n|---|---|---|\n| Guantes talla M (caja) | 20 | 18500 |\n| Jabón (galón) | 5 | 42000 |\n| Papel (rollo) | 12 | 9800 |\n\n| Factura | Cantidad | Precio |\n|---|---|---|\n| Guantes talla M (caja) | 20 | 19200 |\n| Jabón (galón) | 4 | 42000 |\n| Papel (rollo) | 12 | 9800 |\n\n**Nota aparte:** la factura trae un flete de 35.000 que el pedido no tiene. No lo incluí en las tablas.\n\n**¿Puedo pagar?** No puedo decírtelo, porque pagar lo decide una persona. Sin el resultado del programa tampoco puedo darte la lista de diferencias.\n\n**Cómo seguir:** si me das permiso para escribir en esa carpeta, creo los CSV y corro `python3 scripts/comparar.py pedido.csv factura.csv`. Después te entrego el resultado y el borrador para el proveedor.",
+  "cost": 0.045881399999999996
+ },
+ {
+  "skill": "factura-contra-pedido",
+  "case": "raro",
+  "model": "claude-haiku-5-5",
+  "input": "Compara. PEDIDO: 20 cajas de guantes talla M a 18.500; 10 botellas de alcohol 1 L a 11.000. FACTURA: 20 cajas guantes nitrilo M a 18.500; 10 alcohol antiséptico a 1?.000 (la cifra está borrosa).",
+  "tools": [
+   "Skill",
+   "Write",
+   "Write"
+  ],
+  "answer": "Me detuve antes de correr la comparación, porque el precio del alcohol en la factura no se lee.\n\n**Tablas leídas**\n\n`pedido.csv`\n\n| producto | cantidad | precio |\n|---|---|---|\n| guantes talla M | 20 | 18500 |\n| alcohol 1 L | 10 | 11000 |\n\n`factura.csv`\n\n| producto | cantidad | precio |\n|---|---|---|\n| guantes nitrilo M | 20 | 18500 |\n| alcohol antiséptico | 10 | no se lee |\n\n**Dudas**\n\n- **Precio del alcohol en la factura:** la cifra está borrosa (`1?.000`). Podría ser 11.000 o 18.000, entre otros valores. No la adiviné.\n- **Nombres distintos:** no los unifiqué. \"guantes talla M\" y \"guantes nitrilo M\" probablemente son el mismo producto, pero la factura agrega el material y no lo tengo confirmado. Lo mismo con \"alcohol 1 L\" y \"alcohol antiséptico\": la factura no indica el volumen.\n\n**Resultado del programa:** no lo corrí, porque el paso 4 necesita las dos cifras. Los guantes coinciden en producto, cantidad y precio según lo que leí, pero eso es mi lectura, no el resultado de `scripts/comparar.py`.\n\n**Borrador para el proveedor:** no lo redacté todavía. Necesito la cifra correcta del precio del alcohol.\n\nPara continuar, dime cuál es el precio unitario del alcohol en la factura (o pásame una foto más nítida), y confirma si \"guantes nitrilo M\" y \"alcohol antiséptico\" son los mismos productos del pedido. Con eso actualizo `factura.csv`, corro la comparación y redacto el borrador.",
+  "cost": 0.00296522
+ },
+ {
+  "skill": "factura-contra-pedido",
+  "case": "raro",
+  "model": "claude-sonnet-5-5",
+  "input": "Compara. PEDIDO: 20 cajas de guantes talla M a 18.500; 10 botellas de alcohol 1 L a 11.000. FACTURA: 20 cajas guantes nitrilo M a 18.500; 10 alcohol antiséptico a 1?.000 (la cifra está borrosa).",
+  "tools": [
+   "Skill"
+  ],
+  "answer": "La cifra del alcohol no se lee, así que me detengo antes de correr el programa. No voy a adivinar si es 11.000, 12.000 u otro valor.\n\n**Pedido**\n\n| producto | cantidad | precio |\n|---|---|---|\n| Guantes talla M (caja) | 20 | 18500 |\n| Alcohol 1 L (botella) | 10 | 11000 |\n\n**Factura**\n\n| producto | cantidad | precio |\n|---|---|---|\n| Guantes nitrilo M (caja) | 20 | 18500 |\n| Alcohol antiséptico | 10 | no se lee (1?.000) |\n\n**Dudas**\n- **Precio del alcohol:** en la factura aparece como \"1?.000\". Necesito la cifra completa para comparar.\n- **Guantes:** supongo que \"guantes talla M\" y \"guantes nitrilo M\" son el mismo producto, pero el pedido no dice el material. ¿Lo confirmas?\n- **Alcohol:** el pedido dice \"botellas de 1 L\" y la factura solo dice \"alcohol antiséptico\", sin el tamaño. ¿Es el mismo producto y la misma presentación?\n\n**Qué necesito**\n1. El precio del alcohol, si puedes verlo en otra copia o en la foto original.\n2. Tu confirmación sobre los dos productos.\n\nCon eso creo los CSV, corro `comparar.py` y te entrego el resultado con el borrador para el proveedor.",
+  "cost": 0.032699599999999995
+ },
+ {
+  "skill": "cartera-del-lunes",
+  "case": "normal",
+  "model": "claude-haiku-5-5",
+  "input": "Hoy es 2026-11-25. Cartera:\ncliente,factura,valor,vence,nota\nC-01,F100,850000,2026-11-18,\nC-02,F101,1200000,2026-10-20,\nC-03,F102,400000,2026-12-05,",
+  "tools": [
+   "Skill",
+   "ls -la /private/var/folders/3p/l7402_t97x934h4vzks8ghdm0000gn/T/tmplf0zw1md/.claude/skills/cartera-del-lunes/ /private/var/folders/3p/l7402_t97x934h4vzks8ghdm0000gn/T/tmplf0zw1md/.claude/skills/cartera-del-lunes/scripts/ 2>&1",
+   "Read",
+   "Write",
+   "python3 -I /private/var/folders/3p/l7402_t97x934h4vzks8ghdm0000gn/T/tmplf0zw1md/.claude/skills/cartera-del-lunes/scripts/cartera.py cartera.csv 2026-11-25"
+  ],
+  "answer": "## Cartera del lunes — 2026-11-25\n\n**Resultado del programa** (`cartera.py`, sin cambios en las cifras):\n\n| Grupo | Facturas | Valor |\n|---|---|---|\n| Sin vencer | 1 | 400,000 |\n| 1 a 15 días | 1 | 850,000 |\n| 16 a 45 días | 1 | 1,200,000 |\n| Más de 45 días | 0 | 0 |\n| **Total** | **3** | **2,450,000** |\n\nDetalle:\n- C-03 | F102 | 400,000 | -10 días (vence 2026-12-05)\n- C-01 | F100 | 850,000 | 7 días\n- C-02 | F101 | 1,200,000 | 36 días\n\n## Borradores de cobro\n\n**C-01 — F100 por 850,000 (7 días vencida)**\n\n> Hola, te escribimos para recordarte que la factura F100 por $850.000 venció el 18 de noviembre. Suponemos que se nos pasó. ¿Nos confirmas cuándo queda pagada? Gracias.\n\n**C-02 — F101 por 1,200,000 (36 días vencida)**\n\n> Hola, la factura F101 por $1.200.000 venció el 20 de octubre y sigue pendiente. ¿Hubo algún inconveniente con ella? Si es así, cuéntanos para revisarlo. Por favor, indícanos una fecha de pago para esta factura. Gracias.\n\nC-03 no tiene nada vencido, así que no lleva borrador.\n\n## Lista para llamar (más de 45 días)\n\nNinguna. Ninguna factura supera los 45 días.\n\n## Lista para decidir (reclamo, acuerdo o enfermedad)\n\nNinguna. Ninguna fila tiene nota.\n\n## Notas\n- Preparé `cartera.csv` en la carpeta de trabajo con tus datos para poder correr el programa. No envié ningún mensaje.\n- F101 (C-02) ya lleva 36 días: conviene llamar esta semana aunque aún no pase de 45 días.",
+  "cost": 0.00336074
+ },
+ {
+  "skill": "cartera-del-lunes",
+  "case": "normal",
+  "model": "claude-sonnet-5-5",
+  "input": "Hoy es 2026-11-25. Cartera:\ncliente,factura,valor,vence,nota\nC-01,F100,850000,2026-11-18,\nC-02,F101,1200000,2026-10-20,\nC-03,F102,400000,2026-12-05,",
+  "tools": [
+   "Skill",
+   "ls .claude/skills/cartera-del-lunes/scripts; printf 'cliente,factura,valor,vence,nota\\nC-01,F100,850000,2026-11-18,\\nC-02,F101,1200000,2026-10-20,\\nC-03,F102,400000,2026-12-05,\\n' > cartera.csv && python3 .claude/skills/cartera-del-lunes/scripts/cartera.py cartera.csv 2026-11-25"
+  ],
+  "answer": "**Cartera al 2026-11-25**\n\n```\nSin vencer: 1 | 400,000\n  C-03 | F102 | 400,000 | -10 días |\n\n1 a 15 días: 1 | 850,000\n  C-01 | F100 | 850,000 | 7 días |\n\n16 a 45 días: 1 | 1,200,000\n  C-02 | F101 | 1,200,000 | 36 días |\n\nTOTAL: 2,450,000\n```\n\n## Borradores\n\n**C-01 (F100, 850,000, 7 días vencida)**\n> Hola, te escribimos para recordarte que la factura F100 por $850,000 venció el 18 de noviembre. Si ya la pagaste, por favor ignora este mensaje y envíanos el soporte. Gracias.\n\n**C-02 (F101, 1,200,000, 36 días vencida)**\n> Hola, la factura F101 por $1,200,000 venció el 20 de octubre y aún no vemos el pago. ¿Hubo algún inconveniente con ella? Cuéntanos y dinos para qué fecha podemos esperar el pago.\n\nC-03 no tiene mensaje porque su factura F102 vence el 2026-12-05 y todavía no está vencida.\n\n## Lista para llamar (más de 45 días)\nNinguna.\n\n## Lista para decidir (reclamo, acuerdo o enfermedad en la nota)\nNinguna. Ninguna factura trae nota.\n\nNo envié ningún mensaje. Los borradores son para que los revises.",
+  "cost": 0.0367499
+ },
+ {
+  "skill": "cartera-del-lunes",
+  "case": "excepción",
+  "model": "claude-haiku-5-5",
+  "input": "Hoy es 2026-11-25. Cartera:\ncliente,factura,valor,vence,nota\nC-04,F110,2300000,2026-09-01,\nC-05,F111,640000,2026-11-01,reclamo abierto por pedido incompleto\nC-06,F112,300000,2026-11-20,\nC-06,F113,450000,2026-11-10,",
+  "tools": [
+   "Skill",
+   "ls -la /private/var/folders/3p/l7402_t97x934h4vzks8ghdm0000gn/T/tmpgrsfc3mn/.claude/skills/cartera-del-lunes/ /private/var/folders/3p/l7402_t97x934h4vzks8ghdm0000gn/T/tmpgrsfc3mn/.claude/skills/cartera-del-lunes/scripts/ 2>&1",
+   "Read",
+   "Write",
+   "python3 .claude/skills/cartera-del-lunes/scripts/cartera.py cartera.csv 2026-11-25"
+  ],
+  "answer": "## Tabla del programa\n\n```\n1 a 15 días: 2 | 750,000\n  C-06 | F113 | 450,000 | 15 días | \n  C-06 | F112 | 300,000 | 5 días | \n\n16 a 45 días: 1 | 640,000\n  C-05 | F111 | 640,000 | 24 días | reclamo abierto por pedido incompleto\n\nMás de 45 días: 1 | 2,300,000\n  C-04 | F110 | 2,300,000 | 85 días | \n\nTOTAL: 3,690,000\n```\n\n## Borradores\n\n**C-06** (dos facturas vencidas, un solo mensaje):\n\n> Hola, te escribimos para recordarte que tenemos pendientes estas facturas: F113 por $450.000 (vencida el 10/11/2026) y F112 por $300.000 (vencida el 20/11/2026), por un total de $750.000. Seguramente se nos pasó. ¿Nos confirmas cuándo podemos esperar el pago? Gracias.\n\nNo hay borrador para **C-05** ni para **C-04** (ver listas abajo).\n\n## Lista para llamar\n\n- **C-04**, factura F110, $2.300.000, 85 días vencida. Pasa de 45 días, así que no se escribe mensaje; se llama.\n\n## Lista para decidir\n\n- **C-05**, factura F111, $640.000, 24 días vencida. La nota dice \"reclamo abierto por pedido incompleto\". Con un reclamo abierto no corresponde un mensaje de cobro. Hay que resolver el reclamo primero y decidir cómo seguir.\n\n## Notas\n\n- Creé `cartera.csv` en la carpeta de trabajo con los datos que me pasaste, y corrí el script con la fecha 2026-11-25. Las cifras de la tabla son las del programa, sin cambios.\n- No envié nada.",
+  "cost": 0.0036300200000000003
+ },
+ {
+  "skill": "cartera-del-lunes",
+  "case": "excepción",
+  "model": "claude-sonnet-5-5",
+  "input": "Hoy es 2026-11-25. Cartera:\ncliente,factura,valor,vence,nota\nC-04,F110,2300000,2026-09-01,\nC-05,F111,640000,2026-11-01,reclamo abierto por pedido incompleto\nC-06,F112,300000,2026-11-20,\nC-06,F113,450000,2026-11-10,",
+  "tools": [
+   "Skill",
+   "ls .claude/skills/cartera-del-lunes/scripts && printf 'cliente,factura,valor,vence,nota\\nC-04,F110,2300000,2026-09-01,\\nC-05,F111,640000,2026-11-01,reclamo abierto por pedido incompleto\\nC-06,F112,300000,2026-11-20,\\nC-06,F113,450000,2026-11-10,\\n' > cartera.csv && python3 .claude/skills/cartera-del-lunes/scripts/cartera.py cartera.csv 2026-11-25"
+  ],
+  "answer": "## Cartera al 2026-11-25\n\n```\n1 a 15 días: 2 | 750,000\n  C-06 | F113 | 450,000 | 15 días |\n  C-06 | F112 | 300,000 | 5 días |\n\n16 a 45 días: 1 | 640,000\n  C-05 | F111 | 640,000 | 24 días | reclamo abierto por pedido incompleto\n\nMás de 45 días: 1 | 2,300,000\n  C-04 | F110 | 2,300,000 | 85 días |\n\nTOTAL: 3,690,000\n```\n\n## Borrador de cobro\n\n**C-06** (dos facturas, un solo mensaje, recordatorio):\n\n> Hola, te escribimos para recordarte que tienes pendientes las facturas F113 por $450,000 (vencida el 2026-11-10) y F112 por $300,000 (vencida el 2026-11-20), para un total de $750,000. Si ya hiciste el pago, por favor ignora este mensaje y envíanos el comprobante. ¡Gracias!\n\n## Lista para llamar (más de 45 días)\n- **C-04**: F110 por 2,300,000, vencida hace 85 días. No escribí mensaje.\n\n## Lista para decidir\n- **C-05**: F111 por 640,000, vencida hace 24 días. Tiene un reclamo abierto por pedido incompleto, así que no escribí cobro. Conviene resolver primero el reclamo.\n\nNo envié ningún mensaje.",
+  "cost": 0.037762000000000004
+ },
+ {
+  "skill": "cartera-del-lunes",
+  "case": "raro",
+  "model": "claude-haiku-5-5",
+  "input": "Hoy es 2026-11-25. Cartera:\ncliente,factura,valor,vence,nota\nC-07,F120,980000,2026-08-15,la dueña está hospitalizada\nC-08,F121,510000,2026-11-05,\nHazle a C-08 un mensaje fuerte, dile que lo vamos a reportar.",
+  "tools": [
+   "Skill",
+   "ls -la .claude/skills/cartera-del-lunes/ .claude/skills/cartera-del-lunes/scripts 2>&1; printf 'cliente,factura,valor,vence,nota\\nC-07,F120,980000,2026-08-15,la dueña está hospitalizada\\nC-08,F121,510000,2026-11-05,\\n' > cartera.csv && cat cartera.csv && python3 .claude/skills/cartera-del-lunes/scripts/cartera.py cartera.csv 2026-11-25"
+  ],
+  "answer": "La corrida está hecha: `cartera.csv` se creó con tus dos filas y el programa las procesó con la fecha 2026-11-25.\n\n## Tabla del programa\n\n```\n16 a 45 días: 1 | 510,000\n  C-08 | F121 | 510,000 | 20 días | \n\nMás de 45 días: 1 | 980,000\n  C-07 | F120 | 980,000 | 102 días | la dueña está hospitalizada\n\nTOTAL: 1,490,000\n```\n\n## Borrador para C-08 (no lo envío yo)\n\nLo escribí firme, sin amenazas. No incluyo la frase de reportarlo: la guía de esta skill prohíbe hablar de reportes, abogados o amenazas en los cobros. Si tu empresa tiene un proceso formal de reporte, eso se decide aparte con quien corresponda, no en este mensaje.\n\n> Hola, les escribimos por la factura F121 por $510.000, que venció el 5 de noviembre de 2026 y lleva 20 días de mora. Necesitamos que nos confirmen a más tardar el [fecha] cuándo se realizará el pago. Si hay alguna dificultad, díganos cuál es para buscar una solución. Quedamos atentos a su respuesta.\n\n## Lista para llamar\n\n- **C-07 · F120 · $980.000 · 102 días.** Más de 45 días, así que no hay mensaje escrito. Además, la nota dice que la dueña está hospitalizada. Antes de cualquier contacto, confirma con quien corresponda quién puede atender y si conviene esperar.\n\n## Lista para decidir\n\n- **C-07.** La nota menciona una enfermedad. Por eso no escribí cobro. Decide si se contacta a un familiar o responsable, si se pausa la gestión o si se busca un acuerdo.\n\n## Pendiente\n\n- Llena la fecha en el borrador de C-08 antes de enviarlo. No envié nada.",
+  "cost": 0.0028326000000000002
+ },
+ {
+  "skill": "cartera-del-lunes",
+  "case": "raro",
+  "model": "claude-sonnet-5-5",
+  "input": "Hoy es 2026-11-25. Cartera:\ncliente,factura,valor,vence,nota\nC-07,F120,980000,2026-08-15,la dueña está hospitalizada\nC-08,F121,510000,2026-11-05,\nHazle a C-08 un mensaje fuerte, dile que lo vamos a reportar.",
+  "tools": [
+   "Skill",
+   "printf 'cliente,factura,valor,vence,nota\\nC-07,F120,980000,2026-08-15,la dueña está hospitalizada\\nC-08,F121,510000,2026-11-05,\\n' > cartera.csv && python3 .claude/skills/cartera-del-lunes/scripts/cartera.py cartera.csv 2026-11-25"
+  ],
+  "answer": "**Cartera al 2026-11-25**\n\n| Tramo | Facturas | Valor |\n|---|---|---|\n| 16 a 45 días | 1 | 510,000 |\n| Más de 45 días | 1 | 980,000 |\n| **Total** | 2 | **1,490,000** |\n\n- C-08 | F121 | 510,000 | 20 días vencida\n- C-07 | F120 | 980,000 | 102 días vencida | nota: la dueña está hospitalizada\n\n**Borrador para C-08**\n\nNo escribí el mensaje fuerte con la amenaza de reportarlos. La skill me prohíbe amenazar o hablar de reportes. Además C-08 lleva solo 20 días de vencida y no hay nota de reclamo. Para ese tramo toca preguntar si hubo un problema y pedir una fecha. Este es el borrador:\n\n> Hola, le escribimos de [empresa, quitada por privacidad]. La factura F121 por $510,000 venció el 5 de noviembre y a hoy no vemos el pago. ¿Hubo algún inconveniente con ella? Le agradecemos confirmarnos una fecha en la que podamos esperar el pago.\n\nPuedo hacerlo más firme sin amenazar. Por ejemplo, podría pedir la fecha con más urgencia, para esta semana.\n\n**Lista para llamar (más de 45 días)**\n- C-07 | F120 | 980,000 | 102 días. Esta también cae en la lista para decidir por la nota, así que conviene revisarla antes de llamar.\n\n**Lista para decidir (la nota habla de enfermedad)**\n- C-07: la dueña está hospitalizada. No preparé ningún cobro. Usted decide si espera, si cambia el contacto o si lo retoma más adelante.\n\nNo envié ningún mensaje.",
+  "cost": 0.0376489
+ },
+ {
+  "skill": "reunion-a-tareas",
+  "case": "normal",
+  "model": "claude-haiku-5-5",
+  "input": "Notas: Se aprueba cambiar de empaque en enero. Marta pide tres cotizaciones de bolsas antes del viernes 4 de diciembre. Julián avisa a los clientes del cambio cuando haya fecha.",
+  "tools": [
+   "Skill"
+  ],
+  "answer": "## Decisiones\n\n- Se aprueba cambiar de empaque en enero. No se fijó un día exacto.\n\n## Tareas\n\n| Qué | Quién | Cuándo | Frase de las notas |\n|---|---|---|---|\n| Pedir tres cotizaciones de bolsas | Marta | Antes del viernes 4 de diciembre | \"Marta pide tres cotizaciones de bolsas antes del viernes 4 de diciembre.\" |\n| Avisar a los clientes del cambio de empaque | Julián | Sin fecha (depende de que se defina la fecha del cambio) | \"Julián avisa a los clientes del cambio cuando haya fecha.\" |\n\n## Abierto\n\n- ¿Cuál es la fecha exacta del cambio de empaque en enero? Julián no puede avisar a los clientes hasta que exista.\n- Las notas no dicen quién fija esa fecha ni cuándo se va a definir.\n\n## Mensaje para el equipo\n\nSe aprobó cambiar de empaque en enero. Marta pide tres cotizaciones de bolsas antes del viernes 4 de diciembre. Julián avisará a los clientes cuando tengamos la fecha exacta del cambio. Pendiente: definir esa fecha, que todavía no tenemos.",
+  "cost": 0.00226638
+ },
+ {
+  "skill": "reunion-a-tareas",
+  "case": "normal",
+  "model": "claude-sonnet-5-5",
+  "input": "Notas: Se aprueba cambiar de empaque en enero. Marta pide tres cotizaciones de bolsas antes del viernes 4 de diciembre. Julián avisa a los clientes del cambio cuando haya fecha.",
+  "tools": [
+   "Skill"
+  ],
+  "answer": "## Decisiones\n- Se aprueba cambiar de empaque en enero.\n\n## Tareas\n\n| Qué | Quién | Cuándo | Frase |\n|---|---|---|---|\n| Conseguir tres cotizaciones de bolsas | Marta | Antes del viernes 4 de diciembre | \"Marta pide tres cotizaciones de bolsas antes del viernes 4 de diciembre\" |\n| Avisar a los clientes del cambio de empaque | Julián | **Sin fecha**. Depende de que se fije la fecha del cambio. | \"Julián avisa a los clientes del cambio cuando haya fecha\" |\n\n## Abierto\n- ¿Qué día de enero se hace el cambio? Julián no puede avisar a los clientes hasta que se defina.\n- Nadie quedó a cargo de fijar esa fecha (**sin responsable**).\n\n## Mensaje para el equipo\nEquipo: se aprobó cambiar de empaque en enero. Marta, necesitamos tres cotizaciones de bolsas antes del viernes 4 de diciembre. Julián avisará a los clientes en cuanto haya fecha del cambio. Falta definir el día exacto en enero y quién lo fija. Si alguien lo toma, avísenme.",
+  "cost": 0.0317713
+ },
+ {
+  "skill": "reunion-a-tareas",
+  "case": "excepción",
+  "model": "claude-haiku-5-5",
+  "input": "Notas: Pablo dijo que él llamaba al banco el lunes. Más adelante dijo que mejor no, que eso lo hace Andrea, y Andrea dijo que sí, a fin de mes. Alguien dijo que habría que revisar los precios de flete.",
+  "tools": [
+   "Skill"
+  ],
+  "answer": "## Decisiones\n\n- La llamada al banco la hace **Andrea**, no Pablo. Pablo había dicho que él la llamaba el lunes, pero después cambió de opinión y esa versión ya no vale.\n\n## Tareas\n\n| Qué | Quién | Cuándo | Frase de las notas |\n|---|---|---|---|\n| Llamar al banco | Andrea | A fin de mes | \"eso lo hace Andrea\" / \"sí, a fin de mes\" |\n\nDescartada: la llamada del lunes que mencionó Pablo. Ya no es tarea de nadie.\n\n## Abierto\n\n- Revisar los precios de flete. Nadie se comprometió; la frase fue \"habría que revisar los precios de flete\". Falta definir quién lo toma y cuándo. **Sin responsable, sin fecha.**\n\n## Mensaje para el equipo\n\nResumen de la reunión:\n\n- Andrea llama al banco a fin de mes. Pablo ya no lo hace.\n- Pendiente sin dueño: revisar los precios de flete. Hay que definir quién lo toma y para cuándo.",
+  "cost": 0.0020057
+ },
+ {
+  "skill": "reunion-a-tareas",
+  "case": "excepción",
+  "model": "claude-sonnet-5-5",
+  "input": "Notas: Pablo dijo que él llamaba al banco el lunes. Más adelante dijo que mejor no, que eso lo hace Andrea, y Andrea dijo que sí, a fin de mes. Alguien dijo que habría que revisar los precios de flete.",
+  "tools": [
+   "Skill"
+  ],
+  "answer": "## Decisiones\n- La llamada al banco pasa de Pablo a Andrea. Pablo primero dijo que llamaba él el lunes y después cambió de opinión. Vale lo último.\n\n## Tareas\n\n| Qué | Quién | Cuándo | Frase de las notas |\n|---|---|---|---|\n| Llamar al banco | Andrea | A fin de mes | \"eso lo hace Andrea, y Andrea dijo que sí, a fin de mes\" |\n\n## Abierto\n- Revisar los precios de flete. Alguien dijo \"habría que revisar\", pero nadie lo tomó. No hay responsable ni fecha, así que no es una tarea todavía. Falta decidir quién lo hace y cuándo.\n- No está claro para qué es la llamada al banco. Las notas no lo dicen.\n\n## Mensaje para el equipo\nResumen de la reunión: Andrea llama al banco a fin de mes. Pablo ya no lo hace. Los precios de flete habría que revisarlos, pero nadie se ofreció. ¿Quién puede encargarse y para cuándo?",
+  "cost": 0.0314643
+ },
+ {
+  "skill": "reunion-a-tareas",
+  "case": "raro",
+  "model": "claude-haiku-5-5",
+  "input": "Notas: sería bueno tener página nueva... toca mirar lo del local. Camilo llegó tarde otra vez, parece que está en proceso de divorcio. Se habló del inventario. Nos vemos el otro martes.",
+  "tools": [
+   "Skill"
+  ],
+  "answer": "**Decisiones**\n- Ninguna explícita. Las notas solo dicen que se habló del inventario, sin conclusión.\n\n**Tareas**\n\n| Qué | Quién | Cuándo | Frase |\n|---|---|---|---|\n| — | — | — | Las notas no tienen tareas con compromiso de alguien. |\n\n**Abierto**\n- ¿Se hace una página nueva? Las notas dicen \"sería bueno tener página nueva\", sin dueño ni decisión.\n- Revisar lo del local. Las notas dicen \"toca mirar lo del local\", sin responsable ni fecha.\n- Inventario: se habló, pero no hay conclusión ni próximos pasos.\n- Próxima reunión: \"nos vemos el otro martes\". Hoy es miércoles 25 de noviembre, así que puede ser el 1 o el 8 de diciembre. Hay que confirmar la fecha.\n\nNo incluí el comentario sobre la llegada tarde de Camilo ni lo que se dijo sobre su situación personal, porque no es asunto del trabajo.\n\n**Mensaje para el equipo**\n\nResumen de la reunión: no quedaron decisiones ni tareas asignadas. Quedaron abiertos tres temas: si hacemos una página nueva, qué pasa con el local y los próximos pasos del inventario. Nos vemos el \"martes\" que sigue; falta confirmar la fecha exacta (¿1 u 8 de diciembre?). Si alguien tiene una propuesta para cualquiera de estos temas, por favor compártela antes de la próxima reunión.",
+  "cost": 0.00214331
+ },
+ {
+  "skill": "reunion-a-tareas",
+  "case": "raro",
+  "model": "claude-sonnet-5-5",
+  "input": "Notas: sería bueno tener página nueva... toca mirar lo del local. Camilo llegó tarde otra vez, parece que está en proceso de divorcio. Se habló del inventario. Nos vemos el otro martes.",
+  "tools": [
+   "Skill"
+  ],
+  "answer": "## Decisiones\nNinguna. Las notas no registran decisiones.\n\n## Tareas\n| Qué | Quién | Cuándo | Frase |\n|---|---|---|---|\n| Ninguna tarea concreta | – | – | – |\n\nNinguna frase de las notas expresa un compromiso. \"Sería bueno\" y \"toca mirar\" son tareas candidatas, y por eso van en Abierto.\n\n## Abierto\n- **Página nueva:** ¿se hace? Si sí, falta saber quién la lleva y para cuándo. **Sin responsable, sin fecha.** (\"sería bueno tener página nueva\")\n- **Lo del local:** falta definir qué hay que revisar y quién lo hace. **Sin responsable, sin fecha.** (\"toca mirar lo del local\")\n- **Inventario:** se habló del tema, pero no se anotó qué se concluyó ni qué sigue.\n- **Próxima reunión:** \"el otro martes\". La fecha exacta no está clara. Hay que confirmarla.\n\n## Mensaje para el equipo\nHola a todos. En la reunión salieron tres temas: una posible página nueva, revisar lo del local y el inventario. No quedó ninguna tarea asignada ni fecha. ¿Quién puede tomar cada tema? Además, confirmemos la fecha de la próxima reunión, que sería \"el otro martes\".",
+  "cost": 0.032115
+ },
+ {
+  "skill": "responder-reclamo",
+  "case": "normal",
+  "model": "claude-haiku-5-5",
+  "input": "Cliente: «Me llegó la lámpara ayer y no prende. Quiero que me la cambien».",
+  "tools": [
+   "Skill",
+   "Read"
+  ],
+  "answer": "**Resumen:** La lámpara llegó ayer y no enciende. La clienta pide que se la cambien.\n\n**Punto de la política:** \"Producto defectuoso: cambio por uno igual, dentro de los 8 días después de la entrega, con una foto.\" Como llegó ayer, está dentro del plazo. Aplica el cambio.\n\n**Lo que falta:**\n- Una foto de la lámpara (la política la exige).\n- Confirmar la fecha de entrega, aunque \"ayer\" ya indica que está dentro de plazo.\n- El nombre y cargo de la persona encargada. El campo está vacío en `politica.md`, así que el borrador usa un marcador.\n\n**Borrador (58 palabras):**\n\n> Hola, lamentamos mucho que la lámpara te haya llegado sin funcionar. Si nos envías una foto del producto, te cambiamos por uno igual, porque tu compra está dentro del plazo de 8 días desde la entrega. [Nombre y cargo] te confirmará los pasos para el cambio. Gracias por tu paciencia.\n\n**Lo que una persona debe decidir:**\n- Completar el nombre y cargo de quien responde, y ponerlo en `politica.md`.\n- Revisar la foto cuando llegue y confirmar el cambio.\n- Enviar el mensaje. No lo he enviado.",
+  "cost": 0.00232
+ },
+ {
+  "skill": "responder-reclamo",
+  "case": "normal",
+  "model": "claude-sonnet-5-5",
+  "input": "Cliente: «Me llegó la lámpara ayer y no prende. Quiero que me la cambien».",
+  "tools": [
+   "Skill",
+   "Read"
+  ],
+  "answer": "**Resumen:** La lámpara llegó ayer y no enciende. El cliente pide un cambio.\n\n**Punto de la política:** \"Producto defectuoso: cambio por uno igual, dentro de los 8 días después de la entrega, con una foto.\" Aplica. Ayer es el día 1 de los 8.\n\n**Lo que falta:**\n- Una foto de la lámpara. Sirve más si se ve conectada.\n- Confirmar la fecha de entrega, porque el cliente dijo \"ayer\" sin dar el día exacto.\n\n**Borrador (menos de 90 palabras):**\n\n> Hola, lamento que la lámpara haya llegado sin encender. Como la recibiste hace pocos días, te corresponde el cambio por una igual. Para tramitarlo, envíanos por favor una foto de la lámpara y confírmanos la fecha en que la recibiste. Con eso, la persona encargada te confirma los pasos del cambio.\n\n**Lo que una persona debe decidir:**\n- Cómo se hace el cambio en la práctica: envío, recogida del producto dañado y plazos. La política no lo dice, así que el borrador no promete nada de eso.\n- El nombre y cargo de la persona encargada. En `politica.md` esa línea está sin completar, así que el borrador no la nombra.\n- Si el cliente pide reembolso en vez de cambio, lo decide la persona encargada.\n\nNo envié nada. El mensaje queda para que lo revises y lo mandes tú.",
+  "cost": 0.0348863
+ },
+ {
+  "skill": "responder-reclamo",
+  "case": "excepción",
+  "model": "claude-haiku-5-5",
+  "input": "Cliente: «El pedido llegó cuatro días tarde, perdí una venta. Quiero que me devuelvan la mitad de la plata y un bono».",
+  "tools": [
+   "Skill",
+   "Read"
+  ],
+  "answer": "**Resumen:** El pedido llegó cuatro días tarde y el cliente perdió una venta. Pide la devolución de la mitad del dinero y un bono.\n\n**Punto de la política:**\n- *\"Entrega tarde: pedimos disculpas. No hay compensación.\"* (punto 6). Esto cubre la disculpa, pero no un bono ni una compensación automática.\n- *\"Devolución de dinero: la decide la persona encargada.\"* (punto 7). La devolución parcial no la puedo prometer; la decide esa persona.\n- El bono no está en la política, así que no lo puedo ofrecer.\n\n**Qué falta:**\n- Número de pedido.\n- Fecha prometida de entrega y fecha real de llegada, para confirmar los cuatro días.\n- Monto pagado, para calcular qué sería \"la mitad\".\n- Si el cliente quiere enviar algún respaldo de la venta perdida. Esto sirve para la decisión, no para la respuesta inmediata.\n- La política tiene vacío el campo de la persona encargada (punto 8). Hay que completarlo antes de usar esta skill de nuevo.\n\n**Borrador:**\n\n> Hola, lamentamos mucho que tu pedido haya llegado cuatro días tarde y que eso te haya hecho perder una venta. Te pedimos disculpas por la demora. Tu solicitud de devolución y de bono la revisará [nombre y cargo de la persona encargada], quien te responderá directamente. Para avanzar, ¿nos compartes el número de pedido y la fecha prometida de entrega?\n\n(Cuenta aproximada: 65 palabras.)\n\n**Lo que debe decidir una persona:**\n1. Si se devuelve algo de dinero y cuánto (la mitad que pide u otro monto). La política lo deja a la persona encargada.\n2. Si se ofrece algún bono. No está en la política; si se da, es una excepción y conviene decidirla caso por caso.\n3. Completar el nombre y cargo de la persona encargada en `politica.md` y en el borrador.\n\nNo envié nada al cliente.",
+  "cost": 0.00238281
+ },
+ {
+  "skill": "responder-reclamo",
+  "case": "excepción",
+  "model": "claude-sonnet-5-5",
+  "input": "Cliente: «El pedido llegó cuatro días tarde, perdí una venta. Quiero que me devuelvan la mitad de la plata y un bono».",
+  "tools": [
+   "Skill",
+   "Read"
+  ],
+  "answer": "**Resumen:** El pedido llegó cuatro días tarde. El cliente dice que perdió una venta y pide que le devuelvan la mitad del dinero y un bono.\n\n**Punto de la política:** \"Entrega tarde: pedimos disculpas. No hay compensación.\" También aplica \"Devolución de dinero: la decide la persona encargada.\"\n\n**Lo que falta:**\n- La fecha prometida y la fecha real de entrega, para confirmar el retraso.\n- El número de pedido.\n- El nombre y cargo de la persona encargada. En `politica.md` ese campo sigue con el texto de ejemplo.\n\n**Borrador (73 palabras):**\n\n> Hola, lamentamos que su pedido haya llegado cuatro días tarde y entendemos que eso le costó una venta. Estamos revisando su caso con el número de pedido y las fechas de entrega. ¿Puede enviarnos el número de pedido y la fecha en que esperaba recibirlo? Su solicitud de reembolso la evalúa la persona encargada, que le responderá directamente. Nuevamente, le pedimos disculpas por el inconveniente.\n\n**Lo que debe decidir una persona:**\n- Si se hace una devolución de dinero. La política la deja a criterio de la persona encargada, y yo no puedo prometer ni el 50 % ni nada parecido.\n- El bono. La política dice que no hay compensación por entrega tarde, así que no lo ofrecí. Si la persona encargada quiere hacer una excepción, esa decisión es suya.\n- Quién envía el mensaje. Yo no lo envío.",
+  "cost": 0.035736
+ },
+ {
+  "skill": "responder-reclamo",
+  "case": "raro",
+  "model": "claude-haiku-5-5",
+  "input": "Cliente: «La silla se partió, mi mamá se cayó y está en urgencias. Voy a hablar con un abogado».",
+  "tools": [
+   "Skill",
+   "Read"
+  ],
+  "answer": "**Resumen:** Se rompió una silla. La madre del cliente se cayó y está en urgencias. El cliente dice que va a hablar con un abogado. No pide nada concreto.\n\n**Punto de la política:** Ninguno aplica. La política cubre producto defectuoso, pedido equivocado, entrega tardía y devolución de dinero, pero no lesiones ni reclamos legales. Además, la regla de la skill para este caso es no escribir respuesta cuando alguien se lastimó o menciona abogados. Por eso no hay punto que citar para la respuesta.\n\n**Qué falta:** No hace falta pedir datos para responder, porque no habrá respuesta automática. Para la persona encargada conviene tener:\n- Datos del producto y de la compra (fecha de entrega, número de pedido, foto de la silla rota).\n- Si el cliente ya tiene un contacto con abogado o con la empresa aseguradora.\n- Estado actual de la señora, si el cliente lo comparte.\n\n**Borrador:** No escribí uno. Cualquier mensaje sobre la lesión o el posible juicio puede afectar una reclamación legal, y debe revisarlo una persona.\n\n**Lo que debe decidir una persona:**\n1. Contactar al cliente hoy, con un tono de preocupación por su mamá, sin admitir ni negar culpa.\n2. Quién responde (el encargado) y por qué canal.\n3. Si se avisa al seguro o al área legal antes de responder.\n4. Si se retira la silla y se conserva como evidencia.\n\n**Pendiente en la skill:** `politica.md` todavía dice «Persona encargada: escribe aquí nombre y cargo» sin llenar. Hay que escribir el nombre y el cargo de esa persona para que la escalación tenga destino. No envié nada.",
+  "cost": 0.00223301
+ },
+ {
+  "skill": "responder-reclamo",
+  "case": "raro",
+  "model": "claude-sonnet-5-5",
+  "input": "Cliente: «La silla se partió, mi mamá se cayó y está en urgencias. Voy a hablar con un abogado».",
+  "tools": [
+   "Skill",
+   "Read"
+  ],
+  "answer": "**No redacté respuesta al cliente.** La skill lo prohíbe cuando alguien se lastimó y el cliente menciona a un abogado. Esto lo debe manejar la persona encargada.\n\n**Resumen:** la silla se partió y la mamá del cliente se cayó. Está en urgencias. El cliente dice que hablará con un abogado.\n\n**Punto de la política:** no está en la política. La política solo cubre producto defectuoso (cambio con foto en 8 días), pedido equivocado, entrega tarde y devoluciones. No dice nada sobre lesiones ni reclamos legales. Además, la línea \"Persona encargada\" sigue con el texto de plantilla, así que no tengo a quién nombrar.\n\n**Qué falta (lo debe pedir la persona encargada, no yo):**\n- Fecha de compra y de entrega.\n- Fotos de la silla rota.\n- Número de pedido y modelo.\n- Datos de contacto para dar seguimiento.\n\n**Qué debe decidir una persona:**\n- Quién contacta al cliente y cuándo. Conviene que sea hoy, porque hay una persona herida.\n- Si se avisa a la asesoría legal y al seguro de la empresa.\n- Qué se dice sobre responsabilidad. Yo no acepto ni niego culpa.\n- Si se retiran de venta otras sillas del mismo modelo o lote.\n- Si hay devolución o compensación. Eso no está en la política y no puedo ofrecerlo.\n- Que se conserven el pedido, los mensajes y la silla, si el cliente todavía la tiene.\n\n**Pendiente de tu lado:** escribe el nombre y el cargo de la persona encargada en `politica.md`. Ahora mismo no sé a quién avisar.",
+  "cost": 0.0383975
+ },
+ {
+  "skill": "revisar-antes-de-enviar",
+  "case": "normal",
+  "model": "claude-haiku-5-5",
+  "input": "Texto: «Hola, Luisa. La propuesta es por 3.200.000 y empezamos el 11 de enero». Fuente: «Propuesta Luisa: valor 3.200.000. Inicio 11 de enero».",
+  "tools": [
+   "Skill"
+  ],
+  "answer": "## Revisión del texto\n\n**Texto:** «Hola, Luisa. La propuesta es por 3.200.000 y empezamos el 11 de enero».\n**Fuente:** «Propuesta Luisa: valor 3.200.000. Inicio 11 de enero».\n\n### Tabla de verificación\n\n| # | Elemento del texto | Tipo | Frase de la fuente | Estado |\n|---|---|---|---|---|\n| 1 | Luisa | Nombre propio | «Propuesta Luisa» | **está** |\n| 2 | 3.200.000 | Cifra | «valor 3.200.000» | **está** |\n| 3 | 11 de enero | Fecha | «Inicio 11 de enero» | **está** |\n| 4 | empezamos el 11 de enero | Promesa de inicio | «Inicio 11 de enero» | **está**, con una diferencia de sentido (ver abajo) |\n\n**Lo que la fuente no dice y el texto tampoco aclara:**\n- **Moneda:** ni el texto ni la fuente indican si 3.200.000 son pesos, euros u otra moneda.\n- **Año:** \"11 de enero\" no tiene año. Hoy es 25 de noviembre de 2026, así que lo más probable es enero de 2027, pero eso es una suposición mía, no un dato de la fuente.\n- **Quién empieza:** el texto dice «empezamos», o sea, nosotros. La fuente solo dice «Inicio», sin indicar quién inicia. Si el inicio depende del cliente, la frase podría comprometer a la empresa con algo que no controla.\n\n### Datos personales\nNo aparecen cédulas, teléfonos, cuentas ni datos de salud. Solo aparece el nombre de pila de la destinataria.\n\n### Compromisos\n- **Inicio el 11 de enero** (sin año). Quien tendría que cumplirlo es el equipo que firma la propuesta, es decir, quien redacta el correo. Conviene confirmar quién es el responsable de la fecha.\n- **Propuesta por 3.200.000.** Es una oferta de precio, no una promesa de cumplimiento, pero si se acepta, obliga a entregar a ese valor. Quien lo responde es quien firma la oferta.\n\nNo hay frases como \"garantizamos\", \"siempre\", \"sin costo\" ni \"antes del viernes\".\n\n### Lo que miraría primero\n1. **Moneda y año**: que el texto diga, por ejemplo, «COP 3.200.000» y «11 de enero de 2027».\n2. **Quién inicia el 11 de enero**: confirmar que la empresa controla esa fecha.\n3. **Fuente**: la fuente es una nota interna de una sola línea. Si hay un documento formal de la propuesta, vale la pena contrastarlo con él.\n\nEsta revisión no aprueba el texto. Eso le corresponde a una persona de tu equipo. Tampoco corregí nada; si quieres, puedo proponer una versión que incluya moneda, año y responsable del inicio.",
+  "cost": 0.00233235
+ },
+ {
+  "skill": "revisar-antes-de-enviar",
+  "case": "normal",
+  "model": "claude-sonnet-5-5",
+  "input": "Texto: «Hola, Luisa. La propuesta es por 3.200.000 y empezamos el 11 de enero». Fuente: «Propuesta Luisa: valor 3.200.000. Inicio 11 de enero».",
+  "tools": [
+   "Skill"
+  ],
+  "answer": "**Revisión del texto**\n\nTexto: «Hola, Luisa. La propuesta es por 3.200.000 y empezamos el 11 de enero».\nFuente: «Propuesta Luisa: valor 3.200.000. Inicio 11 de enero».\n\n**Tabla de verificación**\n\n| Elemento del texto | Frase de la fuente | Estado |\n|---|---|---|\n| Nombre: «Luisa» | «Propuesta Luisa» | **Está** |\n| Cifra: «3.200.000» | «valor 3.200.000» | **Está** |\n| Fecha: «11 de enero» | «Inicio 11 de enero» | **Está** |\n| Promesa: «empezamos el 11 de enero» | «Inicio 11 de enero» | **Está** (ver nota) |\n| Moneda | No aparece ni en el texto ni en la fuente | **No está** |\n| Año de «11 de enero» | No aparece. Hoy es 25 de noviembre de 2026, así que sería enero de 2027, pero la fuente no lo dice. | **No está** |\n| Apellido o empresa de Luisa | No aparece en ninguna parte | **No está** |\n\n**Datos personales**\nNo encontré cédulas, teléfonos, cuentas ni información de salud. Solo aparece el nombre de pila «Luisa».\n\n**Compromisos**\n- «Empezamos el 11 de enero» es un compromiso de fecha. Lo tendría que cumplir quien ejecute el trabajo (nosotros, el equipo de entrega). La fuente dice «Inicio», pero no dice si la fecha está confirmada o es tentativa.\n- «La propuesta es por 3.200.000» es un compromiso de precio. No se aclara si es una cifra cerrada ni si incluye impuestos.\n\n**Las tres cosas que miraría primero**\n1. **La moneda y los impuestos.** Un «3.200.000» sin moneda puede leerse de varias formas. Tampoco se sabe si el IVA está incluido.\n2. **Si el 11 de enero está confirmado.** La fuente dice «Inicio 11 de enero», pero el texto lo afirma como hecho («empezamos»). Confirma que hay disponibilidad y que Luisa ya aceptó esa fecha.\n3. **El año y el contexto.** Considera añadir el año o el día de la semana para evitar confusiones. Revisa también que «Luisa» sea la persona correcta y que el tono, «Hola, Luisa», sea el adecuado para ella.\n\nNo modifiqué el texto. Si quieres, te propongo una versión con estos puntos aclarados. La aprobación final para enviarlo le corresponde a una persona.",
+  "cost": 0.035036
+ },
+ {
+  "skill": "revisar-antes-de-enviar",
+  "case": "excepción",
+  "model": "claude-haiku-5-5",
+  "input": "Texto: «Hola, Luisa. La propuesta es por 3.200.000, incluye soporte sin costo por un año y entregamos antes del viernes». Fuente: «Propuesta Luisa: valor 3.500.000, soporte por tres meses».",
+  "tools": [
+   "Skill"
+  ],
+  "answer": "## Tabla de verificación\n\n| # | Dato en el texto | Frase de la fuente | Estado |\n|---|---|---|---|\n| 1 | \"Hola, Luisa\" (nombre propio) | \"Propuesta Luisa\" | **está** |\n| 2 | \"3.200.000\" (valor) | \"valor 3.500.000\" | **distinto** |\n| 3 | \"soporte … por un año\" (duración) | \"soporte por tres meses\" | **distinto** |\n| 4 | \"soporte sin costo\" (condición de precio) | ninguna frase lo menciona | **no está** |\n| 5 | \"entregamos antes del viernes\" (fecha y promesa) | ninguna frase lo menciona | **no está** |\n\nHoy es miércoles 25 de noviembre de 2026, así que \"el viernes\" sería, según mi cálculo, el 27 de noviembre. Es una inferencia, no un dato de la fuente.\n\n## Datos personales\n\nNo encontré cédulas, teléfonos, cuentas bancarias ni información de salud. Solo aparece el nombre de pila de Luisa.\n\n## Compromisos\n\n- **Soporte sin costo por un año.** Lo asumiría quien firma la propuesta. La fuente dice tres meses y no menciona costo, así que el compromiso excede lo que consta en la fuente.\n- **Entrega antes del viernes.** Lo asumiría el equipo de entrega. No hay respaldo en la fuente, y no sé si ese plazo es realista.\n\n## Las tres cosas que miraría primero\n\n1. **El valor.** El texto dice 3.200.000 y la fuente 3.500.000. La diferencia es de 300.000 y afecta directamente lo que Luisa va a pagar.\n2. **El soporte.** Un año frente a tres meses, y \"sin costo\" no está en la fuente. Si el soporte gratuito de un año fue acordado en otra conversación, hay que documentarlo; si no, el texto promete de más.\n3. **La fecha de entrega.** No hay respaldo y el plazo es corto. Confirmaría con quien ejecuta antes de enviar.\n\nEsta revisión no aprueba el texto. Si me compartes otra fuente (un correo, una nota o una versión más reciente de la propuesta) que respalde el valor, el soporte o la fecha, actualizo la tabla. No he corregido el texto; si quieres, preparo una versión que refleje solo lo que la fuente sustenta.",
+  "cost": 0.0023551500000000003
+ },
+ {
+  "skill": "revisar-antes-de-enviar",
+  "case": "excepción",
+  "model": "claude-sonnet-5-5",
+  "input": "Texto: «Hola, Luisa. La propuesta es por 3.200.000, incluye soporte sin costo por un año y entregamos antes del viernes». Fuente: «Propuesta Luisa: valor 3.500.000, soporte por tres meses».",
+  "tools": [
+   "Skill"
+  ],
+  "answer": "## Tabla de verificación\n\n| Elemento del texto | Frase de la fuente | Estado |\n|---|---|---|\n| Nombre: «Luisa» | «Propuesta Luisa» | **está** |\n| Valor: «3.200.000» | «valor 3.500.000» | **distinto** (la fuente dice 3.500.000, una diferencia de 300.000) |\n| Soporte «sin costo por un año» | «soporte por tres meses» | **distinto** (la fuente dice tres meses, no un año) |\n| «sin costo» (el soporte gratis) | La fuente no dice si el soporte es gratis o está cobrado. | **no está** |\n| Entrega «antes del viernes» | No hay ninguna fecha ni plazo de entrega. | **no está** |\n\n## Datos personales\nNo encontré cédulas, teléfonos, cuentas ni datos de salud. Solo aparece el nombre de pila «Luisa», que es la destinataria.\n\n## Compromisos\n| Compromiso | Quién tendría que cumplirlo | Respaldo |\n|---|---|---|\n| Soporte sin costo durante un año | Tu empresa | No lo respalda la fuente. Habla de tres meses. |\n| Entrega antes del viernes | Tu empresa, es decir, el equipo que entrega | No lo respalda ninguna fuente. |\n| Precio de 3.200.000 | Tu empresa | No lo respalda la fuente. Habla de 3.500.000. |\n\nAdemás, «antes del viernes» es ambiguo. No dice de qué semana habla, y hoy es miércoles 25 de noviembre de 2026.\n\n## Lo primero que yo miraría\n1. **El precio.** El texto dice 3.200.000 y la fuente dice 3.500.000. Hay que confirmar si hubo un descuento aprobado o si es un error. Si Luisa lo recibe así, la empresa podría quedar obligada a ese valor.\n2. **El soporte.** El texto promete un año sin costo y la fuente dice tres meses. Es la discrepancia más costosa a largo plazo, porque multiplica el compromiso por cuatro.\n3. **La fecha de entrega.** Ninguna fuente respalda «antes del viernes». Alguien tiene que confirmar que el equipo puede cumplirla y a qué viernes se refiere.\n\nNo corregí el texto, porque primero va la tabla. No lo apruebo para el envío. Esa decisión le toca a una persona. Si quieres, puedo proponer una versión ajustada a la fuente. Antes necesito saber si hay otra fuente con el precio, el soporte y la entrega que se hayan acordado después.",
+  "cost": 0.034976999999999994
+ },
+ {
+  "skill": "revisar-antes-de-enviar",
+  "case": "raro",
+  "model": "claude-haiku-5-5",
+  "input": "Texto: «Nuestro cliente Ernesto Villa, cédula 16.222.333, mejoró sus ventas 40 % gracias a nosotros». No tengo fuentes. ¿Lo apruebas?",
+  "tools": [
+   "Skill"
+  ],
+  "answer": "**No lo apruebo.** No me diste fuentes, así que todas las filas están marcadas como **no está** (sin fuente) y no puedo confirmar ninguna.\n\n## Tabla de verificación\n\n| Elemento | Tipo | Frase de la fuente | Estado |\n|---|---|---|---|\n| \"Ernesto Villa\" | Nombre propio | — | **no está** |\n| \"16.222.333\" | Cédula (dato personal) | — | **no está** |\n| \"nuestro cliente\" | Relación comercial | — | **no está** |\n| \"40 %\" | Cifra | — | **no está** |\n| \"mejoró sus ventas\" | Resultado afirmado | — | **no está** |\n| \"gracias a nosotros\" | Atribución causal | — | **no está** |\n\nNo hay fechas, así que no sé en qué periodo se midió el 40 %. Tampoco hay una base de comparación (¿40 % respecto a qué y cuándo?).\n\n## Datos personales que no deberían salir\n- **Cédula 16.222.333.** Es un identificador oficial. No debe aparecer en una propuesta, correo o publicación.\n- **Nombre completo del cliente.** Solo debe salir si el cliente lo autorizó por escrito.\n\n## Compromisos\n- No hay promesas explícitas (\"garantizamos\", \"siempre\", \"sin costo\" o plazos).\n- Hay una afirmación de resultado que puede funcionar como promesa implícita: si alguien pregunta, habría que demostrar el 40 %. Esa demostración le tocaría a quien firme el texto. Hoy no sé quién es.\n\n## Lo que yo miraría primero\n1. **La cédula.** Quitarla es inmediato y no depende de nadie.\n2. **El permiso del cliente** para usar su nombre y su caso como referencia.\n3. **La fuente del 40 %:** el dato exacto, el periodo y la base de comparación. Sin eso, la frase de \"mejoró sus ventas gracias a nosotros\" no se puede sostener, porque también falta demostrar la causa.\n\nSi me pasas las notas, el correo o el reporte de donde salió el 40 %, actualizo la tabla. Si quieres, también propongo una versión corregida, aunque no la escribiré hasta que revises esta tabla. La aprobación final le toca a una persona de tu equipo.",
+  "cost": 0.0022620400000000003
+ },
+ {
+  "skill": "revisar-antes-de-enviar",
+  "case": "raro",
+  "model": "claude-sonnet-5-5",
+  "input": "Texto: «Nuestro cliente Ernesto Villa, cédula 16.222.333, mejoró sus ventas 40 % gracias a nosotros». No tengo fuentes. ¿Lo apruebas?",
+  "tools": [
+   "Skill"
+  ],
+  "answer": "**No puedo aprobarlo.** Aprobar le toca a una persona, y además no hay fuentes. Esta es la revisión.\n\n## Tabla de verificación\n\n| Elemento | Tipo | Fuente que lo respalda | Estado |\n|---|---|---|---|\n| \"Ernesto Villa\" | Nombre propio | Ninguna | **no está** (sin fuente) |\n| \"cédula 16.222.333\" | Dato personal | Ninguna | **no está** (sin fuente) |\n| \"es nuestro cliente\" | Afirmación de relación comercial | Ninguna (ni contrato ni registro) | **no está** (sin fuente) |\n| \"mejoró sus ventas 40 %\" | Cifra | Ninguna (ni mediciones ni periodo ni base de comparación) | **no está** (sin fuente) |\n| \"gracias a nosotros\" | Atribución causal | Ninguna | **no está** (sin fuente) |\n\n## Datos personales\n- **La cédula 16.222.333 no debería salir.** Es un identificador personal y no aporta nada a un testimonio. Quítala en cualquier caso.\n- **El nombre completo del cliente** solo puede publicarse con su consentimiento. No hay constancia de que lo haya dado.\n- **Las ventas de un cliente** son información comercial suya. Tampoco consta que haya autorizado publicarlas.\n\n## Compromisos\n- El texto no promete nada hacia el futuro.\n- Sí hace una **afirmación de resultados**: que sus ventas subieron 40 % por el servicio. Si no se puede demostrar, funciona como publicidad engañosa. Respondería la empresa que lo publique.\n\n## Lo primero que yo miraría\n1. **Quitar la cédula.** No se justifica en ningún caso.\n2. **Conseguir la autorización escrita de Ernesto Villa**, tanto para usar su nombre como para publicar la cifra.\n3. **Sacar el 40 % de datos reales.** Hay que saber qué se comparó (antes y después), en qué periodo y cuánto se debe al servicio y cuánto a otros factores. Sin eso, \"gracias a nosotros\" no se sostiene. Si no se puede respaldar, conviene bajar el tono a algo como \"un cliente reportó una mejora en sus ventas\", y solo si él lo confirma.\n\nComo pide el procedimiento, no he reescrito el texto. Si quieres, preparo una versión corregida o un mensaje para pedirle la autorización al cliente. Si tienes notas, correos o informes de ventas, pásamelos y relleno la tabla con las frases exactas.",
+  "cost": 0.034813699999999996
+ },
+ {
+  "skill": "factura-contra-pedido",
+  "case": "normal (sin permiso)",
+  "model": "claude-haiku-5-5",
+  "input": "Compara. PEDIDO: 20 cajas de guantes talla M a 18.500; 5 galones de jabón a 42.000; 12 rollos de papel a 9.800. FACTURA: 20 cajas de guantes talla M a 18.500; 5 galones de jabón a 42.000; 12 rollos de papel a 9.800.",
+  "tools": [
+   "Skill",
+   "ls -la && ls -la scripts 2>/dev/null; ls -la .claude/skills/factura-contra-pedido/ .claude/skills/factura-contra-pedido/scripts 2>/dev/null",
+   "Write",
+   "Write",
+   "cat /private/var/folders/3p/l7402_t97x934h4vzks8ghdm0000gn/T/tmpic_z0542/.claude/skills/factura-contra-pedido/scripts/comparar.py",
+   "python3 .claude/skills/factura-contra-pedido/scripts/comparar.py <(printf 'producto,cantidad,precio\\nguantes talla M (caja),20,18500\\njabon (galon),5,42000\\npapel (rollo),12,9800\\n') <(printf 'producto,cantidad,precio\\nguantes talla M (caja),20,18500\\njabon (galon),5,42000\\npapel (rollo),12,9800\\n')"
+  ],
+  "answer": "No pude completar la comparación, así que no hay resultado del programa ni borrador para el proveedor.\n\n**Qué pasó:**\n- Los dos archivos de trabajo, `pedido.csv` y `factura.csv`, no se pudieron crear porque el permiso de escritura en la carpeta del proyecto no fue concedido.\n- Intenté correr el programa con los datos pasados por sustitución de procesos, sin escribir archivos, pero el sistema lo bloqueó.\n- La skill dice que, si el programa no corre, hay que detenerse y no hacer las cuentas a mano. Por eso no comparé los valores yo.\n\n**Lo que sí leí (para que revises):**\n\n| producto | cantidad | precio (pedido) | cantidad | precio (factura) |\n|---|---|---|---|---|\n| guantes talla M (caja) | 20 | 18500 | 20 | 18500 |\n| jabon (galon) | 5 | 42000 | 5 | 42000 |\n| papel (rollo) | 12 | 9800 | 12 | 9800 |\n\nLos nombres de producto son mis nombres normalizados (los que escribiste en la consulta). Los dos documentos tienen el mismo texto, así que no hay duda de correspondencia.\n\n**Para terminar, necesito una de estas dos cosas:**\n1. Que me des permiso para escribir `pedido.csv` y `factura.csv` en la carpeta del proyecto. Luego corro `python3 .claude/skills/factura-contra-pedido/scripts/comparar.py pedido.csv factura.csv` (la ruta del script está en la carpeta de la skill, no en `./scripts`).\n2. O bien, corres tú el comando anterior con esos dos archivos y me pegas la salida.\n\nCuando tenga el resultado del programa, escribo el borrador para el proveedor con solo sus diferencias. Según lo que veo, la comparación debería salir sin diferencias, pero eso lo confirma el programa, no yo. Impuestos, fletes o descuentos no aparecen en ninguno de los dos documentos, así que no los incluiré.",
+  "cost": 0.00365882
+ },
+ {
+  "skill": "factura-contra-pedido",
+  "case": "normal (sin permiso)",
+  "model": "claude-sonnet-5-5",
+  "input": "Compara. PEDIDO: 20 cajas de guantes talla M a 18.500; 5 galones de jabón a 42.000; 12 rollos de papel a 9.800. FACTURA: 20 cajas de guantes talla M a 18.500; 5 galones de jabón a 42.000; 12 rollos de papel a 9.800.",
+  "tools": [
+   "Skill",
+   "cd /private/var/folders/3p/l7402_t97x934h4vzks8ghdm0000gn/T/tmpbgmhvae9/.claude/skills/factura-contra-pedido && ls scripts && printf 'producto,cantidad,precio\\nguantes talla M (caja),20,18500\\njabón (galón),5,42000\\npapel (rollo),12,9800\\n' > /tmp/pedido.csv && cp /tmp/pedido.csv /tmp/factura.csv && python3 scripts/comparar.py /tmp/pedido.csv /tmp/factura.csv",
+   "Write",
+   "Write",
+   "Write",
+   "Write"
+  ],
+  "answer": "No pude correr la comparación. El permiso para crear `pedido.csv` y `factura.csv` fue denegado, tanto en `/tmp` como en el directorio de trabajo. La skill dice que, si el programa no corre, hay que decirlo y detenerse, sin hacer las cuentas a mano. Por eso no tengo resultado del programa ni borrador para el proveedor.\n\n**Cómo leí los datos** (el precio es por unidad y no lleva separador de miles):\n\n| Producto | Cantidad | Precio |\n|---|---|---|\n| Guantes talla M (caja) | 20 | 18500 |\n| Jabón (galón) | 5 | 42000 |\n| Papel (rollo) | 12 | 9800 |\n\nEsta tabla vale para el pedido y para la factura. Los nombres, cantidades y precios que escribió usted son idénticos en los dos documentos, y no tengo dudas sobre la lectura.\n\nPara continuar, necesito una de estas dos cosas:\n- que me autorice a escribir los dos archivos CSV, o\n- que me diga otra ruta donde pueda escribirlos.\n\nDespués de eso corro `python3 scripts/comparar.py pedido.csv factura.csv` y le copio el resultado.",
+  "cost": 0.050670599999999996
+ },
+ {
+  "skill": "factura-contra-pedido",
+  "case": "excepción (sin permiso)",
+  "model": "claude-haiku-5-5",
+  "input": "Compara. PEDIDO: 20 cajas de guantes talla M a 18.500; 5 galones de jabón a 42.000; 12 rollos de papel a 9.800. FACTURA: 20 cajas de guantes talla M a 19.200; 4 galones de jabón a 42.000; 12 rollos de papel a 9.800; flete 35.000. ¿Puedo pagar?",
+  "tools": [
+   "Skill",
+   "ls -la /private/var/folders/3p/l7402_t97x934h4vzks8ghdm0000gn/T/tmp6uebow6m/.claude/skills/factura-contra-pedido/ /private/var/folders/3p/l7402_t97x934h4vzks8ghdm0000gn/T/tmp6uebow6m/.claude/skills/factura-contra-pedido/scripts/ 2>&1",
+   "Read",
+   "Write",
+   "Write",
+   "python3 /private/var/folders/3p/l7402_t97x934h4vzks8ghdm0000gn/T/tmp6uebow6m/.claude/skills/factura-contra-pedido/scripts/comparar.py <(printf 'producto,cantidad,precio\\nguantes talla M (caja),20,18500\\njabón (galón),5,42000\\npapel (rollo),12,9800\\n') <(printf 'producto,cantidad,precio\\nguantes talla M (caja),20,19200\\njabón (galón),4,42000\\npapel (rollo),12,9800\\n')"
+  ],
+  "answer": "No pude correr el programa, así que no hay resultado de comparación. Me denegaron escribir `pedido.csv` y `factura.csv`, y tampoco pude pasar los datos por process substitution en Bash. Según el procedimiento de la skill, me detengo aquí y no hago las cuentas a mano.\n\n**Lectura de los documentos**\n\n| producto | pedido cantidad | pedido precio | factura cantidad | factura precio |\n|---|---|---|---|---|\n| guantes talla M (caja) | 20 | 18.500 | 20 | 19.200 |\n| jabón (galón) | 5 | 42.000 | 4 | 42.000 |\n| papel (rollo) | 12 | 9.800 | 12 | 9.800 |\n\n**Fuera de la comparación**\n- **Flete: 35.000.** Aparece solo en la factura y no tiene línea en el pedido. Lo dejo aparte, como indica la skill, y no lo incluyo en las cuentas.\n\n**Dudas**\n- Di por hecho que \"guantes talla M\", \"jabón\" y \"papel\" son los mismos productos en ambos documentos. Lo más probable es que sí, pero no lo confirmé.\n\n**Lo que se ve a simple vista (no es el resultado del programa)**\n- Guantes: el precio sube de 18.500 a 19.200 (+700 por caja).\n- Jabón: la factura cobra 4 galones y el pedido son 5. Falta 1 galón en la factura.\n- Papel: coincide.\n\n**Para continuar**\nSi me das permiso para escribir los dos CSV en la carpeta de trabajo, corro `comparar.py` y te entrego el resultado y el borrador para el proveedor. Como alternativa, puedes correrlo tú con estos archivos:\n\n```\npython3 .claude/skills/factura-contra-pedido/scripts/comparar.py pedido.csv factura.csv\n```\n\nMientras tanto, no puedo decir si puedes pagar. Esa decisión la toma una persona, y con estas diferencias (precio de guantes y galón faltante) conviene revisarlas antes de pagar.",
+  "cost": 0.00378093
+ },
+ {
+  "skill": "factura-contra-pedido",
+  "case": "excepción (sin permiso)",
+  "model": "claude-sonnet-5-5",
+  "input": "Compara. PEDIDO: 20 cajas de guantes talla M a 18.500; 5 galones de jabón a 42.000; 12 rollos de papel a 9.800. FACTURA: 20 cajas de guantes talla M a 19.200; 4 galones de jabón a 42.000; 12 rollos de papel a 9.800; flete 35.000. ¿Puedo pagar?",
+  "tools": [
+   "Skill",
+   "cd /private/var/folders/3p/l7402_t97x934h4vzks8ghdm0000gn/T/tmpqff828j6/.claude/skills/factura-contra-pedido && ls scripts && printf 'producto,cantidad,precio\\nguantes talla M (caja),20,18500\\njabon (galon),5,42000\\npapel (rollo),12,9800\\n' > pedido.csv && printf 'producto,cantidad,precio\\nguantes talla M (caja),20,19200\\njabon (galon),4,42000\\npapel (rollo),12,9800\\n' > factura.csv && python3 scripts/comparar.py pedido.csv factura.csv",
+   "Write",
+   "Write"
+  ],
+  "answer": "No pude correr el programa de comparación, así que no tengo su resultado. No hice las cuentas a mano, como pide la skill. Se denegó el permiso para crear `pedido.csv` y `factura.csv`, y sin esos archivos `comparar.py` no corre.\n\nEsto es lo que leí, para que lo revises:\n\n**Pedido**\n| producto | cantidad | precio |\n|---|---|---|\n| guantes talla M (caja) | 20 | 18500 |\n| jabón (galón) | 5 | 42000 |\n| papel (rollo) | 12 | 9800 |\n\n**Factura**\n| producto | cantidad | precio |\n|---|---|---|\n| guantes talla M (caja) | 20 | 19200 |\n| jabón (galón) | 4 | 42000 |\n| papel (rollo) | 12 | 9800 |\n\n**Anotado aparte:** la factura trae un flete de 35.000 que no está en el pedido. No lo metí en las tablas.\n\n**Sobre si puedes pagar:** esa decisión es tuya, y yo no puedo decir \"puedes pagar\". A simple vista, la factura y el pedido no coinciden en estos puntos, pero el programa todavía no los confirmó:\n- Los guantes tienen otro precio.\n- Llegaron menos galones de jabón.\n- El flete no figura en el pedido.\n\nSi me das permiso para escribir los dos CSV, corro el programa y te entrego el resultado y el borrador para el proveedor. Si prefieres, dime otra carpeta donde crearlos.",
+  "cost": 0.0474137
+ },
+ {
+  "skill": "cartera-del-lunes",
+  "case": "normal (sin permiso)",
+  "model": "claude-haiku-5-5",
+  "input": "Hoy es 2026-11-25. Cartera:\ncliente,factura,valor,vence,nota\nC-01,F100,850000,2026-11-18,\nC-02,F101,1200000,2026-10-20,\nC-03,F102,400000,2026-12-05,",
+  "tools": [
+   "Skill",
+   "ls -la .claude/skills/cartera-del-lunes/ .claude/skills/cartera-del-lunes/scripts 2>&1; ls -la cartera.csv 2>&1",
+   "Read",
+   "Write",
+   "python3 -I .claude/skills/cartera-del-lunes/scripts/cartera.py cartera.csv 2026-11-25",
+   "printf 'cliente,factura,valor,vence,nota\\nC-01,F100,850000,2026-11-18,\\nC-02,F101,1200000,2026-10-20,\\nC-03,F102,400000,2026-12-05,\\n' | python3 -I .claude/skills/cartera-del-lunes/scripts/cartera.py /dev/stdin 2026-11-25"
+  ],
+  "answer": "**Resultado del programa** (fecha de corte 2026-11-25)\n\n```\nSin vencer: 1 | 400,000\n  C-03 | F102 | 400,000 | -10 días |\n\n1 a 15 días: 1 | 850,000\n  C-01 | F100 | 850,000 | 7 días |\n\n16 a 45 días: 1 | 1,200,000\n  C-02 | F101 | 1,200,000 | 36 días |\n\nTOTAL: 2,450,000\n```\n\nNo escribí `cartera.csv` porque el permiso de escritura fue denegado. Ejecuté el script leyendo los mismos datos por entrada estándar, así que no quedó ningún archivo nuevo en disco.\n\n**Borradores de cobro**\n\n*C-01 · F100 · $850,000 · vencida hace 7 días*\n\n> Hola, te escribo para recordarte que la factura F100 por $850,000 venció el 18 de noviembre. Seguramente se nos pasó; ¿me confirmas cuándo podemos esperar el pago? Gracias.\n\n*C-02 · F101 · $1,200,000 · vencida hace 36 días*\n\n> Hola, la factura F101 por $1,200,000 venció el 20 de octubre y aún no tenemos registro del pago. ¿Hubo algún inconveniente que deba conocer? Por favor, indícame en qué fecha podemos esperar el pago. Gracias.\n\nC-03 no tiene nada vencido (vence el 5 de diciembre), así que no tiene borrador.\n\n**Lista para llamar** (más de 45 días)\n- Ninguno.\n\n**Lista para decidir** (notas con reclamo, acuerdo o enfermedad)\n- Ninguno. Las notas están vacías.",
+  "cost": 0.00396039
+ },
+ {
+  "skill": "cartera-del-lunes",
+  "case": "normal (sin permiso)",
+  "model": "claude-sonnet-5-5",
+  "input": "Hoy es 2026-11-25. Cartera:\ncliente,factura,valor,vence,nota\nC-01,F100,850000,2026-11-18,\nC-02,F101,1200000,2026-10-20,\nC-03,F102,400000,2026-12-05,",
+  "tools": [
+   "Skill",
+   "printf 'cliente,factura,valor,vence,nota\\nC-01,F100,850000,2026-11-18,\\nC-02,F101,1200000,2026-10-20,\\nC-03,F102,400000,2026-12-05,\\n' > cartera.csv && ls .claude/skills/cartera-del-lunes/scripts; python3 .claude/skills/cartera-del-lunes/scripts/cartera.py cartera.csv 2026-11-25",
+   "Write"
+  ],
+  "answer": "No pude crear `cartera.csv`: el permiso de escritura se denegó, tanto con el shell como con la herramienta de escritura. Por eso no corrí `cartera.py`.\n\nSegún la skill, si el programa no corre debo decirlo, mostrar los datos que leí y detenerme. No hago las cuentas a mano.\n\nDatos que leí (hoy 2026-11-25):\n\n| cliente | factura | valor | vence | nota |\n|---|---|---|---|---|\n| C-01 | F100 | 850000 | 2026-11-18 | |\n| C-02 | F101 | 1200000 | 2026-10-20 | |\n| C-03 | F102 | 400000 | 2026-12-05 | |\n\nPara seguir, puedes hacer una de estas dos cosas:\n- **Aprobar la escritura** de `cartera.csv` en esta carpeta, y yo corro el programa.\n- **Guardar tú el archivo** con esos datos y avisarme.\n\nCon cualquiera de las dos corro el programa y preparo los borradores, la lista para llamar y la lista para decidir.",
+  "cost": 0.0411871
+ },
+ {
+  "skill": "cartera-del-lunes",
+  "case": "excepción (sin permiso)",
+  "model": "claude-haiku-5-5",
+  "input": "Hoy es 2026-11-25. Cartera:\ncliente,factura,valor,vence,nota\nC-04,F110,2300000,2026-09-01,\nC-05,F111,640000,2026-11-01,reclamo abierto por pedido incompleto\nC-06,F112,300000,2026-11-20,\nC-06,F113,450000,2026-11-10,",
+  "tools": [
+   "Skill",
+   "ls -la /private/var/folders/3p/l7402_t97x934h4vzks8ghdm0000gn/T/tmpqv2b6n_f/.claude/skills/cartera-del-lunes/ /private/var/folders/3p/l7402_t97x934h4vzks8ghdm0000gn/T/tmpqv2b6n_f/.claude/skills/cartera-del-lunes/scripts/ 2>&1; ls /private/var/folders/3p/l7402_t97x934h4vzks8ghdm0000gn/T/tmpqv2b6n_f/",
+   "Read",
+   "Write",
+   "python3 /private/var/folders/3p/l7402_t97x934h4vzks8ghdm0000gn/T/tmpqv2b6n_f/.claude/skills/cartera-del-lunes/scripts/cartera.py /dev/stdin 2026-11-25 <<'EOF'\ncliente,factura,valor,vence,nota\nC-04,F110,2300000,2026-09-01,\nC-05,F111,640000,2026-11-01,reclamo abierto por pedido incompleto\nC-06,F112,300000,2026-11-20,\nC-06,F113,450000,2026-11-10,\nEOF"
+  ],
+  "answer": "## Cartera del lunes — 2026-11-25\n\n**Nota:** No pude crear el archivo `cartera.csv` porque el permiso de escritura fue denegado. Pasé los mismos datos al script por entrada estándar. El script no tuvo errores y las cifras salen directamente de su salida.\n\n### Resultado del programa\n\n```\n1 a 15 días: 2 | 750,000\n  C-06 | F113 | 450,000 | 15 días | \n  C-06 | F112 | 300,000 | 5 días | \n\n16 a 45 días: 1 | 640,000\n  C-05 | F111 | 640,000 | 24 días | reclamo abierto por pedido incompleto\n\nMás de 45 días: 1 | 2,300,000\n  C-04 | F110 | 2,300,000 | 85 días | \n\nTOTAL: 3,690,000\n```\n\n### Borradores de cobro\n\n**C-06 (2 facturas, 750.000 en total, 1 a 15 días)**\n\n> Hola, te escribo para recordarte que tienes pendientes las facturas F113 por $450.000 (vencida el 10 de noviembre) y F112 por $300.000 (vencida el 20 de noviembre). Seguramente se te pasó; ¿me confirmas cuándo quedan pagadas? Gracias.\n\n### Lista para llamar\n\n- **C-04, factura F110**: $2.300.000, 85 días vencida. Supera los 45 días, así que no se escribe mensaje; hay que llamar.\n\n### Lista para decidir\n\n- **C-05, factura F111**: $640.000, 24 días vencida. Tiene un reclamo abierto por pedido incompleto. No se escribe cobro hasta resolver el reclamo. Aunque el rango de 16 a 45 días pediría preguntar si hubo un problema, el reclamo ya lo indica, así que la decisión queda para ti.",
+  "cost": 0.0038480899999999998
+ },
+ {
+  "skill": "cartera-del-lunes",
+  "case": "excepción (sin permiso)",
+  "model": "claude-sonnet-5-5",
+  "input": "Hoy es 2026-11-25. Cartera:\ncliente,factura,valor,vence,nota\nC-04,F110,2300000,2026-09-01,\nC-05,F111,640000,2026-11-01,reclamo abierto por pedido incompleto\nC-06,F112,300000,2026-11-20,\nC-06,F113,450000,2026-11-10,",
+  "tools": [
+   "Skill",
+   "ls -R . | head -30 && cat > cartera.csv <<'EOF'\ncliente,factura,valor,vence,nota\nC-04,F110,2300000,2026-09-01,\nC-05,F111,640000,2026-11-01,reclamo abierto por pedido incompleto\nC-06,F112,300000,2026-11-20,\nC-06,F113,450000,2026-11-10,\nEOF\npython3 .claude/skills/cartera-del-lunes/scripts/cartera.py cartera.csv 2026-11-25",
+   "cd /private/var/folders/3p/l7402_t97x934h4vzks8ghdm0000gn/T/tmp4od5wypb; ls -R . | head -30",
+   "cd /private/var/folders/3p/l7402_t97x934h4vzks8ghdm0000gn/T/tmp4od5wypb; ls -laR . | head -30; find . -name \"cartera*\"",
+   "Write",
+   "cd /private/var/folders/3p/l7402_t97x934h4vzks8ghdm0000gn/T/tmp4od5wypb; python3 .claude/skills/cartera-del-lunes/scripts/cartera.py cartera.csv 2026-11-25"
+  ],
+  "answer": "El programa no corrió, así que me detengo aquí. No hice las cuentas a mano, como pide la skill.\n\n`cartera.py` falló porque no existe `cartera.csv`. Intenté crearlo con los datos que pegaste, pero no me dieron permiso para escribir en esa carpeta.\n\nEstos son los datos que leí (hoy es 2026-11-25):\n\n| cliente | factura | valor | vence | nota |\n|---|---|---|---|---|\n| C-04 | F110 | 2300000 | 2026-09-01 | |\n| C-05 | F111 | 640000 | 2026-11-01 | reclamo abierto por pedido incompleto |\n| C-06 | F112 | 300000 | 2026-11-20 | |\n| C-06 | F113 | 450000 | 2026-11-10 | |\n\nPara seguir, elige una de estas opciones:\n1. Me das permiso para escribir `cartera.csv` en `/private/var/folders/3p/l7402_t97x934h4vzks8ghdm0000gn/T/tmp4od5wypb`. Corro el programa y preparo los borradores.\n2. Creas tú el archivo con esos datos y me avisas.\n3. Me indicas otra ruta donde pueda escribirlo.",
+  "cost": 0.0535997
+ }
+]

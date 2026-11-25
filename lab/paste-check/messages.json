@@ -1,0 +1,1142 @@
+[
+ {
+  "text": "Buenas, soy Hernán Darío Pava, mi cédula es 29.504.766. Necesito la factura del pedido de $891.000.",
+  "entities": [
+   {
+    "type": "NOMBRE",
+    "text": "Hernán Darío Pava",
+    "start": 12,
+    "end": 29
+   },
+   {
+    "type": "CC",
+    "text": "29.504.766",
+    "start": 44,
+    "end": 54
+   }
+  ]
+ },
+ {
+  "text": "Cliente: Jhon Fredy Ríos - Tel 321 474 1950 - Dirección Diagonal 28 # 5-12.",
+  "entities": [
+   {
+    "type": "NOMBRE",
+    "text": "Jhon Fredy Ríos",
+    "start": 9,
+    "end": 24
+   },
+   {
+    "type": "TEL",
+    "text": "321 474 1950",
+    "start": 31,
+    "end": 43
+   },
+   {
+    "type": "DIR",
+    "text": "Diagonal 28 # 5-12",
+    "start": 56,
+    "end": 74
+   }
+  ]
+ },
+ {
+  "text": "La empresa con NIT 853.171.346-1 pide cotización. Contacto maria71@correo.example.",
+  "entities": [
+   {
+    "type": "NIT",
+    "text": "853.171.346-1",
+    "start": 19,
+    "end": 32
+   },
+   {
+    "type": "EMAIL",
+    "text": "maria71@correo.example",
+    "start": 59,
+    "end": 81
+   }
+  ]
+ },
+ {
+  "text": "Consigné a la cuenta de ahorros 160-967017-82 el valor de $2.128.000. Atentamente, María Camila Lucumí.",
+  "entities": [
+   {
+    "type": "CUENTA",
+    "text": "160-967017-82",
+    "start": 32,
+    "end": 45
+   },
+   {
+    "type": "NOMBRE",
+    "text": "María Camila Lucumí",
+    "start": 83,
+    "end": 102
+   }
+  ]
+ },
+ {
+  "text": "Doña Luz Ocampo dice que se lo dejen en bodega 4 de la zona franca, y que llamen al 326 150 4622.",
+  "entities": [
+   {
+    "type": "NOMBRE",
+    "text": "Luz Ocampo",
+    "start": 5,
+    "end": 15
+   },
+   {
+    "type": "DIR",
+    "text": "bodega 4 de la zona franca",
+    "start": 40,
+    "end": 66
+   },
+   {
+    "type": "TEL",
+    "text": "326 150 4622",
+    "start": 84,
+    "end": 96
+   }
+  ]
+ },
+ {
+  "text": "Habló Luz para cambiar la cita del martes 14, a las 3:30. Que le devuelvan la llamada al tres uno cinco, 770, 27, 47.",
+  "entities": [
+   {
+    "type": "NOMBRE",
+    "text": "Luz",
+    "start": 6,
+    "end": 9
+   },
+   {
+    "type": "TEL",
+    "text": "tres uno cinco, 770, 27, 47",
+    "start": 89,
+    "end": 116
+   }
+  ]
+ },
+ {
+  "text": "Buenas, soy María Camila Lucumí, mi cédula es 28.653.220. Necesito la factura del pedido de $9.453.000.",
+  "entities": [
+   {
+    "type": "NOMBRE",
+    "text": "María Camila Lucumí",
+    "start": 12,
+    "end": 31
+   },
+   {
+    "type": "CC",
+    "text": "28.653.220",
+    "start": 46,
+    "end": 56
+   }
+  ]
+ },
+ {
+  "text": "Cliente: Yuliana Grisales - Tel 322 205 4078 - Dirección Cra 13 # 71-92.",
+  "entities": [
+   {
+    "type": "NOMBRE",
+    "text": "Yuliana Grisales",
+    "start": 9,
+    "end": 25
+   },
+   {
+    "type": "TEL",
+    "text": "322 205 4078",
+    "start": 32,
+    "end": 44
+   },
+   {
+    "type": "DIR",
+    "text": "Cra 13 # 71-92",
+    "start": 57,
+    "end": 71
+   }
+  ]
+ },
+ {
+  "text": "La empresa con NIT 872.161.733-3 pide cotización. Contacto jhon64@correo.example.",
+  "entities": [
+   {
+    "type": "NIT",
+    "text": "872.161.733-3",
+    "start": 19,
+    "end": 32
+   },
+   {
+    "type": "EMAIL",
+    "text": "jhon64@correo.example",
+    "start": 59,
+    "end": 80
+   }
+  ]
+ },
+ {
+  "text": "Consigné a la cuenta de ahorros 895-429407-69 el valor de $9.693.000. Atentamente, María Camila Lucumí.",
+  "entities": [
+   {
+    "type": "CUENTA",
+    "text": "895-429407-69",
+    "start": 32,
+    "end": 45
+   },
+   {
+    "type": "NOMBRE",
+    "text": "María Camila Lucumí",
+    "start": 83,
+    "end": 102
+   }
+  ]
+ },
+ {
+  "text": "Doña Yuliana Grisales dice que se lo dejen en al lado de la iglesia de La Buitrera, y que llamen al 302 815 4999.",
+  "entities": [
+   {
+    "type": "NOMBRE",
+    "text": "Yuliana Grisales",
+    "start": 5,
+    "end": 21
+   },
+   {
+    "type": "DIR",
+    "text": "al lado de la iglesia de La Buitrera",
+    "start": 46,
+    "end": 82
+   },
+   {
+    "type": "TEL",
+    "text": "302 815 4999",
+    "start": 100,
+    "end": 112
+   }
+  ]
+ },
+ {
+  "text": "Habló Jhon para cambiar la cita del martes 14, a las 3:30. Que le devuelvan la llamada al tres uno cinco, 788, 48, 77.",
+  "entities": [
+   {
+    "type": "NOMBRE",
+    "text": "Jhon",
+    "start": 6,
+    "end": 10
+   },
+   {
+    "type": "TEL",
+    "text": "tres uno cinco, 788, 48, 77",
+    "start": 90,
+    "end": 117
+   }
+  ]
+ },
+ {
+  "text": "Buenas, soy Óscar Giraldo, mi cédula es 53.846.559. Necesito la factura del pedido de $4.817.000.",
+  "entities": [
+   {
+    "type": "NOMBRE",
+    "text": "Óscar Giraldo",
+    "start": 12,
+    "end": 25
+   },
+   {
+    "type": "CC",
+    "text": "53.846.559",
+    "start": 40,
+    "end": 50
+   }
+  ]
+ },
+ {
+  "text": "Cliente: Jhon Fredy Ríos - Tel 308 528 3702 - Dirección Cra 20 # 63-54.",
+  "entities": [
+   {
+    "type": "NOMBRE",
+    "text": "Jhon Fredy Ríos",
+    "start": 9,
+    "end": 24
+   },
+   {
+    "type": "TEL",
+    "text": "308 528 3702",
+    "start": 31,
+    "end": 43
+   },
+   {
+    "type": "DIR",
+    "text": "Cra 20 # 63-54",
+    "start": 56,
+    "end": 70
+   }
+  ]
+ },
+ {
+  "text": "La empresa con NIT 885.179.882-8 pide cotización. Contacto luz74@correo.example.",
+  "entities": [
+   {
+    "type": "NIT",
+    "text": "885.179.882-8",
+    "start": 19,
+    "end": 32
+   },
+   {
+    "type": "EMAIL",
+    "text": "luz74@correo.example",
+    "start": 59,
+    "end": 79
+   }
+  ]
+ },
+ {
+  "text": "Consigné a la cuenta de ahorros 448-829070-54 el valor de $9.838.000. Atentamente, Hernán Darío Pava.",
+  "entities": [
+   {
+    "type": "CUENTA",
+    "text": "448-829070-54",
+    "start": 32,
+    "end": 45
+   },
+   {
+    "type": "NOMBRE",
+    "text": "Hernán Darío Pava",
+    "start": 83,
+    "end": 100
+   }
+  ]
+ },
+ {
+  "text": "Doña María Lucumí dice que se lo dejen en la casa azul frente al parque de Rozo, y que llamen al 304 585 2064.",
+  "entities": [
+   {
+    "type": "NOMBRE",
+    "text": "María Lucumí",
+    "start": 5,
+    "end": 17
+   },
+   {
+    "type": "DIR",
+    "text": "la casa azul frente al parque de Rozo",
+    "start": 42,
+    "end": 79
+   },
+   {
+    "type": "TEL",
+    "text": "304 585 2064",
+    "start": 97,
+    "end": 109
+   }
+  ]
+ },
+ {
+  "text": "Habló Luz para cambiar la cita del martes 14, a las 3:30. Que le devuelvan la llamada al tres uno cinco, 517, 92, 83.",
+  "entities": [
+   {
+    "type": "NOMBRE",
+    "text": "Luz",
+    "start": 6,
+    "end": 9
+   },
+   {
+    "type": "TEL",
+    "text": "tres uno cinco, 517, 92, 83",
+    "start": 89,
+    "end": 116
+   }
+  ]
+ },
+ {
+  "text": "Buenas, soy Óscar Giraldo, mi cédula es 46.833.495. Necesito la factura del pedido de $5.785.000.",
+  "entities": [
+   {
+    "type": "NOMBRE",
+    "text": "Óscar Giraldo",
+    "start": 12,
+    "end": 25
+   },
+   {
+    "type": "CC",
+    "text": "46.833.495",
+    "start": 40,
+    "end": 50
+   }
+  ]
+ },
+ {
+  "text": "Cliente: Luz Marina Ocampo - Tel 315 272 2918 - Dirección Avenida 8 # 28-99.",
+  "entities": [
+   {
+    "type": "NOMBRE",
+    "text": "Luz Marina Ocampo",
+    "start": 9,
+    "end": 26
+   },
+   {
+    "type": "TEL",
+    "text": "315 272 2918",
+    "start": 33,
+    "end": 45
+   },
+   {
+    "type": "DIR",
+    "text": "Avenida 8 # 28-99",
+    "start": 58,
+    "end": 75
+   }
+  ]
+ },
+ {
+  "text": "La empresa con NIT 816.856.353-6 pide cotización. Contacto yuliana51@correo.example.",
+  "entities": [
+   {
+    "type": "NIT",
+    "text": "816.856.353-6",
+    "start": 19,
+    "end": 32
+   },
+   {
+    "type": "EMAIL",
+    "text": "yuliana51@correo.example",
+    "start": 59,
+    "end": 83
+   }
+  ]
+ },
+ {
+  "text": "Consigné a la cuenta de ahorros 182-274447-67 el valor de $6.680.000. Atentamente, Óscar Giraldo.",
+  "entities": [
+   {
+    "type": "CUENTA",
+    "text": "182-274447-67",
+    "start": 32,
+    "end": 45
+   },
+   {
+    "type": "NOMBRE",
+    "text": "Óscar Giraldo",
+    "start": 83,
+    "end": 96
+   }
+  ]
+ },
+ {
+  "text": "Doña Paola Cuero dice que se lo dejen en al lado de la iglesia de La Buitrera, y que llamen al 324 823 7804.",
+  "entities": [
+   {
+    "type": "NOMBRE",
+    "text": "Paola Cuero",
+    "start": 5,
+    "end": 16
+   },
+   {
+    "type": "DIR",
+    "text": "al lado de la iglesia de La Buitrera",
+    "start": 41,
+    "end": 77
+   },
+   {
+    "type": "TEL",
+    "text": "324 823 7804",
+    "start": 95,
+    "end": 107
+   }
+  ]
+ },
+ {
+  "text": "Habló Hernán para cambiar la cita del martes 14, a las 3:30. Que le devuelvan la llamada al tres uno cinco, 899, 58, 39.",
+  "entities": [
+   {
+    "type": "NOMBRE",
+    "text": "Hernán",
+    "start": 6,
+    "end": 12
+   },
+   {
+    "type": "TEL",
+    "text": "tres uno cinco, 899, 58, 39",
+    "start": 92,
+    "end": 119
+   }
+  ]
+ },
+ {
+  "text": "Buenas, soy Paola Andrea Cuero, mi cédula es 20.280.254. Necesito la factura del pedido de $3.900.000.",
+  "entities": [
+   {
+    "type": "NOMBRE",
+    "text": "Paola Andrea Cuero",
+    "start": 12,
+    "end": 30
+   },
+   {
+    "type": "CC",
+    "text": "20.280.254",
+    "start": 45,
+    "end": 55
+   }
+  ]
+ },
+ {
+  "text": "Cliente: Esteban Mosquera - Tel 307 951 3987 - Dirección Cra 37 # 1-19.",
+  "entities": [
+   {
+    "type": "NOMBRE",
+    "text": "Esteban Mosquera",
+    "start": 9,
+    "end": 25
+   },
+   {
+    "type": "TEL",
+    "text": "307 951 3987",
+    "start": 32,
+    "end": 44
+   },
+   {
+    "type": "DIR",
+    "text": "Cra 37 # 1-19",
+    "start": 57,
+    "end": 70
+   }
+  ]
+ },
+ {
+  "text": "La empresa con NIT 868.478.724-9 pide cotización. Contacto maria41@correo.example.",
+  "entities": [
+   {
+    "type": "NIT",
+    "text": "868.478.724-9",
+    "start": 19,
+    "end": 32
+   },
+   {
+    "type": "EMAIL",
+    "text": "maria41@correo.example",
+    "start": 59,
+    "end": 81
+   }
+  ]
+ },
+ {
+  "text": "Consigné a la cuenta de ahorros 807-640531-89 el valor de $984.000. Atentamente, Paola Andrea Cuero.",
+  "entities": [
+   {
+    "type": "CUENTA",
+    "text": "807-640531-89",
+    "start": 32,
+    "end": 45
+   },
+   {
+    "type": "NOMBRE",
+    "text": "Paola Andrea Cuero",
+    "start": 81,
+    "end": 99
+   }
+  ]
+ },
+ {
+  "text": "Doña María Lucumí dice que se lo dejen en al lado de la iglesia de La Buitrera, y que llamen al 316 206 8889.",
+  "entities": [
+   {
+    "type": "NOMBRE",
+    "text": "María Lucumí",
+    "start": 5,
+    "end": 17
+   },
+   {
+    "type": "DIR",
+    "text": "al lado de la iglesia de La Buitrera",
+    "start": 42,
+    "end": 78
+   },
+   {
+    "type": "TEL",
+    "text": "316 206 8889",
+    "start": 96,
+    "end": 108
+   }
+  ]
+ },
+ {
+  "text": "Habló María para cambiar la cita del martes 14, a las 3:30. Que le devuelvan la llamada al tres uno cinco, 263, 34, 18.",
+  "entities": [
+   {
+    "type": "NOMBRE",
+    "text": "María",
+    "start": 6,
+    "end": 11
+   },
+   {
+    "type": "TEL",
+    "text": "tres uno cinco, 263, 34, 18",
+    "start": 91,
+    "end": 118
+   }
+  ]
+ },
+ {
+  "text": "Buenas, soy Esteban Mosquera, mi cédula es 66.266.212. Necesito la factura del pedido de $5.671.000.",
+  "entities": [
+   {
+    "type": "NOMBRE",
+    "text": "Esteban Mosquera",
+    "start": 12,
+    "end": 28
+   },
+   {
+    "type": "CC",
+    "text": "66.266.212",
+    "start": 43,
+    "end": 53
+   }
+  ]
+ },
+ {
+  "text": "Cliente: Luz Marina Ocampo - Tel 300 680 3478 - Dirección Diagonal 13 # 47-79.",
+  "entities": [
+   {
+    "type": "NOMBRE",
+    "text": "Luz Marina Ocampo",
+    "start": 9,
+    "end": 26
+   },
+   {
+    "type": "TEL",
+    "text": "300 680 3478",
+    "start": 33,
+    "end": 45
+   },
+   {
+    "type": "DIR",
+    "text": "Diagonal 13 # 47-79",
+    "start": 58,
+    "end": 77
+   }
+  ]
+ },
+ {
+  "text": "La empresa con NIT 809.995.312-9 pide cotización. Contacto luz49@correo.example.",
+  "entities": [
+   {
+    "type": "NIT",
+    "text": "809.995.312-9",
+    "start": 19,
+    "end": 32
+   },
+   {
+    "type": "EMAIL",
+    "text": "luz49@correo.example",
+    "start": 59,
+    "end": 79
+   }
+  ]
+ },
+ {
+  "text": "Consigné a la cuenta de ahorros 749-364511-54 el valor de $9.967.000. Atentamente, Paola Andrea Cuero.",
+  "entities": [
+   {
+    "type": "CUENTA",
+    "text": "749-364511-54",
+    "start": 32,
+    "end": 45
+   },
+   {
+    "type": "NOMBRE",
+    "text": "Paola Andrea Cuero",
+    "start": 83,
+    "end": 101
+   }
+  ]
+ },
+ {
+  "text": "Doña María Lucumí dice que se lo dejen en la casa azul frente al parque de Rozo, y que llamen al 307 577 8870.",
+  "entities": [
+   {
+    "type": "NOMBRE",
+    "text": "María Lucumí",
+    "start": 5,
+    "end": 17
+   },
+   {
+    "type": "DIR",
+    "text": "la casa azul frente al parque de Rozo",
+    "start": 42,
+    "end": 79
+   },
+   {
+    "type": "TEL",
+    "text": "307 577 8870",
+    "start": 97,
+    "end": 109
+   }
+  ]
+ },
+ {
+  "text": "Habló Óscar para cambiar la cita del martes 14, a las 3:30. Que le devuelvan la llamada al tres uno cinco, 519, 20, 28.",
+  "entities": [
+   {
+    "type": "NOMBRE",
+    "text": "Óscar",
+    "start": 6,
+    "end": 11
+   },
+   {
+    "type": "TEL",
+    "text": "tres uno cinco, 519, 20, 28",
+    "start": 91,
+    "end": 118
+   }
+  ]
+ },
+ {
+  "text": "Buenas, soy Jhon Fredy Ríos, mi cédula es 53.858.371. Necesito la factura del pedido de $7.941.000.",
+  "entities": [
+   {
+    "type": "NOMBRE",
+    "text": "Jhon Fredy Ríos",
+    "start": 12,
+    "end": 27
+   },
+   {
+    "type": "CC",
+    "text": "53.858.371",
+    "start": 42,
+    "end": 52
+   }
+  ]
+ },
+ {
+  "text": "Cliente: Paola Andrea Cuero - Tel 320 310 9654 - Dirección Cra 19 # 89-70.",
+  "entities": [
+   {
+    "type": "NOMBRE",
+    "text": "Paola Andrea Cuero",
+    "start": 9,
+    "end": 27
+   },
+   {
+    "type": "TEL",
+    "text": "320 310 9654",
+    "start": 34,
+    "end": 46
+   },
+   {
+    "type": "DIR",
+    "text": "Cra 19 # 89-70",
+    "start": 59,
+    "end": 73
+   }
+  ]
+ },
+ {
+  "text": "La empresa con NIT 897.640.405-1 pide cotización. Contacto luz90@correo.example.",
+  "entities": [
+   {
+    "type": "NIT",
+    "text": "897.640.405-1",
+    "start": 19,
+    "end": 32
+   },
+   {
+    "type": "EMAIL",
+    "text": "luz90@correo.example",
+    "start": 59,
+    "end": 79
+   }
+  ]
+ },
+ {
+  "text": "Consigné a la cuenta de ahorros 630-484512-31 el valor de $5.927.000. Atentamente, Yuliana Grisales.",
+  "entities": [
+   {
+    "type": "CUENTA",
+    "text": "630-484512-31",
+    "start": 32,
+    "end": 45
+   },
+   {
+    "type": "NOMBRE",
+    "text": "Yuliana Grisales",
+    "start": 83,
+    "end": 99
+   }
+  ]
+ },
+ {
+  "text": "Doña Yuliana Grisales dice que se lo dejen en bodega 4 de la zona franca, y que llamen al 309 930 4197.",
+  "entities": [
+   {
+    "type": "NOMBRE",
+    "text": "Yuliana Grisales",
+    "start": 5,
+    "end": 21
+   },
+   {
+    "type": "DIR",
+    "text": "bodega 4 de la zona franca",
+    "start": 46,
+    "end": 72
+   },
+   {
+    "type": "TEL",
+    "text": "309 930 4197",
+    "start": 90,
+    "end": 102
+   }
+  ]
+ },
+ {
+  "text": "Habló Esteban para cambiar la cita del martes 14, a las 3:30. Que le devuelvan la llamada al tres uno cinco, 610, 39, 35.",
+  "entities": [
+   {
+    "type": "NOMBRE",
+    "text": "Esteban",
+    "start": 6,
+    "end": 13
+   },
+   {
+    "type": "TEL",
+    "text": "tres uno cinco, 610, 39, 35",
+    "start": 93,
+    "end": 120
+   }
+  ]
+ },
+ {
+  "text": "Buenas, soy Óscar Giraldo, mi cédula es 55.848.129. Necesito la factura del pedido de $557.000.",
+  "entities": [
+   {
+    "type": "NOMBRE",
+    "text": "Óscar Giraldo",
+    "start": 12,
+    "end": 25
+   },
+   {
+    "type": "CC",
+    "text": "55.848.129",
+    "start": 40,
+    "end": 50
+   }
+  ]
+ },
+ {
+  "text": "Cliente: Yuliana Grisales - Tel 314 298 6640 - Dirección Avenida 104 # 45-47.",
+  "entities": [
+   {
+    "type": "NOMBRE",
+    "text": "Yuliana Grisales",
+    "start": 9,
+    "end": 25
+   },
+   {
+    "type": "TEL",
+    "text": "314 298 6640",
+    "start": 32,
+    "end": 44
+   },
+   {
+    "type": "DIR",
+    "text": "Avenida 104 # 45-47",
+    "start": 57,
+    "end": 76
+   }
+  ]
+ },
+ {
+  "text": "La empresa con NIT 828.204.332-7 pide cotización. Contacto jhon26@correo.example.",
+  "entities": [
+   {
+    "type": "NIT",
+    "text": "828.204.332-7",
+    "start": 19,
+    "end": 32
+   },
+   {
+    "type": "EMAIL",
+    "text": "jhon26@correo.example",
+    "start": 59,
+    "end": 80
+   }
+  ]
+ },
+ {
+  "text": "Consigné a la cuenta de ahorros 309-606098-89 el valor de $131.000. Atentamente, Hernán Darío Pava.",
+  "entities": [
+   {
+    "type": "CUENTA",
+    "text": "309-606098-89",
+    "start": 32,
+    "end": 45
+   },
+   {
+    "type": "NOMBRE",
+    "text": "Hernán Darío Pava",
+    "start": 81,
+    "end": 98
+   }
+  ]
+ },
+ {
+  "text": "Doña Yuliana Grisales dice que se lo dejen en bodega 4 de la zona franca, y que llamen al 301 497 4265.",
+  "entities": [
+   {
+    "type": "NOMBRE",
+    "text": "Yuliana Grisales",
+    "start": 5,
+    "end": 21
+   },
+   {
+    "type": "DIR",
+    "text": "bodega 4 de la zona franca",
+    "start": 46,
+    "end": 72
+   },
+   {
+    "type": "TEL",
+    "text": "301 497 4265",
+    "start": 90,
+    "end": 102
+   }
+  ]
+ },
+ {
+  "text": "Habló Óscar para cambiar la cita del martes 14, a las 3:30. Que le devuelvan la llamada al tres uno cinco, 382, 65, 91.",
+  "entities": [
+   {
+    "type": "NOMBRE",
+    "text": "Óscar",
+    "start": 6,
+    "end": 11
+   },
+   {
+    "type": "TEL",
+    "text": "tres uno cinco, 382, 65, 91",
+    "start": 91,
+    "end": 118
+   }
+  ]
+ },
+ {
+  "text": "Buenas, soy Hernán Darío Pava, mi cédula es 21.920.839. Necesito la factura del pedido de $6.585.000.",
+  "entities": [
+   {
+    "type": "NOMBRE",
+    "text": "Hernán Darío Pava",
+    "start": 12,
+    "end": 29
+   },
+   {
+    "type": "CC",
+    "text": "21.920.839",
+    "start": 44,
+    "end": 54
+   }
+  ]
+ },
+ {
+  "text": "Cliente: Óscar Giraldo - Tel 311 842 3602 - Dirección Carrera 17 # 4-20.",
+  "entities": [
+   {
+    "type": "NOMBRE",
+    "text": "Óscar Giraldo",
+    "start": 9,
+    "end": 22
+   },
+   {
+    "type": "TEL",
+    "text": "311 842 3602",
+    "start": 29,
+    "end": 41
+   },
+   {
+    "type": "DIR",
+    "text": "Carrera 17 # 4-20",
+    "start": 54,
+    "end": 71
+   }
+  ]
+ },
+ {
+  "text": "La empresa con NIT 883.249.726-9 pide cotización. Contacto oscar61@correo.example.",
+  "entities": [
+   {
+    "type": "NIT",
+    "text": "883.249.726-9",
+    "start": 19,
+    "end": 32
+   },
+   {
+    "type": "EMAIL",
+    "text": "oscar61@correo.example",
+    "start": 59,
+    "end": 81
+   }
+  ]
+ },
+ {
+  "text": "Consigné a la cuenta de ahorros 259-675311-80 el valor de $2.246.000. Atentamente, Hernán Darío Pava.",
+  "entities": [
+   {
+    "type": "CUENTA",
+    "text": "259-675311-80",
+    "start": 32,
+    "end": 45
+   },
+   {
+    "type": "NOMBRE",
+    "text": "Hernán Darío Pava",
+    "start": 83,
+    "end": 100
+   }
+  ]
+ },
+ {
+  "text": "Doña Luz Ocampo dice que se lo dejen en bodega 4 de la zona franca, y que llamen al 321 639 3281.",
+  "entities": [
+   {
+    "type": "NOMBRE",
+    "text": "Luz Ocampo",
+    "start": 5,
+    "end": 15
+   },
+   {
+    "type": "DIR",
+    "text": "bodega 4 de la zona franca",
+    "start": 40,
+    "end": 66
+   },
+   {
+    "type": "TEL",
+    "text": "321 639 3281",
+    "start": 84,
+    "end": 96
+   }
+  ]
+ },
+ {
+  "text": "Habló María para cambiar la cita del martes 14, a las 3:30. Que le devuelvan la llamada al tres uno cinco, 399, 37, 13.",
+  "entities": [
+   {
+    "type": "NOMBRE",
+    "text": "María",
+    "start": 6,
+    "end": 11
+   },
+   {
+    "type": "TEL",
+    "text": "tres uno cinco, 399, 37, 13",
+    "start": 91,
+    "end": 118
+   }
+  ]
+ },
+ {
+  "text": "Buenas, soy Yuliana Grisales, mi cédula es 37.399.613. Necesito la factura del pedido de $4.040.000.",
+  "entities": [
+   {
+    "type": "NOMBRE",
+    "text": "Yuliana Grisales",
+    "start": 12,
+    "end": 28
+   },
+   {
+    "type": "CC",
+    "text": "37.399.613",
+    "start": 43,
+    "end": 53
+   }
+  ]
+ },
+ {
+  "text": "Cliente: Hernán Darío Pava - Tel 318 529 3147 - Dirección Calle 117 # 46-59.",
+  "entities": [
+   {
+    "type": "NOMBRE",
+    "text": "Hernán Darío Pava",
+    "start": 9,
+    "end": 26
+   },
+   {
+    "type": "TEL",
+    "text": "318 529 3147",
+    "start": 33,
+    "end": 45
+   },
+   {
+    "type": "DIR",
+    "text": "Calle 117 # 46-59",
+    "start": 58,
+    "end": 75
+   }
+  ]
+ },
+ {
+  "text": "La empresa con NIT 864.233.644-2 pide cotización. Contacto maria68@correo.example.",
+  "entities": [
+   {
+    "type": "NIT",
+    "text": "864.233.644-2",
+    "start": 19,
+    "end": 32
+   },
+   {
+    "type": "EMAIL",
+    "text": "maria68@correo.example",
+    "start": 59,
+    "end": 81
+   }
+  ]
+ },
+ {
+  "text": "Consigné a la cuenta de ahorros 993-561504-33 el valor de $164.000. Atentamente, Luz Marina Ocampo.",
+  "entities": [
+   {
+    "type": "CUENTA",
+    "text": "993-561504-33",
+    "start": 32,
+    "end": 45
+   },
+   {
+    "type": "NOMBRE",
+    "text": "Luz Marina Ocampo",
+    "start": 81,
+    "end": 98
+   }
+  ]
+ },
+ {
+  "text": "Doña Paola Cuero dice que se lo dejen en la casa azul frente al parque de Rozo, y que llamen al 319 842 2971.",
+  "entities": [
+   {
+    "type": "NOMBRE",
+    "text": "Paola Cuero",
+    "start": 5,
+    "end": 16
+   },
+   {
+    "type": "DIR",
+    "text": "la casa azul frente al parque de Rozo",
+    "start": 41,
+    "end": 78
+   },
+   {
+    "type": "TEL",
+    "text": "319 842 2971",
+    "start": 96,
+    "end": 108
+   }
+  ]
+ },
+ {
+  "text": "Habló Luz para cambiar la cita del martes 14, a las 3:30. Que le devuelvan la llamada al tres uno cinco, 533, 97, 76.",
+  "entities": [
+   {
+    "type": "NOMBRE",
+    "text": "Luz",
+    "start": 6,
+    "end": 9
+   },
+   {
+    "type": "TEL",
+    "text": "tres uno cinco, 533, 97, 76",
+    "start": 89,
+    "end": 116
+   }
+  ]
+ }
+]
