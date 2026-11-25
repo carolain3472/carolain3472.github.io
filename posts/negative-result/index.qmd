@@ -3,7 +3,7 @@ title: "I trained the model more and it did not improve. Two years later I know 
 description: "I went back to the 101 answers of my internship in Mexico, found a bug in my own evaluator, and saw that the model had changed its vocabulary."
 author: "Carolain Jiménez Bedoya"
 date: 2026-11-25
-categories: [clinical NLP, research]
+categories: [research, clinical NLP]
 image: cw-grid.png
 lang: en
 toc: true

@@ -1,0 +1,50 @@
+---
+pagetitle: "AI for business | Carolain Jiménez Bedoya"
+description-meta: "How to look at a process before bringing AI into it, with tests and a small tool you can use in a meeting."
+page-layout: full
+toc: false
+---
+
+```{=html}
+<div class="sec"><h1>AI for business</h1><p>At work I build AI systems for companies and teach the people who are going to use them. Here I write about processes: which steps are good for AI, which ones want a plain program, and which ones stay with a person.</p><p>You don’t need to know how to code to read this part.</p></div>
+
+<h2>Start with your own process</h2>
+<p class="lead">Think of something your team repeats every week and write its steps. Mark each one, and see where AI could go.</p>
+<div class="rcd"><div class="keys">
+<div><b>R</b><span><strong>Read.</strong> Reading, summarizing, classifying or drafting.</span></div>
+<div><b>C</b><span><strong>Calculate.</strong> Math, or a rule that is already written.</span></div>
+<div><b>D</b><span><strong>Decide.</strong> Something that somebody answers for.</span></div></div>
+<div class="tool"><ol id="steps"></ol>
+<form id="add"><label for="new">New step</label><div><input id="new" maxlength="90" autocomplete="off" placeholder="Check the invoice against the order"><button>Add</button></div></form>
+<div id="out" aria-live="polite"></div>
+<p class="tiny"><button type="button" id="copy">Copy the result</button> <button type="button" id="clear">Start empty</button> What you write stays in this page. It is not sent or saved.</p></div></div>
+<script>
+(()=>{const ex=[["Read the order that arrives by email","R"],["Calculate the total with discounts and taxes","C"],["Approve the price for a new client","D"],["Write the answer to the client","R"]];
+let S=ex.map(x=>[...x]);const $=i=>document.getElementById(i),L={R:"Read",C:"Calculate",D:"Decide"},T={R:"Try AI here first, and keep the original next to the answer so someone can check it.",C:"Use a program. It may already exist in a spreadsheet.",D:"Keep a person here, with a name and a position. AI can prepare the information."};
+function draw(){const o=$("steps");o.textContent="";S.forEach((s,i)=>{const li=document.createElement("li"),t=document.createElement("span"),g=document.createElement("div");t.className="t";t.textContent=s[0];g.className="g";g.setAttribute("role","group");g.setAttribute("aria-label","Type of step: "+s[0]);
+for(const k in L){const b=document.createElement("button");b.type="button";b.textContent=k;b.title=L[k];b.setAttribute("aria-label",L[k]);b.setAttribute("aria-pressed",s[1]===k);b.onclick=()=>{s[1]=k;draw();$("steps").children[i].querySelectorAll("button")["RCD".indexOf(k)].focus()};g.append(b)}
+const x=document.createElement("button");x.type="button";x.className="x";x.textContent="×";x.setAttribute("aria-label","Remove step: "+s[0]);x.onclick=()=>{S.splice(i,1);draw();$("new").focus()};g.append(x);li.append(t,g);o.append(li)});
+const out=$("out");out.textContent="";if(!S.length)return;for(const k in L){const n=S.filter(s=>s[1]===k);if(!n.length)continue;const p=document.createElement("p"),b=document.createElement("b");b.textContent=L[k]+" ("+n.length+" of "+S.length+"). ";p.append(b,T[k]);out.append(p)}
+const i=S.findIndex((s,j)=>s[1]==="R"&&!S.slice(j+1).some(z=>z[1]!=="R"));if(i>=0){const p=document.createElement("p");p.className="warn";p.textContent="After step “"+S[i][0]+"” nobody checks anything. If that text goes out to someone, add a person at the end.";out.append(p)}}
+$("add").onsubmit=e=>{e.preventDefault();const v=$("new").value.trim();if(v){S.push([v,"R"]);$("new").value="";draw()}};$("clear").onclick=()=>{S=[];draw();$("new").focus()};
+$("copy").onclick=async()=>{const t=S.map((s,i)=>(i+1)+". "+s[0]+" ["+L[s[1]]+"]").join("\n")+"\n\n"+[...$("out").children].map(p=>p.textContent).join("\n");try{await navigator.clipboard.writeText(t);$("copy").textContent="Copied"}catch{$("copy").textContent="Could not copy"}setTimeout(()=>$("copy").textContent="Copy the result",1600)};draw()})();
+</script>
+
+<h2>Tests</h2>
+<div class="cards">
+<a class="big" href="posts/who-does-the-math/"><div class="pic fit" style="background-image:url(posts/who-does-the-math/exact.png)"></div><div class="tx"><small>Digital transformation</small><h3>Three models read 40 documents without a mistake. The math was another story</h3><p>Who reads, who calculates and who signs.</p></div></a>
+<a class="big" href="posts/chatbot-i-dont-know/"><div class="pic fit" style="background-image:url(posts/chatbot-i-dont-know/chat1.png)"></div><div class="tx"><small>Responsible AI</small><h3>I gave a chatbot permission to say “I don't know”</h3><p>270 answers with and without the handbook, and the mistakes that were left.</p></div></a>
+</div>
+
+<h2>Things I have built at work</h2>
+<ul class="built">
+<li><strong>Municipal tax platform.</strong> AI reads the rules, a program calculates and an accountant approves.</li>
+<li><strong>Commercial agents.</strong> From finding bids to following up with leads.</li>
+<li><strong>Workflows with n8n.</strong> Emails and sales summaries that a colleague without code can change later.</li>
+<li><strong>Talks and workshops.</strong> People work on their own documents.</li>
+</ul>
+<p>There is more about each one in <a href="https://carolain-jimenez.netlify.app/projects.html">my portfolio</a>.</p>
+
+<h2>If you have a process in mind</h2>
+<p class="lead">Tell me what you repeat every week and where it hurts. I like hearing about the process before talking about any tool. You can write to me from <a href="https://carolain-jimenez.netlify.app/contact.html">my portfolio</a> or on <a href="https://www.linkedin.com/in/carolain-jimenez-bedoya">LinkedIn</a>.</p>
+```

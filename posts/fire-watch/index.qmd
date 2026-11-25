@@ -3,7 +3,7 @@ title: "Fire Watch: I made a game to see how a decision model fails"
 description: "A 3D forest, six sensors, four buttons. I compared two cloud models with two models that run inside the browser, and the local ones could not read a thermometer."
 author: "Carolain Jiménez Bedoya"
 date: 2026-11-25
-categories: [decision models, trustworthy AI]
+categories: [explorations, decision models, trustworthy AI]
 image: bad.jpg
 lang: en
 toc: true

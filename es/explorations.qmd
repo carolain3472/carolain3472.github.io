@@ -1,0 +1,14 @@
+---
+pagetitle: "Exploraciones | Carolain Jiménez Bedoya"
+description-meta: "Juegos, modelos pequeños y cosas que Carolain Jiménez Bedoya prueba por su cuenta."
+page-layout: full
+toc: false
+---
+
+```{=html}
+<div class="sec"><h1>Exploraciones</h1><p>Cosas que pruebo porque me dio curiosidad, en un evento, con un modelo nuevo o en medio de otra cosa. Algunas se pueden jugar.</p></div>
+<div class="cards">
+<a class="big wide" href="posts/fire-watch/"><div class="pic" style="background-image:url(../posts/fire-watch/bad.jpg)"></div><div class="tx"><small>Modelos de decisión</small><h3>Fire Watch: hice un juego para ver cómo falla un modelo de decisión</h3><p>Un bosque en 3D, seis sensores y cuatro botones. Los modelos locales no supieron leer un termómetro.</p></div></a>
+</div>
+<p class="play"><a href="../lab/fire-watch/index.html?lang=es">Jugar Fire Watch</a></p>
+```

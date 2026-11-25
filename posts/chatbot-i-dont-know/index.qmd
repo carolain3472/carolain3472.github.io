@@ -3,7 +3,7 @@ title: "I gave a chatbot permission to say \"I don't know\". It changed less tha
 description: "270 answers of a university assistant, with and without the handbook, and the mistakes that were left."
 author: "Carolain Jiménez Bedoya"
 date: 2026-11-25
-categories: [responsible AI, work]
+categories: [business, responsible AI]
 image: chat1.png
 lang: en
 toc: true

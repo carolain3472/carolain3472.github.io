@@ -7,11 +7,20 @@ website:
   title: "Carolain Jiménez Bedoya"
   navbar:
     right:
-      - text: Notes
+      - text: Research
+        href: research.qmd
+      - text: AI for business
+        href: business.qmd
+      - text: Explorations
+        href: explorations.qmd
+      - text: All notes
         href: blog.qmd
       - icon: github
         href: https://github.com/carolain3472
         aria-label: GitHub
+      - text: "ES"
+        href: es/index.qmd
+        aria-label: Ver esta página en español
 
 format:
   html:
@@ -19,3 +28,4 @@ format:
     css: styles.css
     toc-title: " "
     lightbox: true
+    include-after-body: lang.html

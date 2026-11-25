@@ -3,7 +3,7 @@ title: "When a model learns the scanner"
 description: "A small experiment with simulated images. The same model scores 0.97 or 0.69, and you can see inside it what it was looking at."
 author: "Carolain Jiménez Bedoya"
 date: 2026-11-25
-categories: [medical imaging, trustworthy AI]
+categories: [research, medical imaging, trustworthy AI]
 image: sc-weights.png
 lang: en
 toc: true

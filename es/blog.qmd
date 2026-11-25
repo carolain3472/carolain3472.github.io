@@ -1,0 +1,13 @@
+---
+title: "Todas las notas"
+lang: es
+listing:
+  contents: posts
+  type: default
+  sort: "date desc"
+  categories: true
+  fields: [image, date, title, description, categories, reading-time]
+---
+
+
+Notas sobre mi investigación, los sistemas de IA que construyo en el trabajo y cosas que pruebo por mi cuenta. Uso herramientas de IA, sobre todo Claude, para que me ayuden con el código, las figuras y la edición, y publico los datos para que cualquiera pueda revisar los números.

@@ -3,7 +3,7 @@ title: "Three models read 40 documents without a mistake. The math was another s
 description: "An invented town, 40 documents and two ways of getting to a total that can't be wrong."
 author: "Carolain Jiménez Bedoya"
 date: 2026-11-25
-categories: [digital transformation, responsible AI, work]
+categories: [business, digital transformation, responsible AI]
 image: exact.png
 lang: en
 toc: true

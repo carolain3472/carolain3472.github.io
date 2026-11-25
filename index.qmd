@@ -13,6 +13,13 @@ toc: false
 <div class="links"><a href="https://github.com/carolain3472">GitHub</a><a href="https://www.linkedin.com/in/carolain-jimenez-bedoya">LinkedIn</a><a href="https://orcid.org/0009-0006-0077-7890">ORCID</a><a href="https://carolain-jimenez.netlify.app/">Portfolio</a></div>
 </div><img src="retrato.jpg" alt="Portrait of Carolain Jiménez Bedoya"></section>
 
+<div class="doors">
+<a href="research.html"><h2>Research</h2><p>Medical images, language in hospitals, and models that are right for the wrong reason.</p></a>
+<a href="business.html"><h2>AI for business</h2><p>Processes, people and where AI fits. With a small tool to sort your own steps.</p></a>
+<a href="explorations.html"><h2>Explorations</h2><p>Games and small models that I try because I got curious.</p></a>
+</div>
+
+
 <h2>Notes</h2>
 <div class="cards">
 <a class="big" href="posts/fire-watch/"><div class="pic" style="background-image:url(posts/fire-watch/bad.jpg)"></div><div class="tx"><small>Decision models</small><h3>Fire Watch: I made a game to see how a decision model fails</h3><p>A 3D forest, six sensors and four buttons. The local models could not read a thermometer.</p></div></a>

@@ -1,0 +1,51 @@
+---
+lang: es
+pagetitle: "IA para empresas | Carolain Jiménez Bedoya"
+description-meta: "Cómo mirar un proceso antes de meterle IA, con pruebas y una herramienta pequeña para usar en una reunión."
+page-layout: full
+toc: false
+---
+
+```{=html}
+<div class="sec"><h1>IA para empresas</h1><p>En mi trabajo construyo sistemas de IA para empresas y les enseño a las personas que los van a usar. Aquí escribo sobre procesos: qué pasos le quedan bien a la IA, cuáles necesitan un programa normal y cuáles se quedan con una persona.</p><p>No necesitas saber programar para leer esta parte.</p></div>
+
+<h2>Empieza por tu propio proceso</h2>
+<p class="lead">Piensa en algo que tu equipo repite cada semana y escribe los pasos. Marca cada uno y mira dónde podría entrar la IA.</p>
+<div class="rcd"><div class="keys">
+<div><b>L</b><span><strong>Leer.</strong> Leer, resumir, clasificar o hacer un borrador.</span></div>
+<div><b>C</b><span><strong>Calcular.</strong> Cuentas, o una regla que ya está escrita.</span></div>
+<div><b>D</b><span><strong>Decidir.</strong> Algo por lo que alguien responde.</span></div></div>
+<div class="tool"><ol id="steps"></ol>
+<form id="add"><label for="new">Paso nuevo</label><div><input id="new" maxlength="90" autocomplete="off" placeholder="Revisar la factura contra el pedido"><button>Agregar</button></div></form>
+<div id="out" aria-live="polite"></div>
+<p class="tiny"><button type="button" id="copy">Copiar el resultado</button> <button type="button" id="clear">Empezar de cero</button> Lo que escribes se queda en esta página. No se envía ni se guarda.</p></div></div>
+<script>
+(()=>{const ex=[["Leer el pedido que llega por correo","L"],["Calcular el total con descuentos e impuestos","C"],["Aprobar el precio para un cliente nuevo","D"],["Escribir la respuesta al cliente","L"]];
+let S=ex.map(x=>[...x]);const $=i=>document.getElementById(i),L={L:"Leer",C:"Calcular",D:"Decidir"},T={L:"Prueba la IA aquí primero, y deja el original al lado de la respuesta para que alguien pueda revisarla.",C:"Usa un programa. Puede que ya exista en una hoja de cálculo.",D:"Aquí se queda una persona, con nombre y cargo. La IA puede prepararle la información."};
+function draw(){const o=$("steps");o.textContent="";S.forEach((s,i)=>{const li=document.createElement("li"),t=document.createElement("span"),g=document.createElement("div");t.className="t";t.textContent=s[0];g.className="g";g.setAttribute("role","group");g.setAttribute("aria-label","Tipo de paso: "+s[0]);
+for(const k in L){const b=document.createElement("button");b.type="button";b.textContent=k;b.title=L[k];b.setAttribute("aria-label",L[k]);b.setAttribute("aria-pressed",s[1]===k);b.onclick=()=>{s[1]=k;draw();$("steps").children[i].querySelectorAll("button")["LCD".indexOf(k)].focus()};g.append(b)}
+const x=document.createElement("button");x.type="button";x.className="x";x.textContent="×";x.setAttribute("aria-label","Quitar paso: "+s[0]);x.onclick=()=>{S.splice(i,1);draw();$("new").focus()};g.append(x);li.append(t,g);o.append(li)});
+const out=$("out");out.textContent="";if(!S.length)return;for(const k in L){const n=S.filter(s=>s[1]===k);if(!n.length)continue;const p=document.createElement("p"),b=document.createElement("b");b.textContent=L[k]+" ("+n.length+" de "+S.length+"). ";p.append(b,T[k]);out.append(p)}
+const i=S.findIndex((s,j)=>s[1]==="L"&&!S.slice(j+1).some(z=>z[1]!=="L"));if(i>=0){const p=document.createElement("p");p.className="warn";p.textContent="Después del paso “"+S[i][0]+"” nadie revisa nada. Si ese texto le va a llegar a alguien, agrega una persona al final.";out.append(p)}}
+$("add").onsubmit=e=>{e.preventDefault();const v=$("new").value.trim();if(v){S.push([v,"L"]);$("new").value="";draw()}};$("clear").onclick=()=>{S=[];draw();$("new").focus()};
+$("copy").onclick=async()=>{const t=S.map((s,i)=>(i+1)+". "+s[0]+" ["+L[s[1]]+"]").join("\n")+"\n\n"+[...$("out").children].map(p=>p.textContent).join("\n");try{await navigator.clipboard.writeText(t);$("copy").textContent="Copiado"}catch{$("copy").textContent="No se pudo copiar"}setTimeout(()=>$("copy").textContent="Copiar el resultado",1600)};draw()})();
+</script>
+
+<h2>Pruebas</h2>
+<div class="cards">
+<a class="big" href="posts/who-does-the-math/"><div class="pic fit" style="background-image:url(posts/who-does-the-math/exact.png)"></div><div class="tx"><small>Transformación digital</small><h3>Tres modelos leyeron bien 40 documentos. La cuenta fue otra historia</h3><p>Quién lee, quién calcula y quién firma.</p></div></a>
+<a class="big" href="posts/chatbot-i-dont-know/"><div class="pic fit" style="background-image:url(posts/chatbot-i-dont-know/chat1.png)"></div><div class="tx"><small>IA responsable</small><h3>Le di permiso a un chatbot de decir «no sé»</h3><p>270 respuestas con y sin el reglamento, y los errores que quedaron.</p></div></a>
+</div>
+
+<h2>Lo que he construido en el trabajo</h2>
+<ul class="built">
+<li><strong>Plataforma de impuestos municipales.</strong> La IA lee las normas, un programa calcula y un contador aprueba.</li>
+<li><strong>Agentes comerciales.</strong> Desde encontrar licitaciones hasta hacerles seguimiento a los prospectos.</li>
+<li><strong>Flujos con n8n.</strong> Correos y resúmenes de ventas que alguien que no programa puede cambiar después.</li>
+<li><strong>Charlas y talleres.</strong> Las personas trabajan con sus propios documentos.</li>
+</ul>
+<p>Hay más sobre cada uno en <a href="https://carolain-jimenez.netlify.app/projects.html">mi portafolio</a>.</p>
+
+<h2>Si tienes un proceso en mente</h2>
+<p class="lead">Cuéntame qué repites cada semana y dónde te duele. Me gusta oír del proceso antes de hablar de herramientas. Puedes escribirme desde <a href="https://carolain-jimenez.netlify.app/contact.html">mi portafolio</a> o por <a href="https://www.linkedin.com/in/carolain-jimenez-bedoya">LinkedIn</a>.</p>
+```
