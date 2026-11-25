@@ -85,9 +85,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
+      valueNames: ['listing-image','listing-date','listing-title',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-date","listing-title","listing-author"],
+      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -205,61 +205,99 @@ window.Quarto = {
 <p>This is where I write about my research, the AI systems I build at work, and what I learn teaching and mentoring. Some notes are in English and some in Spanish.</p>
 <section id="latest-notes" class="level2">
 <h2 data-anchor-id="latest-notes">Latest notes</h2>
-<div id="listing-latest" class="quarto-listing quarto-listing-container-table">
-<table class="quarto-listing-table table">
-<thead>
-<tr>
-<th>
-Date
-</th>
-<th>
-Title
-</th>
-</tr>
-</thead>
-<tbody class="list">
-<tr data-index="0" data-categories="Y2xpbmljYWwlMjBOTFAlMkNyZXNlYXJjaA==" data-listing-date-sort="1795582800000" data-listing-file-modified-sort="1795584938072" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="338" data-listing-title-sort="More training, and the model did not improve" data-listing-filename-sort="index.qmd">
-<td>
-<span class="listing-date">Nov 25, 2026</span>
-</td>
-<td>
-<a href="./posts/negative-result/index.html" class="title listing-title">More training, and the model did not improve</a>
-</td>
-</tr>
-<tr data-index="1" data-categories="ZGVjaXNpb24lMjBtb2RlbHMlMkN0cnVzdHdvcnRoeSUyMEFJ" data-listing-date-sort="1795582800000" data-listing-file-modified-sort="1795584938071" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="542" data-listing-title-sort="Fire Watch: the same event, written four ways" data-listing-filename-sort="index.qmd">
-<td>
-<span class="listing-date">Nov 25, 2026</span>
-</td>
-<td>
-<a href="./posts/fire-watch/index.html" class="title listing-title">Fire Watch: the same event, written four ways</a>
-</td>
-</tr>
-<tr data-index="2" data-categories="SUElMjByZXNwb25zYWJsZSUyQ3RyYWJham8=" data-listing-date-sort="1795582800000" data-listing-file-modified-sort="1795584938071" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="322" data-listing-title-sort="Un chatbot que puede decir «no tengo esa información»" data-listing-filename-sort="index.qmd">
-<td>
-<span class="listing-date">Nov 25, 2026</span>
-</td>
-<td>
-<a href="./posts/chatbot-no-se/index.html" class="title listing-title">Un chatbot que puede decir «no tengo esa información»</a>
-</td>
-</tr>
-<tr data-index="3" data-categories="bWVkaWNhbCUyMGltYWdpbmclMkN0cnVzdHdvcnRoeSUyMEFJ" data-listing-date-sort="1795582800000" data-listing-file-modified-sort="1795584938072" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="747" data-listing-title-sort="When a model learns the scanner" data-listing-filename-sort="index.qmd">
-<td>
-<span class="listing-date">Nov 25, 2026</span>
-</td>
-<td>
-<a href="./posts/scanner-shortcut/index.html" class="title listing-title">When a model learns the scanner</a>
-</td>
-</tr>
-<tr data-index="4" data-categories="dHJhbnNmb3JtYWNpJUMzJUIzbiUyMGRpZ2l0YWwlMkNJQSUyMHJlc3BvbnNhYmxlJTJDdHJhYmFqbw==" data-listing-date-sort="1795582800000" data-listing-file-modified-sort="1795584938072" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="372" data-listing-title-sort="La IA propone, el programa calcula y una persona firma" data-listing-filename-sort="index.qmd">
-<td>
-<span class="listing-date">Nov 25, 2026</span>
-</td>
-<td>
-<a href="./posts/ia-propone/index.html" class="title listing-title">La IA propone, el programa calcula y una persona firma</a>
-</td>
-</tr>
-</tbody>
-</table>
+<div id="listing-latest" class="quarto-listing quarto-listing-container-grid">
+<div class="list grid quarto-listing-cols-2">
+<div class="g-col-1" data-index="0" data-categories="Y2xpbmljYWwlMjBOTFAlMkNyZXNlYXJjaA==" data-listing-date-sort="1795582800000" data-listing-file-modified-sort="1795585087572" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="357">
+<a href="./posts/negative-result/index.html" class="quarto-grid-link no-external-icon">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="./posts/negative-result/intervals.png" class="thumbnail-image card-img" style="height: 130px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+More training, and the model did not improve
+</h5>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+Nov 25, 2026
+</div>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="1" data-categories="ZGVjaXNpb24lMjBtb2RlbHMlMkN0cnVzdHdvcnRoeSUyMEFJ" data-listing-date-sort="1795582800000" data-listing-file-modified-sort="1795585087572" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="588">
+<a href="./posts/fire-watch/index.html" class="quarto-grid-link no-external-icon">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="./posts/fire-watch/game.png" class="thumbnail-image card-img" style="height: 130px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Fire Watch: the same event, written four ways
+</h5>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+Nov 25, 2026
+</div>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="2" data-categories="SUElMjByZXNwb25zYWJsZSUyQ3RyYWJham8=" data-listing-date-sort="1795582800000" data-listing-file-modified-sort="1795585087573" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="351">
+<a href="./posts/chatbot-no-se/index.html" class="quarto-grid-link no-external-icon">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="./posts/chatbot-no-se/flujo-chatbot.png" class="thumbnail-image card-img" style="height: 130px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Un chatbot que puede decir «no tengo esa información»
+</h5>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+Nov 25, 2026
+</div>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="3" data-categories="bWVkaWNhbCUyMGltYWdpbmclMkN0cnVzdHdvcnRoeSUyMEFJ" data-listing-date-sort="1795582800000" data-listing-file-modified-sort="1795584938072" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="747">
+<a href="./posts/scanner-shortcut/index.html" class="quarto-grid-link no-external-icon">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="./posts/scanner-shortcut/images.png" class="thumbnail-image card-img" style="height: 130px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+When a model learns the scanner
+</h5>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+Nov 25, 2026
+</div>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="4" data-categories="dHJhbnNmb3JtYWNpJUMzJUIzbiUyMGRpZ2l0YWwlMkNJQSUyMHJlc3BvbnNhYmxlJTJDdHJhYmFqbw==" data-listing-date-sort="1795582800000" data-listing-file-modified-sort="1795585087573" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="388">
+<a href="./posts/ia-propone/index.html" class="quarto-grid-link no-external-icon">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="./posts/ia-propone/reparto.png" class="thumbnail-image card-img" style="height: 130px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+La IA propone, el programa calcula y una persona firma
+</h5>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+Nov 25, 2026
+</div>
+</div>
+</div>
+</div></a>
+</div>
+</div>
 <div class="listing-no-matching d-none">No matching items</div>
 </div>
 </section>

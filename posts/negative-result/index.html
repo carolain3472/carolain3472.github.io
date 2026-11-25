@@ -192,6 +192,12 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 </tbody>
 </table>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="intervals.png" class="img-fluid figure-img" alt="Three overlapping intervals: 81.2, 79.2 and 76.2 percent"></p>
+<figcaption>The three scores with their intervals. The axis goes from 60 to 95.</figcaption>
+</figure>
+</div>
 <p>The model without extra training had the highest score. In my portfolio I wrote that extra training lowered the score, and it is true for these notes. Looking at the intervals now, they overlap almost completely, and the difference between the first two rows is two notes out of 101. The same notes were used for every model, so a paired test on each answer would be more precise than these intervals, and I would need the individual answers to do it.</p>
 <p>What I can say is that extra training showed no improvement on this test. I cannot say that it hurts.</p>
 <p>There are three more limits I would fix before repeating it. The test notes were synthetic, written by GPT-3.5 in the style of a real case report, and real hospital notes have more abbreviations. Each note tested a single word. And exact match counts “enfermedad” as wrong when the hidden word was “diabetes”, although both fit the sentence.</p>

@@ -165,6 +165,12 @@ ul.task-list li input[type="checkbox"] {
 
 <p>At a tech event I learned about decision models for interfaces. Instead of writing text, they receive a situation and a closed list of options, and they return one option with a probability. Chrome is testing an API for this, the <a href="https://github.com/explainers-by-googlers/decisions-api">Decisions API</a>, where the model runs on the computer of the person using the page.</p>
 <p>I wanted to try the idea on something close to my work, so I made a small game. I lead the AI research of Kawsay, a wildfire detection project with FIRST Global Team Colombia, and the game borrows that setting. You read a message from a forest sensor and choose one of four actions: ignore, monitor, send a drone or call the brigade. The rule book is fixed, so there is always one correct answer.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../../lab/fire-watch/index.html"><img src="game.png" class="img-fluid figure-img" alt="Screenshot of Fire Watch with the rule book, a sensor message and four buttons"></a></p>
+<figcaption>The game, with one of the sensor messages. Click to play.</figcaption>
+</figure>
+</div>
 <p><a href="../../lab/fire-watch/index.html">Play Fire Watch</a></p>
 <section id="the-test" class="level2">
 <h2 class="anchored" data-anchor-id="the-test">The test</h2>
@@ -209,6 +215,12 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 </tbody>
 </table>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fire-results.png" class="img-fluid figure-img" alt="Dot chart: Sonnet 24 in all versions, Haiku 24, 24, 19.3 and 22"></p>
+<figcaption>The same results as a chart. The horizontal axis starts at 16.</figcaption>
+</figure>
+</div>
 <p>Changing the language made no difference. Taking the numbers away did, for the smaller model. Almost every mistake went in the same direction: the rule book said monitor and the model said ignore. For an alarm this is the bad direction, because an event that needed attention gets no attention.</p>
 </section>
 <section id="what-i-found-in-my-own-prompt" class="level2">

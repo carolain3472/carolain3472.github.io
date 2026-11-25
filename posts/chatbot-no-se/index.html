@@ -166,6 +166,12 @@ ul.task-list li input[type="checkbox"] {
 <p>Por eso casi todo el trabajo de diseño estuvo en lo que el bot no hace.</p>
 <p>La primera decisión fue tener una sola base de conocimiento, verificada por la institución. El modelo responde con lo que encuentra ahí, y el prompt le prohíbe completar con lo que aprendió en su entrenamiento. Un modelo de lenguaje sabe muchas cosas sobre universidades en general, y en este caso eso es un problema, porque suena correcto y puede ser de otra universidad.</p>
 <p>La segunda fue darle una salida. Cuando la base no tiene la respuesta, el bot dice «no tengo esa información». Cuando la pregunta se sale de su alcance, pasa el caso a una persona. Parece un detalle, pero un sistema sin esa opción queda obligado a responder algo.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="flujo-chatbot.png" class="img-fluid figure-img" alt="Diagrama: la pregunta pasa por la búsqueda en la base verificada y sale como respuesta, como no tengo esa información o hacia una persona"></p>
+<figcaption>Las tres salidas posibles para una pregunta.</figcaption>
+</figure>
+</div>
 <p>La tercera fue probar con preguntas reales de estudiantes y corregir hasta que dejaron de aparecer respuestas inventadas en esas pruebas. Eso no garantiza que nunca vaya a pasar, y por eso la salida hacia una persona sigue ahí.</p>
 <p>Usé la misma idea en otro sistema, uno que compara los documentos de un área de recursos humanos con un marco internacional. Si la búsqueda no encuentra un fragmento suficientemente relevante, el resultado es «no hay información suficiente», y al final se revisa que cada afirmación tenga un fragmento que la respalde. En un diagnóstico, un hallazgo inventado hace más daño que uno que falta.</p>
 <p>Si estás montando un asistente en tu empresa o en tu universidad, yo empezaría por escribir la lista de preguntas que no debe responder y quién las recibe. Con esa lista lista, lo demás es más fácil.</p>
