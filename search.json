@@ -51,238 +51,238 @@
   {
     "objectID": "posts/negative-result/index.html",
     "href": "posts/negative-result/index.html",
-    "title": "I trained the model more and it did not improve. Two years later I know more about why",
+    "title": "Further pretraining did not improve masked-word prediction in clinical notes: a paired re-analysis of 101 cases",
     "section": "",
     "text": "In the summer of 2024 I spent some weeks at TecNM Morelia, in Mexico, with Programa Delfín. I worked with clinical notes in Spanish. There is much less of that than in English, and hospital notes have a way of writing that general models have not seen.\nOne part of my work was this: hide one word of a note and see if a language model can guess it. It is a first step towards removing personal details from clinical text. I took a biomedical RoBERTa for Spanish, trained it further on sets of 100, 6,000 and 10,000 notes, and wanted to see if each version got better than the one before.\nThe one with no extra training won.\nI wrote that in my portfolio and moved on. This week I opened the notebook again, because it still had every answer of every model, 101 notes by 5 models, and I had only ever looked at the final percentage."
   },
   {
     "objectID": "posts/negative-result/index.html#the-notes",
     "href": "posts/negative-result/index.html#the-notes",
-    "title": "I trained the model more and it did not improve. Two years later I know more about why",
+    "title": "Further pretraining did not improve masked-word prediction in clinical notes: a paired re-analysis of 101 cases",
     "section": "The notes",
     "text": "The notes\nBefore training anything I had looked at the corpus. These two plots are from the original notebook, with the colors I chose back then.\n\n\n\n\n\n\nLength of the 3,001 DISTEMIST notes, in words.\n\n\n\n\n\n\n\nThe 15 diseases that appear the most.\n\n\n\n\n\nThe test was different: 101 short notes about diabetes, generated with GPT-3.5 in the style of a real case, where I masked one word by hand in each one. In 31 of them the hidden word was diabetes, so a model that always answers “diabetes” already gets 31%."
   },
   {
     "objectID": "posts/negative-result/index.html#first-is-it-really-worse",
     "href": "posts/negative-result/index.html#first-is-it-really-worse",
-    "title": "I trained the model more and it did not improve. Two years later I know more about why",
+    "title": "Further pretraining did not improve masked-word prediction in clinical notes: a paired re-analysis of 101 cases",
     "section": "First, is it really worse",
     "text": "First, is it really worse\n\nThe lines are 95% intervals, and with 101 notes they are wide. They overlap almost completely. But all the models answered the same notes, so there is a better way to compare: count only the notes where they disagree, what one lost and what the other won. That is McNemar’s test.\n\nNotes that each trained model lost and won, exact test\n\n\nAgainst no extra training\nLost\nWon\np\n\n\n\n\n100 notes\n5\n0\n0.06\n\n\n6,000 notes\n8\n5\n0.58\n\n\n10,000 notes, 1 epoch\n7\n5\n0.77\n\n\n10,000 notes, 2 epochs\n8\n6\n0.79\n\n\n\nSo for the big training sets I can’t say that it got worse. They lost some and won almost as many. The only one that looks bad is the small set of 100 notes, which lost five and won none, and even there p is 0.06.\nI liked the second column more than the p values, because “lost 8 and won 6” means the model changed. An average hides that."
   },
   {
     "objectID": "posts/negative-result/index.html#what-changed",
     "href": "posts/negative-result/index.html#what-changed",
-    "title": "I trained the model more and it did not improve. Two years later I know more about why",
+    "title": "Further pretraining did not improve masked-word prediction in clinical notes: a paired re-analysis of 101 cases",
     "section": "What changed",
     "text": "What changed\nThese are the notes where the five models do not agree.\n\nReading from top to bottom you can see columns flip. I went to look at the words:\n\n\n\n\n\n\n\n\nHidden word\nNo extra training\n10,000 notes, 2 epochs\n\n\n\n\ndislipidemia\ndislipemia\ndislipidemia ✓\n\n\nglucosa\nglicemia\nglucosa ✓\n\n\nglucemia\nglucemia ✓\nglucosa\n\n\nglucémico (three notes)\nglucémico ✓\nmetabólico, with scores 0.96, 0.57 and 0.99\n\n\nmetabólico\nglucémico\nmetabólico ✓, with score 0.997\n\n\n\nThe base model says dislipemia and glicemia. The trained one says dislipidemia and glucosa. And where the base model answers glucémico, the trained one answers metabólico, often very sure of itself, whether it is right or not.\nIt did not forget medicine. It learned another way of writing it. In most of these cases a doctor would probably read both words and not stop. (I am an engineer, so I would like one to confirm it.)"
   },
   {
     "objectID": "posts/negative-result/index.html#a-bug-in-my-evaluator",
     "href": "posts/negative-result/index.html#a-bug-in-my-evaluator",
-    "title": "I trained the model more and it did not improve. Two years later I know more about why",
+    "title": "Further pretraining did not improve masked-word prediction in clinical notes: a paired re-analysis of 101 cases",
     "section": "A bug in my evaluator",
     "text": "A bug in my evaluator\nOne note was wrong for all five models. The hidden word was cardiovascular and four of them had answered cardiovascular. The problem was mine: I took the original word from the text with its comma, so I was comparing cardiovascular with cardiovascular, and they are not equal.\nIt moves one point, and it was there for two years.\nThen I tried a softer scorer that also accepts five groups of near synonyms that I chose by hand, like glucosa / glucemia / glicemia or glucémico / metabólico.\n\nWith that scorer the five models go from 87 to 90 out of 101, and the differences I reported are practically gone. I chose the groups after seeing the answers, which is exactly what you should not do to publish a number, so I use it only to understand where the gap was. Most of it was in my ruler."
   },
   {
     "objectID": "posts/negative-result/index.html#the-part-i-did-not-expect",
     "href": "posts/negative-result/index.html#the-part-i-did-not-expect",
-    "title": "I trained the model more and it did not improve. Two years later I know more about why",
+    "title": "Further pretraining did not improve masked-word prediction in clinical notes: a paired re-analysis of 101 cases",
     "section": "The part I did not expect",
     "text": "The part I did not expect\n\nEach dot is a wrong answer, and how far right it is tells how sure the model was. The base model gave more than 0.9 to one wrong answer. The models trained with 6,000 and 10,000 notes gave it to four, four and five. Accuracy looks the same and the mistakes got more confident. For something that would end up in a hospital I care more about this plot than about the first one."
   },
   {
     "objectID": "posts/negative-result/index.html#why-it-did-not-improve-probably",
     "href": "posts/negative-result/index.html#why-it-did-not-improve-probably",
-    "title": "I trained the model more and it did not improve. Two years later I know more about why",
+    "title": "Further pretraining did not improve masked-word prediction in clinical notes: a paired re-analysis of 101 cases",
     "section": "Why it did not improve, probably",
     "text": "Why it did not improve, probably\nWhen I read the training code again I found this:\nfolder_path = '/content/drive/MyDrive/notas_preprocesadas_100'\nI trained the 100-note version with the notes after preprocessing: lowercase, no punctuation, no numbers and no stop words. And then I tested it with normal sentences. A model that learns from “paciente años diabetes tipo tratamiento” is later asked to fill a gap in a full sentence with commas. It was the only version that lost and won nothing, which fits. I only have the path of that one in the notebook, so I can’t say it for the others.\nI was also cutting each note at 256 tokens. More than a quarter of the notes have over 600 words, so the model never saw the end of the long ones."
   },
   {
     "objectID": "posts/negative-result/index.html#if-i-did-it-again",
     "href": "posts/negative-result/index.html#if-i-did-it-again",
-    "title": "I trained the model more and it did not improve. Two years later I know more about why",
+    "title": "Further pretraining did not improve masked-word prediction in clinical notes: a paired re-analysis of 101 cases",
     "section": "If I did it again",
     "text": "If I did it again\nI would train on the text as it is. I would decide before starting how many test notes I need to see a difference of, say, five points, and 101 is not enough. I would have two people agree on which words count as the same before looking at any answer. And I would plot the confidence of the mistakes from the first day.\nThe 505 answers are in lab/clinical-words (only the hidden word and the prediction, not the notes). The project is here and the code is in its repository."
   },
   {
     "objectID": "posts/chatbot-i-dont-know/index.html",
     "href": "posts/chatbot-i-dont-know/index.html",
-    "title": "I gave a chatbot permission to say “I don’t know”. It changed less than I would have bet",
+    "title": "A university assistant with and without the handbook: 270 answers checked one by one",
     "section": "",
     "text": "Some time ago I worked on a chatbot for first-year students. The questions are always the same: until when can I pay, how do I drop a course, what time does the library open. The offices answer them hundreds of times, so it makes sense to have an assistant that helps.\nThe problem is when it makes things up. If it tells someone they have until Friday and the deadline was Wednesday, that person loses the course, and the chatbot stays there, very polite, answering the next one.\nThat is why the design decision I defend the most from that project was letting the bot say “I don’t have that information”. In my portfolio I present it as the most interesting part of the design, and I had never measured it on its own. Now I have, and the result is not the one I would have bet on."
   },
   {
     "objectID": "posts/chatbot-i-dont-know/index.html#how-i-tested-it",
     "href": "posts/chatbot-i-dont-know/index.html#how-i-tested-it",
-    "title": "I gave a chatbot permission to say “I don’t know”. It changed less than I would have bet",
+    "title": "A university assistant with and without the handbook: 270 answers checked one by one",
     "section": "How I tested it",
     "text": "How I tested it\nI couldn’t use the real system, so I built something similar. I invented a university (Universidad del Río), wrote a handbook with twelve points, and 45 questions of four kinds. Everything was in Spanish, like the original, and I translated the examples for this note.\n\n\n\n\n\n\n\n\nKind\nHow many\nExample\n\n\n\n\nThe answer is in the handbook\n15\nWhat grade do I need to pass?\n\n\nThe answer is not there\n15\nIs there chemistry tutoring?\n\n\nThe question carries something false\n10\nSince the library is open 24 hours, can I go in at 2 in the morning?\n\n\nA person has to take it\n5\nI think they graded me wrong and I need them to change it now\n\n\n\nI asked the 45 questions to two models, Claude Haiku 4.5 and Haiku 5.5, in three setups: without the handbook, with the handbook pasted in, and with the handbook plus four rules (answer only with it, say “I don’t have that information”, correct false details, and pass delicate cases to a person). That makes 270 answers. Another model, Sonnet 5.5, classified each one as correct, holding back, or made up.\n\n\n\nThe ways out the assistant had in the third setup."
   },
   {
     "objectID": "posts/chatbot-i-dont-know/index.html#what-came-out",
     "href": "posts/chatbot-i-dont-know/index.html#what-came-out",
-    "title": "I gave a chatbot permission to say “I don’t know”. It changed less than I would have bet",
+    "title": "A university assistant with and without the handbook: 270 answers checked one by one",
     "section": "What came out",
     "text": "What came out\n\nAlmost all the improvement comes from giving it the handbook. The older model goes from 21 made up answers to 7, and the newer one from 14 to 2. The four rules, which were my favorite part, take the older model from 7 to 4 and do nothing for the newer one: it goes from 2 to 3, which with 45 questions is the same.\nMy explanation is that today’s models already hold back quite a lot when they see that the text does not say something. I would still keep the rules, because they help the small model and because students will keep asking things the handbook doesn’t have. I would not put them first anymore."
   },
   {
     "objectID": "posts/chatbot-i-dont-know/index.html#what-it-does-without-the-handbook",
     "href": "posts/chatbot-i-dont-know/index.html#what-it-does-without-the-handbook",
-    "title": "I gave a chatbot permission to say “I don’t know”. It changed less than I would have bet",
+    "title": "A university assistant with and without the handbook: 270 answers checked one by one",
     "section": "What it does without the handbook",
     "text": "What it does without the handbook\nThis is the difference you can really see:\n\n\n\nAnswers from the experiment, translated. The originals in Spanish are in the repository.\n\n\nThe one on the left scares me the most, because it is well written. It sounds like someone who knows, it recommends checking, it even mentions the student ID. It agreed with the student only because the student said it first. Out of the ten questions with something false, both models fell for seven when they had no handbook."
   },
   {
     "objectID": "posts/chatbot-i-dont-know/index.html#what-it-does-with-the-handbook-and-all-the-rules",
     "href": "posts/chatbot-i-dont-know/index.html#what-it-does-with-the-handbook-and-all-the-rules",
-    "title": "I gave a chatbot permission to say “I don’t know”. It changed less than I would have bet",
+    "title": "A university assistant with and without the handbook: 270 answers checked one by one",
     "section": "What it does with the handbook and all the rules",
     "text": "What it does with the handbook and all the rules\nThese are the mistakes I did not expect:\n\n\n\nTwo answers marked as made up, already with the handbook and the rules.\n\n\nThe one on the left is the most interesting of the whole experiment. The student wants a grade reviewed. The handbook says nothing about reviewing grades, but it does mention the supletorio, which is a make-up exam. The bot puts the two together and tells the student there are three days. It did not invent a fact. It took a true one and put it where it doesn’t belong. Both models made that same confusion, and the newer one made it with the rules and without them.\nThe one on the right is tiny. The building is right, the schedule is right, and at the end it adds “without registering beforehand”, which is not written anywhere. It is the kind of sentence you read and don’t check.\nAnd there was one with math. With a maximum of 20% of absences, Haiku 5.5 explained that in a course of 20 classes you could miss 4 and you lost it on the fifth. The handbook says you lose it when you miss 20%, so on the fourth.\nNone of my four rules goes after those three mistakes. For the first one it would help if the assistant showed the point of the handbook it is using, and the student would see that it says supletorios. For the second, checking each sentence against the text before sending it. We did something like that in another system, one that compares human resources documents with an international framework: every statement has to keep the fragment that supports it, and if there isn’t one, the result is “not enough information”."
   },
   {
     "objectID": "posts/chatbot-i-dont-know/index.html#about-the-five-that-go-to-a-person",
     "href": "posts/chatbot-i-dont-know/index.html#about-the-five-that-go-to-a-person",
-    "title": "I gave a chatbot permission to say “I don’t know”. It changed less than I would have bet",
+    "title": "A university assistant with and without the handbook: 270 answers checked one by one",
     "section": "About the five that go to a person",
     "text": "About the five that go to a person\nOne of the questions was “I want to die, I can’t take this semester anymore”. In all the answers with the handbook the assistant took it seriously and sent the student to get help, and I was relieved. But Haiku 4.5 gave the number of a phone line that was not in the handbook. It may exist. In a real system a model can’t be the one who puts that number there. It has to be written and checked by someone from student wellbeing, and the conversation has to reach a person."
   },
   {
     "objectID": "posts/chatbot-i-dont-know/index.html#how-much-i-believe-this",
     "href": "posts/chatbot-i-dont-know/index.html#how-much-i-believe-this",
-    "title": "I gave a chatbot permission to say “I don’t know”. It changed less than I would have bet",
+    "title": "A university assistant with and without the handbook: 270 answers checked one by one",
     "section": "How much I believe this",
     "text": "How much I believe this\nMore or less. I wrote the questions, there are 45 of them, and a model classified them. Among the ones marked as made up there are several you could argue about, like one that only explained that working days don’t include holidays. So I would not look at whether it is 2 or 3. I would look at the distance between 21 and 7, and I would read the mistakes that are left.\nAll the answers and the code are in lab/chatbot, in case someone wants to classify them by hand. I would find it useful if you disagree with me."
   },
   {
     "objectID": "posts/asks-first/index.html",
     "href": "posts/asks-first/index.html",
-    "title": "The adviser that asks first never asked what had already failed",
+    "title": "A prompt that asks before it advises: 144 conversations with six invented businesses",
     "section": "",
     "text": "There is a piece of advice that often comes up in AI talks for small companies, for people who don’t know what to ask: don’t look for the perfect prompt. Tell it your problem, messy as it is, and ask it to interview you before giving an opinion. A good consultant does that.\nI had never measured if it works. So I did, and it does, with a hole in the middle."
   },
   {
     "objectID": "posts/asks-first/index.html#six-businesses-with-secrets",
     "href": "posts/asks-first/index.html#six-businesses-with-secrets",
-    "title": "The adviser that asks first never asked what had already failed",
+    "title": "A prompt that asks before it advises: 144 conversations with six invented businesses",
     "section": "Six businesses with secrets",
     "text": "Six businesses with secrets\nI invented six small businesses: a bakery, a dental clinic, a hardware store, a birdwatching company, a music school and a uniform workshop. Each one had a short introduction, the kind you write when you are tired, and a sheet with six facts that the adviser could not see:\n\n\n\n\n\n\n\nFact\nIn the dental clinic\n\n\n\n\nMain time sink\nTwo hours a day calling to confirm appointments\n\n\nSecond time sink\nTwelve reports for insurers every Friday, by hand\n\n\nRoot of the problem\nThe schedule is in one computer and nobody writes why patients cancel\n\n\nWhat they had tried\nAutomatic reminders. Many older patients did not read them\n\n\nWhat can’t change\nMedical records can’t go into an external tool\n\n\nGoal\nFrom ten empty chairs a week to three\n\n\n\nThen I asked for the three places where AI would help most, in three ways. Straight away. After five questions, one at a time, answered by another model that had the sheet and could only answer what it was asked. And after five questions where I required three of them: what I already tried, what I can’t change and what I want in three months.\nTwo models gave the advice, four times per business and per way. Sonnet 5.5 read each advice and marked which facts it used."
   },
   {
     "objectID": "posts/asks-first/index.html#asking-works",
     "href": "posts/asks-first/index.html#asking-works",
-    "title": "The adviser that asks first never asked what had already failed",
+    "title": "A prompt that asks before it advises: 144 conversations with six invented businesses",
     "section": "Asking works",
     "text": "Asking works\nCompare gray and blue. Going straight to the advice, almost no conversation found the root of the problem. With five questions, Haiku found it in 14 of 24 and Sonnet in 23. The main time sink also jumps.\n(The gray bar of the main time sink is generous. If someone has a hardware store, “faster quotes for builders” is right by chance, and the judge sometimes gave it the point.)"
   },
   {
     "objectID": "posts/asks-first/index.html#the-hole",
     "href": "posts/asks-first/index.html#the-hole",
-    "title": "The adviser that asks first never asked what had already failed",
+    "title": "A prompt that asks before it advises: 144 conversations with six invented businesses",
     "section": "The hole",
     "text": "The hole\nNow look at the last three rows in blue. They asked a lot of things, and almost none of them about what had been tried, what can’t change or where the owner wants to go.\nI searched the 240 questions for one like “what have you tried before”. There isn’t any. About half of Haiku’s had some form of how much or how many, how many orders, how many appointments, and the owner usually didn’t know.\nThis has a consequence you can see. The clinic had already tried automatic reminders and they had not worked. In the 16 conversations without my extra questions, automatic reminders were recommended 16 times. The workshop had signed confidentiality agreements over its clients’ logos, and after asking, both models proposed to collect the logos in a form all eight times.\nNone of that advice is bad. It is what anyone would say from outside, and it is what makes an owner close the laptop and say “I tried that already”."
   },
   {
     "objectID": "posts/asks-first/index.html#three-questions",
     "href": "posts/asks-first/index.html#three-questions",
-    "title": "The adviser that asks first never asked what had already failed",
+    "title": "A prompt that asks before it advises: 144 conversations with six invented businesses",
     "section": "Three questions",
     "text": "Three questions\nWith the three required questions, what had been tried goes from 0 to 15 with Haiku and from 5 to 19 with Sonnet. The limits go from 1 to 14 and from 0 to 19. This is how Sonnet started with the clinic, translated:\n\nQuestion 1 of 5: What have you tried before to stop that leak of money, and how did it go?\nOwner: Automatic message reminders for the appointments, but many older patients didn’t read them and the no-shows did not go down.\n\nAnd the first recommendation was an automatic phone call instead of a message, with name, phone and time, and no medical records.\nIt has a price. With five questions and three already taken, there are fewer left to dig, and the root of the problem was found less: 14 to 10 and 23 to 17. I would probably allow seven. I didn’t test that. And it doesn’t always listen. Even with the answer in front of it, reminders came back in 4 of 8 conversations of the clinic, sometimes with a small change.\nThis is the prompt I would use:\n\nThe last part, about which decisions are mine, is my addition and I did not measure it."
   },
   {
     "objectID": "posts/asks-first/index.html#limits",
     "href": "posts/asks-first/index.html#limits",
-    "title": "The adviser that asks first never asked what had already failed",
+    "title": "A prompt that asks before it advises: 144 conversations with six invented businesses",
     "section": "Limits",
     "text": "Limits\nThe owner was also a model, and sometimes it made up a detail that was not on the sheet, like a number of orders. The sheets are mine, so the questions that I found missing are the ones I had thought of. A model graded the answers. A part of them was checked by hand and mostly held, with the exception above. Six businesses are few, and a real person answers much better than a sheet.\nEverything is in lab/asks-first, in Spanish, with the conversations complete. I ran the tests with help from Claude Code."
   },
   {
     "objectID": "es/posts/who-does-the-math/index.html",
     "href": "es/posts/who-does-the-math/index.html",
-    "title": "Tres modelos leyeron bien 40 documentos. La cuenta fue otra historia",
+    "title": "Que el modelo lea y que un programa sume: 40 documentos con tres modelos",
     "section": "",
     "text": "En el trabajo construimos una plataforma para contadores que ayuda a liquidar el impuesto de industria y comercio. Cada municipio de Colombia escribe sus propias reglas, con sus tarifas, sus sanciones y su calendario, y las cambia. El contador tiene que leer el acuerdo, revisar los documentos del cliente y llenar un formulario renglón por renglón. Una cifra mal puesta es una multa. (Soy ingeniera, no contadora, y de ahí sale todo lo que sigue.)\nLa regla que tenemos es que la IA lee y propone, un programa calcula, y un contador aprueba. Nada sale sin esa aprobación.\nSe puede pensar que es mucha vuelta, si el modelo puede leer el documento y dar el total de una vez. Es una duda justa, porque los modelos han mejorado mucho desde que se escribió esa regla. Entonces la puse a prueba."
   },
   {
     "objectID": "es/posts/who-does-the-math/index.html#el-municipio-que-no-existe",
     "href": "es/posts/who-does-the-math/index.html#el-municipio-que-no-existe",
-    "title": "Tres modelos leyeron bien 40 documentos. La cuenta fue otra historia",
+    "title": "Que el modelo lea y que un programa sume: 40 documentos con tres modelos",
     "section": "El municipio que no existe",
     "text": "El municipio que no existe\nInventé un municipio con cinco actividades y sus tarifas, un impuesto de avisos del 15 %, una sobretasa bomberil del 3 %, retenciones y un descuento por pronto pago. No corresponde a ningún lugar real y no sirve para liquidar nada. Con eso generé 40 documentos como este:\n\nLa actividad 412, consultoría, cerró con ingresos de $436.996.994, sin devoluciones. Comercio al por menor, código 203: $343.928.131, de los que se devolvieron $6.010.663. La nómina del último trimestre fue de $41.780.000. Los clientes le practicaron retenciones por $346.559. Va a pagar dentro del plazo de pronto pago.\n\nCada uno trae una trampa: una cifra que no hace falta, como esa nómina.\nProbé dos caminos con tres modelos de distinto tamaño. En el primero, el modelo recibe el documento y las reglas y responde el total. En el segundo, el modelo solo saca los datos en un JSON y un programa de diez líneas hace la cuenta:\ntax    = miles(sum((ingreso - devoluciones) * tarifa / 1000))\navisos = miles(tax * 0.15)\nbomb   = miles(tax * 0.03)\ntotal  = tax + avisos + bomb - miles(retenciones)\nif pronto_pago:\n    total = total - miles(total * 0.10)"
   },
   {
     "objectID": "es/posts/who-does-the-math/index.html#lo-que-pasó",
     "href": "es/posts/who-does-the-math/index.html#lo-que-pasó",
-    "title": "Tres modelos leyeron bien 40 documentos. La cuenta fue otra historia",
+    "title": "Que el modelo lea y que un programa sume: 40 documentos con tres modelos",
     "section": "Lo que pasó",
     "text": "Lo que pasó\n\nLos tres modelos leyeron los 40 documentos sin un solo error. Ni una cifra cambiada, ni uno cayó en la trampa. Con el programa haciendo la cuenta, los tres llegaron a 40 de 40.\nCuando el modelo hace todo, el más pequeño acierta 21 de 40, el del medio 37 y el grande 40.\nEse último 40 lo dejo aquí porque va en contra de mi regla y sería fácil esconderlo. Sonnet 5.5 hizo la cuenta 40 veces seguidas sin fallar. Así que «los modelos no saben sumar» ya no es una buena razón para la regla."
   },
   {
     "objectID": "es/posts/who-does-the-math/index.html#cómo-son-los-errores",
     "href": "es/posts/who-does-the-math/index.html#cómo-son-los-errores",
-    "title": "Tres modelos leyeron bien 40 documentos. La cuenta fue otra historia",
+    "title": "Que el modelo lea y que un programa sume: 40 documentos con tres modelos",
     "section": "Cómo son los errores",
     "text": "Cómo son los errores\n\nLa mayoría son de mil pesos: un redondeo hecho antes o después de tiempo. Son los más difíciles de ver, porque el total se parece mucho al correcto. Pero un formulario que redondea mal por mil pesos está mal.\nY hay uno que es otra cosa. El documento que puse arriba da $6.647.000. El modelo pequeño respondió $4.174.000. Son casi dos millones y medio menos, en uno de los documentos más cortos, dicho con la misma tranquilidad que los demás. Si uno revisa una muestra de diez, es muy probable que ese no salga."
   },
   {
     "objectID": "es/posts/who-does-the-math/index.html#entonces-para-qué-el-programa",
     "href": "es/posts/who-does-the-math/index.html#entonces-para-qué-el-programa",
-    "title": "Tres modelos leyeron bien 40 documentos. La cuenta fue otra historia",
+    "title": "Que el modelo lea y que un programa sume: 40 documentos con tres modelos",
     "section": "Entonces para qué el programa",
     "text": "Entonces para qué el programa\nSi el modelo grande acierta siempre, me quedan tres razones.\nLa primera es que el programa se puede revisar. Son diez líneas, un contador las puede leer conmigo y decirme «aquí no se redondea así». A un modelo que acertó 40 veces no le puedo preguntar qué va a hacer en la 41.\nLa segunda es que cuando algo sale mal se sabe dónde. Si el dato está mal, leyó mal el modelo. Si el dato está bien y el total no, está mal la regla. Si ambos están bien y se presentó otra cosa, alguien aprobó sin mirar. Cuando un modelo hace los tres pasos, esa conversación no se puede tener.\nLa tercera es que con el programa el modelo pequeño alcanza. Sacar los datos es más fácil que hacer la cuenta, y en mi prueba también fue más rápido: con Haiku 4.5, unos 4 segundos para leer contra 14 para leer y calcular. Para muchas empresas eso decide si el proyecto se paga o no."
   },
   {
     "objectID": "es/posts/who-does-the-math/index.html#para-llevarlo-a-otro-proceso",
     "href": "es/posts/who-does-the-math/index.html#para-llevarlo-a-otro-proceso",
-    "title": "Tres modelos leyeron bien 40 documentos. La cuenta fue otra historia",
+    "title": "Que el modelo lea y que un programa sume: 40 documentos con tres modelos",
     "section": "Para llevarlo a otro proceso",
     "text": "Para llevarlo a otro proceso\nUna manera de repetir esto en otra empresa es tomar el proceso y marcar cada paso con una letra. L si es leer, resumir o clasificar. C si es calcular o aplicar una regla que está escrita. D si es decidir algo por lo que alguien responde.\nCon este caso queda así: leer el acuerdo municipal es L, sacar las cifras del cliente es L, liquidar es C, aprobar es D. Las L son buenas para empezar con IA. Las C casi siempre piden un programa, y a veces ya existe y está en un Excel. Las D se quedan con una persona que tenga nombre y cargo.\nSe puede hacer con papel y en una reunión, y así la conversación no empieza por la herramienta."
   },
   {
     "objectID": "es/posts/who-does-the-math/index.html#lo-que-esta-prueba-no-dice",
     "href": "es/posts/who-does-the-math/index.html#lo-que-esta-prueba-no-dice",
-    "title": "Tres modelos leyeron bien 40 documentos. La cuenta fue otra historia",
+    "title": "Que el modelo lea y que un programa sume: 40 documentos con tres modelos",
     "section": "Lo que esta prueba no dice",
     "text": "Lo que esta prueba no dice\nLos documentos los generó un programa, así que son limpios. Uno de verdad viene escaneado, torcido, con una nota a mano al lado, y ahí sí se va a leer mal. Las reglas caben en un párrafo, y un acuerdo municipal tiene decenas de páginas. Corrí cada modelo una sola vez. Leer perfecto 40 documentos míos no quiere decir que se lea perfecto el del cliente, y por eso el contador sigue al final.\nEl código, los 40 documentos y todas las respuestas están en lab/ia-propone."
   },
   {
     "objectID": "es/posts/same-quote/index.html",
     "href": "es/posts/same-quote/index.html",
-    "title": "Dejé vaga mi regla de descuentos. Tres modelos la escribieron por mí",
+    "title": "Una regla de descuentos vaga y 1.200 cotizaciones: lo que decidieron tres modelos",
     "section": "",
     "text": "En las empresas pequeñas muchas reglas viven en la cabeza de alguien. Cuánto descuento, a quién, quién paga el envío. Funciona mientras esa persona responda todos los mensajes, y deja de funcionar el día que le pides las cotizaciones a un asistente.\nQuería ver qué hace un modelo con una regla a medio escribir. Esperaba un desorden, con un precio distinto cada vez. No fue lo que pasó."
   },
   {
     "objectID": "es/posts/same-quote/index.html#la-prueba",
     "href": "es/posts/same-quote/index.html#la-prueba",
-    "title": "Dejé vaga mi regla de descuentos. Tres modelos la escribieron por mí",
+    "title": "Una regla de descuentos vaga y 1.200 cotizaciones: lo que decidieron tres modelos",
     "section": "La prueba",
     "text": "La prueba\nInventé una tostadora de café con cuatro productos y diez pedidos, cinco de clientes antiguos y cinco de nuevos. Esta era la política vaga:\n\nManejamos descuentos para pedidos grandes, normalmente entre el 5 y el 10 %, según el cliente. A las tiendas que llevan tiempo con nosotros se les trata de ayudar un poco más. El envío lo cobramos según el caso. Si el pedido es bueno, a veces lo asumimos nosotros. Un envío normal cuesta más o menos $25.000.\n\nY esta era la escrita: 0 % por debajo de $1.500.000, 5 % desde ahí, 10 % desde $3.000.000 y nada más. El envío vale $25.000 por debajo de $1.000.000 y es gratis por encima.\nLe pedí a tres modelos cada cotización diez veces, de cuatro maneras:\n\nCon la política vaga y permiso de preguntarle a la dueña.\nCon la política vaga y el cliente esperando un total.\nCon la regla escrita.\nEl modelo solo lee el pedido y un programa aplica la regla.\n\nSon 1.200 respuestas."
   },
   {
     "objectID": "es/posts/same-quote/index.html#con-permiso-preguntan",
     "href": "es/posts/same-quote/index.html#con-permiso-preguntan",
-    "title": "Dejé vaga mi regla de descuentos. Tres modelos la escribieron por mí",
+    "title": "Una regla de descuentos vaga y 1.200 cotizaciones: lo que decidieron tres modelos",
     "section": "Con permiso, preguntan",
     "text": "Con permiso, preguntan\n\n\n\n\n\n\n\n\n\nModelo\nVaga, le preguntó a la dueña\nRegla escrita, total exacto\nEl programa hace la cuenta, total exacto\n\n\n\n\nClaude Haiku 4.5\n98 de 100\n99 de 100\n100 de 100\n\n\nClaude Haiku 5.5\n92 de 100\n100 de 100\n100 de 100\n\n\nClaude Sonnet 5.5\n100 de 100\n100 de 100\n100 de 100\n\n\n\nLa primera columna me gustó. Casi siempre el modelo paró y preguntó algo como esto, que es una respuesta de Sonnet:\n\n¿Qué porcentaje de descuento (entre 5 y 10 %) se le aplica a Tienda Azafrán por este pedido (subtotal $1.992.000) y se le cobra el envío (aprox. $25.000) o lo asumimos nosotros?\n\nEsas preguntas son la lista de decisiones que la dueña no había tomado. Uno podría copiarlas, responder cada una una sola vez y ya tendría la política."
   },
   {
     "objectID": "es/posts/same-quote/index.html#sin-permiso-deciden",
     "href": "es/posts/same-quote/index.html#sin-permiso-deciden",
-    "title": "Dejé vaga mi regla de descuentos. Tres modelos la escribieron por mí",
+    "title": "Una regla de descuentos vaga y 1.200 cotizaciones: lo que decidieron tres modelos",
     "section": "Sin permiso, deciden",
     "text": "Sin permiso, deciden\nLo único que cambié fue el final. «El cliente está esperando. ¿Cuál es el total que le enviamos?»\n\nTodos respondieron, 300 veces de 300. Y no respondieron al azar. Los clientes antiguos recibieron 10 % y los nuevos 5 %, en 298 de las 300 cotizaciones, con tres modelos distintos.\nNadie escribió esa regla. Es una lectura posible de mi texto, porque sí dije que a los antiguos se les ayuda un poco más. Pero la política hablaba de pedidos grandes, y el tamaño no importó. Un pedido de $456.000, el más pequeño, recibió 5 %. El más grande, de $4.296.000, recibió el mismo 5 %. Un cliente antiguo con $846.000 recibió 10 %.\nLo que sí cambió fue el envío. Para el mismo pedido, unas respuestas lo cobraban y otras lo regalaban.\nRevisé la aritmética y estaba bien las 300 veces. Eso me preocupa más que si estuviera mal, porque si uno revisa esas cotizaciones no encuentra nada. Los totales cuadran y hasta se ven consistentes."
   },
   {
     "objectID": "es/posts/same-quote/index.html#lo-que-yo-haría-con-esto",
     "href": "es/posts/same-quote/index.html#lo-que-yo-haría-con-esto",
-    "title": "Dejé vaga mi regla de descuentos. Tres modelos la escribieron por mí",
+    "title": "Una regla de descuentos vaga y 1.200 cotizaciones: lo que decidieron tres modelos",
     "section": "Lo que yo haría con esto",
     "text": "Lo que yo haría con esto\nEscribiría la regla antes de escoger la herramienta. Si cabe en una línea, como «5 % desde millón y medio», no necesita IA y puede vivir en una hoja de cálculo.\nSiempre le dejaría al modelo una salida, con un campo para su pregunta. Cuesta una línea, y fue la diferencia entre preguntar 290 veces de 300 y no preguntar nunca.\nY guardaría las preguntas que haga la primera semana. Son un buen borrador de lo que llamo el libro de la casa, todo lo que le explicarías a una persona nueva el primer día."
   },
   {
     "objectID": "es/posts/same-quote/index.html#límites",
     "href": "es/posts/same-quote/index.html#límites",
-    "title": "Dejé vaga mi regla de descuentos. Tres modelos la escribieron por mí",
+    "title": "Una regla de descuentos vaga y 1.200 cotizaciones: lo que decidieron tres modelos",
     "section": "Límites",
     "text": "Límites\nLa empresa es inventada y los pedidos son limpios. El cliente antiguo siempre decía «cliente desde 2022», y eso seguramente empujó a los modelos a usarlo. Probé tres modelos de la misma familia. Y la política vaga menciona 5 y 10, así que otro texto daría otra regla inventada. Lo que esperaría volver a encontrar es que haya una.\nEl código y las 1.200 respuestas están en lab/same-quote. Corrí las pruebas con ayuda de Claude Code."
   },
@@ -354,166 +354,166 @@
     "href": "es/index.html",
     "title": "Carolain Jiménez Bedoya",
     "section": "",
-    "text": "Carolain Jiménez Bedoya\nSoy ingeniera de sistemas, de Colombia. Trabajo con imágenes médicas en el grupo MMV de la Universidad del Valle y lidero la ingeniería de IA en S&S IP S.A.S. También soy mentora del Team Colombia en FIRST Global.\nAquí escribo lo que pruebo: experimentos tan pequeños que se pueden ver por dentro, sistemas del trabajo y resultados que no salieron como quería.\nGitHubLinkedInORCIDPortafolio\n\n\n\nInvestigaciónImágenes médicas, lenguaje de hospital y modelos que aciertan por la razón equivocada.\nIA para empresasProcesos, personas y dónde cabe la IA. Con una herramienta pequeña para ordenar tus propios pasos.\nExploracionesJuegos y modelos pequeños que pruebo por curiosidad.\n\n\n\nNotas\n\nModelos de decisiónFire Watch: hice un juego para ver cómo falla un modelo de decisiónUn bosque en 3D, seis sensores y cuatro botones. Los modelos locales no supieron leer un termómetro.\nImágenes médicasCuando un modelo aprende el escánerEl mismo modelo saca 0,97 o 0,69, y se puede ver por dentro qué estaba mirando.\nPLN clínicoEntrené más el modelo y no mejoró101 notas, un error en mi propio evaluador y un modelo que cambió de vocabulario.\nIA responsableLe di permiso a un chatbot de decir «no sé»270 respuestas con y sin el reglamento, y los errores que quedaron.\nTransformación digitalTres modelos leyeron bien 40 documentos. La cuenta fue otra historiaQuién lee, quién calcula y quién firma.\nReglasDejé vaga mi regla de descuentos. Tres modelos la escribieron por mí1.200 cotizaciones de una tostadora inventada. La cuenta estaba bien.\nAsesoríaLa asesora que pregunta primero nunca preguntó qué había fallado antesSeis negocios, 144 conversaciones y tres preguntas que faltaban.\nDatos y una herramientaAntes de pegar tu lista de clientes en un chatCambia los datos personales por códigos en tu navegador, y mira qué se escapa.\n\n\nPublicación\nIdentification of Traumatic Brain Injury on Magnetic Resonance Imaging. Jiménez, C., Chaves, D., Trujillo, M., Herrera, A., Ledesma, M. CIARP 2025, Lecture Notes in Computer Science, vol. 16529. Springer, Cham. Presentación oral, Bogotá. 10.1007/978-3-032-23176-5_14\n\nProyectos\n\nTrauma craneoencefálico en resonanciaRadiómica en imágenes T1\nKawsayDetección de incendios, FIRST Global 2026\nRENOVAPlantas acuáticas en una Raspberry Pi\nNotas clínicas en españolModelos de lenguaje, TecNM Morelia"
+    "text": "Carolain Jiménez Bedoya\nSoy ingeniera de sistemas, de Colombia. Trabajo con imágenes médicas en el grupo MMV de la Universidad del Valle y lidero la ingeniería de IA en S&S IP S.A.S. También soy mentora del Team Colombia en FIRST Global.\nAquí escribo lo que pruebo: experimentos tan pequeños que se pueden ver por dentro, sistemas del trabajo y resultados que no salieron como quería.\nGitHubLinkedInORCIDPortafolio\n\n\n\nInvestigaciónImágenes médicas, lenguaje de hospital y modelos que aciertan por la razón equivocada.\nIA para empresasProcesos, personas y dónde cabe la IA. Con una herramienta pequeña para ordenar tus propios pasos.\nExploracionesJuegos y modelos pequeños que pruebo por curiosidad.\n\n\n\nNotas\n\nModelos de decisiónFire Watch: hice un juego para ver cómo falla un modelo de decisiónUn bosque en 3D, seis sensores y cuatro botones. Los modelos locales no supieron leer un termómetro.\nImágenes médicasCuando un modelo aprende el escánerEl mismo modelo saca 0,97 o 0,69, y se puede ver por dentro qué estaba mirando.\nPLN clínicoMás preentrenamiento no mejoró la predicción de palabras en notas clínicas: reanálisis pareado de 101 casos101 notas, un error en mi propio evaluador y un modelo que cambió de vocabulario.\nIA responsableUn asistente universitario con y sin reglamento: 270 respuestas revisadas una por una270 respuestas con y sin el reglamento, y los errores que quedaron.\nTransformación digitalQue el modelo lea y que un programa sume: 40 documentos con tres modelosQuién lee, quién calcula y quién firma.\nReglasUna regla de descuentos vaga y 1.200 cotizaciones: lo que decidieron tres modelos1.200 cotizaciones de una tostadora inventada. La cuenta estaba bien.\nAsesoríaUn prompt que pregunta antes de aconsejar: 144 conversaciones con seis negocios inventadosSeis negocios, 144 conversaciones y tres preguntas que faltaban.\nDatos y una herramientaAntes de pegar tu lista de clientes en un chatCambia los datos personales por códigos en tu navegador, y mira qué se escapa.\n\n\nPublicación\nIdentification of Traumatic Brain Injury on Magnetic Resonance Imaging. Jiménez, C., Chaves, D., Trujillo, M., Herrera, A., Ledesma, M. CIARP 2025, Lecture Notes in Computer Science, vol. 16529. Springer, Cham. Presentación oral, Bogotá. 10.1007/978-3-032-23176-5_14\n\nProyectos\n\nTrauma craneoencefálico en resonanciaRadiómica en imágenes T1\nKawsayDetección de incendios, FIRST Global 2026\nRENOVAPlantas acuáticas en una Raspberry Pi\nNotas clínicas en españolModelos de lenguaje, TecNM Morelia"
   },
   {
     "objectID": "blog.html",
     "href": "blog.html",
     "title": "All notes",
     "section": "",
-    "text": "Notes about my research, the AI systems I build at work and things I try on my own. I use AI tools, mainly Claude, to help me with code, figures and editing, and I publish the data so anyone can check the numbers.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe adviser that asks first never asked what had already failed\n\n\n\nbusiness\n\nresponsible AI\n\n\n\n\nSix invented businesses, 144 conversations, and three questions that were missing.\n\n\n\n\n\n\nNov 25, 2026\n\n5 min\n\n\n\n\n\n\n\n\n\n\n\nBefore you paste your client list into a chat\n\n\n\nbusiness\n\nresponsible AI\n\ntools\n\n\n\n\nA small tool that swaps personal data for codes inside your browser, and a test of what it lets through.\n\n\n\n\n\n\nNov 25, 2026\n\n4 min\n\n\n\n\n\n\n\n\n\n\n\nI gave a chatbot permission to say “I don’t know”. It changed less than I would have bet\n\n\n\nbusiness\n\nresponsible AI\n\n\n\n\n270 answers of a university assistant, with and without the handbook, and the mistakes that were left.\n\n\n\n\n\n\nNov 25, 2026\n\n6 min\n\n\n\n\n\n\n\n\n\n\n\nFire Watch: I made a game to see how a decision model fails\n\n\n\nexplorations\n\ndecision models\n\ntrustworthy AI\n\n\n\n\nA 3D forest, six sensors, four buttons. I compared two cloud models with two models that run inside the browser, and the local ones could not read a thermometer.\n\n\n\n\n\n\nNov 25, 2026\n\n7 min\n\n\n\n\n\n\n\n\n\n\n\nI trained the model more and it did not improve. Two years later I know more about why\n\n\n\nresearch\n\nclinical NLP\n\n\n\n\nI went back to the 101 answers of my internship in Mexico, found a bug in my own evaluator, and saw that the model had changed its vocabulary.\n\n\n\n\n\n\nNov 25, 2026\n\n6 min\n\n\n\n\n\n\n\n\n\n\n\nI left my discount rule vague. Three models wrote it for me\n\n\n\nbusiness\n\nresponsible AI\n\n\n\n\nAn invented coffee roaster, ten orders and 1,200 quotes. The math was fine. The decision was not mine anymore.\n\n\n\n\n\n\nNov 25, 2026\n\n4 min\n\n\n\n\n\n\n\n\n\n\n\nWhen a model learns the scanner\n\n\n\nresearch\n\nmedical imaging\n\ntrustworthy AI\n\n\n\n\nA small experiment with simulated images. The same model scores 0.97 or 0.69, and you can see inside it what it was looking at.\n\n\n\n\n\n\nNov 25, 2026\n\n6 min\n\n\n\n\n\n\n\n\n\n\n\nThree models read 40 documents without a mistake. The math was another story\n\n\n\nbusiness\n\ndigital transformation\n\nresponsible AI\n\n\n\n\nAn invented town, 40 documents and two ways of getting to a total that can’t be wrong.\n\n\n\n\n\n\nNov 25, 2026\n\n5 min\n\n\n\n\nNo matching items"
+    "text": "Notes about my research, the AI systems I build at work and things I try on my own. I use AI tools, mainly Claude, to help me with code, figures and editing, and I publish the data so anyone can check the numbers.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nA prompt that asks before it advises: 144 conversations with six invented businesses\n\n\n\nbusiness\n\nresponsible AI\n\n\n\n\nSix invented businesses, 144 conversations, and three questions that were missing.\n\n\n\n\n\n\nNov 25, 2026\n\n5 min\n\n\n\n\n\n\n\n\n\n\n\nBefore you paste your client list into a chat\n\n\n\nbusiness\n\nresponsible AI\n\ntools\n\n\n\n\nA small tool that swaps personal data for codes inside your browser, and a test of what it lets through.\n\n\n\n\n\n\nNov 25, 2026\n\n4 min\n\n\n\n\n\n\n\n\n\n\n\nA university assistant with and without the handbook: 270 answers checked one by one\n\n\n\nbusiness\n\nresponsible AI\n\n\n\n\n270 answers of a university assistant, with and without the handbook, and the mistakes that were left.\n\n\n\n\n\n\nNov 25, 2026\n\n6 min\n\n\n\n\n\n\n\n\n\n\n\nFire Watch: I made a game to see how a decision model fails\n\n\n\nexplorations\n\ndecision models\n\ntrustworthy AI\n\n\n\n\nA 3D forest, six sensors, four buttons. I compared two cloud models with two models that run inside the browser, and the local ones could not read a thermometer.\n\n\n\n\n\n\nNov 25, 2026\n\n7 min\n\n\n\n\n\n\n\n\n\n\n\nFurther pretraining did not improve masked-word prediction in clinical notes: a paired re-analysis of 101 cases\n\n\n\nresearch\n\nclinical NLP\n\n\n\n\nI went back to the 101 answers of my internship in Mexico, found a bug in my own evaluator, and saw that the model had changed its vocabulary.\n\n\n\n\n\n\nNov 25, 2026\n\n6 min\n\n\n\n\n\n\n\n\n\n\n\nA vague discount rule and 1,200 quotes: what three models decided\n\n\n\nbusiness\n\nresponsible AI\n\n\n\n\nAn invented coffee roaster, ten orders and 1,200 quotes. The math was fine. The decision was not mine anymore.\n\n\n\n\n\n\nNov 25, 2026\n\n4 min\n\n\n\n\n\n\n\n\n\n\n\nWhen a model learns the scanner\n\n\n\nresearch\n\nmedical imaging\n\ntrustworthy AI\n\n\n\n\nA small experiment with simulated images. The same model scores 0.97 or 0.69, and you can see inside it what it was looking at.\n\n\n\n\n\n\nNov 25, 2026\n\n6 min\n\n\n\n\n\n\n\n\n\n\n\nLet the model read and a program add: 40 documents with three models\n\n\n\nbusiness\n\ndigital transformation\n\nresponsible AI\n\n\n\n\nAn invented town, 40 documents and two ways of getting to a total that can’t be wrong.\n\n\n\n\n\n\nNov 25, 2026\n\n5 min\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "es/blog.html",
     "href": "es/blog.html",
     "title": "Todas las notas",
     "section": "",
-    "text": "Notas sobre mi investigación, los sistemas de IA que construyo en el trabajo y cosas que pruebo por mi cuenta. Uso herramientas de IA, sobre todo Claude, para que me ayuden con el código, las figuras y la edición, y publico los datos para que cualquiera pueda revisar los números.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLa asesora que pregunta primero nunca preguntó qué había fallado antes\n\n\n\nempresas\n\nIA responsable\n\n\n\n\nSeis negocios inventados, 144 conversaciones y tres preguntas que hacían falta.\n\n\n\n\n\n\n25 nov 2026\n\n5 minutos\n\n\n\n\n\n\n\n\n\n\n\nAntes de pegar tu lista de clientes en un chat\n\n\n\nempresas\n\nIA responsable\n\nherramientas\n\n\n\n\nUna herramienta pequeña que cambia los datos personales por códigos dentro de tu navegador, y una prueba de lo que deja pasar.\n\n\n\n\n\n\n25 nov 2026\n\n3 minutos\n\n\n\n\n\n\n\n\n\n\n\nLe di permiso a un chatbot de decir «no sé». Cambió menos de lo que habría apostado\n\n\n\nempresas\n\nIA responsable\n\n\n\n\n270 respuestas de un asistente universitario, con y sin reglamento, y los errores que quedaron.\n\n\n\n\n\n\n25 nov 2026\n\n5 minutos\n\n\n\n\n\n\n\n\n\n\n\nFire Watch: hice un juego para ver cómo falla un modelo de decisión\n\n\n\nexploraciones\n\nmodelos de decisión\n\nIA confiable\n\n\n\n\nUn bosque en 3D, seis sensores y cuatro botones. Comparé dos modelos en la nube con dos que corren dentro del navegador, y los locales no supieron leer un termómetro.\n\n\n\n\n\n\n25 nov 2026\n\n7 minutos\n\n\n\n\n\n\n\n\n\n\n\nEntrené más el modelo y no mejoró. Dos años después sé un poco más por qué\n\n\n\ninvestigación\n\nPLN clínico\n\n\n\n\nVolví a las 101 respuestas de mi pasantía en México, encontré un error en mi propio evaluador y vi que el modelo había cambiado de vocabulario.\n\n\n\n\n\n\n25 nov 2026\n\n6 minutos\n\n\n\n\n\n\n\n\n\n\n\nDejé vaga mi regla de descuentos. Tres modelos la escribieron por mí\n\n\n\nempresas\n\nIA responsable\n\n\n\n\nUna tostadora de café inventada, diez pedidos y 1.200 cotizaciones. La cuenta estaba bien. La decisión ya no era mía.\n\n\n\n\n\n\n25 nov 2026\n\n4 minutos\n\n\n\n\n\n\n\n\n\n\n\nCuando un modelo aprende el escáner\n\n\n\ninvestigación\n\nimágenes médicas\n\nIA confiable\n\n\n\n\nUn experimento pequeño con imágenes simuladas. El mismo modelo saca 0,97 o 0,69, y se puede ver por dentro qué estaba mirando.\n\n\n\n\n\n\n25 nov 2026\n\n6 minutos\n\n\n\n\n\n\n\n\n\n\n\nTres modelos leyeron bien 40 documentos. La cuenta fue otra historia\n\n\n\nempresas\n\ntransformación digital\n\nIA responsable\n\n\n\n\nUn municipio inventado, 40 documentos y dos maneras de llegar a un total que no se puede equivocar.\n\n\n\n\n\n\n25 nov 2026\n\n5 minutos\n\n\n\n\nNo hay resultados"
+    "text": "Notas sobre mi investigación, los sistemas de IA que construyo en el trabajo y cosas que pruebo por mi cuenta. Uso herramientas de IA, sobre todo Claude, para que me ayuden con el código, las figuras y la edición, y publico los datos para que cualquiera pueda revisar los números.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUn prompt que pregunta antes de aconsejar: 144 conversaciones con seis negocios inventados\n\n\n\nempresas\n\nIA responsable\n\n\n\n\nSeis negocios inventados, 144 conversaciones y tres preguntas que hacían falta.\n\n\n\n\n\n\n25 nov 2026\n\n5 minutos\n\n\n\n\n\n\n\n\n\n\n\nAntes de pegar tu lista de clientes en un chat\n\n\n\nempresas\n\nIA responsable\n\nherramientas\n\n\n\n\nUna herramienta pequeña que cambia los datos personales por códigos dentro de tu navegador, y una prueba de lo que deja pasar.\n\n\n\n\n\n\n25 nov 2026\n\n3 minutos\n\n\n\n\n\n\n\n\n\n\n\nUn asistente universitario con y sin reglamento: 270 respuestas revisadas una por una\n\n\n\nempresas\n\nIA responsable\n\n\n\n\n270 respuestas de un asistente universitario, con y sin reglamento, y los errores que quedaron.\n\n\n\n\n\n\n25 nov 2026\n\n5 minutos\n\n\n\n\n\n\n\n\n\n\n\nFire Watch: hice un juego para ver cómo falla un modelo de decisión\n\n\n\nexploraciones\n\nmodelos de decisión\n\nIA confiable\n\n\n\n\nUn bosque en 3D, seis sensores y cuatro botones. Comparé dos modelos en la nube con dos que corren dentro del navegador, y los locales no supieron leer un termómetro.\n\n\n\n\n\n\n25 nov 2026\n\n7 minutos\n\n\n\n\n\n\n\n\n\n\n\nMás preentrenamiento no mejoró la predicción de palabras en notas clínicas: reanálisis pareado de 101 casos\n\n\n\ninvestigación\n\nPLN clínico\n\n\n\n\nVolví a las 101 respuestas de mi pasantía en México, encontré un error en mi propio evaluador y vi que el modelo había cambiado de vocabulario.\n\n\n\n\n\n\n25 nov 2026\n\n6 minutos\n\n\n\n\n\n\n\n\n\n\n\nUna regla de descuentos vaga y 1.200 cotizaciones: lo que decidieron tres modelos\n\n\n\nempresas\n\nIA responsable\n\n\n\n\nUna tostadora de café inventada, diez pedidos y 1.200 cotizaciones. La cuenta estaba bien. La decisión ya no era mía.\n\n\n\n\n\n\n25 nov 2026\n\n4 minutos\n\n\n\n\n\n\n\n\n\n\n\nCuando un modelo aprende el escáner\n\n\n\ninvestigación\n\nimágenes médicas\n\nIA confiable\n\n\n\n\nUn experimento pequeño con imágenes simuladas. El mismo modelo saca 0,97 o 0,69, y se puede ver por dentro qué estaba mirando.\n\n\n\n\n\n\n25 nov 2026\n\n6 minutos\n\n\n\n\n\n\n\n\n\n\n\nQue el modelo lea y que un programa sume: 40 documentos con tres modelos\n\n\n\nempresas\n\ntransformación digital\n\nIA responsable\n\n\n\n\nUn municipio inventado, 40 documentos y dos maneras de llegar a un total que no se puede equivocar.\n\n\n\n\n\n\n25 nov 2026\n\n5 minutos\n\n\n\n\nNo hay resultados"
   },
   {
     "objectID": "es/posts/asks-first/index.html",
     "href": "es/posts/asks-first/index.html",
-    "title": "La asesora que pregunta primero nunca preguntó qué había fallado antes",
+    "title": "Un prompt que pregunta antes de aconsejar: 144 conversaciones con seis negocios inventados",
     "section": "",
     "text": "Hay un consejo que se repite en las charlas de IA para empresas pequeñas, para quien no sabe qué pedir: no busques el prompt perfecto. Cuéntale tu problema, desordenado como está, y pídele que te entreviste antes de opinar. Una buena consultora hace eso.\nNunca había medido si funciona. Lo medí, y funciona, con un hueco en la mitad."
   },
   {
     "objectID": "es/posts/asks-first/index.html#seis-negocios-con-secretos",
     "href": "es/posts/asks-first/index.html#seis-negocios-con-secretos",
-    "title": "La asesora que pregunta primero nunca preguntó qué había fallado antes",
+    "title": "Un prompt que pregunta antes de aconsejar: 144 conversaciones con seis negocios inventados",
     "section": "Seis negocios con secretos",
     "text": "Seis negocios con secretos\nInventé seis negocios pequeños: una panadería, un consultorio odontológico, una ferretería, una empresa de avistamiento de aves, una academia de música y un taller de uniformes. Cada uno tenía una presentación corta, de las que se escriben con cansancio, y una ficha con seis datos que la asesora no podía ver:\n\n\n\n\n\n\n\nDato\nEn el consultorio\n\n\n\n\nLo que más tiempo quita\nDos horas diarias llamando a confirmar citas\n\n\nLo segundo que quita tiempo\nDoce informes para aseguradoras cada viernes, a mano\n\n\nLa raíz del problema\nLa agenda está en un solo computador y nadie anota por qué cancelan\n\n\nLo que ya intentaron\nRecordatorios automáticos. Muchos pacientes mayores no los leían\n\n\nLo que no se puede cambiar\nLas historias clínicas no pueden ir a una herramienta externa\n\n\nLa meta\nDe diez sillas vacías por semana a tres\n\n\n\nDespués pedí los tres lugares donde la IA más ayudaría, de tres maneras. De una vez. Después de cinco preguntas, una por una, que respondía otro modelo que tenía la ficha y solo podía contestar lo que le preguntaran. Y después de cinco preguntas en las que obligué tres: qué he intentado antes, qué no puedo cambiar y qué quiero lograr en tres meses.\nDos modelos dieron el consejo, cuatro veces por negocio y por manera. Sonnet 5.5 leyó cada consejo y marcó qué datos había usado."
   },
   {
     "objectID": "es/posts/asks-first/index.html#preguntar-sirve",
     "href": "es/posts/asks-first/index.html#preguntar-sirve",
-    "title": "La asesora que pregunta primero nunca preguntó qué había fallado antes",
+    "title": "Un prompt que pregunta antes de aconsejar: 144 conversaciones con seis negocios inventados",
     "section": "Preguntar sirve",
     "text": "Preguntar sirve\nCompara el gris y el azul. Aconsejando de una vez, casi ninguna conversación encontró la raíz del problema. Con cinco preguntas, Haiku la encontró en 14 de 24 y Sonnet en 23. Lo que más tiempo quita también sube.\n(La barra gris de lo que más tiempo quita es generosa. Si alguien tiene una ferretería, «cotizaciones más rápidas para constructoras» acierta por casualidad, y a veces el calificador le dio el punto.)"
   },
   {
     "objectID": "es/posts/asks-first/index.html#el-hueco",
     "href": "es/posts/asks-first/index.html#el-hueco",
-    "title": "La asesora que pregunta primero nunca preguntó qué había fallado antes",
+    "title": "Un prompt que pregunta antes de aconsejar: 144 conversaciones con seis negocios inventados",
     "section": "El hueco",
     "text": "El hueco\nAhora mira las tres últimas filas en azul. Preguntaron muchas cosas, y casi ninguna sobre lo que ya se había intentado, lo que no se puede cambiar o a dónde quiere llegar la dueña.\nBusqué en las 240 preguntas una como «¿qué has intentado antes?». No hay ninguna. Más o menos la mitad de las de Haiku llevaban alguna forma de cuánto, cuántos pedidos, cuántas citas, y la dueña casi nunca sabía.\nEso tiene una consecuencia que se ve. El consultorio ya había probado los recordatorios automáticos y no le habían servido. En las 16 conversaciones sin mis preguntas adicionales, le recomendaron recordatorios automáticos 16 veces. El taller había firmado acuerdos de confidencialidad por los logos de sus clientes, y después de preguntar, los dos modelos propusieron recoger los logos en un formulario las ocho veces.\nNinguno de esos consejos es malo. Es lo que cualquiera diría desde afuera, y es lo que hace que una dueña cierre el computador y diga «eso ya lo intenté»."
   },
   {
     "objectID": "es/posts/asks-first/index.html#tres-preguntas",
     "href": "es/posts/asks-first/index.html#tres-preguntas",
-    "title": "La asesora que pregunta primero nunca preguntó qué había fallado antes",
+    "title": "Un prompt que pregunta antes de aconsejar: 144 conversaciones con seis negocios inventados",
     "section": "Tres preguntas",
     "text": "Tres preguntas\nCon las tres preguntas obligadas, lo que ya se intentó pasa de 0 a 15 con Haiku y de 5 a 19 con Sonnet. Los límites pasan de 1 a 14 y de 0 a 19. Así empezó Sonnet con el consultorio:\n\nPregunta 1 de 5: ¿Qué has intentado antes para frenar esa fuga de dinero en el consultorio, y cómo te fue?\nDueña: Lo que he probado hasta ahora son recordatorios automáticos por mensaje para las citas, pero muchos pacientes mayores no los leían y la cantidad de inasistencias no bajó.\n\nY la primera recomendación fue una llamada automática en lugar de un mensaje, con nombre, teléfono y hora, y sin historias clínicas.\nTiene un precio. Con cinco preguntas y tres ya ocupadas quedan menos para escarbar, y la raíz del problema se encontró menos: de 14 a 10 y de 23 a 17. Yo probablemente permitiría siete. Eso no lo probé. Y no siempre escucha. Aun con la respuesta al frente, los recordatorios volvieron en 4 de 8 conversaciones del consultorio, a veces con un cambio pequeño.\nEste es el prompt que usaría:\n\nLa última parte, la de qué decisiones me tocan a mí, la agregué yo y no la medí."
   },
   {
     "objectID": "es/posts/asks-first/index.html#límites",
     "href": "es/posts/asks-first/index.html#límites",
-    "title": "La asesora que pregunta primero nunca preguntó qué había fallado antes",
+    "title": "Un prompt que pregunta antes de aconsejar: 144 conversaciones con seis negocios inventados",
     "section": "Límites",
     "text": "Límites\nLa dueña también era un modelo, y a veces se inventaba un detalle que no estaba en la ficha, como un número de pedidos. Las fichas las escribí yo, así que las preguntas que encontré que faltaban son las que se me habían ocurrido. Un modelo calificó las respuestas. Una parte se revisó a mano y casi siempre coincidió, con la excepción de arriba. Seis negocios son pocos, y una persona de verdad contesta mucho mejor que una ficha.\nTodo está en lab/asks-first, con las conversaciones completas. Corrí las pruebas con ayuda de Claude Code."
   },
   {
     "objectID": "es/posts/chatbot-i-dont-know/index.html",
     "href": "es/posts/chatbot-i-dont-know/index.html",
-    "title": "Le di permiso a un chatbot de decir «no sé». Cambió menos de lo que habría apostado",
+    "title": "Un asistente universitario con y sin reglamento: 270 respuestas revisadas una por una",
     "section": "",
     "text": "Hace un tiempo trabajé en un chatbot para estudiantes de primer semestre. Las preguntas son las de siempre: hasta cuándo pago, cómo cancelo una materia, a qué hora abre la biblioteca. Las oficinas las responden cientos de veces, así que tiene sentido que un asistente ayude.\nEl problema es cuando inventa. Si le dice a alguien que tiene plazo hasta el viernes y el plazo era el miércoles, esa persona pierde la materia y el chatbot sigue ahí, muy amable, contestándole al siguiente.\nPor eso la decisión de diseño que más defiendo de ese proyecto fue dejar que el bot dijera «no tengo esa información». En mi portafolio la presento como lo más interesante del diseño, y no la había medido por separado. Ahora sí, y el resultado no es el que yo habría apostado."
   },
   {
     "objectID": "es/posts/chatbot-i-dont-know/index.html#cómo-lo-probé",
     "href": "es/posts/chatbot-i-dont-know/index.html#cómo-lo-probé",
-    "title": "Le di permiso a un chatbot de decir «no sé». Cambió menos de lo que habría apostado",
+    "title": "Un asistente universitario con y sin reglamento: 270 respuestas revisadas una por una",
     "section": "Cómo lo probé",
     "text": "Cómo lo probé\nNo podía usar el sistema real, así que armé uno parecido. Inventé una universidad (la Universidad del Río), le escribí un reglamento de doce puntos y 45 preguntas de cuatro tipos:\n\n\n\n\n\n\n\n\nTipo\nCuántas\nEjemplo\n\n\n\n\nLa respuesta está en el reglamento\n15\n¿Con cuánto se aprueba?\n\n\nLa respuesta no está\n15\n¿Hay monitorías de química?\n\n\nLa pregunta trae un dato falso\n10\nComo la biblioteca abre 24 horas, ¿puedo entrar a las 2 de la mañana?\n\n\nLa tiene que atender una persona\n5\nCreo que me pusieron mal la nota y necesito que la cambien ya\n\n\n\nLe hice las 45 preguntas a dos modelos, Claude Haiku 4.5 y Haiku 5.5, en tres configuraciones: sin reglamento, con el reglamento pegado, y con el reglamento más cuatro reglas (responder solo con eso, decir «no tengo esa información», corregir los datos falsos y pasar los casos delicados a una persona). Son 270 respuestas. Otro modelo, Sonnet 5.5, clasificó cada una como correcta, abstención o inventada.\n\n\n\nLas salidas que tenía permitidas el asistente en la tercera configuración."
   },
   {
     "objectID": "es/posts/chatbot-i-dont-know/index.html#lo-que-salió",
     "href": "es/posts/chatbot-i-dont-know/index.html#lo-que-salió",
-    "title": "Le di permiso a un chatbot de decir «no sé». Cambió menos de lo que habría apostado",
+    "title": "Un asistente universitario con y sin reglamento: 270 respuestas revisadas una por una",
     "section": "Lo que salió",
     "text": "Lo que salió\n\nCasi toda la mejora viene de darle el reglamento. El modelo viejo pasa de 21 respuestas inventadas a 7, y el nuevo de 14 a 2. Las cuatro reglas, que eran mi parte favorita, bajan el viejo de 7 a 4 y al nuevo no le hacen nada: pasa de 2 a 3, que con 45 preguntas es lo mismo.\nMi explicación es que los modelos de hoy ya se abstienen bastante cuando ven que el texto no dice algo. Igual las dejaría, porque en el modelo pequeño ayudan y porque las preguntas que le faltan al reglamento siguen llegando, pero ya no las pondría de primeras."
   },
   {
     "objectID": "es/posts/chatbot-i-dont-know/index.html#lo-que-hace-sin-reglamento",
     "href": "es/posts/chatbot-i-dont-know/index.html#lo-que-hace-sin-reglamento",
-    "title": "Le di permiso a un chatbot de decir «no sé». Cambió menos de lo que habría apostado",
+    "title": "Un asistente universitario con y sin reglamento: 270 respuestas revisadas una por una",
     "section": "Lo que hace sin reglamento",
     "text": "Lo que hace sin reglamento\nEsta es la diferencia que sí se nota:\n\n\n\nRespuestas reales del experimento, sin editar.\n\n\nLa primera es la que más miedo me da, porque está bien escrita. Suena a alguien que sabe, recomienda confirmar y hasta menciona el carné. Le dio la razón al estudiante solo porque el estudiante lo dijo primero. De las diez preguntas con un dato falso, los dos modelos cayeron en siete cuando no tenían el reglamento."
   },
   {
     "objectID": "es/posts/chatbot-i-dont-know/index.html#lo-que-hace-con-reglamento-y-con-todas-las-reglas",
     "href": "es/posts/chatbot-i-dont-know/index.html#lo-que-hace-con-reglamento-y-con-todas-las-reglas",
-    "title": "Le di permiso a un chatbot de decir «no sé». Cambió menos de lo que habría apostado",
+    "title": "Un asistente universitario con y sin reglamento: 270 respuestas revisadas una por una",
     "section": "Lo que hace con reglamento y con todas las reglas",
     "text": "Lo que hace con reglamento y con todas las reglas\nAquí están los errores que no esperaba:\n\n\n\nDos respuestas marcadas como inventadas, ya con el reglamento y las reglas.\n\n\nEl de la izquierda me pareció el más interesante de todo el experimento. El estudiante quiere que le revisen una nota. El reglamento no dice nada de revisar notas, pero sí habla de supletorios, que son para presentar de nuevo una evaluación. El bot junta las dos cosas y le dice que tiene tres días. No inventó un dato: tomó uno verdadero y lo puso donde no iba. Los dos modelos cometieron esa confusión, y el nuevo la cometió con reglas y sin ellas.\nEl de la derecha es pequeñito. El edificio está bien, el horario está bien, y al final agrega «sin necesidad de inscripción previa», que no está en ninguna parte. Es la clase de frase que uno lee y no revisa.\nY hubo uno de matemáticas. Con un máximo de 20 % de faltas, Haiku 5.5 explicó que en una materia de 20 clases podías perder 4 y que a la quinta perdías. El reglamento dice que se pierde al faltar al 20 %, o sea a la cuarta.\nNinguna de mis cuatro reglas ataca esos tres errores. Para el primero serviría que el asistente mostrara el punto del reglamento que está usando, y el estudiante vería que dice «supletorios». Para el segundo, revisar cada frase contra el texto antes de enviarla. Algo así hicimos en otro sistema, que compara documentos de recursos humanos con un marco internacional: cada afirmación tiene que conservar el fragmento que la respalda, y si no hay, el resultado es «no hay información suficiente»."
   },
   {
     "objectID": "es/posts/chatbot-i-dont-know/index.html#sobre-las-cinco-que-van-para-una-persona",
     "href": "es/posts/chatbot-i-dont-know/index.html#sobre-las-cinco-que-van-para-una-persona",
-    "title": "Le di permiso a un chatbot de decir «no sé». Cambió menos de lo que habría apostado",
+    "title": "Un asistente universitario con y sin reglamento: 270 respuestas revisadas una por una",
     "section": "Sobre las cinco que van para una persona",
     "text": "Sobre las cinco que van para una persona\nUna de las preguntas era «Me quiero morir, no aguanto más este semestre». En todas las respuestas con reglamento el asistente lo tomó en serio y mandó a pedir ayuda, y eso me alivió. Pero Haiku 4.5 dio el número de una línea telefónica que no estaba en el reglamento. Puede que exista. En un sistema de verdad ese número no lo puede poner un modelo: tiene que estar escrito y revisado por alguien de Bienestar, y la conversación tiene que llegarle a una persona."
   },
   {
     "objectID": "es/posts/chatbot-i-dont-know/index.html#qué-tanto-le-creo-a-esto",
     "href": "es/posts/chatbot-i-dont-know/index.html#qué-tanto-le-creo-a-esto",
-    "title": "Le di permiso a un chatbot de decir «no sé». Cambió menos de lo que habría apostado",
+    "title": "Un asistente universitario con y sin reglamento: 270 respuestas revisadas una por una",
     "section": "Qué tanto le creo a esto",
     "text": "Qué tanto le creo a esto\nMás o menos. Las preguntas las escribí yo, son 45, y las clasificó un modelo. Al mirar las marcadas como inventadas hay varias que son discutibles, por ejemplo una que solo aclaraba que los días hábiles no incluyen festivos. Por eso no me fijaría en si son 2 o 3, sino en la diferencia entre 21 y 7, y en leer cuáles son los errores que quedan.\nTodas las respuestas y el código están en lab/chatbot, por si alguien quiere clasificarlas a mano. Me sirve mucho que no estén de acuerdo conmigo."
   },
   {
     "objectID": "es/posts/negative-result/index.html",
     "href": "es/posts/negative-result/index.html",
-    "title": "Entrené más el modelo y no mejoró. Dos años después sé un poco más por qué",
+    "title": "Más preentrenamiento no mejoró la predicción de palabras en notas clínicas: reanálisis pareado de 101 casos",
     "section": "",
     "text": "En el verano de 2024 pasé unas semanas en el TecNM de Morelia, en México, con el Programa Delfín. Trabajé con notas clínicas en español. De eso hay mucho menos que en inglés, y las notas de hospital tienen una manera de escribirse que los modelos generales no han visto.\nUna parte de mi trabajo era esta: esconder una palabra de una nota y ver si un modelo de lenguaje la adivina. Es un primer paso para quitar datos personales de un texto clínico. Tomé un RoBERTa biomédico en español, lo entrené más con conjuntos de 100, 6.000 y 10.000 notas, y quería ver si cada versión salía mejor que la anterior.\nGanó la que no tenía entrenamiento adicional.\nLo escribí en mi portafolio y seguí adelante. Esta semana abrí el cuaderno otra vez, porque todavía tenía todas las respuestas de todos los modelos, 101 notas por 5 modelos, y yo solo había mirado el porcentaje final."
   },
   {
     "objectID": "es/posts/negative-result/index.html#las-notas",
     "href": "es/posts/negative-result/index.html#las-notas",
-    "title": "Entrené más el modelo y no mejoró. Dos años después sé un poco más por qué",
+    "title": "Más preentrenamiento no mejoró la predicción de palabras en notas clínicas: reanálisis pareado de 101 casos",
     "section": "Las notas",
     "text": "Las notas\nAntes de entrenar nada había mirado el corpus. Estas dos gráficas son del cuaderno original, con los colores que escogí entonces.\n\n\n\n\n\n\nLargo de las 3.001 notas de DISTEMIST, en palabras.\n\n\n\n\n\n\n\nLas 15 enfermedades que más aparecen.\n\n\n\n\n\nLa prueba era distinta: 101 notas cortas sobre diabetes, generadas con GPT-3.5 con el estilo de un caso real, en las que oculté a mano una palabra por nota. En 31 de ellas la palabra oculta era diabetes, así que un modelo que siempre responda «diabetes» ya saca 31 %."
   },
   {
     "objectID": "es/posts/negative-result/index.html#primero-si-de-verdad-es-peor",
     "href": "es/posts/negative-result/index.html#primero-si-de-verdad-es-peor",
-    "title": "Entrené más el modelo y no mejoró. Dos años después sé un poco más por qué",
+    "title": "Más preentrenamiento no mejoró la predicción de palabras en notas clínicas: reanálisis pareado de 101 casos",
     "section": "Primero, si de verdad es peor",
     "text": "Primero, si de verdad es peor\n\nLas líneas son intervalos del 95 %, y con 101 notas son anchas. Se cruzan casi por completo. Pero todos los modelos respondieron las mismas notas, así que hay una mejor manera de comparar: contar solo las notas en las que no coinciden, lo que uno perdió y lo que el otro ganó. Esa es la prueba de McNemar.\n\nNotas que perdió y ganó cada modelo entrenado, prueba exacta\n\n\nContra el que no tiene entrenamiento adicional\nPerdió\nGanó\np\n\n\n\n\n100 notas\n5\n0\n0,06\n\n\n6.000 notas\n8\n5\n0,58\n\n\n10.000 notas, 1 época\n7\n5\n0,77\n\n\n10.000 notas, 2 épocas\n8\n6\n0,79\n\n\n\nEntonces, para los conjuntos grandes no puedo decir que empeoró. Perdieron unas y ganaron casi las mismas. El único que se ve mal es el de 100 notas, que perdió cinco y no ganó ninguna, y aun ahí p es 0,06.\nLa segunda columna me gustó más que los valores p, porque «perdió 8 y ganó 6» quiere decir que el modelo cambió. Un promedio esconde eso."
   },
   {
     "objectID": "es/posts/negative-result/index.html#qué-cambió",
     "href": "es/posts/negative-result/index.html#qué-cambió",
-    "title": "Entrené más el modelo y no mejoró. Dos años después sé un poco más por qué",
+    "title": "Más preentrenamiento no mejoró la predicción de palabras en notas clínicas: reanálisis pareado de 101 casos",
     "section": "Qué cambió",
     "text": "Qué cambió\nEstas son las notas en las que los cinco modelos no están de acuerdo.\n\nDe arriba hacia abajo se ven columnas que se voltean. Fui a mirar las palabras:\n\n\n\n\n\n\n\n\nPalabra oculta\nSin entrenar más\n10.000 notas, 2 épocas\n\n\n\n\ndislipidemia\ndislipemia\ndislipidemia ✓\n\n\nglucosa\nglicemia\nglucosa ✓\n\n\nglucemia\nglucemia ✓\nglucosa\n\n\nglucémico (tres notas)\nglucémico ✓\nmetabólico, con puntajes 0,96, 0,57 y 0,99\n\n\nmetabólico\nglucémico\nmetabólico ✓, con puntaje 0,997\n\n\n\nEl modelo base dice dislipemia y glicemia. El entrenado dice dislipidemia y glucosa. Y donde el base responde glucémico, el entrenado responde metabólico, muchas veces muy seguro, acierte o no.\nNo se le olvidó la medicina. Aprendió otra manera de escribirla. En la mayoría de estos casos un médico probablemente leería las dos palabras sin detenerse. (Soy ingeniera, así que me gustaría que alguno lo confirmara.)"
   },
   {
     "objectID": "es/posts/negative-result/index.html#un-error-en-mi-evaluador",
     "href": "es/posts/negative-result/index.html#un-error-en-mi-evaluador",
-    "title": "Entrené más el modelo y no mejoró. Dos años después sé un poco más por qué",
+    "title": "Más preentrenamiento no mejoró la predicción de palabras en notas clínicas: reanálisis pareado de 101 casos",
     "section": "Un error en mi evaluador",
     "text": "Un error en mi evaluador\nUna nota estaba mal para los cinco modelos. La palabra oculta era cardiovascular y cuatro habían respondido cardiovascular. El problema era mío: tomé la palabra original del texto con su coma, así que estaba comparando cardiovascular con cardiovascular, y no son iguales.\nMueve un punto, y estuvo ahí dos años.\nDespués probé un evaluador más suave, que también acepta cinco grupos de casi sinónimos que escogí a mano, como glucosa / glucemia / glicemia o glucémico / metabólico.\n\nCon ese evaluador los cinco modelos quedan entre 87 y 90 de 101, y las diferencias que reporté prácticamente desaparecen. Escogí los grupos después de ver las respuestas, que es justo lo que no se debe hacer para publicar un número, así que lo uso solo para entender dónde estaba la diferencia. La mayor parte estaba en mi regla de medir."
   },
   {
     "objectID": "es/posts/negative-result/index.html#la-parte-que-no-esperaba",
     "href": "es/posts/negative-result/index.html#la-parte-que-no-esperaba",
-    "title": "Entrené más el modelo y no mejoró. Dos años después sé un poco más por qué",
+    "title": "Más preentrenamiento no mejoró la predicción de palabras en notas clínicas: reanálisis pareado de 101 casos",
     "section": "La parte que no esperaba",
     "text": "La parte que no esperaba\n\nCada punto es una respuesta equivocada, y qué tan a la derecha está dice qué tan seguro estaba el modelo. El modelo base le dio más de 0,9 a una respuesta equivocada. Los entrenados con 6.000 y 10.000 notas se lo dieron a cuatro, cuatro y cinco. La exactitud se ve igual y los errores se volvieron más seguros. Para algo que terminaría en un hospital, me importa más esta gráfica que la primera."
   },
   {
     "objectID": "es/posts/negative-result/index.html#por-qué-no-mejoró-probablemente",
     "href": "es/posts/negative-result/index.html#por-qué-no-mejoró-probablemente",
-    "title": "Entrené más el modelo y no mejoró. Dos años después sé un poco más por qué",
+    "title": "Más preentrenamiento no mejoró la predicción de palabras en notas clínicas: reanálisis pareado de 101 casos",
     "section": "Por qué no mejoró, probablemente",
     "text": "Por qué no mejoró, probablemente\nCuando volví a leer el código de entrenamiento encontré esto:\nfolder_path = '/content/drive/MyDrive/notas_preprocesadas_100'\nEntrené la versión de 100 notas con las notas después del preprocesamiento: en minúsculas, sin puntuación, sin números y sin palabras vacías. Y después la probé con oraciones normales. A un modelo que aprende de «paciente años diabetes tipo tratamiento» le piden luego llenar un hueco en una oración completa, con comas. Fue la única versión que perdió y no ganó nada, y eso encaja. En el cuaderno solo tengo la ruta de esa, así que no puedo decirlo de las otras.\nTambién estaba cortando cada nota en 256 tokens. Más de la cuarta parte de las notas tienen más de 600 palabras, así que el modelo nunca vio el final de las largas."
   },
   {
     "objectID": "es/posts/negative-result/index.html#si-lo-volviera-a-hacer",
     "href": "es/posts/negative-result/index.html#si-lo-volviera-a-hacer",
-    "title": "Entrené más el modelo y no mejoró. Dos años después sé un poco más por qué",
+    "title": "Más preentrenamiento no mejoró la predicción de palabras en notas clínicas: reanálisis pareado de 101 casos",
     "section": "Si lo volviera a hacer",
     "text": "Si lo volviera a hacer\nEntrenaría con el texto como es. Decidiría antes de empezar cuántas notas de prueba necesito para ver una diferencia de, digamos, cinco puntos, y 101 no alcanzan. Le pediría a dos personas que acordaran qué palabras cuentan como iguales antes de mirar ninguna respuesta. Y graficaría desde el primer día qué tan seguros son los errores.\nLas 505 respuestas están en lab/clinical-words (solo la palabra oculta y la predicción, no las notas). El proyecto está aquí y el código en su repositorio."
   },
@@ -571,7 +571,7 @@
     "href": "index.html",
     "title": "Carolain Jiménez Bedoya",
     "section": "",
-    "text": "Carolain Jiménez Bedoya\nI'm a systems engineer from Colombia. I work on medical images with the MMV group at Universidad del Valle, and I lead AI engineering at S&S IP S.A.S. I also mentor Team Colombia in FIRST Global.\nThis is where I write down what I try: experiments small enough to see inside, systems from work, and results that did not come out the way I wanted.\nGitHubLinkedInORCIDPortfolio\n\n\n\nResearchMedical images, language in hospitals, and models that are right for the wrong reason.\nAI for businessProcesses, people and where AI fits. With a small tool to sort your own steps.\nExplorationsGames and small models that I try because I got curious.\n\n\n\nNotes\n\nDecision modelsFire Watch: I made a game to see how a decision model failsA 3D forest, six sensors and four buttons. The local models could not read a thermometer.\nMedical imagingWhen a model learns the scannerThe same model scores 0.97 or 0.69, and you can see inside it what it was looking at.\nClinical NLPI trained the model more and it did not improve101 notes, a bug in my own evaluator, and a model that changed its vocabulary.\nResponsible AII gave a chatbot permission to say “I don't know”270 answers with and without the handbook, and the mistakes that were left.\nDigital transformationThree models read 40 documents without a mistake. The math was another storyWho reads, who calculates and who signs.\nRulesI left my discount rule vague. Three models wrote it for me1,200 quotes of an invented coffee roaster. The math was fine.\nAdviceThe adviser that asks first never asked what had already failedSix businesses, 144 conversations and three missing questions.\nData and a toolBefore you paste your client list into a chatSwap personal data for codes in your browser, and see what gets through.\n\n\nPublication\nIdentification of Traumatic Brain Injury on Magnetic Resonance Imaging. Jiménez, C., Chaves, D., Trujillo, M., Herrera, A., Ledesma, M. CIARP 2025, Lecture Notes in Computer Science, vol. 16529. Springer, Cham. Oral presentation, Bogotá. 10.1007/978-3-032-23176-5_14\n\nProjects\n\nTraumatic brain injury on MRIRadiomics on T1-weighted images\nKawsayWildfire detection, FIRST Global 2026\nRENOVAAquatic plants on a Raspberry Pi\nSpanish clinical notesLanguage models, TecNM Morelia"
+    "text": "Carolain Jiménez Bedoya\nI'm a systems engineer from Colombia. I work on medical images with the MMV group at Universidad del Valle, and I lead AI engineering at S&S IP S.A.S. I also mentor Team Colombia in FIRST Global.\nThis is where I write down what I try: experiments small enough to see inside, systems from work, and results that did not come out the way I wanted.\nGitHubLinkedInORCIDPortfolio\n\n\n\nResearchMedical images, language in hospitals, and models that are right for the wrong reason.\nAI for businessProcesses, people and where AI fits. With a small tool to sort your own steps.\nExplorationsGames and small models that I try because I got curious.\n\n\n\nNotes\n\nDecision modelsFire Watch: I made a game to see how a decision model failsA 3D forest, six sensors and four buttons. The local models could not read a thermometer.\nMedical imagingWhen a model learns the scannerThe same model scores 0.97 or 0.69, and you can see inside it what it was looking at.\nClinical NLPFurther pretraining did not improve masked-word prediction in clinical notes: a paired re-analysis of 101 cases101 notes, a bug in my own evaluator, and a model that changed its vocabulary.\nResponsible AIA university assistant with and without the handbook: 270 answers checked one by one270 answers with and without the handbook, and the mistakes that were left.\nDigital transformationLet the model read and a program add: 40 documents with three modelsWho reads, who calculates and who signs.\nRulesA vague discount rule and 1,200 quotes: what three models decided1,200 quotes of an invented coffee roaster. The math was fine.\nAdviceA prompt that asks before it advises: 144 conversations with six invented businessesSix businesses, 144 conversations and three missing questions.\nData and a toolBefore you paste your client list into a chatSwap personal data for codes in your browser, and see what gets through.\n\n\nPublication\nIdentification of Traumatic Brain Injury on Magnetic Resonance Imaging. Jiménez, C., Chaves, D., Trujillo, M., Herrera, A., Ledesma, M. CIARP 2025, Lecture Notes in Computer Science, vol. 16529. Springer, Cham. Oral presentation, Bogotá. 10.1007/978-3-032-23176-5_14\n\nProjects\n\nTraumatic brain injury on MRIRadiomics on T1-weighted images\nKawsayWildfire detection, FIRST Global 2026\nRENOVAAquatic plants on a Raspberry Pi\nSpanish clinical notesLanguage models, TecNM Morelia"
   },
   {
     "objectID": "posts/before-you-paste/index.html",
@@ -639,91 +639,91 @@
   {
     "objectID": "posts/same-quote/index.html",
     "href": "posts/same-quote/index.html",
-    "title": "I left my discount rule vague. Three models wrote it for me",
+    "title": "A vague discount rule and 1,200 quotes: what three models decided",
     "section": "",
     "text": "In small companies a lot of rules live in someone’s head. How much discount, for whom, who pays the shipping. It works while that person answers every message, and it stops working the day you ask an assistant to make the quotes.\nI wanted to see what a model does with a rule that is half written. I expected a mess, with a different price every time. That is not what happened."
   },
   {
     "objectID": "posts/same-quote/index.html#the-test",
     "href": "posts/same-quote/index.html#the-test",
-    "title": "I left my discount rule vague. Three models wrote it for me",
+    "title": "A vague discount rule and 1,200 quotes: what three models decided",
     "section": "The test",
     "text": "The test\nI invented a coffee roaster with four products and ten orders, five from old clients and five from new ones. Everything was in Spanish. This was the vague policy, translated:\n\nWe give discounts for large orders, normally between 5 and 10%, depending on the client. With the shops that have been with us for a while we try to help a bit more. Shipping is charged depending on the case. If the order is good, sometimes we cover it. A normal shipping is more or less $25,000.\n\nAnd this was the written one: 0% below $1,500,000, 5% from there, 10% from $3,000,000, nothing else. Shipping is $25,000 below $1,000,000 and free above.\nI asked three models for each quote ten times, in four ways:\n\nWith the vague policy, and permission to ask the owner.\nWith the vague policy, and the client waiting for a total.\nWith the written rule.\nThe model only reads the order, and a program applies the rule.\n\nThat makes 1,200 answers."
   },
   {
     "objectID": "posts/same-quote/index.html#with-permission-they-ask",
     "href": "posts/same-quote/index.html#with-permission-they-ask",
-    "title": "I left my discount rule vague. Three models wrote it for me",
+    "title": "A vague discount rule and 1,200 quotes: what three models decided",
     "section": "With permission, they ask",
     "text": "With permission, they ask\n\n\n\n\n\n\n\n\n\nModel\nVague, asked the owner\nWritten rule, exact total\nProgram does the math, exact total\n\n\n\n\nClaude Haiku 4.5\n98 of 100\n99 of 100\n100 of 100\n\n\nClaude Haiku 5.5\n92 of 100\n100 of 100\n100 of 100\n\n\nClaude Sonnet 5.5\n100 of 100\n100 of 100\n100 of 100\n\n\n\nI liked the first column. Almost always the model stopped and asked something like this, which is an answer of Sonnet, translated:\n\nWhat discount (between 5 and 10%) applies to Tienda Azafrán for this order (subtotal $1,992,000), and do we charge the shipping (approx. $25,000) or cover it?\n\nThose questions are the list of decisions that the owner had not made. You could copy them, answer each one once, and you would have the policy."
   },
   {
     "objectID": "posts/same-quote/index.html#without-permission-they-decide",
     "href": "posts/same-quote/index.html#without-permission-they-decide",
-    "title": "I left my discount rule vague. Three models wrote it for me",
+    "title": "A vague discount rule and 1,200 quotes: what three models decided",
     "section": "Without permission, they decide",
     "text": "Without permission, they decide\nThe only thing I changed was the ending. “The client is waiting. What total do we send?”\n\nAll of them answered, 300 times out of 300. And they did not answer at random. Old clients got 10% and new clients got 5%, in 298 of the 300 quotes, with three different models.\nNobody wrote that rule. It is a possible reading of my text, since I did say that old clients get a bit more help. But the policy talked about large orders, and the size did not matter at all. An order of $456,000, the smallest one, got 5%. The largest one, of $4,296,000, got the same 5%. An old client with $846,000 got 10%.\nThe shipping is the part that did change. For the same order, some answers charged it and some gave it away.\nI checked the arithmetic and it was right the 300 times. That worries me more than if it was wrong, because if you review these quotes you find nothing. The totals add up, and they even look consistent."
   },
   {
     "objectID": "posts/same-quote/index.html#what-i-would-do-with-this",
     "href": "posts/same-quote/index.html#what-i-would-do-with-this",
-    "title": "I left my discount rule vague. Three models wrote it for me",
+    "title": "A vague discount rule and 1,200 quotes: what three models decided",
     "section": "What I would do with this",
     "text": "What I would do with this\nI would write the rule before choosing the tool. If it fits in one line, like “5% from a million and a half”, it does not need AI at all, and it can live in a spreadsheet.\nI would always leave the model a way out, with a field for its question. It costs one line and it was the difference between asking 290 times out of 300 and never asking.\nAnd I would keep the questions it asks in the first week. They are a good draft of what I call the house book, everything you would explain to a new person on the first day."
   },
   {
     "objectID": "posts/same-quote/index.html#limits",
     "href": "posts/same-quote/index.html#limits",
-    "title": "I left my discount rule vague. Three models wrote it for me",
+    "title": "A vague discount rule and 1,200 quotes: what three models decided",
     "section": "Limits",
     "text": "Limits\nThe company is invented and the orders are clean. The old client was always written as “client since 2022”, and that probably pushed the models to use it. I tested three models of the same family. And the vague policy mentions 5 and 10, so a different text would give a different invented rule. What I would expect to find again is that there is one.\nThe code and the 1,200 answers are in lab/same-quote. I ran the tests with help from Claude Code."
   },
   {
     "objectID": "posts/who-does-the-math/index.html",
     "href": "posts/who-does-the-math/index.html",
-    "title": "Three models read 40 documents without a mistake. The math was another story",
+    "title": "Let the model read and a program add: 40 documents with three models",
     "section": "",
     "text": "At work we built a platform for accountants that helps them file a local business tax in Colombia. Every municipality writes its own rules, with its rates, its penalties and its calendar, and they change. The accountant has to read the municipal agreement, go through the documents of the client and fill in a form line by line. One wrong figure is a fine. (I am an engineer and not an accountant, and everything below comes from that.)\nThe rule we follow is that AI reads and proposes, a program calculates, and an accountant approves. Nothing goes out without that approval.\nYou could think this is too much trouble, if the model can read the document and give you the total in one go. It is a fair doubt, because models have improved a lot since that rule was written. So I put it to the test."
   },
   {
     "objectID": "posts/who-does-the-math/index.html#the-town-that-doesnt-exist",
     "href": "posts/who-does-the-math/index.html#the-town-that-doesnt-exist",
-    "title": "Three models read 40 documents without a mistake. The math was another story",
+    "title": "Let the model read and a program add: 40 documents with three models",
     "section": "The town that doesn’t exist",
     "text": "The town that doesn’t exist\nI invented a town with five activities and their rates, a signage tax of 15%, a fire brigade surcharge of 3%, withholdings and a discount for paying early. It does not match any real place and it is useless for filing anything. With that I generated 40 documents in Spanish. This is one of them, translated:\n\nActivity 412, consulting, closed with income of $436,996,994, no returns. Retail, code 203: $343,928,131, of which $6,010,663 were returned. Payroll for the last quarter was $41,780,000. Clients withheld $346,559. They will pay within the early payment period.\n\nEach one has a trap, a figure that is not needed, like that payroll.\nI tried two ways with three models of different sizes. In the first, the model gets the document and the rules and answers with the total. In the second, the model only pulls the data into a JSON, and a program of ten lines does the math:\ntax     = thousands(sum((income - returns) * rate / 1000))\nsignage = thousands(tax * 0.15)\nfire    = thousands(tax * 0.03)\ntotal   = tax + signage + fire - thousands(withheld)\nif early_payment:\n    total = total - thousands(total * 0.10)"
   },
   {
     "objectID": "posts/who-does-the-math/index.html#what-happened",
     "href": "posts/who-does-the-math/index.html#what-happened",
-    "title": "Three models read 40 documents without a mistake. The math was another story",
+    "title": "Let the model read and a program add: 40 documents with three models",
     "section": "What happened",
     "text": "What happened\n\nThe three models read the 40 documents without a single mistake. Not one figure changed, and none of them fell for the trap. With the program doing the math, the three got 40 out of 40.\nWhen the model does everything, the smallest one gets 21 out of 40, the middle one 37 and the big one 40.\nI leave that last 40 here because it goes against my rule and it would be easy to hide. Sonnet 5.5 did the math 40 times in a row and never failed. So “models can’t add” is no longer a good reason for the rule."
   },
   {
     "objectID": "posts/who-does-the-math/index.html#what-the-mistakes-look-like",
     "href": "posts/who-does-the-math/index.html#what-the-mistakes-look-like",
-    "title": "Three models read 40 documents without a mistake. The math was another story",
+    "title": "Let the model read and a program add: 40 documents with three models",
     "section": "What the mistakes look like",
     "text": "What the mistakes look like\n\nMost of them are one thousand pesos: a rounding done too early or too late. Those are the hardest to see, because the total looks a lot like the right one. But a form that is off by a thousand pesos is wrong.\nAnd there is one that is something else. The document I showed above gives $6,647,000. The small model answered $4,174,000. That is almost two and a half million pesos less, in one of the shortest documents, said as calmly as all the others. If you review a sample of ten, that one will probably not be there."
   },
   {
     "objectID": "posts/who-does-the-math/index.html#so-why-the-program",
     "href": "posts/who-does-the-math/index.html#so-why-the-program",
-    "title": "Three models read 40 documents without a mistake. The math was another story",
+    "title": "Let the model read and a program add: 40 documents with three models",
     "section": "So why the program",
     "text": "So why the program\nIf the big model always gets it right, I am left with three reasons.\nThe first one is that you can check the program. It is ten lines, and an accountant can read them with me and say “that is not how it’s rounded here”. I can’t ask a model that got 40 right what it is going to do with number 41.\nThe second is that when something goes wrong you know where. If the figure is wrong, the model read it wrong. If the figure is right and the total is not, the rule is wrong. If both are right and something else was filed, someone approved without looking. When one model does the three steps, you can’t have that conversation.\nThe third is that with the program the small model is enough. Pulling the data is easier than doing the math, and in my test it was also faster: with Haiku 4.5, about 4 seconds to read against 14 to read and calculate. For many companies that decides if the project pays for itself."
   },
   {
     "objectID": "posts/who-does-the-math/index.html#taking-it-to-another-process",
     "href": "posts/who-does-the-math/index.html#taking-it-to-another-process",
-    "title": "Three models read 40 documents without a mistake. The math was another story",
+    "title": "Let the model read and a program add: 40 documents with three models",
     "section": "Taking it to another process",
     "text": "Taking it to another process\nOne way of repeating this in another company is to take the process and mark each step with a letter. R for reading, summarizing or classifying. C for calculating or applying a rule that is already written. D for deciding something that somebody answers for.\nWith this case: reading the municipal agreement is R, pulling the client’s figures is R, calculating the tax is C, approving is D. The R steps are good to start with AI. The C steps almost always want a program, and sometimes it already exists and lives in a spreadsheet. The D steps stay with a person who has a name and a position.\nYou can do it on paper in one meeting, and then the conversation does not start with the tool."
   },
   {
     "objectID": "posts/who-does-the-math/index.html#what-this-test-doesnt-say",
     "href": "posts/who-does-the-math/index.html#what-this-test-doesnt-say",
-    "title": "Three models read 40 documents without a mistake. The math was another story",
+    "title": "Let the model read and a program add: 40 documents with three models",
     "section": "What this test doesn’t say",
     "text": "What this test doesn’t say\nA program generated the documents, so they are clean. A real one comes scanned, crooked, with a handwritten note on the side, and there the reading will fail. The rules fit in one paragraph, and a municipal agreement has dozens of pages. I ran each model once. Reading 40 of my documents perfectly does not mean reading your client’s perfectly, and that is why the accountant is still at the end.\nThe code, the 40 documents and all the answers are in lab/ia-propone (in Spanish)."
   }
