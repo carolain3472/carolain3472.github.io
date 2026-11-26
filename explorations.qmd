@@ -1,14 +1,15 @@
 ---
 pagetitle: "Explorations | Carolain Jiménez Bedoya"
 description-meta: "Games, small models and things Carolain Jiménez Bedoya tries on her own."
-page-layout: full
+page-layout: custom
 toc: false
+lightbox: false
+css: business.css
 ---
 
 ```{=html}
-<div class="sec"><h1>Explorations</h1><p>Things I try because I got curious, at an event, with a new model or in the middle of something else. Some of them you can play.</p></div>
-<div class="cards">
-<a class="big wide" href="posts/fire-watch/"><div class="pic" style="background-image:url(posts/fire-watch/bad.jpg)"></div><div class="tx"><small>Decision models</small><h3>Fire Watch: I made a game to see how a decision model fails</h3><p>A 3D forest, six sensors and four buttons. The local models could not read a thermometer.</p></div></a>
+<div class="biz pg">
+<header class="top solo"><div class="w"><h1>Things I <em>try</em></h1><div><p>Things I try because I got curious, at an event, with a new model or in the middle of something else. Some of them you can play.</p></div></div></header>
+<section class="w found"><div class="feat"><a class="pic" href="posts/fire-watch/"><img src="posts/fire-watch/bad.jpg" alt="" loading="lazy"></a><div class="tx"><small>Decision models</small><h3 class="no-anchor"><a href="posts/fire-watch/">Fire Watch: I made a game to see how a decision model fails</a></h3><p>A 3D forest, six sensors and four buttons. The local models could not read a thermometer.</p><p class="go"><a href="lab/fire-watch/index.html">Play Fire Watch</a><a class="alt" href="posts/fire-watch/">Read the note</a></p></div></div></section>
 </div>
-<p class="play"><a href="lab/fire-watch/index.html">Play Fire Watch</a></p>
 ```
