@@ -1,5 +1,5 @@
 ---
-title: "La asesora que pregunta primero nunca preguntó qué había fallado antes"
+title: "Un prompt que pregunta antes de aconsejar: 144 conversaciones con seis negocios inventados"
 description: "Seis negocios inventados, 144 conversaciones y tres preguntas que hacían falta."
 author: "Carolain Jiménez Bedoya"
 date: 2026-11-25

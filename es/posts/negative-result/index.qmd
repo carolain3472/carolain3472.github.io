@@ -1,5 +1,5 @@
 ---
-title: "Entrené más el modelo y no mejoró. Dos años después sé un poco más por qué"
+title: "Más preentrenamiento no mejoró la predicción de palabras en notas clínicas: reanálisis pareado de 101 casos"
 description: "Volví a las 101 respuestas de mi pasantía en México, encontré un error en mi propio evaluador y vi que el modelo había cambiado de vocabulario."
 author: "Carolain Jiménez Bedoya"
 date: 2026-11-25

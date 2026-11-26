@@ -1,5 +1,5 @@
 ---
-title: "The adviser that asks first never asked what had already failed"
+title: "A prompt that asks before it advises: 144 conversations with six invented businesses"
 description: "Six invented businesses, 144 conversations, and three questions that were missing."
 author: "Carolain Jiménez Bedoya"
 date: 2026-11-25

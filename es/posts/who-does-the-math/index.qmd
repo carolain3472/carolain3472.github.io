@@ -1,5 +1,5 @@
 ---
-title: "Tres modelos leyeron bien 40 documentos. La cuenta fue otra historia"
+title: "Que el modelo lea y que un programa sume: 40 documentos con tres modelos"
 description: "Un municipio inventado, 40 documentos y dos maneras de llegar a un total que no se puede equivocar."
 author: "Carolain Jiménez Bedoya"
 date: 2026-11-25

@@ -1,5 +1,5 @@
 ---
-title: "I gave a chatbot permission to say \"I don't know\". It changed less than I would have bet"
+title: "A university assistant with and without the handbook: 270 answers checked one by one"
 description: "270 answers of a university assistant, with and without the handbook, and the mistakes that were left."
 author: "Carolain Jiménez Bedoya"
 date: 2026-11-25

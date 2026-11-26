@@ -1,5 +1,5 @@
 ---
-title: "Le di permiso a un chatbot de decir «no sé». Cambió menos de lo que habría apostado"
+title: "Un asistente universitario con y sin reglamento: 270 respuestas revisadas una por una"
 description: "270 respuestas de un asistente universitario, con y sin reglamento, y los errores que quedaron."
 author: "Carolain Jiménez Bedoya"
 date: 2026-11-25
