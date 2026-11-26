@@ -1,12 +1,5 @@
 [
   {
-    "objectID": "research.html",
-    "href": "research.html",
-    "title": "Research",
-    "section": "",
-    "text": "I study medical images, and above all whether we can believe what a model says about them. I do it with the MMV group at Universidad del Valle.In these notes I make the problem small enough to look inside. Each one comes with its code or its data.\nNotes\n\nMedical imagingWhen a model learns the scannerThe same model scores 0.97 or 0.69, and you can see inside it what it was looking at.\nClinical NLPI trained the model more and it did not improve101 notes, a bug in my own evaluator, and a model that changed its vocabulary.\n\n\nPublication\nIdentification of Traumatic Brain Injury on Magnetic Resonance Imaging. Jiménez, C., Chaves, D., Trujillo, M., Herrera, A., Ledesma, M. CIARP 2025, Lecture Notes in Computer Science, vol. 16529. Springer, Cham. Oral presentation, Bogotá. 10.1007/978-3-032-23176-5_14\n\nProjects\n\nTraumatic brain injury on MRIRadiomics on T1-weighted images\nSpanish clinical notesLanguage models, TecNM Morelia\nRENOVAAquatic plants on a Raspberry Pi\nKawsayWildfire detection, FIRST Global 2026"
-  },
-  {
     "objectID": "posts/scanner-shortcut/index.html",
     "href": "posts/scanner-shortcut/index.html",
     "title": "When a model learns the scanner",
@@ -203,13 +196,6 @@
     "text": "Limits\nThe owner was also a model, and sometimes it made up a detail that was not on the sheet, like a number of orders. The sheets are mine, so the questions that I found missing are the ones I had thought of. A model graded the answers. A part of them was checked by hand and mostly held, with the exception above. Six businesses are few, and a real person answers much better than a sheet.\nEverything is in lab/asks-first, in Spanish, with the conversations complete. I ran the tests with help from Claude Code."
   },
   {
-    "objectID": "explorations.html",
-    "href": "explorations.html",
-    "title": "Explorations",
-    "section": "",
-    "text": "Things I try because I got curious, at an event, with a new model or in the middle of something else. Some of them you can play.\n\nDecision modelsFire Watch: I made a game to see how a decision model failsA 3D forest, six sensors and four buttons. The local models could not read a thermometer.\n\nPlay Fire Watch"
-  },
-  {
     "objectID": "es/posts/who-does-the-math/index.html",
     "href": "es/posts/who-does-the-math/index.html",
     "title": "Tres modelos leyeron bien 40 documentos. La cuenta fue otra historia",
@@ -383,13 +369,6 @@
     "title": "Todas las notas",
     "section": "",
     "text": "Notas sobre mi investigación, los sistemas de IA que construyo en el trabajo y cosas que pruebo por mi cuenta. Uso herramientas de IA, sobre todo Claude, para que me ayuden con el código, las figuras y la edición, y publico los datos para que cualquiera pueda revisar los números.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLa asesora que pregunta primero nunca preguntó qué había fallado antes\n\n\n\nempresas\n\nIA responsable\n\n\n\n\nSeis negocios inventados, 144 conversaciones y tres preguntas que hacían falta.\n\n\n\n\n\n\n25 nov 2026\n\n5 minutos\n\n\n\n\n\n\n\n\n\n\n\nAntes de pegar tu lista de clientes en un chat\n\n\n\nempresas\n\nIA responsable\n\nherramientas\n\n\n\n\nUna herramienta pequeña que cambia los datos personales por códigos dentro de tu navegador, y una prueba de lo que deja pasar.\n\n\n\n\n\n\n25 nov 2026\n\n3 minutos\n\n\n\n\n\n\n\n\n\n\n\nLe di permiso a un chatbot de decir «no sé». Cambió menos de lo que habría apostado\n\n\n\nempresas\n\nIA responsable\n\n\n\n\n270 respuestas de un asistente universitario, con y sin reglamento, y los errores que quedaron.\n\n\n\n\n\n\n25 nov 2026\n\n5 minutos\n\n\n\n\n\n\n\n\n\n\n\nFire Watch: hice un juego para ver cómo falla un modelo de decisión\n\n\n\nexploraciones\n\nmodelos de decisión\n\nIA confiable\n\n\n\n\nUn bosque en 3D, seis sensores y cuatro botones. Comparé dos modelos en la nube con dos que corren dentro del navegador, y los locales no supieron leer un termómetro.\n\n\n\n\n\n\n25 nov 2026\n\n7 minutos\n\n\n\n\n\n\n\n\n\n\n\nEntrené más el modelo y no mejoró. Dos años después sé un poco más por qué\n\n\n\ninvestigación\n\nPLN clínico\n\n\n\n\nVolví a las 101 respuestas de mi pasantía en México, encontré un error en mi propio evaluador y vi que el modelo había cambiado de vocabulario.\n\n\n\n\n\n\n25 nov 2026\n\n6 minutos\n\n\n\n\n\n\n\n\n\n\n\nDejé vaga mi regla de descuentos. Tres modelos la escribieron por mí\n\n\n\nempresas\n\nIA responsable\n\n\n\n\nUna tostadora de café inventada, diez pedidos y 1.200 cotizaciones. La cuenta estaba bien. La decisión ya no era mía.\n\n\n\n\n\n\n25 nov 2026\n\n4 minutos\n\n\n\n\n\n\n\n\n\n\n\nCuando un modelo aprende el escáner\n\n\n\ninvestigación\n\nimágenes médicas\n\nIA confiable\n\n\n\n\nUn experimento pequeño con imágenes simuladas. El mismo modelo saca 0,97 o 0,69, y se puede ver por dentro qué estaba mirando.\n\n\n\n\n\n\n25 nov 2026\n\n6 minutos\n\n\n\n\n\n\n\n\n\n\n\nTres modelos leyeron bien 40 documentos. La cuenta fue otra historia\n\n\n\nempresas\n\ntransformación digital\n\nIA responsable\n\n\n\n\nUn municipio inventado, 40 documentos y dos maneras de llegar a un total que no se puede equivocar.\n\n\n\n\n\n\n25 nov 2026\n\n5 minutos\n\n\n\n\nNo hay resultados"
-  },
-  {
-    "objectID": "es/explorations.html",
-    "href": "es/explorations.html",
-    "title": "Exploraciones",
-    "section": "",
-    "text": "Cosas que pruebo porque me dio curiosidad, en un evento, con un modelo nuevo o en medio de otra cosa. Algunas se pueden jugar.\n\nModelos de decisiónFire Watch: hice un juego para ver cómo falla un modelo de decisiónUn bosque en 3D, seis sensores y cuatro botones. Los modelos locales no supieron leer un termómetro.\n\nJugar Fire Watch"
   },
   {
     "objectID": "es/posts/asks-first/index.html",
@@ -586,13 +565,6 @@
     "title": "Cuando un modelo aprende el escáner",
     "section": "Referencias",
     "text": "Referencias\n\n\nGlocker, Ben, Robert Robinson, Daniel C. Castro, Qi Dou, y Ender Konukoglu. 2019. Machine Learning with Multi-Site Imaging Data: An Empirical Study on the Impact of Scanner Effects. https://arxiv.org/abs/1910.04597.\n\n\nZech, John R., Marcus A. Badgeley, Manway Liu, Anthony B. Costa, Joseph J. Titano, y Eric Karl Oermann. 2018. «Variable generalization performance of a deep learning model to detect pneumonia in chest radiographs: A cross-sectional study». PLOS Medicine 15 (11): e1002683. https://doi.org/10.1371/journal.pmed.1002683."
-  },
-  {
-    "objectID": "es/research.html",
-    "href": "es/research.html",
-    "title": "Investigación",
-    "section": "",
-    "text": "Estudio imágenes médicas, y sobre todo si podemos creer lo que un modelo dice de ellas. Lo hago con el grupo MMV de la Universidad del Valle.En estas notas hago el problema tan pequeño que se puede mirar adentro. Cada una viene con su código o sus datos.\nNotas\n\nImágenes médicasCuando un modelo aprende el escánerEl mismo modelo saca 0,97 o 0,69, y se puede ver por dentro qué estaba mirando.\nPLN clínicoEntrené más el modelo y no mejoró101 notas, un error en mi propio evaluador y un modelo que cambió de vocabulario.\n\n\nPublicación\nIdentification of Traumatic Brain Injury on Magnetic Resonance Imaging. Jiménez, C., Chaves, D., Trujillo, M., Herrera, A., Ledesma, M. CIARP 2025, Lecture Notes in Computer Science, vol. 16529. Springer, Cham. Presentación oral, Bogotá. 10.1007/978-3-032-23176-5_14\n\nProyectos\n\nTrauma craneoencefálico en resonanciaRadiómica en imágenes T1\nNotas clínicas en españolModelos de lenguaje, TecNM Morelia\nRENOVAPlantas acuáticas en una Raspberry Pi\nKawsayDetección de incendios, FIRST Global 2026"
   },
   {
     "objectID": "index.html",
