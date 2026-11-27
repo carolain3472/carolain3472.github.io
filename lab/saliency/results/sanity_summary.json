@@ -1,0 +1,682 @@
+[
+ {
+  "kind": "edges",
+  "step": "trained",
+  "method": "Gradient",
+  "seeds": 5,
+  "spearman": 0.125,
+  "spearman_ci": [
+   0.118,
+   0.133
+  ],
+  "ssim": 0.116,
+  "ssim_ci": [
+   0.111,
+   0.12
+  ],
+  "flat": 0
+ },
+ {
+  "kind": "edges",
+  "step": "trained",
+  "method": "Integrated Gradients",
+  "seeds": 5,
+  "spearman": 0.079,
+  "spearman_ci": [
+   0.072,
+   0.089
+  ],
+  "ssim": 0.104,
+  "ssim_ci": [
+   0.101,
+   0.109
+  ],
+  "flat": 0
+ },
+ {
+  "kind": "edges",
+  "step": "trained",
+  "method": "Guided Backprop",
+  "seeds": 5,
+  "spearman": 0.279,
+  "spearman_ci": [
+   0.271,
+   0.286
+  ],
+  "ssim": 0.116,
+  "ssim_ci": [
+   0.109,
+   0.123
+  ],
+  "flat": 0
+ },
+ {
+  "kind": "edges",
+  "step": "trained",
+  "method": "Grad-CAM",
+  "seeds": 5,
+  "spearman": -0.044,
+  "spearman_ci": [
+   -0.059,
+   -0.028
+  ],
+  "ssim": 0.095,
+  "ssim_ci": [
+   0.092,
+   0.098
+  ],
+  "flat": 0
+ },
+ {
+  "kind": "cascade",
+  "step": "fc",
+  "method": "Gradient",
+  "seeds": 5,
+  "spearman": 0.659,
+  "spearman_ci": [
+   0.643,
+   0.674
+  ],
+  "ssim": 0.673,
+  "ssim_ci": [
+   0.658,
+   0.688
+  ],
+  "flat": 0
+ },
+ {
+  "kind": "cascade",
+  "step": "fc",
+  "method": "Integrated Gradients",
+  "seeds": 5,
+  "spearman": 0.569,
+  "spearman_ci": [
+   0.56,
+   0.579
+  ],
+  "ssim": 0.569,
+  "ssim_ci": [
+   0.562,
+   0.576
+  ],
+  "flat": 0
+ },
+ {
+  "kind": "cascade",
+  "step": "fc",
+  "method": "Guided Backprop",
+  "seeds": 5,
+  "spearman": 0.979,
+  "spearman_ci": [
+   0.977,
+   0.981
+  ],
+  "ssim": 0.96,
+  "ssim_ci": [
+   0.954,
+   0.965
+  ],
+  "flat": 0
+ },
+ {
+  "kind": "cascade",
+  "step": "fc",
+  "method": "Grad-CAM",
+  "seeds": 5,
+  "spearman": 0.046,
+  "spearman_ci": [
+   0.032,
+   0.061
+  ],
+  "ssim": 0.248,
+  "ssim_ci": [
+   0.24,
+   0.256
+  ],
+  "flat": 205
+ },
+ {
+  "kind": "cascade",
+  "step": "layer4",
+  "method": "Gradient",
+  "seeds": 5,
+  "spearman": 0.33,
+  "spearman_ci": [
+   0.325,
+   0.335
+  ],
+  "ssim": 0.33,
+  "ssim_ci": [
+   0.326,
+   0.334
+  ],
+  "flat": 0
+ },
+ {
+  "kind": "cascade",
+  "step": "layer4",
+  "method": "Integrated Gradients",
+  "seeds": 5,
+  "spearman": 0.322,
+  "spearman_ci": [
+   0.311,
+   0.334
+  ],
+  "ssim": 0.299,
+  "ssim_ci": [
+   0.293,
+   0.306
+  ],
+  "flat": 0
+ },
+ {
+  "kind": "cascade",
+  "step": "layer4",
+  "method": "Guided Backprop",
+  "seeds": 5,
+  "spearman": 0.905,
+  "spearman_ci": [
+   0.901,
+   0.91
+  ],
+  "ssim": 0.844,
+  "ssim_ci": [
+   0.836,
+   0.853
+  ],
+  "flat": 0
+ },
+ {
+  "kind": "cascade",
+  "step": "layer4",
+  "method": "Grad-CAM",
+  "seeds": 5,
+  "spearman": 0.009,
+  "spearman_ci": [
+   -0.009,
+   0.027
+  ],
+  "ssim": 0.184,
+  "ssim_ci": [
+   0.179,
+   0.189
+  ],
+  "flat": 65
+ },
+ {
+  "kind": "cascade",
+  "step": "layer3",
+  "method": "Gradient",
+  "seeds": 5,
+  "spearman": 0.257,
+  "spearman_ci": [
+   0.252,
+   0.262
+  ],
+  "ssim": 0.253,
+  "ssim_ci": [
+   0.249,
+   0.256
+  ],
+  "flat": 0
+ },
+ {
+  "kind": "cascade",
+  "step": "layer3",
+  "method": "Integrated Gradients",
+  "seeds": 5,
+  "spearman": 0.271,
+  "spearman_ci": [
+   0.26,
+   0.282
+  ],
+  "ssim": 0.243,
+  "ssim_ci": [
+   0.236,
+   0.249
+  ],
+  "flat": 0
+ },
+ {
+  "kind": "cascade",
+  "step": "layer3",
+  "method": "Guided Backprop",
+  "seeds": 5,
+  "spearman": 0.813,
+  "spearman_ci": [
+   0.81,
+   0.817
+  ],
+  "ssim": 0.753,
+  "ssim_ci": [
+   0.747,
+   0.759
+  ],
+  "flat": 0
+ },
+ {
+  "kind": "cascade",
+  "step": "layer3",
+  "method": "Grad-CAM",
+  "seeds": 5,
+  "spearman": -0.072,
+  "spearman_ci": [
+   -0.092,
+   -0.051
+  ],
+  "ssim": 0.167,
+  "ssim_ci": [
+   0.161,
+   0.173
+  ],
+  "flat": 46
+ },
+ {
+  "kind": "cascade",
+  "step": "layer2",
+  "method": "Gradient",
+  "seeds": 5,
+  "spearman": 0.216,
+  "spearman_ci": [
+   0.21,
+   0.221
+  ],
+  "ssim": 0.23,
+  "ssim_ci": [
+   0.227,
+   0.234
+  ],
+  "flat": 0
+ },
+ {
+  "kind": "cascade",
+  "step": "layer2",
+  "method": "Integrated Gradients",
+  "seeds": 5,
+  "spearman": 0.239,
+  "spearman_ci": [
+   0.229,
+   0.251
+  ],
+  "ssim": 0.219,
+  "ssim_ci": [
+   0.212,
+   0.227
+  ],
+  "flat": 0
+ },
+ {
+  "kind": "cascade",
+  "step": "layer2",
+  "method": "Guided Backprop",
+  "seeds": 5,
+  "spearman": 0.669,
+  "spearman_ci": [
+   0.666,
+   0.673
+  ],
+  "ssim": 0.637,
+  "ssim_ci": [
+   0.632,
+   0.642
+  ],
+  "flat": 0
+ },
+ {
+  "kind": "cascade",
+  "step": "layer2",
+  "method": "Grad-CAM",
+  "seeds": 5,
+  "spearman": -0.086,
+  "spearman_ci": [
+   -0.108,
+   -0.061
+  ],
+  "ssim": 0.192,
+  "ssim_ci": [
+   0.184,
+   0.201
+  ],
+  "flat": 161
+ },
+ {
+  "kind": "cascade",
+  "step": "layer1",
+  "method": "Gradient",
+  "seeds": 5,
+  "spearman": 0.189,
+  "spearman_ci": [
+   0.184,
+   0.194
+  ],
+  "ssim": 0.225,
+  "ssim_ci": [
+   0.221,
+   0.23
+  ],
+  "flat": 0
+ },
+ {
+  "kind": "cascade",
+  "step": "layer1",
+  "method": "Integrated Gradients",
+  "seeds": 5,
+  "spearman": 0.228,
+  "spearman_ci": [
+   0.217,
+   0.241
+  ],
+  "ssim": 0.206,
+  "ssim_ci": [
+   0.199,
+   0.214
+  ],
+  "flat": 0
+ },
+ {
+  "kind": "cascade",
+  "step": "layer1",
+  "method": "Guided Backprop",
+  "seeds": 5,
+  "spearman": 0.512,
+  "spearman_ci": [
+   0.507,
+   0.517
+  ],
+  "ssim": 0.529,
+  "ssim_ci": [
+   0.526,
+   0.532
+  ],
+  "flat": 0
+ },
+ {
+  "kind": "cascade",
+  "step": "layer1",
+  "method": "Grad-CAM",
+  "seeds": 5,
+  "spearman": -0.104,
+  "spearman_ci": [
+   -0.12,
+   -0.087
+  ],
+  "ssim": 0.213,
+  "ssim_ci": [
+   0.207,
+   0.218
+  ],
+  "flat": 199
+ },
+ {
+  "kind": "cascade",
+  "step": "conv1",
+  "method": "Gradient",
+  "seeds": 5,
+  "spearman": 0.184,
+  "spearman_ci": [
+   0.179,
+   0.189
+  ],
+  "ssim": 0.221,
+  "ssim_ci": [
+   0.217,
+   0.226
+  ],
+  "flat": 0
+ },
+ {
+  "kind": "edges",
+  "step": "random",
+  "method": "Gradient",
+  "seeds": 5,
+  "spearman": 0.102,
+  "spearman_ci": [
+   0.097,
+   0.107
+  ],
+  "ssim": 0.122,
+  "ssim_ci": [
+   0.117,
+   0.127
+  ],
+  "flat": 0
+ },
+ {
+  "kind": "cascade",
+  "step": "conv1",
+  "method": "Integrated Gradients",
+  "seeds": 5,
+  "spearman": 0.216,
+  "spearman_ci": [
+   0.205,
+   0.229
+  ],
+  "ssim": 0.197,
+  "ssim_ci": [
+   0.189,
+   0.204
+  ],
+  "flat": 0
+ },
+ {
+  "kind": "edges",
+  "step": "random",
+  "method": "Integrated Gradients",
+  "seeds": 5,
+  "spearman": 0.044,
+  "spearman_ci": [
+   0.035,
+   0.054
+  ],
+  "ssim": 0.118,
+  "ssim_ci": [
+   0.112,
+   0.124
+  ],
+  "flat": 0
+ },
+ {
+  "kind": "cascade",
+  "step": "conv1",
+  "method": "Guided Backprop",
+  "seeds": 5,
+  "spearman": 0.358,
+  "spearman_ci": [
+   0.353,
+   0.363
+  ],
+  "ssim": 0.404,
+  "ssim_ci": [
+   0.401,
+   0.407
+  ],
+  "flat": 0
+ },
+ {
+  "kind": "edges",
+  "step": "random",
+  "method": "Guided Backprop",
+  "seeds": 5,
+  "spearman": 0.094,
+  "spearman_ci": [
+   0.088,
+   0.101
+  ],
+  "ssim": 0.1,
+  "ssim_ci": [
+   0.095,
+   0.105
+  ],
+  "flat": 0
+ },
+ {
+  "kind": "cascade",
+  "step": "conv1",
+  "method": "Grad-CAM",
+  "seeds": 5,
+  "spearman": -0.082,
+  "spearman_ci": [
+   -0.097,
+   -0.068
+  ],
+  "ssim": 0.091,
+  "ssim_ci": [
+   0.083,
+   0.099
+  ],
+  "flat": 597
+ },
+ {
+  "kind": "edges",
+  "step": "random",
+  "method": "Grad-CAM",
+  "seeds": 5,
+  "spearman": 0.025,
+  "spearman_ci": [
+   0.02,
+   0.031
+  ],
+  "ssim": 0.038,
+  "ssim_ci": [
+   0.035,
+   0.043
+  ],
+  "flat": 597
+ },
+ {
+  "kind": "other_seed",
+  "step": "other_seed",
+  "method": "Gradient",
+  "seeds": 5,
+  "spearman": 0.306,
+  "spearman_ci": [
+   0.294,
+   0.317
+  ],
+  "ssim": 0.259,
+  "ssim_ci": [
+   0.253,
+   0.267
+  ],
+  "flat": 0
+ },
+ {
+  "kind": "other_seed",
+  "step": "other_seed",
+  "method": "Integrated Gradients",
+  "seeds": 5,
+  "spearman": 0.27,
+  "spearman_ci": [
+   0.255,
+   0.287
+  ],
+  "ssim": 0.219,
+  "ssim_ci": [
+   0.21,
+   0.227
+  ],
+  "flat": 0
+ },
+ {
+  "kind": "other_seed",
+  "step": "other_seed",
+  "method": "Guided Backprop",
+  "seeds": 5,
+  "spearman": 0.494,
+  "spearman_ci": [
+   0.483,
+   0.505
+  ],
+  "ssim": 0.498,
+  "ssim_ci": [
+   0.487,
+   0.51
+  ],
+  "flat": 0
+ },
+ {
+  "kind": "other_seed",
+  "step": "other_seed",
+  "method": "Grad-CAM",
+  "seeds": 5,
+  "spearman": 0.774,
+  "spearman_ci": [
+   0.757,
+   0.791
+  ],
+  "ssim": 0.718,
+  "ssim_ci": [
+   0.704,
+   0.732
+  ],
+  "flat": 0
+ },
+ {
+  "kind": "shuffled",
+  "step": "shuffled",
+  "method": "Gradient",
+  "seeds": 3,
+  "spearman": 0.202,
+  "spearman_ci": [
+   0.193,
+   0.21
+  ],
+  "ssim": 0.199,
+  "ssim_ci": [
+   0.195,
+   0.204
+  ],
+  "flat": 0
+ },
+ {
+  "kind": "shuffled",
+  "step": "shuffled",
+  "method": "Integrated Gradients",
+  "seeds": 3,
+  "spearman": 0.222,
+  "spearman_ci": [
+   0.209,
+   0.236
+  ],
+  "ssim": 0.19,
+  "ssim_ci": [
+   0.183,
+   0.198
+  ],
+  "flat": 0
+ },
+ {
+  "kind": "shuffled",
+  "step": "shuffled",
+  "method": "Guided Backprop",
+  "seeds": 3,
+  "spearman": 0.416,
+  "spearman_ci": [
+   0.409,
+   0.424
+  ],
+  "ssim": 0.426,
+  "ssim_ci": [
+   0.417,
+   0.435
+  ],
+  "flat": 0
+ },
+ {
+  "kind": "shuffled",
+  "step": "shuffled",
+  "method": "Grad-CAM",
+  "seeds": 3,
+  "spearman": 0.002,
+  "spearman_ci": [
+   -0.029,
+   0.033
+  ],
+  "ssim": 0.22,
+  "ssim_ci": [
+   0.205,
+   0.233
+  ],
+  "flat": 49
+ }
+]

@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.11.9">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Carolain Jiménez Bedoya">
+<meta name="dcterms.date" content="2026-11-27">
+<meta name="description" content="Five ResNet-18 models, three trained on shuffled labels, four methods and 200 X-rays. One method barely changed when I replaced the output layer with random numbers.">
+
+<title>Do saliency maps explain anything? Randomization tests on chest X-rays – Carolain Jiménez Bedoya</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/scrollable-regions/scrollable-regions.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-d31a0c91b01e363be7b7a36e602e2c70.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../brand.css">
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark" aria-label="Site">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Carolain Jiménez Bedoya</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../research.html"> 
+<span class="menu-text">Research</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../business.html"> 
+<span class="menu-text">AI for business</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../explorations.html"> 
+<span class="menu-text">Explorations</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog.html"> 
+<span class="menu-text">All notes</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/carolain3472"> <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../es/index.html"> 
+<span class="menu-text">ES</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+            <div id="quarto-search" class="" title="Search"></div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+   
+  <ul>
+  <li><a href="#the-setup" id="toc-the-setup" class="nav-link active" data-scroll-target="#the-setup">The setup</a></li>
+  <li><a href="#breaking-the-model-one-layer-at-a-time" id="toc-breaking-the-model-one-layer-at-a-time" class="nav-link" data-scroll-target="#breaking-the-model-one-layer-at-a-time">Breaking the model one layer at a time</a></li>
+  <li><a href="#what-each-method-did" id="toc-what-each-method-did" class="nav-link" data-scroll-target="#what-each-method-did">What each method did</a></li>
+  <li><a href="#what-it-means-and-what-it-does-not" id="toc-what-it-means-and-what-it-does-not" class="nav-link" data-scroll-target="#what-it-means-and-what-it-does-not">What it means and what it does not</a></li>
+  <li><a href="#limits" id="toc-limits" class="nav-link" data-scroll-target="#limits">Limits</a></li>
+  <li><a href="#code-and-data" id="toc-code-and-data" class="nav-link" data-scroll-target="#code-and-data">Code and data</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content" tabindex="-1">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Do saliency maps explain anything? Randomization tests on chest X-rays</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">research</div>
+    <div class="quarto-category">medical imaging</div>
+    <div class="quarto-category">trustworthy AI</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    Five ResNet-18 models, three trained on shuffled labels, four methods and 200 X-rays. One method barely changed when I replaced the output layer with random numbers.
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Carolain Jiménez Bedoya </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">November 27, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>When a paper on medical images wants to show that its model looks at the right place, it usually puts a heat map next to the image: the lung lights up, so the model must be looking at the lung. The maps go by many names, saliency maps, attribution maps, and they all answer the same question, which pixels pushed the decision.</p>
+<p>There is a simple way to check whether a map says anything about the model. You destroy the model and draw the map again. If the map hardly changes, it was never describing what the model learned. <span class="citation" data-cites="adebayo">Adebayo et al. (<a href="#ref-adebayo" role="doc-biblioref">2018</a>)</span> proposed this test in 2018 and found methods that fail it on natural images. I wanted to see it with my own hands on X-rays, small enough to run on my laptop.</p>
+<section id="the-setup" class="level2">
+<h2 class="anchored" data-anchor-id="the-setup">The setup</h2>
+<p>The data is PneumoniaMNIST <span class="citation" data-cites="medmnist">(<a href="#ref-medmnist" role="doc-biblioref">Yang et al. 2023</a>)</span>, a version of the pediatric chest X-rays of <span class="citation" data-cites="kermany"><span class="nocase">Kermany et al.</span> (<a href="#ref-kermany" role="doc-biblioref">2018</a>)</span> at 128 × 128 pixels: 4,708 images to train, 524 to validate and 624 to test, labelled normal or pneumonia.</p>
+<p>I trained a ResNet-18 from scratch five times with five different seeds, 15 epochs each, and kept the epoch with the best validation AUC. On the test set they reach an AUC between 0.970 and 0.984.</p>
+<p>I also trained three models of the same architecture on <strong>shuffled labels</strong>: I mixed the labels of the training set once and let the network memorize them for 60 epochs. They end up right on 99.9% of the training images and at an AUC between 0.46 and 0.49 on the test set, which is chance. They learned nothing about pneumonia, and that is what makes them useful here.</p>
+<p>I compared four methods, all on the class that the trained model predicts:</p>
+<ul>
+<li><strong>Gradient</strong> <span class="citation" data-cites="simonyan">(<a href="#ref-simonyan" role="doc-biblioref">Simonyan et al. 2014</a>)</span>: how much the score changes when each pixel changes.</li>
+<li><strong>Integrated Gradients</strong> <span class="citation" data-cites="ig">(<a href="#ref-ig" role="doc-biblioref">Sundararajan et al. 2017</a>)</span>: the gradient added up along a path from a black image to the real one, 32 steps.</li>
+<li><strong>Guided Backprop</strong> <span class="citation" data-cites="guided">(<a href="#ref-guided" role="doc-biblioref">Springenberg et al. 2015</a>)</span>: the gradient, letting only positive signals pass back through each ReLU.</li>
+<li><strong>Grad-CAM</strong> <span class="citation" data-cites="gradcam">(<a href="#ref-gradcam" role="doc-biblioref">Selvaraju et al. 2017</a>)</span>: the last convolutional block weighted by its gradient. In this network that block is a grid of 4 × 4 cells, so the map is enlarged from 16 numbers.</li>
+</ul>
+<p>I took 200 test X-rays, 100 of each class, and compared each map with the original one using the Spearman correlation over its 16,384 pixels (absolute values). 1 means the same ordering of pixels and 0 means no relation. The intervals are 95% bootstrap intervals over the images.</p>
+</section>
+<section id="breaking-the-model-one-layer-at-a-time" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="breaking-the-model-one-layer-at-a-time">Breaking the model one layer at a time</h2>
+<p>The test is to re-initialize the network from the output towards the input: first the output layer, then the last block too, and so on until no trained weight is left. At every step I draw the map again and compare it with the one of the trained model.</p>
+<p>Two horizontal lines give each number a scale. The dashed one is how much the maps of <strong>two good models</strong>, trained with different seeds, agree with each other. The dotted one is how much the map of a good model agrees with the map of a <strong>model trained on shuffled labels</strong>.</p>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p class="page-columns page-full"><a href="cascade.png" class="lightbox page-columns page-full" data-gallery="quarto-lightbox-gallery-1" title="Similarity with the map of the trained model as the network is randomized from the output towards the input. Each point is the mean over 5 models and 200 images."><img src="cascade.png" class="column-page img-fluid figure-img" alt="Four line charts, one per method. Grad-CAM falls to zero at the first step, Gradient and Integrated Gradients fall to about 0.2, Guided Backprop stays at 0.98 after the first step and goes down slowly."></a></p>
+<figcaption>Similarity with the map of the trained model as the network is randomized from the output towards the input. Each point is the mean over 5 models and 200 images.</figcaption>
+</figure>
+</div>
+<table class="table-striped caption-top table">
+<caption>Spearman correlation with the map of the trained model, mean over 5 models (3 for shuffled labels) and 200 images.</caption>
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Method</th>
+<th>Output layer random</th>
+<th>All layers random</th>
+<th>Shuffled labels</th>
+<th>Another good model</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Grad-CAM</td>
+<td>0.05 [0.03, 0.06]</td>
+<td>−0.08</td>
+<td>0.00 [−0.03, 0.03]</td>
+<td><strong>0.77</strong> [0.76, 0.79]</td>
+</tr>
+<tr class="even">
+<td>Gradient</td>
+<td>0.66 [0.64, 0.67]</td>
+<td>0.18</td>
+<td>0.20 [0.19, 0.21]</td>
+<td>0.31 [0.29, 0.32]</td>
+</tr>
+<tr class="odd">
+<td>Integrated Gradients</td>
+<td>0.57 [0.56, 0.58]</td>
+<td>0.22</td>
+<td>0.22 [0.21, 0.24]</td>
+<td>0.27 [0.26, 0.29]</td>
+</tr>
+<tr class="even">
+<td>Guided Backprop</td>
+<td><strong>0.98</strong> [0.98, 0.98]</td>
+<td>0.36</td>
+<td>0.42 [0.41, 0.42]</td>
+<td>0.49 [0.48, 0.51]</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="what-each-method-did" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="what-each-method-did">What each method did</h2>
+<p><strong>Guided Backprop</strong> is the clearest case. I replaced the 1,026 weights of the output layer with random numbers and the map stayed at 0.98. The network after that change gives random answers and the picture looks the same. And the map of a model that learned nothing at all (0.42) is almost as close to the original as the map of another good model (0.49). This is what <span class="citation" data-cites="adebayo">Adebayo et al. (<a href="#ref-adebayo" role="doc-biblioref">2018</a>)</span> found on natural images, and it holds here.</p>
+<p><strong>Grad-CAM</strong> passes the test without doubt. Change the output layer and the map has nothing to do with the original one (0.05). Two good models agree a lot (0.77), and the model of shuffled labels gives a different map (0.00). One thing I counted apart: with random weights the map often comes out empty, all zeros, because Grad-CAM keeps only the positive part. That happened in 597 of 1,000 maps with the whole network random. I counted those as 0, and I report it because it pulls the means down.</p>
+<p><strong>Gradient and Integrated Gradients</strong> change when the network is damaged, so in that sense they pass. But the most useful number for me was in the last column. Two models that are equally good agree only 0.31 and 0.27, and a model that learned nothing gets 0.20 and 0.22. The map of one model tells you a lot about that particular model, the seed, the order of the batches, and little about the task.</p>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p class="page-columns page-full"><a href="maps.png" class="lightbox page-columns page-full" data-gallery="quarto-lightbox-gallery-2" title="One pneumonia X-ray from the test set and its maps. The columns go from the trained model to more and more randomized versions, and the last one is the model trained on shuffled labels."><img src="maps.png" class="column-page img-fluid figure-img" alt="A grid of maps. Rows are the four methods and columns are the trained model, output layer random, up to layer3 random, all random and shuffled labels."></a></p>
+<figcaption>One pneumonia X-ray from the test set and its maps. The columns go from the trained model to more and more randomized versions, and the last one is the model trained on shuffled labels.</figcaption>
+</figure>
+</div>
+<p>In the figure you can also see a regular grid of dots in the gradient maps of the random networks. I think it comes from the strides of the convolutions, which leave that pattern when there is nothing learned on top of it, but I did not test it.</p>
+<p>I also expected the maps that survive the randomization to look like the edges of the image, which is the explanation people give for Guided Backprop. I compared every map with the edges (a Sobel filter) and the correlations were low for every method, 0.28 at most. I don’t have evidence for that idea in this data.</p>
+</section>
+<section id="what-it-means-and-what-it-does-not" class="level2">
+<h2 class="anchored" data-anchor-id="what-it-means-and-what-it-does-not">What it means and what it does not</h2>
+<p>Passing this test is necessary and nowhere near enough. It says that the map depends on what the model learned. It does not say that the map points to the lesion. PneumoniaMNIST has no boxes around the lesions, so I can’t measure that here. <span class="citation" data-cites="arun">Arun et al. (<a href="#ref-arun" role="doc-biblioref">2021</a>)</span> did it with boxes on chest X-rays and found that most methods did not localize well.</p>
+<p>And Grad-CAM, the one that passes, works on 16 cells. It can tell you which quarter of the chest weighed more in the decision. It can’t point to a small opacity.</p>
+<p>If I had to choose a map for a clinical paper with this setup, I would choose Grad-CAM and say what resolution it has. I would not show Guided Backprop as evidence of anything. And I would not show the gradient of a single model: I would average it over several models, or at least show how much two of them disagree.</p>
+</section>
+<section id="limits" class="level2">
+<h2 class="anchored" data-anchor-id="limits">Limits</h2>
+<ul>
+<li>One dataset, one resolution and one architecture trained from scratch. A network pre-trained on ImageNet could behave differently.</li>
+<li>Spearman on absolute values ignores the sign of the map. I also computed SSIM and the pattern is the same; it is in the results file.</li>
+<li>Re-initializing the batch normalization layers also resets their statistics, which changes the scale of the activations. It is part of destroying the model, but it is a choice.</li>
+<li>The maps explain the class predicted by the trained model, also when the model is wrong.</li>
+</ul>
+</section>
+<section id="code-and-data" class="level2">
+<h2 class="anchored" data-anchor-id="code-and-data">Code and data</h2>
+<p>The code, the summary table and every similarity per image are in <a href="https://github.com/carolain3472/carolain3472.github.io/tree/main/lab/saliency">lab/saliency</a>. The trained weights are not there because of their size. With the same seeds, <code>train.py</code> and <code>sanity.py</code> should give close numbers, though not identical ones, because the GPU operations I used (Apple M4) are not fully deterministic.</p>
+</section>
+<section id="references" class="level2">
+
+
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-adebayo" class="csl-entry" role="listitem">
+Adebayo, Julius, Justin Gilmer, Michael Muelly, Ian Goodfellow, Moritz Hardt, and Been Kim. 2018. <span>“Sanity Checks for Saliency Maps.”</span> <em>Advances in Neural Information Processing Systems 31 (NeurIPS)</em>. <a href="https://arxiv.org/abs/1810.03292">https://arxiv.org/abs/1810.03292</a>.
+</div>
+<div id="ref-arun" class="csl-entry" role="listitem">
+Arun, Nishanth, Nathan Gaw, Praveer Singh, et al. 2021. <span>“Assessing the Trustworthiness of Saliency Maps for Localizing Abnormalities in Medical Imaging.”</span> <em>Radiology: Artificial Intelligence</em> 3 (6): e200267. <a href="https://doi.org/10.1148/ryai.2021200267">https://doi.org/10.1148/ryai.2021200267</a>.
+</div>
+<div id="ref-kermany" class="csl-entry" role="listitem">
+<span class="nocase">Kermany, Daniel S., Michael Goldbaum, Wenjia Cai, et al.</span> 2018. <span>“Identifying Medical Diagnoses and Treatable Diseases by Image-Based Deep Learning.”</span> <em>Cell</em> 172 (5): 1122–31. <a href="https://doi.org/10.1016/j.cell.2018.02.010">https://doi.org/10.1016/j.cell.2018.02.010</a>.
+</div>
+<div id="ref-gradcam" class="csl-entry" role="listitem">
+Selvaraju, Ramprasaath R., Michael Cogswell, Abhishek Das, Ramakrishna Vedantam, Devi Parikh, and Dhruv Batra. 2017. <span>“Grad-CAM: Visual Explanations from Deep Networks via Gradient-Based Localization.”</span> <em>IEEE International Conference on Computer Vision (ICCV)</em>. <a href="https://arxiv.org/abs/1610.02391">https://arxiv.org/abs/1610.02391</a>.
+</div>
+<div id="ref-simonyan" class="csl-entry" role="listitem">
+Simonyan, Karen, Andrea Vedaldi, and Andrew Zisserman. 2014. <span>“Deep Inside Convolutional Networks: Visualising Image Classification Models and Saliency Maps.”</span> <em>ICLR Workshop</em>. <a href="https://arxiv.org/abs/1312.6034">https://arxiv.org/abs/1312.6034</a>.
+</div>
+<div id="ref-guided" class="csl-entry" role="listitem">
+Springenberg, Jost Tobias, Alexey Dosovitskiy, Thomas Brox, and Martin Riedmiller. 2015. <span>“Striving for Simplicity: The All Convolutional Net.”</span> <em>ICLR Workshop</em>. <a href="https://arxiv.org/abs/1412.6806">https://arxiv.org/abs/1412.6806</a>.
+</div>
+<div id="ref-ig" class="csl-entry" role="listitem">
+Sundararajan, Mukund, Ankur Taly, and Qiqi Yan. 2017. <span>“Axiomatic Attribution for Deep Networks.”</span> <em>International Conference on Machine Learning (ICML)</em>. <a href="https://arxiv.org/abs/1703.01365">https://arxiv.org/abs/1703.01365</a>.
+</div>
+<div id="ref-medmnist" class="csl-entry" role="listitem">
+Yang, Jiancheng, Rui Shi, Donglai Wei, et al. 2023. <span>“MedMNIST V2 - a Large-Scale Lightweight Benchmark for 2D and 3D Biomedical Image Classification.”</span> <em>Scientific Data</em> 10: 41. <a href="https://doi.org/10.1038/s41597-022-01721-8">https://doi.org/10.1038/s41597-022-01721-8</a>.
+</div>
+</div></section></div></main> <!-- /main -->
+<script>
+(()=>{const es=/^\/es(\/|$)/.test(location.pathname),p=location.pathname,other=es?p.replace(/^\/es/,"")||"/":"/es"+p;
+const nav=document.querySelector(".navbar");if(!nav)return;
+const sel=[...nav.querySelectorAll("a.nav-link")].find(a=>a.textContent.trim()==="ES");if(!sel)return;
+sel.href=other;sel.hreflang=es?"en":"es";sel.classList.remove("active");sel.classList.add("langsel");
+sel.innerHTML=es?"<span>EN</span><b>ES</b>":"<b>EN</b><span>ES</span>";sel.setAttribute("aria-label",es?"See this page in English":"Ver esta página en español");
+if(es){const M={"Research":["Investigación","research.html"],"AI for business":["IA para empresas","business.html"],"Explorations":["Exploraciones","explorations.html"],"All notes":["Todas las notas","blog.html"]};
+nav.querySelectorAll("a.nav-link").forEach(a=>{const m=M[a.textContent.trim()];if(!m)return;(a.querySelector(".menu-text")||a).textContent=m[0];a.href="/es/"+m[1];a.classList.toggle("active",p==="/es/"+m[1])});
+nav.querySelectorAll("a.navbar-brand").forEach(b=>b.href="/es/")}
+const c=sel.cloneNode(true);c.classList.add("langm");const q=nav.querySelector(".quarto-navbar-tools")||nav.querySelector("#quarto-search");(q?q.parentNode.insertBefore(c,q):nav.append(c));
+const h=document.createElement("link");h.rel="alternate";h.hreflang=es?"en":"es";h.href=location.origin+other;document.head.append(h)})();
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/carolain3472\.github\.io\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+      window.quartoDecorateExternalLinks = function (root) {
+     var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+          if (!link.classList.contains('no-external-icon')) {
+          }
+        }
+      }
+      };
+      window.quartoDecorateExternalLinks(window.document);
+    // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
+    // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
+    const hideOnEscAndFocusOut = {
+      name: 'hideOnEscAndFocusOut',
+      defaultValue: true,
+      fn(instance) {
+        const dismiss = () => {
+          // A show scheduled by the trigger delay would otherwise reopen it
+          instance.clearDelayTimeouts();
+          instance.hide();
+        };
+        const onKeyDown = (event) => {
+          if (event.key !== 'Escape') {
+            return;
+          }
+          // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
+          // except an open reveal.js slide menu, which Esc should close too.
+          // The menu handles keys only when its keyboard option is on.
+          const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
+            window.Reveal.getConfig().menu?.keyboard !== false;
+          if (!menuHandlesEsc) {
+            event.stopPropagation();
+          }
+          if (instance.popper.contains(window.document.activeElement)) {
+            // Disabled while refocusing so the focus trigger does not reopen it
+            instance.disable();
+            instance.reference.focus();
+            instance.enable();
+          }
+          dismiss();
+        };
+        const onFocusOut = (event) => {
+          const target = event.relatedTarget;
+          if (target && !instance.reference.contains(target) &&
+              !instance.popper.contains(target)) {
+            dismiss();
+          }
+        };
+        // On the trigger too: a click trigger (code-annotations: select) has no
+        // blur handling. Attached for the instance's lifetime so leaving the
+        // trigger also cancels a show still pending on the trigger delay.
+        instance.reference.addEventListener('focusout', onFocusOut);
+        return {
+          onShow() {
+            window.document.addEventListener('keydown', onKeyDown, true);
+            instance.popper.addEventListener('focusout', onFocusOut);
+          },
+          onHide() {
+            window.document.removeEventListener('keydown', onKeyDown, true);
+            instance.popper.removeEventListener('focusout', onFocusOut);
+          },
+          onDestroy() {
+            instance.reference.removeEventListener('focusout', onFocusOut);
+          },
+        };
+      },
+    };
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+        plugins: [hideOnEscAndFocusOut],
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          // Each band is positioned against its own containing block, which is
+          // not the offsetParent of the lines, so place it from client rects.
+          const placeBand = (band, firstEl, lastEl, codeBlock) => {
+            const container = band.offsetParent;
+            if (container === null) {
+              return;
+            }
+            const containerRect = container.getBoundingClientRect();
+            // Reveal.js scales slides with a transform, so convert client
+            // pixels back to the CSS pixels of the container.
+            const scale = containerRect.height / container.offsetHeight || 1;
+            const firstRect = firstEl.getBoundingClientRect();
+            const lastRect = lastEl.getBoundingClientRect();
+            const top = (firstRect.top - containerRect.top) / scale - container.clientTop + container.scrollTop;
+            const height = (lastRect.bottom - firstRect.top) / scale;
+            band.style.top = top - 2 + "px";
+            band.style.height = height + 4 + "px";
+            if (codeBlock) {
+              // Without the copy button wrapper, the containing block is wider
+              // than the code block, so span the code block explicitly.
+              const blockRect = codeBlock.getBoundingClientRect();
+              band.style.left = (blockRect.left - containerRect.left) / scale - container.clientLeft + container.scrollLeft + "px";
+              band.style.width = blockRect.width / scale + "px";
+            }
+          };
+          if (lineIds.length > 0) {
+            const el = window.document.getElementById(lineIds[0]);
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const parent = el.parentElement.parentElement;
+            // cook up a div (if necessary) and position it
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            placeBand(div, el, lastEl, parent.closest("div.sourceCode") || parent);
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            placeBand(gutterDiv, el, lastEl);
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+  <script type="application/javascript">
+  window.quartoScrollableRegionsLabels = {"code":"Scrollable code","output":"Scrollable output"};
+  </script>
+</div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
+
+
+
+
+</body></html>

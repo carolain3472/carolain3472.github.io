@@ -2,6 +2,8 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/posts/calibration-shift/index.html",
+      "/posts/saliency-checks/index.html",
       "/posts/asks-first/index.html",
       "/posts/before-you-paste/index.html",
       "/posts/chatbot-i-dont-know/index.html",
@@ -15,6 +17,8 @@
   {
     "listing": "/es/blog.html",
     "items": [
+      "/es/posts/calibration-shift/index.html",
+      "/es/posts/saliency-checks/index.html",
       "/es/posts/asks-first/index.html",
       "/es/posts/before-you-paste/index.html",
       "/es/posts/chatbot-i-dont-know/index.html",
