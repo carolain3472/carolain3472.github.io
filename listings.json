@@ -3,6 +3,7 @@
     "listing": "/blog.html",
     "items": [
       "/posts/calibration-shift/index.html",
+      "/posts/hidden-order/index.html",
       "/posts/saliency-checks/index.html",
       "/posts/asks-first/index.html",
       "/posts/before-you-paste/index.html",
@@ -18,6 +19,7 @@
     "listing": "/es/blog.html",
     "items": [
       "/es/posts/calibration-shift/index.html",
+      "/es/posts/hidden-order/index.html",
       "/es/posts/saliency-checks/index.html",
       "/es/posts/asks-first/index.html",
       "/es/posts/before-you-paste/index.html",
